@@ -35,14 +35,14 @@
        git commit -m ":emoji_code: commit message"
        ```
 
-     * publish your feature to repository so other can see
+     * publish your feature update to this remote repository so others can see.
        ```
        git flow feature publish your_feature
        ```
 
-     * Do pull request. Make sure you pull request to develop.
+     * If you decided that your feature completed, **do pull request**. Make sure you pull request into develop branch.
        * Wait until it gets approved. Merge button will activate if it's approved.
-       * Merge yourself or merged by reviewer.
+       * Merge by yourself or merged by reviewer.
      
      * Finish your feature
        * pull new change from develop branch just in case it's updated.
