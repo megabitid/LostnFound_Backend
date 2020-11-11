@@ -12,12 +12,8 @@
 
 ## Developer Workflow
    * [workflow cheatsheet](https://danielkummer.github.io/git-flow-cheatsheet/index.html)
+   * [git flow vs git command comparison alternative](https://gist.github.com/JamesMGreene/cdd0ac49f90c987e45ac)
    * [workflow tutorial](https://youtu.be/8fx-EaOUK2E) (without git flow. just as reference to do pull request.)
-   * Do pull request, before you execute. 
-     ```
-     git flow feature finish [yourfeature]
-     ```
-     _Or you have to start over._
    * **General Workflow**
      
      * start new feature
@@ -42,16 +38,25 @@
 
      * If you decided that your feature completed, **do pull request**. Make sure you pull request into develop branch.
        * Wait until it gets approved. Merge button will activate if it's approved.
-       * Merge by yourself or merged by reviewer.
+       * Merge by yourself or merged by reviewer. You can use merge button or command bellow to merge.
      
      * Finish your feature
        * pull new change from develop branch just in case it's updated.
          ```
          git checkout develop && git pull origin develop
          ```
-       * remove your_feature branch in your repo and remote repo
+       * Because of _git flow feature finish_ does not push immediately, we use command bellow.
+       * merge your_feature branch
          ```
-         git flow feature finish your_feature
+         git merge --no-ff feature/your_feature
+         ```
+       * push your merge to develop
+         ```
+         git push origin develop
+         ```
+       * delete feature branch in your local and remote
+         ```
+         get branch -d feature/your_feature && git push origin :feature/your_feature
          ```
 
 ## Installation
