@@ -3,6 +3,9 @@
 namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use GuzzleHttp\Exception\ClientException;
+use Exception;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class Handler extends ExceptionHandler
 {
@@ -32,6 +35,24 @@ class Handler extends ExceptionHandler
      */
     public function register()
     {
-        //
+        $this->renderable(function(ClientException $e, $request) {
+            $response = [
+                'message'=>$e->getMessage(),
+            ];
+            if (config('app.debug')==true) {
+                $response['exception']=get_class($e);
+                $response['trace']=$e->getTrace();
+            }
+            return response()->json($response, 400);
+        });
+        $this->renderable(function(NotFoundHttpException $e, $request) {
+            $response = [
+                'message'=>'Not Found',
+            ];
+            return response()->json($response, $e->getStatusCode());
+        });
     }
+
+    
 }
+
