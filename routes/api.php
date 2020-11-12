@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\android\Oauth2Controller;
+use App\Http\Controllers\Api\android\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,7 +16,11 @@ use App\Http\Controllers\API\android\Oauth2Controller;
 |
 */
 
-Route::get('/oauth2/google/callback', [Oauth2Controller::class, 'handleGoogleCallback']);
+Route::prefix('auth')->group(function() {
+    Route::get('oauth2/google/authorize', [Oauth2Controller::class, 'handleGoogleCallback']);
+});
+Route::get('users/{id}', [UserController::class, 'show']);
+
 // Route::middleware('auth:api')->get('/user', function (Request $request) {
 //     return $request->user();
 // });
