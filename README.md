@@ -15,6 +15,22 @@
    * [git flow vs git command comparison alternative](https://gist.github.com/JamesMGreene/cdd0ac49f90c987e45ac)
    * [workflow tutorial](https://youtu.be/8fx-EaOUK2E) (without git flow. just as reference to do pull request.)
    * **General Workflow**
+     * clone repository
+       ```
+       git clone https://github.com/megabitid/LostnFound_Backend.git
+       ```
+     * init git flow
+       ```
+       git flow init
+       ```
+       * set production branch name to : **master**
+       * leave all option as default (press enter)
+     
+     * pull other people feature
+       ```
+       git pull feature\feature_name
+       git checkout feature\feature_name
+       ```
      
      * start new feature
        ```
