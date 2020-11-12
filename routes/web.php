@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+use App\Http\Controllers\API\android\Oauth2Controller;
+Route::get('oauth2/google', [Oauth2Controller::class, 'redirectToGoogle']);
 Route::get('/', function () {
     return view('welcome');
 });
