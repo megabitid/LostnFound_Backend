@@ -80,7 +80,7 @@
 Use the package manager [composer](https://getcomposer.org/download/) to install **Lost and Found Megabit API**. This project is using [PHP 7](https://www.php.net/downloads.php/).
 
 ```bash
-composer install
+composer update && composer install
 ```
 
 ## Usage
