@@ -50,7 +50,7 @@ class Oauth2Controller extends Controller
         $userData = [
             'nama'=>$account->user['name'],
             'email'=>$account->user['email'],
-            'password'=>bcrypt(env("OAUTH2_DEFAILT_PASSWORD")),
+            'password'=>bcrypt(env("OAUTH2_DEFAULT_PASSWORD")),
             'image'=>$account->user['picture'],
             'role'=>0 // user default (0)
         ];
