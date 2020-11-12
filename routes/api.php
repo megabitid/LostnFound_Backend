@@ -20,8 +20,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::namespace('Admin')->prefix('web/admin')->group(function(){
+Route::namespace('Admin')->middleware('auth:api')->prefix('web/admin')->group(function(){
     Route::get('', [AdminController::class, 'index']);
     Route::get('/{user}', [AdminController::class, 'show']);
-    Route::delete('/{user}', [AdminController::class, 'delete']);
+    Route::delete('/{user}', [AdminController::class, 'destroy']);
 });
