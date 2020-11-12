@@ -22,7 +22,7 @@ class AdminResource extends JsonResource
             'email_verified_at' => $this->email_verified_at,
             'stasiun'           => $this->stasiun,
             'image'             => $this->image,
-            'role'              => $this->role == 1 ? "Admin" : "Reguler",
+            'role'              => $this->role,
             'token'             => $this->token
         ];
     }
