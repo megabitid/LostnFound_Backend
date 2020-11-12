@@ -2,6 +2,8 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
+use App\Http\Controllers\Admin\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +18,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::namespace('Admin')->prefix('web/admin')->group(function(){
+    Route::get('', [AdminController::class, 'index']);
+    Route::get('/{user}', [AdminController::class, 'show']);
+    Route::delete('/{user}', [AdminController::class, 'delete']);
 });
