@@ -26,8 +26,11 @@ jobs:
       # Setup Heroku Git
       - name: Setup Heroku GIT
         run: |
+          ssh-keygen -R heroku.com
+          ssh-keyscan -t rsa heroku.com >> ~/.ssh/known_hosts
           HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku git:remote -a ${{ secrets.HEROKU_APP_NAME }}
           HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku create --ssh-git
+          
           HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} git config --global url.ssh://git@heroku.com/.insteadOf https://git.heroku.com/
       # Set Default ENV
       - name: Set Default ENV
