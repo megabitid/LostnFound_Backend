@@ -25,25 +25,23 @@ jobs:
         run: sudo snap install --classic heroku
       # Setup Heroku Git
       - name: Setup Heroku GIT
-        run: heroku git:remote -a ${{ secrets.HEROKU_APP_NAME }}
+        run: HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku git:remote -a ${{ secrets.HEROKU_APP_NAME }}
       # Set Default ENV
       - name: Set Default ENV
-        run: heroku config:set $(cat .env.example | sed '/^$/d; /#[[:print:]]*$/d')
+        run: HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:set $(cat .env.example | sed '/^$/d; /#[[:print:]]*$/d')
       # Update Production ENV
       - name: Update Production ENV
         run: |
-          heroku config:add APP_ENV=production
-          heroku config:add APP_KEY=${{ secrets.APP_KEY }}
-          heroku config:add APP_DEBUG=false
-          heroku config:add APP_URL=${{ secrets.APP_URL }}
-          heroku config:add DB_CONNECTION=pgsql
-          heroku config:add DB_HOST=${{ secrets.DB_HOST }}
-          heroku config:add DB_PORT=${{ secrets.DB_PORT }}
-          heroku config:add DB_DATABASE=${{ secrets.DB_DATABASE }}
-          heroku config:add DB_USERNAME=${{ secrets.DB_USERNAME }}
-          heroku config:add DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add APP_ENV=production
+          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add APP_KEY=${{ secrets.APP_KEY }}
+          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add APP_DEBUG=false
+          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add APP_URL=${{ secrets.APP_URL }}
+          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add DB_CONNECTION=pgsql
+          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add DB_HOST=${{ secrets.DB_HOST }}
+          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add DB_PORT=${{ secrets.DB_PORT }}
+          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add DB_DATABASE=${{ secrets.DB_DATABASE }}
+          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add DB_USERNAME=${{ secrets.DB_USERNAME }}
+          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add DB_PASSWORD=${{ secrets.DB_PASSWORD }}
       # Push New Changes
       - name: Push new changes to heroku
-        run: git push -f heroku master
-        env:
-          HEROKU_API_KEY='${{ secrets.HEROKU_TOKEN }}'
+        run: HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} git push -f heroku master
