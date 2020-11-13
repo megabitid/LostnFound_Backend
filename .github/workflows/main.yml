@@ -26,6 +26,7 @@ jobs:
       # Setup Heroku Git
       - name: Setup Heroku GIT
         run: |
+          ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y 2>&1 >/dev/null
           ssh-keygen -R heroku.com
           ssh-keyscan -t rsa heroku.com >> ~/.ssh/known_hosts
           HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku git:remote -a ${{ secrets.HEROKU_APP_NAME }}
