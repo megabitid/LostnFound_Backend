@@ -35,12 +35,12 @@ class UserController extends Controller
 
         try {
             if (!$token = JWTAuth::attempt($loginCredentials)) {
-                return response()->json(['Message' => 'Authentication credentials were missing or incorrect'], 401);
+                return response()->json(['message' => 'Authentication credentials were missing or incorrect'], 401);
             } else {
                 return response()->json(['_token' => $token], 200);
             }
         } catch (Exception $e) {
-            return response()->json(['Message' => 'Whoops', 'error' => $e], 404);
+            return response()->json(['message' => 'Whoops', 'error' => $e], 404);
         }
     }
 
@@ -62,7 +62,7 @@ class UserController extends Controller
                 return response()->json(['message' => 'The item was created successfully'], 201);
             }
         } catch (Exception $e) {
-            return response()->json(['Message' => 'Whoops', 'error' => $e], 404);
+            return response()->json(['message' => 'Whoops', 'error' => $e], 404);
         }
     }
 
@@ -94,7 +94,7 @@ class UserController extends Controller
                 return response()->json(['message' => 'The item was updated successfully', 'data' => $update], 201);
             }
         } catch (Exception $e) {
-            return response()->json(['Message' => 'Whoops', 'error' => $e], 404);
+            return response()->json(['message' => 'Whoops', 'error' => $e], 404);
         }
     }
 
@@ -102,9 +102,9 @@ class UserController extends Controller
     {
         try {
             auth()->logout();
-            return response()->json(['Message' => 'successfully logout'], 200);
+            return response()->json(['message' => 'successfully logout'], 200);
         } catch (Exception $e) {
-            return response()->json(['Message' => 'Whoops', 'error' => $e], 404);
+            return response()->json(['message' => 'Whoops', 'error' => $e], 404);
         }
     }
 }
