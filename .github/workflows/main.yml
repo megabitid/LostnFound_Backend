@@ -26,8 +26,15 @@ jobs:
       # Setup Heroku Git
       - name: Setup Heroku GIT
         run: |
+          rm -rf .git
+          git init
+          git config --global user.name "Eugene"
+          git config --global user.email ${{ secrets.MY_EMAIL }}
           HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku git:remote -a ${{ secrets.HEROKU_APP_NAME }}
           sudo printf "${{ secrets.NETRC }}" >> ~/.netrc
+          git add .
+          git commit -m "ROCK YOU"
+          
       # Set Default ENV
       - name: Set Default ENV
         run: HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:set $(cat .env.example | sed '/^$/d; /#[[:print:]]*$/d')
@@ -48,5 +55,5 @@ jobs:
           HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add GOOGLE_OAUTH_REDIRECT=${{ secrets.APP_URL }}/api/auth/oauth2/google/authorize
       # Push New Changes
       - name: Push new changes to heroku
-        run: git push -f heroku master
-
+        run: |
+          git push -f heroku master
