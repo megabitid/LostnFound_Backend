@@ -52,6 +52,8 @@ jobs:
           HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add DB_USERNAME=${{ secrets.DB_USERNAME }}
           HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add DB_PASSWORD=${{ secrets.DB_PASSWORD }}
           HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add OAUTH2_DEFAULT_PASSWORD=${{ secrets.APP_KEY }}
+          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }}
+          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRET }}
           HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add GOOGLE_OAUTH_REDIRECT=${{ secrets.APP_URL }}/api/auth/oauth2/google/authorize
       # Push New Changes
       - name: Push new changes to heroku
