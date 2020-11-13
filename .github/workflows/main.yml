@@ -23,9 +23,6 @@ jobs:
       # Setup Heroku
       - name: Setup Heroku CLI
         run: sudo snap install --classic heroku
-      # Login Heroku
-      - name: Login Heroku
-        run: HEROKU_API_KEY='${{ secrets.HEROKU_TOKEN }}'
       # Setup Heroku Git
       - name: Setup Heroku GIT
         run: heroku git:remote -a ${{ secrets.HEROKU_APP_NAME }}
@@ -48,3 +45,5 @@ jobs:
       # Push New Changes
       - name: Push new changes to heroku
         run: git push -f heroku master
+        env:
+          HEROKU_API_KEY='${{ secrets.HEROKU_TOKEN }}'
