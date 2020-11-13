@@ -26,13 +26,7 @@ jobs:
       # Setup Heroku Git
       - name: Setup Heroku GIT
         run: |
-          ssh-keygen -q -t rsa -N '' -f ~/.ssh/id_rsa <<<y 2>&1 >/dev/null
-          ssh-keyscan -t rsa heroku.com >> ~/.ssh/known_hosts
-          ssh-keygen -R heroku.com
-          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku git:remote -a ${{ secrets.HEROKU_APP_NAME }}
-          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku create --ssh-git
-          
-          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} git config --global url.ssh://git@heroku.com/.insteadOf https://git.heroku.com/
+          git remote add heroku https://heroku:${{ secrets.HEROKU_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_APP_NAME }}.git
       # Set Default ENV
       - name: Set Default ENV
         run: HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:set $(cat .env.example | sed '/^$/d; /#[[:print:]]*$/d')
@@ -51,4 +45,4 @@ jobs:
           HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add DB_PASSWORD=${{ secrets.DB_PASSWORD }}
       # Push New Changes
       - name: Push new changes to heroku
-        run: HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} git push -f heroku master
+        run: git push -f heroku master
