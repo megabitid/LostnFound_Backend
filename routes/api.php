@@ -18,12 +18,25 @@ use App\Http\Controllers\Api\android\UserController;
 |
 */
 
-Route::prefix('auth')->group(function() {
+Route::prefix('auth')->group(function () {
     Route::get('oauth2/google/authorize', [Oauth2Controller::class, 'handleGoogleCallback']);
 });
-Route::namespace('Admin')->middleware('auth:api')->prefix('web/admin')->group(function(){
+
+//API for admin web
+Route::namespace('Admin')->middleware('auth:api')->prefix('web/admin')->group(function () {
     Route::get('', [AdminController::class, 'index']);
     Route::get('/{user}', [AdminController::class, 'show']);
     Route::delete('/{user}', [AdminController::class, 'destroy']);
 });
-Route::get('users/{id}', [UserController::class, 'show']);
+
+//API for Android
+Route::group(['prefix' => 'android'], function () {
+    //users Auth
+    Route::group(['prefix' => 'users'], function () {
+        Route::post('/login', [UserController::class, 'login']);
+        Route::post('/register', [UserController::class, 'register']);
+        Route::get('/show', [UserController::class, 'show'])->middleware('auth:api');
+        Route::post('/update', [UserController::class, 'update'])->middleware('auth:api');
+        Route::get('/logout', [UserController::class, 'logout'])->middleware('auth:api');
+    });
+});
