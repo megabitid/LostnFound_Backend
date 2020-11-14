@@ -19,7 +19,7 @@ use App\Http\Controllers\Api\android\UserController;
 */
 
 //API for admin web
-Route::namespace('Admin')->middleware('auth:api')->prefix('web/admin')->group(function () {
+Route::namespace('Admin')->middleware('jwt.auth:api')->prefix('web/admin')->group(function () {
     Route::get('', [AdminController::class, 'index']);
     Route::get('/{user}', [AdminController::class, 'show']);
 });
