@@ -18,25 +18,11 @@ class AdminController extends Controller
         $admin = User::whereRole(1)->get();
         return AdminResource::collection($admin);
     }
-
     // Show detail admin
     public function show(User $user)
     {
         try{
             return AdminResource::make($user);
-        }catch(Exception $e) {
-            return response()->json(['message' => 'Whoops'], 404);
-        }
-    }
-
-    // delete admin
-    public function destroy(User $user)
-    {
-        try{
-            $userDelete = $user->delete();
-            if($userDelete) {
-                return response()->json(['message' => 'Success'], 204);
-            }
         }catch(Exception $e) {
             return response()->json(['message' => 'Whoops'], 404);
         }

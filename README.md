@@ -90,7 +90,7 @@ composer update && composer install
   
 * Migrate this project to new database. 
   ```bash
-  php artisan migrate:fresh
+  php artisan migrate:fresh && php artisan key:generate && php artisan jwt:secret -f && php artisan config:cache
   ```
 * Run development server locally.
   ```bash
