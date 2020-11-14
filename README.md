@@ -72,7 +72,7 @@
          ```
        * delete feature branch in your local and remote
          ```
-         get branch -d feature/your_feature && git push origin :feature/your_feature
+         git branch -d feature/your_feature && git push origin :feature/your_feature
          ```
 
 ## Installation
