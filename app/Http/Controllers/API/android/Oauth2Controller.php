@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\API\android;
+namespace App\Http\Controllers\Api\android;
 
 use App\Exceptions\ApiException;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
 use Google_Client;
 
@@ -66,11 +65,7 @@ class Oauth2Controller extends Controller
 
         // Auth success! give him jwt token.
         $user=User::where('email','=',$userData['email'])->first();
-
-        // ============================= change this later
-        $jwtToken = 'example token';
-        //==============================
-
+        $jwtToken = auth('api')->login($user);
         $responseData = $user->toArray()+[
             'token'=>$jwtToken
         ];
