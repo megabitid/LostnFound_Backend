@@ -35,32 +35,36 @@ jobs:
           git init
           git config --global user.name "Eugene"
           git config --global user.email ${{ secrets.MY_EMAIL }}
-          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku git:remote -a ${{ secrets.HEROKU_APP_NAME }}
+          heroku git:remote -a ${{ secrets.HEROKU_APP_NAME }}
           sudo printf "${{ secrets.NETRC }}" >> ~/.netrc
           git add .
           git commit -m "ROCK YOU"
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_TOKEN }}
           
       # Set Default ENV
       - name: Set Default ENV
-        run: HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:set $(cat .env.example | sed '/^$/d; /#[[:print:]]*$/d')
+        run: heroku config:set $(cat .env.example | sed '/^$/d; /#[[:print:]]*$/d')
       # Update Production ENV
       - name: Update Production ENV
         run: |
-          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add APP_ENV=production
-          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add APP_KEY=${{ secrets.APP_KEY }}
-          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add APP_DEBUG=false
-          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add APP_URL=${{ secrets.APP_URL }}
-          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add DB_CONNECTION=pgsql
-          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add DB_HOST=${{ secrets.DB_HOST }}
-          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add DB_PORT=${{ secrets.DB_PORT }}
-          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add DB_DATABASE=${{ secrets.DB_DATABASE }}
-          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add DB_USERNAME=${{ secrets.DB_USERNAME }}
-          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add DB_PASSWORD=${{ secrets.DB_PASSWORD }}
-          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add OAUTH2_DEFAULT_PASSWORD=${{ secrets.APP_KEY }}
-          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }}
-          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRET }}
-          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add FIREBASE_CREDENTIALS=firebase_secret.json
-          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add GOOGLE_OAUTH_REDIRECT=${{ secrets.APP_URL }}/api/v1/android/auth/oauth2/google/authorize
+          heroku config:add APP_ENV=production
+          heroku config:add APP_KEY=${{ secrets.APP_KEY }}
+          heroku config:add APP_DEBUG=false
+          heroku config:add APP_URL=${{ secrets.APP_URL }}
+          heroku config:add DB_CONNECTION=pgsql
+          heroku config:add DB_HOST=${{ secrets.DB_HOST }}
+          heroku config:add DB_PORT=${{ secrets.DB_PORT }}
+          heroku config:add DB_DATABASE=${{ secrets.DB_DATABASE }}
+          heroku config:add DB_USERNAME=${{ secrets.DB_USERNAME }}
+          heroku config:add DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+          heroku config:add OAUTH2_DEFAULT_PASSWORD=${{ secrets.APP_KEY }}
+          heroku config:add GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }}
+          heroku config:add GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRET }}
+          heroku config:add FIREBASE_CREDENTIALS=firebase_secret.json
+          heroku config:add GOOGLE_OAUTH_REDIRECT=${{ secrets.APP_URL }}/api/v1/android/auth/oauth2/google/authorize
+        env:
+          HEROKU_API_KEY: ${{ secrets.HEROKU_TOKEN }}
       # Push New Changes
       - name: Push new changes to heroku
         run: |
