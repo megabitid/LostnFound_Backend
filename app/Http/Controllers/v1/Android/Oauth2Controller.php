@@ -1,10 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api\android;
+namespace App\Http\Controllers\v1\Android;
 
 use App\Exceptions\ApiException;
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
@@ -59,6 +60,7 @@ class Oauth2Controller extends Controller
         $statusCode = 200;
         if (!$validator->fails()) {
             // new user is coming. register him.
+            $userData['email_verified_at'] = Carbon::now(); // oauth2 user auto verify email
             $user = User::create($userData);
             $statusCode = 201;
         }
