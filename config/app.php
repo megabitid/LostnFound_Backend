@@ -165,7 +165,10 @@ return [
         /*
          * Package Service Providers...
          */
+        // JWT
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+        // Firebase
+        Kreait\Laravel\Firebase\ServiceProvider::class,
 
         /*
          * Application Service Providers...

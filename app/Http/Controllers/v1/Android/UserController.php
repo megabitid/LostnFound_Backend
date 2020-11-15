@@ -9,6 +9,8 @@ use App\Models\User;
 use App\Traits\Permissions;
 use App\Traits\ValidationError;
 use App\Exceptions\ApiException;
+use App\Traits\FirebaseStorage;
+use App\Traits\StringValidator;
 use Exception;
 use Validator;
 
@@ -65,8 +67,11 @@ class UserController extends Controller
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
-        
         $validatedData = $validator->valid();
+        if(StringValidator::isImageBase64($validatedData['image']) == null) {
+            return ValidationError::response(['image'=>'You must use urlBase64 image format.']);
+        }
+
         try {
             $someUser = User::where('email', '=', $validatedData['email'])->first();
             if($someUser) {
@@ -75,9 +80,12 @@ class UserController extends Controller
                 }
             }
             $validatedData['password'] = bcrypt($validatedData['password']);
+            // upload image to storage
+            $uri = FirebaseStorage::imageUpload($validatedData['image'], 'users/image/'.$id);
+            $validatedData['image'] = $uri;
+            // update database
             $user->update($validatedData);
-            $responseData = $user->toArray();
-            return response()->json(['message' => 'User was updated successfully', 'data' => $responseData], 201);
+            return response()->json($user, 201);
         } catch (Exception $e) {
             return response()->json(['message' => 'Whoops', 'error' => $e->getMessage()], 400);
         }

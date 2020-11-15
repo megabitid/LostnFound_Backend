@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use App\Traits\FirebaseStorage;
+use App\Traits\StringValidator;
 use JWTAuth;
 use Validator;
 use App\Traits\ValidationError;
@@ -19,7 +21,7 @@ class AuthController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'email' => 'required|string|email',
-            'password' => 'required',
+            'password' => 'required|string',
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
@@ -53,11 +55,20 @@ class AuthController extends Controller
             return ValidationError::response($validator->errors());
         }
         $validatedData = $validator->valid();
+        if(StringValidator::isImageBase64($validatedData['image']) == null) {
+            return ValidationError::response(['image'=>'You must use urlBase64 image format.']);
+        }
         $validatedData['role'] = 0; // user default(0)
 
         try {
             $validatedData['password'] = bcrypt($validatedData['password']);
+            $base64 = $validatedData['image'];
+            $validatedData['image'] = "";
             $user = User::create($validatedData);
+            // upload image to storage
+            $uri = FirebaseStorage::imageUpload($base64, 'users/image/'.$user->id);
+            // update database
+            $user->update(['image'=>$uri]);
 
             $token = auth('api')->login($user);
             $responseData = $user->toArray()+[

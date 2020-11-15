@@ -5,7 +5,7 @@ use App\Http\Controllers\v1\Admin\AdminController as AdminControllerV1;
 use App\Http\Controllers\v1\Android\AuthController as AuthControllerV1;
 use App\Http\Controllers\v1\Admin\AuthController as AdminAuthControllerV1;
 use App\Http\Controllers\v1\Android\Oauth2Controller as Oauth2ControllerV1;
-use App\Http\Controllers\v1\android\UserController as UserControllerV1;
+use App\Http\Controllers\v1\Android\UserController as UserControllerV1;
 
 
 /*
