@@ -20,7 +20,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: Decrypt Firebase Secret
-        run: ./decrypt_firebase_secret.sh
+        run: |
+          chmod +x decrypt_firebase_secret.sh
+          ./decrypt_firebase_secret.sh
         env:
           FIREBASE_SECRET_PASSPHRASE: ${{ secrets.FIREBASE_SECRET_PASSPHRASE }}
       # Setup Heroku
