@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Api\android;
+namespace App\Http\Controllers\v1\Android;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\UserResource;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Traits\Permissions;
@@ -22,8 +23,8 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::where('role', '=', 0)->get();
-        return response()->json($users);
+        $users = User::where('role', '=', 0)->paginate(20);
+        return UserResource::collection($users);
     }
 
     /**
@@ -58,8 +59,8 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), [
             'nama' => 'required|string',
             'email' => ['required', 'max:254', "regex:{$this::$rfc5322}"],
-            'password' => 'required',
-            'image'=>'required',
+            'password' => 'required|string',
+            'image'=>'required|string',
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());

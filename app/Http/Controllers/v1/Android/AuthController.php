@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Api\android;
+namespace App\Http\Controllers\v1\Android;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -46,8 +46,8 @@ class AuthController extends Controller
         $validator = Validator::make($request->all(), [
             'nama' => 'required|string',
             'email' => ['required', 'unique:users', 'max:254', "regex:{$this::$rfc5322}"],
-            'password' => 'required',
-            'image'=>'required',
+            'password' => 'required|string',
+            'image'=>'required|string',
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());

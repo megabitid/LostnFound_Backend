@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\API\android\Oauth2Controller;
+use App\Http\Controllers\v1\Android\Oauth2Controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
