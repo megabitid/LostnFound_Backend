@@ -32,6 +32,7 @@ jobs:
           git config --global user.email ${{ secrets.MY_EMAIL }}
           HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku git:remote -a ${{ secrets.HEROKU_APP_NAME }}
           sudo printf "${{ secrets.NETRC }}" >> ~/.netrc
+          sudo printf "${{ secrets.FIREBASE_SECRET }}" >> firebase_secret.json
           git add .
           git commit -m "ROCK YOU"
           
@@ -54,7 +55,8 @@ jobs:
           HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add OAUTH2_DEFAULT_PASSWORD=${{ secrets.APP_KEY }}
           HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }}
           HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRET }}
-          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add GOOGLE_OAUTH_REDIRECT=${{ secrets.APP_URL }}/api/android/auth/oauth2/google/authorize
+          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add FIREBASE_CREDENTIALS=firebase_secret.json
+          HEROKU_API_KEY=${{ secrets.HEROKU_TOKEN }} heroku config:add GOOGLE_OAUTH_REDIRECT=${{ secrets.APP_URL }}/api/v1/android/auth/oauth2/google/authorize
       # Push New Changes
       - name: Push new changes to heroku
         run: |
