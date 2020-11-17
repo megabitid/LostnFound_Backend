@@ -14,3 +14,4 @@ use App\Http\Controllers\v1\Android\Oauth2Controller;
 */
 
 Route::get('auth/oauth2/google', [Oauth2Controller::class, 'redirectToGoogle']);
+
