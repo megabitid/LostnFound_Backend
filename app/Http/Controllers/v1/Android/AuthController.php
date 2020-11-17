@@ -20,21 +20,26 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'email' => 'required|string|email',
+            'email' => 'required|string',
             'password' => 'required|string',
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
+        $loginTypeAttempt = filter_var($request->email, FILTER_VALIDATE_EMAIL) ? 'email' : 'no_telp';
 
-        $validatedData = $validator->valid();
+        $validatedData = [
+            $loginTypeAttempt => $request->email,
+            'password' => $request->password
+        ];
+
         try {
             if (!$token = JWTAuth::attempt($validatedData)) {
                 return response()->json(['message' => 'Authentication credentials were missing or incorrect'], 401);
             } else {
                 $user = Auth::user();
-                $responseData = $user->toArray()+[
-                    'token'=>$token,
+                $responseData = $user->toArray() + [
+                    'token' => $token,
                 ];
                 return response()->json($responseData, 200);
             }
@@ -49,14 +54,15 @@ class AuthController extends Controller
             'nama' => 'required|string',
             'email' => ['required', 'unique:users', 'max:254', "regex:{$this::$rfc5322}"],
             'password' => 'required|string',
-            'image'=>'required|string',
+            'image' => 'required|string',
+            'no_telp' => 'required|unique:users'
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
         $validatedData = $validator->valid();
-        if(StringValidator::isImageBase64($validatedData['image']) == null) {
-            return ValidationError::response(['image'=>'You must use urlBase64 image format.']);
+        if (StringValidator::isImageBase64($validatedData['image']) == null) {
+            return ValidationError::response(['image' => 'You must use urlBase64 image format.']);
         }
         $validatedData['role'] = 0; // user default(0)
 
@@ -66,13 +72,13 @@ class AuthController extends Controller
             $validatedData['image'] = "";
             $user = User::create($validatedData);
             // upload image to storage
-            $uri = FirebaseStorage::imageUpload($base64, 'users/image/'.$user->id);
+            $uri = FirebaseStorage::imageUpload($base64, 'users/image/' . $user->id);
             // update database
-            $user->update(['image'=>$uri]);
+            $user->update(['image' => $uri]);
 
             $token = auth('api')->login($user);
-            $responseData = $user->toArray()+[
-                'token'=>$token,
+            $responseData = $user->toArray() + [
+                'token' => $token,
             ];
             return response()->json($responseData, 201);
         } catch (Exception $e) {
