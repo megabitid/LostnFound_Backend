@@ -1,16 +1,19 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\v1\Auth\{LoginController, LogoutController};
+use App\Http\Controllers\v1\Backend\AdminController;
+
 use App\Http\Controllers\v1\Admin\AdminController as AdminControllerV1;
+use App\Http\Controllers\v1\BarangController as BarangControllerV1;
+use App\Http\Controllers\v1\StasiunController as StasiunControllerV1;
 use App\Http\Controllers\v1\Android\AuthController as AuthControllerV1;
+use App\Http\Controllers\v1\Android\UserController as UserControllerV1;
 use App\Http\Controllers\v1\Admin\AuthController as AdminAuthControllerV1;
 use App\Http\Controllers\v1\Android\Oauth2Controller as Oauth2ControllerV1;
-use App\Http\Controllers\v1\Android\UserController as UserControllerV1;
-use App\Http\Controllers\v1\BarangController as BarangControllerV1;
 use App\Http\Controllers\v1\BarangImageController as BarangImageControllerV1;
-use App\Http\Controllers\v1\BarangKategoriController as BarangKategoriControllerV1;
 use App\Http\Controllers\v1\BarangStatusController as BarangStatusControllerV1;
-use App\Http\Controllers\v1\StasiunController as StasiunControllerV1;
+use App\Http\Controllers\v1\BarangKategoriController as BarangKategoriControllerV1;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,16 +30,15 @@ Route::prefix('v1')->group(function() {
     //API for admin web
     Route::prefix('web')->group(function () {
         // admin users
-        Route::middleware('jwt.auth')->prefix('users')->group(function() {
-            route::get('{id}', [AdminControllerV1::class, 'show']);
-            Route::put('{id}', [AdminControllerV1::class, 'update']);
-            Route::get('', [AdminControllerV1::class, 'index']);
+        Route::prefix('users')->middleware('jwt.auth')->group(function(){
+            Route::post('', [AdminController::class, 'store']);
+            Route::patch('/{user}', [AdminController::class, 'update']);
+            Route::delete('/{user}', [AdminController::class, 'update']);
         });
         // auth admin
         Route::prefix('auth')->group(function () {
-            Route::post('login', [AdminAuthControllerV1::class, 'login']);
-            Route::post('register', [AdminAuthControllerV1::class, 'register']);
-            Route::middleware('jwt.auth')->get('logout', [AuthControllerV1::class, 'logout']);
+            Route::post('login', LoginController::class);
+            Route::post('logout', LogoutController::class)->middleware('jwt.auth');
         });
     });
 

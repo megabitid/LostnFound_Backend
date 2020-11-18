@@ -55,4 +55,10 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+    // Mutator
+    public function getTakeImgAttribute()
+    {
+        return url('storage', $this->image);
+    }
 }
