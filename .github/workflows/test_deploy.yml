@@ -52,11 +52,11 @@ jobs:
           heroku config:add APP_DEBUG=false
           heroku config:add APP_URL=${{ secrets.APP_URL }}
           heroku config:add DB_CONNECTION=pgsql
-          heroku config:add DB_HOST=${{ secrets.DB_HOST }}
-          heroku config:add DB_PORT=${{ secrets.DB_PORT }}
-          heroku config:add DB_DATABASE=${{ secrets.DB_DATABASE }}
-          heroku config:add DB_USERNAME=${{ secrets.DB_USERNAME }}
-          heroku config:add DB_PASSWORD=${{ secrets.DB_PASSWORD }}
+          heroku config:add DB_HOST=${{ secrets.DB_HOST_TEST }}
+          heroku config:add DB_PORT=${{ secrets.DB_PORT_TEST }}
+          heroku config:add DB_DATABASE=${{ secrets.DB_DATABASE_TEST }}
+          heroku config:add DB_USERNAME=${{ secrets.DB_USERNAME_TEST }}
+          heroku config:add DB_PASSWORD=${{ secrets.DB_PASSWORD_TEST }}
           heroku config:add OAUTH2_DEFAULT_PASSWORD=${{ secrets.APP_KEY }}
           heroku config:add GOOGLE_CLIENT_ID=${{ secrets.GOOGLE_CLIENT_ID }}
           heroku config:add GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRET }}
