@@ -6,7 +6,11 @@ use App\Http\Controllers\v1\Android\AuthController as AuthControllerV1;
 use App\Http\Controllers\v1\Admin\AuthController as AdminAuthControllerV1;
 use App\Http\Controllers\v1\Android\Oauth2Controller as Oauth2ControllerV1;
 use App\Http\Controllers\v1\Android\UserController as UserControllerV1;
-
+use App\Http\Controllers\v1\BarangController as BarangControllerV1;
+use App\Http\Controllers\v1\BarangImageController as BarangImageControllerV1;
+use App\Http\Controllers\v1\BarangKategoriController as BarangKategoriControllerV1;
+use App\Http\Controllers\v1\BarangStatusController as BarangStatusControllerV1;
+use App\Http\Controllers\v1\StasiunController as StasiunControllerV1;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,5 +56,27 @@ Route::prefix('v1')->group(function() {
             // oauth2
             Route::get('oauth2/google/authorize', [Oauth2ControllerV1::class, 'handleGoogleCallback']);
         });
+    });
+
+    // global route
+    Route::prefix('barangs')->middleware('jwt.auth')->group(function() {
+        Route::get('{id}', [BarangControllerV1::class, 'show']);
+        Route::get('', [BarangControllerV1::class, 'index']);
+    });
+    Route::prefix('stasiuns')->middleware('jwt.auth')->group(function() {
+        Route::get('{id}', [StasiunControllerV1::class, 'show']);
+        Route::get('', [StasiunControllerV1::class, 'index']);
+    });
+    Route::prefix('barang-kategoris')->middleware('jwt.auth')->group(function() {
+        Route::get('{id}', [BarangKategoriControllerV1::class, 'show']);
+        Route::get('', [BarangKategoriControllerV1::class, 'index']);
+    });
+    Route::prefix('barang-images')->middleware('jwt.auth')->group(function() {
+        Route::get('{id}', [BarangImageControllerV1::class, 'show']);
+        Route::get('', [BarangImageControllerV1::class, 'index']);
+    });
+    Route::prefix('barang-statuses')->middleware('jwt.auth')->group(function() {
+        Route::get('{id}', [BarangStatusControllerV1::class, 'show']);
+        Route::get('', [BarangStatusControllerV1::class, 'index']);
     });
 });
