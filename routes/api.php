@@ -19,11 +19,11 @@ use App\Http\Controllers\v1\Android\UserController as UserControllerV1;
 |
 */
 
-Route::prefix('v1')->group(function() {
+Route::prefix('v1')->group(function () {
     //API for admin web
     Route::prefix('web')->group(function () {
         // admin users
-        Route::middleware('jwt.auth')->prefix('users')->group(function() {
+        Route::middleware('jwt.auth')->prefix('users')->group(function () {
             route::get('{id}', [AdminControllerV1::class, 'show']);
             Route::put('{id}', [AdminControllerV1::class, 'update']);
             Route::get('', [AdminControllerV1::class, 'index']);
@@ -39,7 +39,7 @@ Route::prefix('v1')->group(function() {
     //API for Android
     Route::prefix('android')->group(function () {
         //users
-        Route::middleware('jwt.auth')->prefix('users')->group(function() {
+        Route::middleware('jwt.auth')->prefix('users')->group(function () {
             route::get('{id}', [UserControllerV1::class, 'show']);
             Route::put('{id}', [UserControllerV1::class, 'update']);
             Route::get('', [UserControllerV1::class, 'index']);
@@ -49,6 +49,8 @@ Route::prefix('v1')->group(function() {
             Route::post('login', [AuthControllerV1::class, 'login']);
             Route::post('register', [AuthControllerV1::class, 'register']);
             Route::middleware('jwt.auth')->get('logout', [AuthControllerV1::class, 'logout']);
+            //login using telp
+            Route::post('login/telp', [AuthControllerV1::class, 'loginTelp']);
             // oauth2
             Route::get('oauth2/google/authorize', [Oauth2ControllerV1::class, 'handleGoogleCallback']);
         });

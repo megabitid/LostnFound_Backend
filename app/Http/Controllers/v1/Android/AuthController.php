@@ -20,18 +20,13 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'email' => 'required|string',
+            'email' => 'required|string|email',
             'password' => 'required|string',
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
-        $loginTypeAttempt = filter_var($request->email, FILTER_VALIDATE_EMAIL) ? 'email' : 'no_telp';
-
-        $validatedData = [
-            $loginTypeAttempt => $request->email,
-            'password' => $request->password
-        ];
+        $validatedData = $validator->valid();
 
         try {
             if (!$token = JWTAuth::attempt($validatedData)) {
@@ -92,6 +87,32 @@ class AuthController extends Controller
             auth('api')->logout();
             auth('api')->invalidate();
             return response()->json(['message' => 'successfully logout'], 200);
+        } catch (Exception $e) {
+            return response()->json(['message' => 'Whoops', 'error' => $e->getMessage()], 400);
+        }
+    }
+
+    public function loginTelp(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'no_telp' => 'required',
+            'password' => 'required|string',
+        ]);
+        if ($validator->fails()) {
+            return ValidationError::response($validator->errors());
+        }
+        $validatedData = $validator->valid();
+
+        try {
+            if (!$token = JWTAuth::attempt($validatedData)) {
+                return response()->json(['message' => 'Authentication credentials were missing or incorrect'], 401);
+            } else {
+                $user = Auth::user();
+                $responseData = $user->toArray() + [
+                    'token' => $token,
+                ];
+                return response()->json($responseData, 200);
+            }
         } catch (Exception $e) {
             return response()->json(['message' => 'Whoops', 'error' => $e->getMessage()], 400);
         }
