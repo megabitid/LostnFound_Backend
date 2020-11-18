@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Stasiun extends Model
 {
     use HasFactory;
+    
+    // Table  no created_at & updated_at
+    public  $timestamps = false;
 
     protected $fillable=[
         'nama',
