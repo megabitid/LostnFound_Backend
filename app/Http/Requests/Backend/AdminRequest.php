@@ -25,8 +25,7 @@ class AdminRequest extends FormRequest
     {
         return [
             'nama'      => ['required', 'string', 'min:3', 'max:255'],
-            'nip'       => ['required',  'string', 'min:16', 'max:17', 'unique:users,nip'],
-            'email'     => ['string', 'email', 'unique:users,email'],
+            'nip'       => ['required',  'string', 'min:17', 'max:18', 'unique:users,nip'],
             'password'  => ['required', 'string', 'min:8', 'confirmed'],
             'image'     => ['mimes:png,jpg,jpeg'],
             'stasiun'   => ['required', 'string', 'min:3', 'max:255'],

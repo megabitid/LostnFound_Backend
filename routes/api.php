@@ -30,10 +30,11 @@ Route::prefix('v1')->group(function() {
     //API for admin web
     Route::prefix('web')->group(function () {
         // admin users
-        Route::prefix('users')->middleware('jwt.auth')->group(function(){
+        Route::prefix('admin')->middleware('jwt.auth')->group(function(){
+            Route::get('', [AdminController::class, 'index']);
             Route::post('', [AdminController::class, 'store']);
-            Route::patch('/{user}', [AdminController::class, 'update']);
-            Route::delete('/{user}', [AdminController::class, 'update']);
+            Route::patch('/{user:nip}', [AdminController::class, 'update']);
+            Route::delete('/{user:nip}', [AdminController::class, 'delete']);
         });
         // auth admin
         Route::prefix('auth')->group(function () {

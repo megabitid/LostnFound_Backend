@@ -17,9 +17,8 @@ class AdminResource extends JsonResource
         return [
             'nama'    => $this->nama,
             'nip'     => $this->nip,
-            'email'   => $this->email,
             'stasiun' => $this->stasiun,
-            'img'     => url('storage' , $this->image),
+            'image'   => url('storage' , $this->image),
             'role'    => $this->role,
         ];
     }

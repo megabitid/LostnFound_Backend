@@ -12,19 +12,21 @@ class User extends Authenticatable implements JWTSubject
 {
     use HasFactory, Notifiable;
 
+    // RouteKeyName
+    public function getRouteKeyName()
+    {
+        return 'nip';
+    }
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $fillable = [
-        'nama',
-        'nip',
-        'email',
-        'password',
-        'image',
-        'role',
-        'email_verified_at',
+    protected $guarded = [
+        'id',
+        'created_at',
+        'updated_at',
     ];
 
     /**
@@ -56,9 +58,10 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
-    // Mutator
+    // Mutator 
     public function getTakeImgAttribute()
     {
         return url('storage', $this->image);
     }
+
 }
