@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\v1;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Resource;
 use App\Models\BarangImage;
 use Illuminate\Http\Request;
 
