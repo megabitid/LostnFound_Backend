@@ -11,10 +11,11 @@ class BarangImage extends Model
 
     protected $fillable = [
         'nama',
-        'link',
     ];
 
-    public function barangs() {
-        $this->hasMany('App\Models\Barang', 'barangimage_id');
+    // Relation many to one (Barangs)
+    public function barang() 
+    {
+        $this->belongsTo('App\Models\Barang');
     }
 }

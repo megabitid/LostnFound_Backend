@@ -16,7 +16,9 @@ class BarangKategori extends Model
         'nama',
     ];
 
-    public function barangs() {
-        $this->hasMany('App\Models\Barang', 'kategori_id');
+    // Relation one to one
+    public function barangs() 
+    {
+        return $this->hasMany('App\Models\Barang');
     }
 }

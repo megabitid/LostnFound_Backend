@@ -58,6 +58,12 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
+    // Relation one to many (Barang)
+    public function barangs()
+    {
+        return $this->hasMany(Barang::class);
+    }
+
     // Mutator 
     public function getTakeImgAttribute()
     {

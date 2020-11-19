@@ -16,7 +16,9 @@ class Stasiun extends Model
         'nama',
     ];
 
-    public function barangs() {
-        $this->hasMany('App\Models\Barang', 'stasiun_id');
+    // Relation many to one
+    public function barangs() 
+    {
+        return $this->hasMany('App\Models\Barang');
     }
 }

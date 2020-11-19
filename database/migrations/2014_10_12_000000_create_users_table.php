@@ -20,8 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('email', 254)->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('stasiun'); // Data diambil dari db stasiun
             $table->string('image');
+            $table->string('stasiun');
             $table->tinyInteger('role')->default(0);  //super admin (2) admin (1) user biasa(0)
             $table->rememberToken();
             $table->timestamps();

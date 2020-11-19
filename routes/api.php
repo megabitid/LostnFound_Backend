@@ -2,14 +2,10 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\v1\Auth\{LoginController, LogoutController};
-use App\Http\Controllers\v1\Backend\AdminController;
+use App\Http\Controllers\v1\Backend\{AdminController,  BarangController, StasiunController};
 
-use App\Http\Controllers\v1\Admin\AdminController as AdminControllerV1;
-use App\Http\Controllers\v1\BarangController as BarangControllerV1;
-use App\Http\Controllers\v1\StasiunController as StasiunControllerV1;
 use App\Http\Controllers\v1\Android\AuthController as AuthControllerV1;
 use App\Http\Controllers\v1\Android\UserController as UserControllerV1;
-use App\Http\Controllers\v1\Admin\AuthController as AdminAuthControllerV1;
 use App\Http\Controllers\v1\Android\Oauth2Controller as Oauth2ControllerV1;
 use App\Http\Controllers\v1\BarangImageController as BarangImageControllerV1;
 use App\Http\Controllers\v1\BarangStatusController as BarangStatusControllerV1;
@@ -34,7 +30,7 @@ Route::prefix('v1')->group(function() {
             Route::get('', [AdminController::class, 'index']);
             Route::post('', [AdminController::class, 'store']);
             Route::patch('/{user:nip}', [AdminController::class, 'update']);
-            Route::delete('/{user:nip}', [AdminController::class, 'delete']);
+            Route::delete('/{user:nip}', [AdminController::class, 'destory']);
         });
         // auth admin
         Route::prefix('auth')->group(function () {
@@ -62,13 +58,15 @@ Route::prefix('v1')->group(function() {
     });
 
     // global route
-    Route::prefix('barangs')->middleware('jwt.auth')->group(function() {
-        Route::get('{id}', [BarangControllerV1::class, 'show']);
-        Route::get('', [BarangControllerV1::class, 'index']);
+    
+    Route::prefix('barang')->middleware('jwt.auth')->group(function() {
+        Route::resource('', BarangController::class);
     });
-    Route::prefix('stasiuns')->middleware('jwt.auth')->group(function() {
-        Route::get('{id}', [StasiunControllerV1::class, 'show']);
-        Route::get('', [StasiunControllerV1::class, 'index']);
+    Route::prefix('stasiun')->middleware('jwt.auth')->group(function() {
+        Route::get('', [StasiunController::class, 'index']);
+        Route::post('', [StasiunController::class, 'store']);
+        Route::patch('/{stasiun:id}', [StasiunController::class, 'update']);
+        Route::delete('/{stasiun:id}', [StasiunController::class, 'destory']);
     });
     Route::prefix('barang-kategoris')->middleware('jwt.auth')->group(function() {
         Route::get('{id}', [BarangKategoriControllerV1::class, 'show']);

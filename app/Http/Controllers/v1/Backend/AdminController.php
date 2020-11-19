@@ -57,7 +57,7 @@ class AdminController extends Controller
     }
 
     // Delete
-    public function delete(User $user)
+    public function destory(User $user)
     {
         try{
             if (!auth()->user()->role == 2) {
