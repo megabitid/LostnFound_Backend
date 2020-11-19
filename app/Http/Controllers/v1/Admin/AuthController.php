@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\v1\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Jobs\SendEmailUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -12,6 +13,7 @@ use JWTAuth;
 use Validator;
 use App\Traits\ValidationError;
 use Exception;
+use Illuminate\Support\Str;
 
 class AuthController extends Controller
 {
@@ -60,6 +62,7 @@ class AuthController extends Controller
 
         try {
             $validatedData['password'] = bcrypt($validatedData['password']);
+            $validatedData['activate_token'] = Str::random(30);
             $base64 = $validatedData['image'];
             $validatedData['image'] = "";
             $user = User::create($validatedData);
@@ -72,6 +75,7 @@ class AuthController extends Controller
             $responseData = $user->toArray()+[
                 'token'=>$token,
             ];
+            dispatch(new SendEmailUser($user));
             return response()->json($responseData, 201);
         } catch (Exception $e) {
             return response()->json(['message' => 'Whoops', 'error' => $e->getMessage()], 400);

@@ -6,6 +6,7 @@ use App\Http\Controllers\v1\Android\AuthController as AuthControllerV1;
 use App\Http\Controllers\v1\Admin\AuthController as AdminAuthControllerV1;
 use App\Http\Controllers\v1\Android\Oauth2Controller as Oauth2ControllerV1;
 use App\Http\Controllers\v1\Android\UserController as UserControllerV1;
+use App\Http\Controllers\EmailController;
 
 
 /*
@@ -32,6 +33,9 @@ Route::prefix('v1')->group(function() {
         Route::prefix('auth')->group(function () {
             Route::post('login', [AdminAuthControllerV1::class, 'login']);
             Route::post('register', [AdminAuthControllerV1::class, 'register']);
+            Route::get('verify/{token}', [EmailController::class, 'verify'])->name('user.verify');
+            Route::post('reset-password', [EmailController::class, 'resetPassword']);
+            Route::post('reset-password/{token}', [EmailController::class, 'updatePassword'])->name('user.reset');
             Route::middleware('jwt.auth')->get('logout', [AuthControllerV1::class, 'logout']);
         });
     });
