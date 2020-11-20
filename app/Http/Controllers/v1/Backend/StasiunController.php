@@ -47,7 +47,7 @@ class StasiunController extends Controller
     }
 
     // 
-    public function destory(Stasiun $stasiun)
+    public function destroy(Stasiun $stasiun)
     {
         try {
             $stasiun->delete();

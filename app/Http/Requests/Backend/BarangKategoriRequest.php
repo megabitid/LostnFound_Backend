@@ -4,7 +4,7 @@ namespace App\Http\Requests\Backend;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StasiunRequest extends FormRequest
+class BarangKategoriRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class StasiunRequest extends FormRequest
     public function rules()
     {
         return [
-            'nama' => ['required', 'string', 'min:3', 'max:255', 'unique:stasiuns:nama'],
+            'nama' => ['required', 'string', 'min:3', 'max:255', 'unique:barang_kategoris'],
         ];
     }
 }

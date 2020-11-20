@@ -2,14 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\v1\Auth\{LoginController, LogoutController};
-use App\Http\Controllers\v1\Backend\{AdminController,  BarangController, StasiunController};
+use App\Http\Controllers\v1\Backend\{AdminController,  BarangController, BarangKategoriController, StasiunController};
 
 use App\Http\Controllers\v1\Android\AuthController as AuthControllerV1;
 use App\Http\Controllers\v1\Android\UserController as UserControllerV1;
 use App\Http\Controllers\v1\Android\Oauth2Controller as Oauth2ControllerV1;
-use App\Http\Controllers\v1\BarangImageController as BarangImageControllerV1;
-use App\Http\Controllers\v1\BarangStatusController as BarangStatusControllerV1;
-use App\Http\Controllers\v1\BarangKategoriController as BarangKategoriControllerV1;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +27,7 @@ Route::prefix('v1')->group(function() {
             Route::get('', [AdminController::class, 'index']);
             Route::post('', [AdminController::class, 'store']);
             Route::patch('/{user:nip}', [AdminController::class, 'update']);
-            Route::delete('/{user:nip}', [AdminController::class, 'destory']);
+            Route::delete('/{user:nip}', [AdminController::class, 'destroy']);
         });
         // auth admin
         Route::prefix('auth')->group(function () {
@@ -66,18 +63,20 @@ Route::prefix('v1')->group(function() {
         Route::get('', [StasiunController::class, 'index']);
         Route::post('', [StasiunController::class, 'store']);
         Route::patch('/{stasiun:id}', [StasiunController::class, 'update']);
-        Route::delete('/{stasiun:id}', [StasiunController::class, 'destory']);
+        Route::delete('/{stasiun:id}', [StasiunController::class, 'destroy']);
     });
-    Route::prefix('barang-kategoris')->middleware('jwt.auth')->group(function() {
-        Route::get('{id}', [BarangKategoriControllerV1::class, 'show']);
-        Route::get('', [BarangKategoriControllerV1::class, 'index']);
+    Route::prefix('barang-kategori')->middleware('jwt.auth')->group(function() {
+        Route::get('', [BarangKategoriController::class, 'index']);
+        Route::post('', [BarangKategoriController::class, 'store']);
+        Route::patch('/{barangKategori:id}', [BarangKategoriController::class, 'update']);
+        Route::delete('/{barangKategori:id}', [BarangKategoriController::class, 'destroy']);
     });
-    Route::prefix('barang-images')->middleware('jwt.auth')->group(function() {
-        Route::get('{id}', [BarangImageControllerV1::class, 'show']);
-        Route::get('', [BarangImageControllerV1::class, 'index']);
-    });
-    Route::prefix('barang-statuses')->middleware('jwt.auth')->group(function() {
-        Route::get('{id}', [BarangStatusControllerV1::class, 'show']);
-        Route::get('', [BarangStatusControllerV1::class, 'index']);
-    });
+    // Route::prefix('barang-images')->middleware('jwt.auth')->group(function() {
+    //     Route::get('{id}', [BarangImageControllerV1::class, 'show']);
+    //     Route::get('', [BarangImageControllerV1::class, 'index']);
+    // });
+    // Route::prefix('barang-statuses')->middleware('jwt.auth')->group(function() {
+    //     Route::get('{id}', [BarangStatusControllerV1::class, 'show']);
+    //     Route::get('', [BarangStatusControllerV1::class, 'index']);
+    // });
 });
