@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Barang;
-use App\Models\BarangImage;
 use App\Models\BarangKategori;
 use App\Models\BarangStatus;
 use App\Models\Stasiun;
@@ -94,7 +93,7 @@ class BarangSeeder extends Seeder
             DB::table('barang_images')->insert(
                 [
                     'nama'=>$faker->name,
-                    'uri'=>$faker->image,
+                    'uri'=>$faker->imageUrl,
                     'barang_id'=>$faker->randomElement($barang_ids)
                 ]
             );
