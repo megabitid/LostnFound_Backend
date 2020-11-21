@@ -51,10 +51,7 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::where('role','>', 0)->find($id);
-        if (is_null($user)) {
-            throw new ApiException('User not found.', 404);
-        }
+        $user = User::where('role','>', 0)->findOrFail($id);
         Permissions::isOwner($request, $user->id);
         $validator = Validator::make($request->all(), [
             'nama' => 'required|string',

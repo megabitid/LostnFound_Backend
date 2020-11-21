@@ -53,7 +53,7 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        // 'auth' => \App\Http\Middleware\Authenticate::class,
+        'auth' => \App\Http\Middleware\Authenticate::class,
         'jwt.auth' => Tymon\JWTAuth\Http\Middleware\Authenticate::class,
         'jwt.check' => Tymon\JWTAuth\Http\Middleware\Check::class,
         'jwt.refresh' => Tymon\JWTAuth\Http\Middleware\RefreshToken::class,
