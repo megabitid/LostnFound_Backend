@@ -7,26 +7,25 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
+use App\Models\Barang;
 
 class User extends Authenticatable implements JWTSubject
 {
     use HasFactory, Notifiable;
-
-    // RouteKeyName
-    public function getRouteKeyName()
-    {
-        return 'nip';
-    }
 
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
-    protected $guarded = [
-        'id',
-        'created_at',
-        'updated_at',
+    protected $fillable = [
+        'nama',
+        'nip',
+        'email',
+        'password',
+        'image',
+        'role',
+        'email_verified_at',
     ];
 
     /**
@@ -58,16 +57,8 @@ class User extends Authenticatable implements JWTSubject
         return [];
     }
 
-    // Relation one to many (Barang)
     public function barangs()
     {
         return $this->hasMany(Barang::class);
     }
-
-    // Mutator 
-    public function getTakeImgAttribute()
-    {
-        return url('storage', $this->image);
-    }
-
 }

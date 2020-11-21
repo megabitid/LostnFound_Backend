@@ -2,11 +2,13 @@
 
 namespace Database\Seeders;
 
+use App\Models\Barang;
 use App\Models\BarangImage;
 use App\Models\BarangKategori;
 use App\Models\BarangStatus;
 use App\Models\Stasiun;
 use App\Models\User;
+use Carbon\Carbon;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -42,12 +44,6 @@ class BarangSeeder extends Seeder
                     "nama"=>$faker->name,
                 ]
             );
-            DB::table('barang_images')->insert(
-                [
-                    "nama"=>$faker->name,
-                    "link"=>$faker->imageUrl,
-                ]
-            );
             DB::table('users')->insert(
                 [
                     'nama'=>$faker->name,
@@ -55,8 +51,8 @@ class BarangSeeder extends Seeder
                     'email'=>$faker->email,
                     'password'=>$faker->password,
                     'image'=>$faker->imageUrl,
-                    'role'=>$faker->numberBetween(0, 2),
-                    'email_verified_at'=>$faker->date,
+                    'role'=>0,
+                    'email_verified_at'=>Carbon::now()->format('Y-m-d H:i:s'),
                 ]
             );
         }
@@ -68,12 +64,11 @@ class BarangSeeder extends Seeder
                 'password'=>bcrypt('testpassword'),
                 'image'=>$faker->imageUrl,
                 'role'=>$faker->numberBetween(0, 2),
-                'email_verified_at'=>$faker->date,
+                'email_verified_at'=>Carbon::now()->format('Y-m-d H:i:s'),
             ]
         );
-    $stasiun_ids = Stasiun::pluck('id')->toArray();
+        $stasiun_ids = Stasiun::pluck('id')->toArray();
         $kategori_ids = BarangKategori::pluck('id')->toArray();
-        $image_ids = BarangImage::pluck('id')->toArray();
         $user_ids = User::pluck('id')->toArray();
         $status_ids = BarangStatus::pluck('id')->toArray();
 
@@ -81,13 +76,26 @@ class BarangSeeder extends Seeder
             DB::table('barangs')->insert(
                 [
                     'nama_barang'=>$faker->name,
-                    'tanggal'=>$faker->date,
+                    'lokasi'=>$faker->address,
+                    'deskripsi'=>$faker->text,
+                    'warna'=>$faker->colorName,
+                    'merek'=>$faker->company,
+                    'tanggal'=>Carbon::now()->format('Y-m-d H:i:s'),
                     'stasiun_id'=>$faker->randomElement($stasiun_ids),
                     'kategori_id'=>$faker->randomElement($kategori_ids),
-                    'barangimage_id'=>$faker->randomElement($image_ids),
                     'status_id'=>$faker->randomElement($status_ids),
                     'user_id'=>$faker->randomElement($user_ids),
-                    
+                ]
+            );
+        }
+
+        $barang_ids = Barang::pluck('id')->toArray();
+        for ($i=0; $i<$limit; $i++) {
+            DB::table('barang_images')->insert(
+                [
+                    'nama'=>$faker->name,
+                    'uri'=>$faker->image,
+                    'barang_id'=>$faker->randomElement($barang_ids)
                 ]
             );
         }

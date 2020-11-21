@@ -21,7 +21,6 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('image');
-            $table->string('stasiun');
             $table->tinyInteger('role')->default(0);  //super admin (2) admin (1) user biasa(0)
             $table->rememberToken();
             $table->timestamps();

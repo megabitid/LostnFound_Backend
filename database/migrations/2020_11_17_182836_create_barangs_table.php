@@ -15,17 +15,24 @@ class CreateBarangsTable extends Migration
     {
         Schema::create('barangs', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('lokasi');
+            $table->string('nama_barang', 255);
             $table->date('tanggal');
+            $table->string('lokasi');
             $table->text('deskripsi');
-            $table->string('warnah');
+            $table->string('warna');
             $table->string('merek');
-            $table->string('slug');
-            $table->boolean('status')->default(0);
-            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
-            $table->foreignId('stasiun_id')->constrained('stasiuns')->onDelete('cascade');
-            $table->foreignId('barang_kategori_id')->constrained('barang_kategoris')->onDelete('cascade');
+            $table->foreignId('user_id')->nullable()
+                ->constrained('users')
+                ->onDelete('set null');
+            $table->foreignId('status_id')->nullable()
+                ->constrained('barang_statuses')
+                ->onDelete('set null');
+            $table->foreignId('stasiun_id')->nullable()
+                ->constrained('stasiuns')
+                ->onDelete('set null');
+            $table->foreignId('kategori_id')->nullable()
+                ->constrained('barang_kategoris')
+                ->onDelete('set null');
             $table->timestamps();
         });
     }

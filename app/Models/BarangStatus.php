@@ -5,12 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class BarangKategori extends Model
+class BarangStatus extends Model
 {
     use HasFactory;
-
-    // Table  no created_at & updated_at
-    public  $timestamps = false;
 
     protected $fillable = [
         'nama',
@@ -19,6 +16,6 @@ class BarangKategori extends Model
     // Relation one to many
     public function barangs() 
     {
-        return $this->hasMany('App\Models\Barang');
+        return $this->hasMany('App\Models\Barang', 'status_id');
     }
 }

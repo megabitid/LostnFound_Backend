@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBarangImagesTable extends Migration
+class CreateBarangStatusesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateBarangImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('barang_images', function (Blueprint $table) {
+        Schema::create('barang_statuses', function (Blueprint $table) {
             $table->id();
             $table->string('nama', 255);
-            $table->string('uri');
-            $table->foreignId('barang_id')->constrained('barangs')->onDelete('cascade');
         });
     }
 
@@ -28,6 +26,6 @@ class CreateBarangImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('barang_images');
+        Schema::dropIfExists('barang_statuses');
     }
 }
