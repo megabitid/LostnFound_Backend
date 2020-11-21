@@ -28,7 +28,7 @@ Route::prefix('v1')->group(function() {
     Route::prefix('web')->group(function () {
         // admin users
         Route::middleware('jwt.auth')->prefix('users')->group(function() {
-            route::get('{id}', [AdminControllerV1::class, 'show']);
+            Route::get('{id}', [AdminControllerV1::class, 'show']);
             Route::put('{id}', [AdminControllerV1::class, 'update']);
             Route::get('', [AdminControllerV1::class, 'index']);
         });
@@ -36,7 +36,8 @@ Route::prefix('v1')->group(function() {
         Route::prefix('auth')->group(function () {
             Route::post('login', [AdminAuthControllerV1::class, 'login']);
             Route::post('register', [AdminAuthControllerV1::class, 'register']);
-            Route::middleware('jwt.auth')->get('logout', [AuthControllerV1::class, 'logout']);
+            Route::middleware('jwt.auth')->get('logout', [AdminAuthControllerV1::class, 'logout']);
+            Route::middleware('jwt.auth')->get('refresh', [AdminAuthControllerV1::class, 'refreshToken']);
         });
     });
 
@@ -44,7 +45,7 @@ Route::prefix('v1')->group(function() {
     Route::prefix('android')->group(function () {
         //users
         Route::middleware('jwt.auth')->prefix('users')->group(function() {
-            route::get('{id}', [UserControllerV1::class, 'show']);
+            Route::get('{id}', [UserControllerV1::class, 'show']);
             Route::put('{id}', [UserControllerV1::class, 'update']);
             Route::get('', [UserControllerV1::class, 'index']);
         });
@@ -53,6 +54,7 @@ Route::prefix('v1')->group(function() {
             Route::post('login', [AuthControllerV1::class, 'login']);
             Route::post('register', [AuthControllerV1::class, 'register']);
             Route::middleware('jwt.auth')->get('logout', [AuthControllerV1::class, 'logout']);
+            Route::middleware('jwt.auth')->get('refresh', [AuthControllerV1::class, 'refreshToken']);
             // oauth2
             Route::get('oauth2/google/authorize', [Oauth2ControllerV1::class, 'handleGoogleCallback']);
         });
