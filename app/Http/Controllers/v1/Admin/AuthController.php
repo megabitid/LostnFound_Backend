@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Traits\FirebaseStorage;
+use App\Traits\Permissions;
 use App\Traits\StringValidator;
 use JWTAuth;
 use Validator;
@@ -15,6 +16,7 @@ use Exception;
 
 class AuthController extends Controller
 {
+    private static $JWT_TTL = 60;
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -31,8 +33,11 @@ class AuthController extends Controller
                 return response()->json(['message' => 'Authentication credentials were missing or incorrect'], 401);
             } else {
                 $user = Auth::user();
+                $token = auth('api')->setTTL($this::$JWT_TTL)->login($user); 
+                $exp = JWTAuth::setToken($token)->getPayload()->get('exp'); 
                 $responseData = $user->toArray()+[
                     'token'=>$token,
+                    'exp'=>$exp
                 ];
                 return response()->json($responseData, 200);
             }
@@ -43,10 +48,10 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
+        Permissions::isSuperAdmin($request);
         $validator = Validator::make($request->all(), [
             'nama' => 'required|string',
             'nip' => 'required|unique:users|string',
-            'role' => 'required|numeric|min:1|max:2',
             'password' => 'required|string',
             'image'=>'required|string',
         ]);
@@ -62,20 +67,34 @@ class AuthController extends Controller
             $validatedData['password'] = bcrypt($validatedData['password']);
             $base64 = $validatedData['image'];
             $validatedData['image'] = "";
+            $validatedData['role'] = 1; // regular admin.
             $user = User::create($validatedData);
             // upload image to storage
             $uri = FirebaseStorage::imageUpload($base64, 'users/image/'.$user->id);
             // update database
             $user->update(['image'=>$uri]);
 
-            $token = auth('api')->login($user);
+            $token = auth('api')->setTTL($this::$JWT_TTL)->login($user); 
+            $exp = JWTAuth::setToken($token)->getPayload()->get('exp'); 
             $responseData = $user->toArray()+[
                 'token'=>$token,
+                'exp'=>$exp
             ];
             return response()->json($responseData, 201);
         } catch (Exception $e) {
             return response()->json(['message' => 'Whoops', 'error' => $e->getMessage()], 400);
         }
+    }
+
+    public function refreshToken()
+    {
+        $token = auth('api')->setTTL($this::$JWT_TTL)->refresh(); 
+        $exp = JWTAuth::setToken($token)->getPayload()->get('exp'); 
+        $responseData = [
+            'token'=>$token,
+            'exp'=>$exp
+        ];
+        return response()->json($responseData, 200);
     }
 
     public function logout()
