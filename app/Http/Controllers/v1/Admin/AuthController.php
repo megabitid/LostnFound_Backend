@@ -16,6 +16,7 @@ use Exception;
 
 class AuthController extends Controller
 {
+    private static $JWT_TTL = 60;
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -32,8 +33,11 @@ class AuthController extends Controller
                 return response()->json(['message' => 'Authentication credentials were missing or incorrect'], 401);
             } else {
                 $user = Auth::user();
+                $token = auth('api')->setTTL($this::$JWT_TTL)->login($user); 
+                $exp = JWTAuth::setToken($token)->getPayload()->get('exp'); 
                 $responseData = $user->toArray()+[
                     'token'=>$token,
+                    'exp'=>$exp
                 ];
                 return response()->json($responseData, 200);
             }
@@ -70,14 +74,27 @@ class AuthController extends Controller
             // update database
             $user->update(['image'=>$uri]);
 
-            $token = auth('api')->login($user);
+            $token = auth('api')->setTTL($this::$JWT_TTL)->login($user); 
+            $exp = JWTAuth::setToken($token)->getPayload()->get('exp'); 
             $responseData = $user->toArray()+[
                 'token'=>$token,
+                'exp'=>$exp
             ];
             return response()->json($responseData, 201);
         } catch (Exception $e) {
             return response()->json(['message' => 'Whoops', 'error' => $e->getMessage()], 400);
         }
+    }
+
+    public function refreshToken()
+    {
+        $token = auth('api')->setTTL($this::$JWT_TTL)->refresh(); 
+        $exp = JWTAuth::setToken($token)->getPayload()->get('exp'); 
+        $responseData = [
+            'token'=>$token,
+            'exp'=>$exp
+        ];
+        return response()->json($responseData, 200);
     }
 
     public function logout()

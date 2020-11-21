@@ -47,7 +47,7 @@ class BarangSeeder extends Seeder
             DB::table('users')->insert(
                 [
                     'nama'=>$faker->name,
-                    'nip'=>$faker->unique()->randomAscii,
+                    'nip'=>$faker->unique()->creditCardNumber,
                     'email'=>$faker->email,
                     'password'=>$faker->password,
                     'image'=>$faker->imageUrl,
@@ -59,9 +59,9 @@ class BarangSeeder extends Seeder
         DB::table('users')->insert(
             [
                 'nama'=>$faker->name,
-                'nip'=>$faker->unique()->randomAscii,
-                'email'=>"testemail@mail.com",
-                'password'=>bcrypt('testpassword'),
+                'nip'=>$faker->unique()->creditCardNumber,
+                'email'=>"testemail1@mail.com",
+                'password'=>bcrypt('testpassword1'),
                 'image'=>$faker->imageUrl,
                 'role'=>$faker->numberBetween(0, 2),
                 'email_verified_at'=>Carbon::now()->format('Y-m-d H:i:s'),

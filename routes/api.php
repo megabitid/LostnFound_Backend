@@ -26,7 +26,7 @@ Route::prefix('v1')->group(function() {
     //API for admin web
     Route::prefix('web')->group(function () {      
         // admin users
-        Route::prefix('users')->middleware('jwt.auth')->group(function(){
+        Route::middleware('jwt.auth')->prefix('users')->group(function() {
             Route::get('{id}', [AdminControllerV1::class, 'show']);
             Route::put('{id}', [AdminControllerV1::class, 'update']);
             // Route::delete('{id}', [AdminControllerV1::class, 'destroy']); // to do: soft delete
@@ -38,6 +38,7 @@ Route::prefix('v1')->group(function() {
             Route::post('login', [AdminAuthControllerV1::class, 'login']);
             Route::middleware('jwt.auth')->post('register', [AdminAuthControllerV1::class, 'register']);
             Route::middleware('jwt.auth')->get('logout', [AdminAuthControllerV1::class, 'logout']);
+            Route::middleware('jwt.auth')->get('refresh', [AdminAuthControllerV1::class, 'refreshToken']);
         });
 
     });
@@ -46,7 +47,7 @@ Route::prefix('v1')->group(function() {
     Route::prefix('android')->group(function () {
         //users
         Route::middleware('jwt.auth')->prefix('users')->group(function() {
-            route::get('{id}', [UserControllerV1::class, 'show']);
+            Route::get('{id}', [UserControllerV1::class, 'show']);
             Route::put('{id}', [UserControllerV1::class, 'update']);
             Route::get('', [UserControllerV1::class, 'index']);
         });
@@ -55,6 +56,7 @@ Route::prefix('v1')->group(function() {
             Route::post('login', [AuthControllerV1::class, 'login']);
             Route::post('register', [AuthControllerV1::class, 'register']);
             Route::middleware('jwt.auth')->get('logout', [AuthControllerV1::class, 'logout']);
+            Route::middleware('jwt.auth')->get('refresh', [AuthControllerV1::class, 'refreshToken']);
             // oauth2
             Route::get('oauth2/google/authorize', [Oauth2ControllerV1::class, 'handleGoogleCallback']);
         });
