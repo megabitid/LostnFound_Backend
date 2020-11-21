@@ -1,11 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\v1;
+namespace App\Http\Controllers\v1\Backend;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\Resource;
-use App\Models\Barang;
-use Illuminate\Http\Request;
+use App\Http\Requests\Backend\BarangRequest;
 
 class BarangController extends Controller
 {
@@ -16,20 +14,13 @@ class BarangController extends Controller
      */
     public function index()
     {
-        $barangs = Barang::paginate(20);
-        
-        return Resource::collection($barangs);
+        dd('ok');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    // Store
+    public function store(BarangRequest $request)
     {
-        //
+        $data = $request->all();
     }
 
     /**
@@ -40,8 +31,7 @@ class BarangController extends Controller
      */
     public function show($id)
     {
-        $barang = Barang::findOrFail($id);
-        return response()->json($barang, 200);
+        //
     }
 
     /**

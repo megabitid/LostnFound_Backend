@@ -13,7 +13,9 @@ class BarangStatus extends Model
         'nama',
     ];
 
-    public function barangs() {
-        $this->hasMany('App\Models\Barang', 'status_id');
+    // Relation one to many
+    public function barangs() 
+    {
+        return $this->hasMany('App\Models\Barang', 'status_id');
     }
 }

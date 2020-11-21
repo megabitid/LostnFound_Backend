@@ -1,11 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\v1;
+namespace App\Http\Controllers\v1\GlobalApi;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Resource;
 use App\Models\Stasiun;
+use App\Traits\ValidationError;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class StasiunController extends Controller
 {
@@ -28,7 +30,16 @@ class StasiunController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'nama'=>'required|string',
+        ]);
+        if ($validator->fails()) {
+            return ValidationError::response($validator->errors());
+        }
+
+        $validatedData = $validator->valid();
+        $stasiun = Stasiun::create($validatedData);
+        return response()->json($stasiun, 201);
     }
 
     /**
@@ -52,7 +63,17 @@ class StasiunController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $stasiun = Stasiun::findOrFail($id);
+        $validator = Validator::make($request->all(), [
+            'nama'=>'required|string',
+        ]);
+        if ($validator->fails()) {
+            return ValidationError::response($validator->errors());
+        }
+
+        $validatedData = $validator->valid();
+        $stasiun->update($validatedData);
+        return response()->json($stasiun, 201);
     }
 
     /**
@@ -63,6 +84,8 @@ class StasiunController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $stasiun = Stasiun::findOrFail($id);
+        $stasiun->delete();
+        return response()->json(['message' => 'Stasiun data deleted successfully'], 204);
     }
 }

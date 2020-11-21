@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\v1;
+namespace App\Http\Controllers\v1\GlobalApi;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Resource;
 use App\Models\BarangKategori;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class BarangKategoriController extends Controller
 {
@@ -29,7 +30,16 @@ class BarangKategoriController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'nama'=>'required|string',
+        ]);
+        if ($validator->fails()) {
+            return ValidationError::response($validator->errors());
+        }
+
+        $validatedData = $validator->valid();
+        $barangKategori = BarangKategori::create($validatedData);
+        return response()->json($barangKategori, 201);
     }
 
     /**
@@ -54,7 +64,17 @@ class BarangKategoriController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $barangKategori = BarangKategori::findOrFail($id);
+        $validator = Validator::make($request->all(), [
+            'nama'=>'required|string',
+        ]);
+        if ($validator->fails()) {
+            return ValidationError::response($validator->errors());
+        }
+
+        $validatedData = $validator->valid();
+        $barangKategori->update($validatedData);
+        return response()->json($barangKategori, 201);
     }
 
     /**
@@ -65,6 +85,8 @@ class BarangKategoriController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $barangKategori = BarangKategori::findOrFail($id);
+        $barangKategori->delete();
+        return response()->json(['message' => 'BarangKategori data delete successfully'], 204);
     }
 }

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use App\Traits\FirebaseStorage;
+use App\Traits\Permissions;
 use App\Traits\StringValidator;
 use JWTAuth;
 use Validator;
@@ -47,10 +48,10 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
+        Permissions::isSuperAdmin($request);
         $validator = Validator::make($request->all(), [
             'nama' => 'required|string',
             'nip' => 'required|unique:users|string',
-            'role' => 'required|numeric|min:1|max:2',
             'password' => 'required|string',
             'image'=>'required|string',
         ]);
@@ -66,6 +67,7 @@ class AuthController extends Controller
             $validatedData['password'] = bcrypt($validatedData['password']);
             $base64 = $validatedData['image'];
             $validatedData['image'] = "";
+            $validatedData['role'] = 1; // regular admin.
             $user = User::create($validatedData);
             // upload image to storage
             $uri = FirebaseStorage::imageUpload($base64, 'users/image/'.$user->id);

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\v1;
+namespace App\Http\Controllers\v1\GlobalApi;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Resource;
@@ -30,7 +30,16 @@ class BarangStatusController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+            'nama'=>'required|string',
+        ]);
+        if ($validator->fails()) {
+            return ValidationError::response($validator->errors());
+        }
+
+        $validatedData = $validator->valid();
+        $barangStatus = BarangStatus::create($validatedData);
+        return response()->json($barangStatus, 201);
     }
 
     /**
@@ -55,7 +64,17 @@ class BarangStatusController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $barangStatus = BarangStatus::findOrFail($id);
+        $validator = Validator::make($request->all(), [
+            'nama'=>'required|string',
+        ]);
+        if ($validator->fails()) {
+            return ValidationError::response($validator->errors());
+        }
+
+        $validatedData = $validator->valid();
+        $barangStatus = $barangStatus->update($validatedData);
+        return response()->json($barangStatus, 201);
     }
 
     /**
@@ -66,6 +85,9 @@ class BarangStatusController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $barangStatus = BarangStatus::findOrFail($id);
+        $barangStatus->delete();
+        return response()->json(['message' => 'Status barang deleted successfully'], 204);
+        
     }
 }
