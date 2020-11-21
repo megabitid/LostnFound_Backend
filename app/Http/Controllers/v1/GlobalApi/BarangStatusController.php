@@ -75,7 +75,7 @@ class BarangStatusController extends Controller
         }
 
         $validatedData = $validator->valid();
-        $barangStatus = $barangStatus->update($validatedData);
+        $barangStatus->update($validatedData);
         return response()->json($barangStatus, 201);
     }
 
