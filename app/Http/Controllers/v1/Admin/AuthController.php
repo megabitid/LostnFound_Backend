@@ -62,7 +62,6 @@ class AuthController extends Controller
 
         try {
             $validatedData['password'] = bcrypt($validatedData['password']);
-            $validatedData['activate_token'] = Str::random(30);
             $base64 = $validatedData['image'];
             $validatedData['image'] = "";
             $user = User::create($validatedData);
@@ -71,7 +70,8 @@ class AuthController extends Controller
             // update database
             $user->update(['image'=>$uri]);
 
-            $token = auth('api')->login($user);
+            $waktuExpireTokenDalamMenit = 30;
+            $token = auth('api')->setTTL($waktuExpireTokenDalamMenit)->login($user);
             $responseData = $user->toArray()+[
                 'token'=>$token,
             ];
