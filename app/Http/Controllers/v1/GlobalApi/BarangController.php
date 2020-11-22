@@ -17,9 +17,44 @@ class BarangController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $barangs = Barang::paginate(20);
+        $query = Barang::select('*');
+        $fields = [
+            'id',
+            'user_id',
+            'stasiun_id',
+            'status_id',
+            'kategori_id'
+        ];
+        // limit query by specific field. Example: ?id=1
+        foreach($fields as $field){
+            if(!empty($request->$field)){
+                $query->where($field, '=', $request->$field);
+            }
+        }
+        // order by desc or asc in field specified: use "?orderBy=-id" to order by id descending, and "?orderBy=id" to order by ascending.
+        if(!empty($request->orderBy)){
+            $query = $query->orderByRaw($request->orderBy);
+        }
+        // search text contains in this field.
+        if(!empty($request->search)){
+            $searchFields = [
+                'nama_barang',
+                'lokasi',
+                'tanggal',
+                'deskripsi',
+                'warna',
+                'merek'
+            ];
+            $query->where(function($query) use($request, $searchFields){
+                $searchWildcard = '%' . $request->search . '%';
+                foreach($searchFields as $field){
+                    $query->orWhere($field, 'LIKE', $searchWildcard);
+                }
+            });
+        }
+        $barangs = $query->paginate(20);
         
         return Resource::collection($barangs);
     }
