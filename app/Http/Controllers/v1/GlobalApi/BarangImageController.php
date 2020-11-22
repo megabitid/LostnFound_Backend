@@ -18,9 +18,24 @@ class BarangImageController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $barangImages = BarangImage::paginate(20);
+        $query = BarangImage::select('*');
+        $fields = [
+            'id',
+            'barang_id'
+        ];
+        // limit query by specific field. Example: ?id=1
+        foreach($fields as $field){
+            if(!empty($request->$field)){
+                $query->where($field, '=', $request->$field);
+            }
+        }
+        // order by desc or asc in field specified: use "?orderBy=-id" to order by id descending, and "?orderBy=id" to order by ascending.
+        if(!empty($request->orderBy)){
+            $query = $query->orderByRaw($request->orderBy);
+        }
+        $barangImages = $query->paginate(20);
         return Resource::collection($barangImages);
     }
 
