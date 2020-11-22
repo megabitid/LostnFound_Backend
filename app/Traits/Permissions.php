@@ -17,6 +17,12 @@ trait Permissions {
         }
         throw new ApiException('You must be super admin to do this.', 401);
     }
+    public static function isAdminOrSuperAdmin($request) {
+        if ($request->user()->role > 0) {
+            return true;
+        }
+        throw new ApiException('You must be admin or super admin to do this.', 401);
+    }
     public static function isOwnerOrSuperAdmin($request, $obj) {            
         if ($request->user()->role == 2) {
             return true;
