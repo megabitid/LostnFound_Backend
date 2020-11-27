@@ -24,7 +24,7 @@ class SendEmailResetPassword implements ShouldQueue
      * @return void
      */
     protected $user;
-    public function __construct(User $user)
+    public function __construct(User $user, $token)
     {
         $this->user = $user;
     }
@@ -39,7 +39,7 @@ class SendEmailResetPassword implements ShouldQueue
         try {
             DB::beginTransaction();
             $user = $this->user;
-            Mail::to($user->email)->send(new UserResetPassword($user));
+            Mail::to($user->email)->send(new UserResetPassword($user, $token));
             DB::commit();
         } catch (\Exception $e) {
             DB::rollBack();

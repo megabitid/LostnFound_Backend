@@ -12,12 +12,10 @@ use Illuminate\Support\Str;
 class EmailController extends Controller
 {
     public function verify($token) {
-        $user = User::where('activate_token', $token)->first();
+        JWTAuth::setToken($token);
+        $user = JWTAuth::toUser();
         if ($user) {
-            $user->update([
-                'activate_token' => null,
-                'email_verified_at' => Carbon::now();
-            ]);
+            JWTAuth::invalidate();
             return response()->json(['message' => 'Berhasil', 'success' => 'Email sukses diverifikasi'], 200);
         }
         return response()->json(['message' => 'Whoops', 'error' => 'Invalid verifikasi email'], 400);
@@ -29,22 +27,21 @@ class EmailController extends Controller
         if (!$user) {
             return response()->json(['message' => 'Whoops', 'error' => 'Email not found'], 400);
         }
-        $token = Str::random(30);
-        User::create([
-            'reset_password_token' => $token
-        ]);
-        dispatch(new SendEmailResetPassword($user));
+        $waktuExpireTokenDalamMenit = 30;
+        $token = auth('api')->setTTL($waktuExpireTokenDalamMenit)->login($user);
+        dispatch(new SendEmailResetPassword($user, $token));
     }
 
     public function updatePassword(Request $request, $token) {
-        $tokenUser = User::where('reset_password_token', '=', $token)->first();
-        if (!$tokenUser || !$token) {
+        JWTAuth::setToken($token);
+        $user = JWTAuth::toUser();
+        if (!$user) {
             return response()->json(['message' => 'Whoops', 'error' => 'Token Invalid'], 400);
         }
         $user->update([
-            'password' => $request->password,
-            'reset_password_token' => null
+            'password' => $request->password
         ]);
+        JWTAuth::invalidate(); 
         return response()->json(['message' => 'Berhasil', 'success' => 'Berhasil ubah password'], 400);
 
     }

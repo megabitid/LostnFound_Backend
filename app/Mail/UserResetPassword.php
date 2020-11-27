@@ -18,7 +18,7 @@ class UserResetPassword extends Mailable
      * @return void
      */
     protected $user;
-    public function __construct(User $user)
+    public function __construct(User $user, $token)
     {
         $this->user = $user;
     }
@@ -33,7 +33,8 @@ class UserResetPassword extends Mailable
         return $this->subject('Reset Password !')
             ->view('email.reset-password')
             ->with([
-                'user' => $this->user
+                'user' => $this->user,
+                'token' => $token
             ]);
     }
 }

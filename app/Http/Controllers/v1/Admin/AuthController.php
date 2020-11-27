@@ -69,13 +69,12 @@ class AuthController extends Controller
             $uri = FirebaseStorage::imageUpload($base64, 'users/image/'.$user->id);
             // update database
             $user->update(['image'=>$uri]);
-
             $waktuExpireTokenDalamMenit = 30;
             $token = auth('api')->setTTL($waktuExpireTokenDalamMenit)->login($user);
             $responseData = $user->toArray()+[
                 'token'=>$token,
             ];
-            dispatch(new SendEmailUser($user));
+            dispatch(new SendEmailUser($user, $token));
             return response()->json($responseData, 201);
         } catch (Exception $e) {
             return response()->json(['message' => 'Whoops', 'error' => $e->getMessage()], 400);

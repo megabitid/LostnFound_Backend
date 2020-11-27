@@ -33,7 +33,8 @@ class UserRegisterMail extends Mailable
         return $this->subject('Harap Verifikasi !')
             ->view('email.register')
             ->with([
-                'user' => $this->user
+                'user' => $this->user,
+                'token' => $token
             ]);
     }
 }

@@ -39,7 +39,7 @@ class SendEmailUser implements ShouldQueue
         try {
             DB::beginTransaction();
             $user = $this->user;
-            Mail::to($user->email)->send(new UserRegisterMail($user));
+            Mail::to($user->email)->send(new UserRegisterMail($user, $token));
             DB::commit();
         } catch (\Exception $e) {
             DB::rollBack();
