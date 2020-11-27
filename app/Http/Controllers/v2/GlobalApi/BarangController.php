@@ -1,19 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\v1\GlobalApi;
+namespace App\Http\Controllers\v2\GlobalApi;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Resource;
 use App\Models\Barang;
-use App\Models\BarangImage;
-use App\Traits\FirebaseStorage;
 use App\Traits\Permissions;
-use App\Traits\StringValidator;
 use App\Traits\ValidationError;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class BarangImageController extends Controller
+class BarangController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,10 +19,13 @@ class BarangImageController extends Controller
      */
     public function index(Request $request)
     {
-        $query = BarangImage::select('*');
+        $query = Barang::select('*');
         $fields = [
             'id',
-            'barang_id'
+            'user_id',
+            'stasiun_id',
+            'status_id',
+            'kategori_id'
         ];
         // limit query by specific field. Example: ?id=1
         foreach($fields as $field){
@@ -37,10 +37,27 @@ class BarangImageController extends Controller
         if(!empty($request->orderBy)){
             $query = $query->orderByRaw($request->orderBy);
         }
-        $barangImages = $query->paginate(20);
-        return Resource::collection($barangImages);
+        // search text contains in this field.
+        if(!empty($request->search)){
+            $searchFields = [
+                'nama_barang',
+                'lokasi',
+                'tanggal',
+                'deskripsi',
+                'warna',
+                'merek'
+            ];
+            $query->where(function($query) use($request, $searchFields){
+                $searchWildcard = '%' . $request->search . '%';
+                foreach($searchFields as $field){
+                    $query->orWhere($field, 'LIKE', $searchWildcard);
+                }
+            });
+        }
+        $barangs = $query->paginate(20);
+        
+        return Resource::collection($barangs);
     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -51,26 +68,20 @@ class BarangImageController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'nama'=>'required|string|max:255',
-            'uri'=>'required|string',
-            'barang_id'=>'required|numeric',
+            'nama_barang'=>'required|string|max:255',
+            'deskripsi'=>'required|string',
+            'user_id'=>'required|numeric',
+            'stasiun_id'=>'required|numeric',
+            'status_id'=>'required|numeric',
+            'kategori_id'=>'required|numeric',
+            'tanggal'=>'required|date_format:Y-m-d'
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
-
         $validatedData = $validator->validated();
-        if(StringValidator::isImageBase64($validatedData['uri']) == null) {
-            return ValidationError::response(['uri'=>'You must use urlBase64 image format.']);
-        }
-        $uriBase64 = $validatedData['uri'];
-        $validatedData['uri'] = "";
-        $barang = Barang::findOrFail($validatedData['barang_id']);
-        Permissions::isOwnerOrAdminOrSuperAdmin($request, $barang->user_id);
-        $barangImage = BarangImage::create($validatedData);
-        $uri = FirebaseStorage::imageUpload($uriBase64, 'barangs/image/'.$barangImage->id);
-        $barangImage->update(['uri'=>$uri]);        
-        return response()->json($barangImage, 201);
+        $barang = Barang::create($validatedData);
+        return response()->json($barang, 201);
     }
 
     /**
@@ -81,8 +92,8 @@ class BarangImageController extends Controller
      */
     public function show($id)
     {
-        $barangImage = BarangImage::findOrFail($id);
-        return response()->json($barangImage);
+        $barang = Barang::findOrFail($id);
+        return response()->json($barang, 200);
     }
 
     /**
@@ -94,25 +105,23 @@ class BarangImageController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $barangImage = BarangImage::findOrFail($id);
-        Permissions::isOwnerOrAdminOrSuperAdmin($request, $barangImage->barang()->user_id);
+        $barang = Barang::findOrFail($id);
+        Permissions::isOwnerOrAdminOrSuperAdmin($request, $id);
         $validator = Validator::make($request->all(), [
-            'nama'=>'required|string|max:255',
-            'uri'=>'required|string',
-            'barang_id'=>'required|numeric',
+            'nama_barang'=>'required|string|max:255',
+            'deskripsi'=>'required|string',
+            'user_id'=>'required|numeric',
+            'stasiun_id'=>'required|numeric',
+            'status_id'=>'required|numeric',
+            'kategori_id'=>'required|numeric',
+            'tanggal'=>'required|date_format:Y-m-d'
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
-
         $validatedData = $validator->validated();
-        if(StringValidator::isImageBase64($validatedData['uri']) == null) {
-            return ValidationError::response(['uri'=>'You must use urlBase64 image format.']);
-        }
-        $uri = FirebaseStorage::imageUpload($validatedData['uri'], 'barangs/image/'.$barangImage->id);
-        $validatedData['uri'] = $uri;
-        $barangImage->update($validatedData);        
-        return response()->json($barangImage, 201);
+        $barang->update($validatedData);
+        return response()->json($barang, 201);
     }
 
     /**
@@ -123,9 +132,9 @@ class BarangImageController extends Controller
      */
     public function destroy(Request $request, $id)
     {
-        $barangImage = BarangImage::findOrFail($id);
-        Permissions::isOwnerOrAdminOrSuperAdmin($request, $barangImage->barang()->user_id);
-        $barangImage->delete();
-        return response()->json(['message' => 'Image barang deleted successfully'], 204);
+        $barang = Barang::findOrFail($id);
+        Permissions::isOwnerOrAdminOrSuperAdmin($request, $barang->user_id);
+        $barang->delete();
+        return response()->json(['message'=>'Barang deleted.'], 204);
     }
 }

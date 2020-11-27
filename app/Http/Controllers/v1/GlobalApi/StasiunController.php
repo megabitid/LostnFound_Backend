@@ -5,6 +5,7 @@ namespace App\Http\Controllers\v1\GlobalApi;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Resource;
 use App\Models\Stasiun;
+use App\Traits\Permissions;
 use App\Traits\ValidationError;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -30,6 +31,7 @@ class StasiunController extends Controller
      */
     public function store(Request $request)
     {
+        Permissions::isAdminOrSuperAdmin($request);
         $validator = Validator::make($request->all(), [
             'nama'=>'required|string',
         ]);
@@ -63,6 +65,7 @@ class StasiunController extends Controller
      */
     public function update(Request $request, $id)
     {
+        Permissions::isAdminOrSuperAdmin($request);
         $stasiun = Stasiun::findOrFail($id);
         $validator = Validator::make($request->all(), [
             'nama'=>'required|string',
@@ -82,8 +85,9 @@ class StasiunController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
+        Permissions::isAdminOrSuperAdmin($request);
         $stasiun = Stasiun::findOrFail($id);
         $stasiun->delete();
         return response()->json(['message' => 'Stasiun data deleted successfully'], 204);

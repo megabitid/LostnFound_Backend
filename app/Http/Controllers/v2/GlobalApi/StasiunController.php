@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\v1\GlobalApi;
+namespace App\Http\Controllers\v2\GlobalApi;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Resource;
-use App\Models\BarangStatus;
+use App\Models\Stasiun;
 use App\Traits\Permissions;
 use App\Traits\ValidationError;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
-class BarangStatusController extends Controller
+class StasiunController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,12 +19,10 @@ class BarangStatusController extends Controller
      */
     public function index()
     {
-        $barangStatuses = BarangStatus::paginate(20);
-        return Resource::collection($barangStatuses);
+        $stasiuns = Stasiun::paginate(20);
+        return Resource::collection($stasiuns);
     }
-
-
-
+    
     /**
      * Store a newly created resource in storage.
      *
@@ -42,8 +40,8 @@ class BarangStatusController extends Controller
         }
 
         $validatedData = $validator->validated();
-        $barangStatus = BarangStatus::create($validatedData);
-        return response()->json($barangStatus, 201);
+        $stasiun = Stasiun::create($validatedData);
+        return response()->json($stasiun, 201);
     }
 
     /**
@@ -54,10 +52,9 @@ class BarangStatusController extends Controller
      */
     public function show($id)
     {
-        $barangStatus = BarangStatus::findOrFail($id);
-        return response()->json($barangStatus);
+        $stasiun = Stasiun::findOrFail($id);
+        return response()->json($stasiun);
     }
-
 
     /**
      * Update the specified resource in storage.
@@ -69,7 +66,7 @@ class BarangStatusController extends Controller
     public function update(Request $request, $id)
     {
         Permissions::isAdminOrSuperAdmin($request);
-        $barangStatus = BarangStatus::findOrFail($id);
+        $stasiun = Stasiun::findOrFail($id);
         $validator = Validator::make($request->all(), [
             'nama'=>'required|string',
         ]);
@@ -78,8 +75,8 @@ class BarangStatusController extends Controller
         }
 
         $validatedData = $validator->validated();
-        $barangStatus->update($validatedData);
-        return response()->json($barangStatus, 201);
+        $stasiun->update($validatedData);
+        return response()->json($stasiun, 201);
     }
 
     /**
@@ -91,9 +88,8 @@ class BarangStatusController extends Controller
     public function destroy(Request $request, $id)
     {
         Permissions::isAdminOrSuperAdmin($request);
-        $barangStatus = BarangStatus::findOrFail($id);
-        $barangStatus->delete();
-        return response()->json(['message' => 'Status barang deleted successfully'], 204);
-        
+        $stasiun = Stasiun::findOrFail($id);
+        $stasiun->delete();
+        return response()->json(['message' => 'Stasiun data deleted successfully'], 204);
     }
 }
