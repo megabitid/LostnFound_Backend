@@ -37,7 +37,7 @@ class StasiunController extends Controller
             return ValidationError::response($validator->errors());
         }
 
-        $validatedData = $validator->valid();
+        $validatedData = $validator->validated();
         $stasiun = Stasiun::create($validatedData);
         return response()->json($stasiun, 201);
     }
@@ -71,7 +71,7 @@ class StasiunController extends Controller
             return ValidationError::response($validator->errors());
         }
 
-        $validatedData = $validator->valid();
+        $validatedData = $validator->validated();
         $stasiun->update($validatedData);
         return response()->json($stasiun, 201);
     }

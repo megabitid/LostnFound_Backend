@@ -81,7 +81,7 @@ class BarangController extends Controller
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
-        $validatedData = $validator->valid();
+        $validatedData = $validator->validated();
         $validatedData['tanggal'] = Carbon::now()->format('Y-m-d');
         $barang = Barang::create($validatedData);
         return response()->json($barang, 201);
@@ -123,7 +123,7 @@ class BarangController extends Controller
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
-        $validatedData = $validator->valid();
+        $validatedData = $validator->validated();
         $validatedData['tanggal'] = Carbon::now()->format('Y-m-d');
         $barang->update($validatedData);
         return response()->json($barang, 201);

@@ -39,7 +39,7 @@ class BarangStatusController extends Controller
             return ValidationError::response($validator->errors());
         }
 
-        $validatedData = $validator->valid();
+        $validatedData = $validator->validated();
         $barangStatus = BarangStatus::create($validatedData);
         return response()->json($barangStatus, 201);
     }
@@ -74,7 +74,7 @@ class BarangStatusController extends Controller
             return ValidationError::response($validator->errors());
         }
 
-        $validatedData = $validator->valid();
+        $validatedData = $validator->validated();
         $barangStatus->update($validatedData);
         return response()->json($barangStatus, 201);
     }

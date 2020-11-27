@@ -57,7 +57,7 @@ class BarangImageController extends Controller
             return ValidationError::response($validator->errors());
         }
 
-        $validatedData = $validator->valid();
+        $validatedData = $validator->validated();
         if(StringValidator::isImageBase64($validatedData['uri']) == null) {
             return ValidationError::response(['uri'=>'You must use urlBase64 image format.']);
         }
@@ -100,7 +100,7 @@ class BarangImageController extends Controller
             return ValidationError::response($validator->errors());
         }
 
-        $validatedData = $validator->valid();
+        $validatedData = $validator->validated();
         if(StringValidator::isImageBase64($validatedData['uri']) == null) {
             return ValidationError::response(['uri'=>'You must use urlBase64 image format.']);
         }

@@ -38,7 +38,7 @@ class BarangKategoriController extends Controller
             return ValidationError::response($validator->errors());
         }
 
-        $validatedData = $validator->valid();
+        $validatedData = $validator->validated();
         $barangKategori = BarangKategori::create($validatedData);
         return response()->json($barangKategori, 201);
     }
@@ -73,7 +73,7 @@ class BarangKategoriController extends Controller
             return ValidationError::response($validator->errors());
         }
 
-        $validatedData = $validator->valid();
+        $validatedData = $validator->validated();
         $barangKategori->update($validatedData);
         return response()->json($barangKategori, 201);
     }
