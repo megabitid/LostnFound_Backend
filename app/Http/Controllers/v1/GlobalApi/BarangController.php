@@ -5,6 +5,7 @@ namespace App\Http\Controllers\v1\GlobalApi;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Resource;
 use App\Models\Barang;
+use App\Traits\Permissions;
 use App\Traits\ValidationError;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -81,7 +82,7 @@ class BarangController extends Controller
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
-        $validatedData = $validator->valid();
+        $validatedData = $validator->validated();
         $validatedData['tanggal'] = Carbon::now()->format('Y-m-d');
         $barang = Barang::create($validatedData);
         return response()->json($barang, 201);
@@ -109,6 +110,7 @@ class BarangController extends Controller
     public function update(Request $request, $id)
     {
         $barang = Barang::findOrFail($id);
+        Permissions::isOwnerOrAdminOrSuperAdmin($request, $id);
         $validator = Validator::make($request->all(), [
             'nama_barang'=>'required|string|max:255',
             'lokasi'=>'required|string',
@@ -123,7 +125,7 @@ class BarangController extends Controller
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
-        $validatedData = $validator->valid();
+        $validatedData = $validator->validated();
         $validatedData['tanggal'] = Carbon::now()->format('Y-m-d');
         $barang->update($validatedData);
         return response()->json($barang, 201);
@@ -135,9 +137,10 @@ class BarangController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
         $barang = Barang::findOrFail($id);
+        Permissions::isOwnerOrAdminOrSuperAdmin($request, $barang->user_id);
         $barang->delete();
         return response()->json(['message'=>'Barang deleted.'], 204);
     }

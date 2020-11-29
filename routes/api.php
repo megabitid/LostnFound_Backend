@@ -10,6 +10,7 @@ use App\Http\Controllers\v1\Android\UserController as UserControllerV1;
 use App\Http\Controllers\v1\Android\Oauth2Controller as Oauth2ControllerV1;
 
 use App\Http\Controllers\v1\GlobalApi as GlobalApiV1;
+use App\Http\Controllers\v2\GlobalApi as GlobalApiV2;
 
 /*
 |--------------------------------------------------------------------------
@@ -98,5 +99,44 @@ Route::prefix('v1')->group(function() {
         Route::get('{id}', [GlobalApiV1\BarangStatusController::class, 'show']);
         Route::post('', [GlobalApiV1\BarangStatusController::class, 'store']);
         Route::get('', [GlobalApiV1\BarangStatusController::class, 'index']);;
+    });
+});
+
+Route::prefix('v2')->group(function() {
+    // global route
+    Route::prefix('barang')->middleware('jwt.auth')->group(function() {
+        Route::delete('{id}', [GlobalApiV2\BarangController::class, 'destroy']);
+        Route::put('{id}', [GlobalApiV2\BarangController::class, 'update']);
+        Route::get('{id}', [GlobalApiV2\BarangController::class, 'show']);
+        Route::post('', [GlobalApiV2\BarangController::class, 'store']);
+        Route::get('', [GlobalApiV2\BarangController::class, 'index']);
+    });
+    Route::prefix('stasiun')->middleware('jwt.auth')->group(function() {
+        Route::delete('{id}', [GlobalApiV2\StasiunController::class, 'destroy']);
+        Route::put('{id}', [GlobalApiV2\StasiunController::class, 'update']);
+        Route::get('{id}', [GlobalApiV2\StasiunController::class, 'show']);
+        Route::post('', [GlobalApiV2\StasiunController::class, 'store']);
+        Route::get('', [GlobalApiV2\StasiunController::class, 'index']);
+    });
+    Route::prefix('barang-kategori')->middleware('jwt.auth')->group(function() {
+        Route::delete('{id}', [GlobalApiV2\BarangKategoriController::class, 'destroy']);
+        Route::put('{id}', [GlobalApiV2\BarangKategoriController::class, 'update']);
+        Route::get('{id}', [GlobalApiV2\BarangKategoriController::class, 'show']);
+        Route::post('', [GlobalApiV2\BarangKategoriController::class, 'store']);
+        Route::get('', [GlobalApiV2\BarangKategoriController::class, 'index']);;
+    });
+    Route::prefix('barang-images')->middleware('jwt.auth')->group(function() {
+        Route::delete('{id}', [GlobalApiV2\BarangImageController::class, 'destroy']);
+        Route::put('{id}', [GlobalApiV2\BarangImageController::class, 'update']);
+        Route::get('{id}', [GlobalApiV2\BarangImageController::class, 'show']);
+        Route::post('', [GlobalApiV2\BarangImageController::class, 'store']);
+        Route::get('', [GlobalApiV2\BarangImageController::class, 'index']);;
+    });
+    Route::prefix('barang-status')->middleware('jwt.auth')->group(function() {
+        Route::delete('{id}', [GlobalApiV2\BarangStatusController::class, 'destroy']);
+        Route::put('{id}', [GlobalApiV2\BarangStatusController::class, 'update']);
+        Route::get('{id}', [GlobalApiV2\BarangStatusController::class, 'show']);
+        Route::post('', [GlobalApiV2\BarangStatusController::class, 'store']);
+        Route::get('', [GlobalApiV2\BarangStatusController::class, 'index']);;
     });
 });

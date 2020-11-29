@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\v1\GlobalApi;
+namespace App\Http\Controllers\v2\GlobalApi;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Resource;
