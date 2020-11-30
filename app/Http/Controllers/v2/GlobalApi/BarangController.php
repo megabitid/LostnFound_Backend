@@ -74,7 +74,11 @@ class BarangController extends Controller
             'stasiun_id'=>'required|numeric',
             'status_id'=>'required|numeric',
             'kategori_id'=>'required|numeric',
-            'tanggal'=>'required|date_format:Y-m-d'
+            'tanggal'=>'required|date_format:Y-m-d',
+            // backward compoatible field
+            'warna'=>'string',
+            'merek'=>'string',
+            'lokasi'=>'string'
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
@@ -114,7 +118,11 @@ class BarangController extends Controller
             'stasiun_id'=>'required|numeric',
             'status_id'=>'required|numeric',
             'kategori_id'=>'required|numeric',
-            'tanggal'=>'required|date_format:Y-m-d'
+            'tanggal'=>'required|date_format:Y-m-d',
+            // backward compoatible field
+            'warna'=>'string',
+            'merek'=>'string',
+            'lokasi'=>'string'
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
