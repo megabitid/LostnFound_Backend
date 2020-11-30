@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\v1\GlobalApi;
+namespace App\Http\Controllers\v2\GlobalApi;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Resource;
 use App\Models\Barang;
 use App\Traits\Permissions;
 use App\Traits\ValidationError;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -70,20 +69,21 @@ class BarangController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'nama_barang'=>'required|string|max:255',
-            'lokasi'=>'required|string',
             'deskripsi'=>'required|string',
-            'warna'=>'required|string',
-            'merek'=>'required|string',
             'user_id'=>'required|numeric',
             'stasiun_id'=>'required|numeric',
             'status_id'=>'required|numeric',
-            'kategori_id'=>'required|numeric'
+            'kategori_id'=>'required|numeric',
+            'tanggal'=>'required|date_format:Y-m-d',
+            // backward compoatible field
+            'warna'=>'string',
+            'merek'=>'string',
+            'lokasi'=>'string'
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
         $validatedData = $validator->validated();
-        $validatedData['tanggal'] = Carbon::now()->format('Y-m-d');
         $barang = Barang::create($validatedData);
         return response()->json($barang, 201);
     }
@@ -113,20 +113,21 @@ class BarangController extends Controller
         Permissions::isOwnerOrAdminOrSuperAdmin($request, $id);
         $validator = Validator::make($request->all(), [
             'nama_barang'=>'required|string|max:255',
-            'lokasi'=>'required|string',
             'deskripsi'=>'required|string',
-            'warna'=>'required|string',
-            'merek'=>'required|string',
             'user_id'=>'required|numeric',
             'stasiun_id'=>'required|numeric',
             'status_id'=>'required|numeric',
-            'kategori_id'=>'required|numeric'
+            'kategori_id'=>'required|numeric',
+            'tanggal'=>'required|date_format:Y-m-d',
+            // backward compoatible field
+            'warna'=>'string',
+            'merek'=>'string',
+            'lokasi'=>'string'
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
         $validatedData = $validator->validated();
-        $validatedData['tanggal'] = Carbon::now()->format('Y-m-d');
         $barang->update($validatedData);
         return response()->json($barang, 201);
     }

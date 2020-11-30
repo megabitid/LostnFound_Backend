@@ -27,7 +27,7 @@ class AuthController extends Controller
             return ValidationError::response($validator->errors());
         }
 
-        $validatedData = $validator->valid();
+        $validatedData = $validator->validated();
         try {
             if (!$token = JWTAuth::attempt($validatedData)) {
                 return response()->json(['message' => 'Authentication credentials were missing or incorrect'], 401);
@@ -58,7 +58,7 @@ class AuthController extends Controller
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
-        $validatedData = $validator->valid();
+        $validatedData = $validator->validated();
         if(StringValidator::isImageBase64($validatedData['image']) == null) {
             return ValidationError::response(['image'=>'You must use urlBase64 image format.']);
         }

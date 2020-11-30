@@ -5,6 +5,7 @@ namespace App\Http\Controllers\v1\GlobalApi;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Resource;
 use App\Models\BarangKategori;
+use App\Traits\Permissions;
 use App\Traits\ValidationError;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -31,6 +32,7 @@ class BarangKategoriController extends Controller
      */
     public function store(Request $request)
     {
+        Permissions::isAdminOrSuperAdmin($request);
         $validator = Validator::make($request->all(), [
             'nama'=>'required|string',
         ]);
@@ -38,7 +40,7 @@ class BarangKategoriController extends Controller
             return ValidationError::response($validator->errors());
         }
 
-        $validatedData = $validator->valid();
+        $validatedData = $validator->validated();
         $barangKategori = BarangKategori::create($validatedData);
         return response()->json($barangKategori, 201);
     }
@@ -65,6 +67,7 @@ class BarangKategoriController extends Controller
      */
     public function update(Request $request, $id)
     {
+        Permissions::isAdminOrSuperAdmin($request);
         $barangKategori = BarangKategori::findOrFail($id);
         $validator = Validator::make($request->all(), [
             'nama'=>'required|string',
@@ -73,7 +76,7 @@ class BarangKategoriController extends Controller
             return ValidationError::response($validator->errors());
         }
 
-        $validatedData = $validator->valid();
+        $validatedData = $validator->validated();
         $barangKategori->update($validatedData);
         return response()->json($barangKategori, 201);
     }
@@ -84,8 +87,9 @@ class BarangKategoriController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
+        Permissions::isAdminOrSuperAdmin($request);
         $barangKategori = BarangKategori::findOrFail($id);
         $barangKategori->delete();
         return response()->json(['message' => 'BarangKategori data delete successfully'], 204);

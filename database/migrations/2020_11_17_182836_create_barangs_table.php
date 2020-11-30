@@ -17,10 +17,10 @@ class CreateBarangsTable extends Migration
             $table->id();
             $table->string('nama_barang', 255);
             $table->date('tanggal');
-            $table->string('lokasi');
+            $table->string('lokasi')->nullable();
             $table->text('deskripsi');
-            $table->string('warna');
-            $table->string('merek');
+            $table->string('warna')->nullable();
+            $table->string('merek')->nullable();
             $table->foreignId('user_id')->nullable()
                 ->constrained('users')
                 ->onDelete('set null');
