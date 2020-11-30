@@ -110,7 +110,7 @@ class BarangController extends Controller
     public function update(Request $request, $id)
     {
         $barang = Barang::findOrFail($id);
-        Permissions::isOwnerOrAdminOrSuperAdmin($request, $id);
+        Permissions::isOwnerOrAdminOrSuperAdmin($request, $barang->user_id);
         $validator = Validator::make($request->all(), [
             'nama_barang'=>'required|string|max:255',
             'lokasi'=>'required|string',
