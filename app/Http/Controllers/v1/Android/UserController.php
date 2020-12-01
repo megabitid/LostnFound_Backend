@@ -67,7 +67,7 @@ class UserController extends Controller
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
-        $validatedData = $validator->valid();
+        $validatedData = $validator->validated();
         if(StringValidator::isImageBase64($validatedData['image']) == null) {
             return ValidationError::response(['image'=>'You must use urlBase64 image format.']);
         }

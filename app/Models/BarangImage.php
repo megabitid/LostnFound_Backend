@@ -8,13 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class BarangImage extends Model
 {
     use HasFactory;
+    public $timestamps = false;
 
     protected $fillable = [
         'nama',
-        'link',
+        'uri',
+        'barang_id',
     ];
 
-    public function barangs() {
-        $this->hasMany('App\Models\Barang', 'barangimage_id');
+    // Relation many (barangImage) to one (barang)
+    public function barang() 
+    {
+        return $this->belongsTo('App\Models\Barang');
     }
 }

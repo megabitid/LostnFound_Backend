@@ -16,7 +16,8 @@ class CreateBarangImagesTable extends Migration
         Schema::create('barang_images', function (Blueprint $table) {
             $table->id();
             $table->string('nama', 255);
-            $table->string('link');
+            $table->string('uri');
+            $table->foreignId('barang_id')->constrained('barangs')->onDelete('cascade');
         });
     }
 

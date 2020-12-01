@@ -51,10 +51,7 @@ class AdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::where('role','>', 0)->find($id);
-        if (is_null($user)) {
-            throw new ApiException('User not found.', 404);
-        }
+        $user = User::where('role','>', 0)->findOrFail($id);
         Permissions::isOwner($request, $user->id);
         $validator = Validator::make($request->all(), [
             'nama' => 'required|string',
@@ -65,7 +62,7 @@ class AdminController extends Controller
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
-        $validatedData = $validator->valid();
+        $validatedData = $validator->validated();
         if(StringValidator::isImageBase64($validatedData['image']) == null) {
             return ValidationError::response(['image'=>'You must use urlBase64 image format.']);
         }
