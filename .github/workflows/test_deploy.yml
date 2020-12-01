@@ -62,6 +62,12 @@ jobs:
           heroku config:add GOOGLE_CLIENT_SECRET=${{ secrets.GOOGLE_CLIENT_SECRET }}
           heroku config:add FIREBASE_CREDENTIALS=firebase_secret.json
           heroku config:add GOOGLE_OAUTH_REDIRECT=${{ secrets.APP_URL }}/api/v1/android/auth/oauth2/google/authorize
+          heroku config:add MAIL_HOST=${{ secrets.MAIL_HOST }}
+          heroku config:add MAIL_PORT=${{ secrets.MAIL_PORT }}
+          heroku config:add MAIL_USERNAME=${{ secrets.MAIL_USERNAME }}
+          heroku config:add MAIL_PASSWORD=${{ secrets.MAIL_PASSWORD }}
+          heroku config:add MAIL_ENCRYPTION=${{ secrets.MAIL_ENCRYPTION }}
+          heroku config:add MAIL_FROM_ADDRESS=${{ secrets.MAIL_FROM_ADDRESS }}
         env:
           HEROKU_API_KEY: ${{ secrets.HEROKU_TOKEN }}
       # Push New Changes
