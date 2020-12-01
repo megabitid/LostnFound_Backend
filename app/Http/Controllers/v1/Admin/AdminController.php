@@ -67,22 +67,18 @@ class AdminController extends Controller
             return ValidationError::response(['image'=>'You must use urlBase64 image format.']);
         }
 
-        try {
-            $someUser = User::where('nip', '=', $validatedData['nip'])->first();
-            if($someUser) {
-                if ($someUser->id != $user->id) {
-                    return ValidationError::response(['nip'=>'Someone already use this nip.']);
-                }
+        $someUser = User::where('nip', '=', $validatedData['nip'])->first();
+        if($someUser) {
+            if ($someUser->id != $user->id) {
+                return ValidationError::response(['nip'=>'Someone already use this nip.']);
             }
-            $validatedData['password'] = bcrypt($validatedData['password']);
-            // upload image to storage
-            $uri = FirebaseStorage::imageUpload($validatedData['image'], 'users/image/'.$id);
-            $validatedData['image'] = $uri;
-            // update database
-            $user->update($validatedData);
-            return response()->json($user, 201);
-        } catch (Exception $e) {
-            return response()->json(['message' => 'Whoops', 'error' => $e->getMessage()], 400);
         }
+        $validatedData['password'] = bcrypt($validatedData['password']);
+        // upload image to storage
+        $uri = FirebaseStorage::imageUpload($validatedData['image'], 'users/image/'.$id);
+        $validatedData['image'] = $uri;
+        // update database
+        $user->update($validatedData);
+        return response()->json($user, 201);
     }
 }

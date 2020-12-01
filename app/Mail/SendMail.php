@@ -2,13 +2,12 @@
 
 namespace App\Mail;
 
-use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class UserResetPassword extends Mailable
+class SendMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -17,10 +16,11 @@ class UserResetPassword extends Mailable
      *
      * @return void
      */
-    public function __construct($username, $token)
+    public function __construct($subject, $name, $message)
     {
-        $this->username = $username;
-        $this->token = $token;
+        $this->name = $name;
+        $this->subject = $subject;
+        $this->message = $message;
     }
 
     /**
@@ -30,11 +30,13 @@ class UserResetPassword extends Mailable
      */
     public function build()
     {
-        return $this->subject('Reset Password Anda')
-            ->view('email.reset-password')
-            ->with([
-                'username' => $this->username,
-                'token' => $this->token
-            ]);
+        return $this->view('email.mail')
+            ->subject($this->subject)
+            ->with(
+            [
+                'name'=>$this->name,
+                'msg'=>$this->message,
+            ]
+        );
     }
 }

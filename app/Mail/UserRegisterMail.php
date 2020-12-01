@@ -17,10 +17,10 @@ class UserRegisterMail extends Mailable
      *
      * @return void
      */
-    protected $user;
-    public function __construct(User $user)
+    public function __construct($username, $token)
     {
-        $this->user = $user;
+        $this->username = $username;
+        $this->token = $token;
     }
 
     /**
@@ -30,11 +30,11 @@ class UserRegisterMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Harap Verifikasi !')
+        return $this->subject('Verifikasi Akun Anda')
             ->view('email.register')
             ->with([
-                'user' => $this->user,
-                'token' => $token
+                'username' => $this->username,
+                'token' => $this->token
             ]);
     }
 }

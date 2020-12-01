@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\v1\Android;
+namespace App\Http\Controllers\v2\Android;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
@@ -11,7 +11,6 @@ use App\Traits\ValidationError;
 use App\Exceptions\ApiException;
 use App\Traits\FirebaseStorage;
 use App\Traits\StringValidator;
-use Exception;
 use Validator;
 
 
@@ -61,7 +60,6 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), [
             'nama' => 'required|string',
             'email' => ['required', 'max:254', "regex:{$this::$rfc5322}"],
-            'password' => 'required|string',
             'image'=>'required|string',
         ]);
         if ($validator->fails()) {
@@ -78,7 +76,6 @@ class UserController extends Controller
                 return ValidationError::response(['email'=>'Someone already use this email.']);
             }
         }
-        $validatedData['password'] = bcrypt($validatedData['password']);
         // upload image to storage
         $uri = FirebaseStorage::imageUpload($validatedData['image'], 'users/image/'.$id);
         $validatedData['image'] = $uri;
