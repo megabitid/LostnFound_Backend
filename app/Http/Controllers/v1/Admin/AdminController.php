@@ -63,7 +63,6 @@ class AdminController extends Controller
             return ValidationError::response($validator->errors());
         }
         $validatedData = $validator->validated();
-        dd($validatedData);
         if(StringValidator::isImageBase64($validatedData['image']) == null) {
             return ValidationError::response(['image'=>'You must use urlBase64 image format.']);
         }
