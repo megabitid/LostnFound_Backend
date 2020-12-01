@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+// v1
 use App\Http\Controllers\v1\Admin\AdminController as AdminControllerV1;
 use App\Http\Controllers\v1\Admin\AuthController as AdminAuthControllerV1;
 
@@ -10,6 +12,16 @@ use App\Http\Controllers\v1\Android\UserController as UserControllerV1;
 use App\Http\Controllers\v1\Android\Oauth2Controller as Oauth2ControllerV1;
 
 use App\Http\Controllers\v1\GlobalApi as GlobalApiV1;
+
+
+// v2
+use App\Http\Controllers\v2\Admin\AdminController as AdminControllerV2;
+use App\Http\Controllers\v2\Admin\AuthController as AdminAuthControllerV2;
+
+use App\Http\Controllers\v2\Android\AuthController as AuthControllerV2;
+use App\Http\Controllers\v2\Android\UserController as UserControllerV2;
+use App\Http\Controllers\v2\Android\Oauth2Controller as Oauth2ControllerV2;
+
 use App\Http\Controllers\v2\GlobalApi as GlobalApiV2;
 
 /*
@@ -102,7 +114,52 @@ Route::prefix('v1')->group(function() {
     });
 });
 
+
+// ============================= V2 
 Route::prefix('v2')->group(function() {
+    //API for admin web
+    Route::prefix('web')->group(function () {      
+        // admin users
+        Route::middleware('jwt.auth')->prefix('users')->group(function() {
+            Route::get('{id}', [AdminControllerV2::class, 'show']);
+            Route::put('{id}', [AdminControllerV2::class, 'update']);
+            // Route::delete('{id}', [AdminControllerV2::class, 'destroy']); // to do: soft delete
+            Route::get('', [AdminControllerV2::class, 'index']);
+        });
+
+        // auth admin
+        Route::prefix('auth')->group(function () {
+            Route::post('login', [AdminAuthControllerV1::class, 'login']);
+            Route::middleware('jwt.auth')->post('register', [AdminAuthControllerV2::class, 'register']);
+            Route::middleware('jwt.auth')->get('logout', [AdminAuthControllerV2::class, 'logout']);
+            Route::middleware('jwt.auth')->get('refresh', [AdminAuthControllerV2::class, 'refreshToken']);
+        });
+
+    });
+
+    //API for Android
+    Route::prefix('android')->group(function () {
+        //users
+        Route::middleware('jwt.auth')->prefix('users')->group(function() {
+            Route::get('{id}', [UserControllerV2::class, 'show']);
+            Route::put('{id}', [UserControllerV2::class, 'update']);
+            Route::get('', [UserControllerV2::class, 'index']);
+        });
+        // auth users
+        Route::prefix('auth')->group(function () {
+            Route::post('login', [AuthControllerV2::class, 'login']);
+            Route::post('register', [AuthControllerV2::class, 'register']);
+            Route::middleware('jwt.auth')->get('logout', [AuthControllerV2::class, 'logout']);
+            Route::middleware('jwt.auth')->get('refresh', [AuthControllerV2::class, 'refreshToken']);
+
+            Route::get('verify/{token}', [AuthControllerV2::class, 'verifyEmail'])->name('user.verify');
+            Route::post('reset-password', [AuthControllerV2::class, 'resetPassword']);
+            Route::get('reset-password/{token}', [AuthControllerV2::class, 'updatePasswordAction']);
+            Route::post('reset-password/{token}', [AuthControllerV2::class, 'updatePassword'])->name('user.reset');
+            // oauth2
+            Route::get('oauth2/google/authorize', [Oauth2ControllerV2::class, 'handleGoogleCallback']);
+        });
+    });
     // global route
     Route::prefix('barang')->middleware('jwt.auth')->group(function() {
         Route::delete('{id}', [GlobalApiV2\BarangController::class, 'destroy']);

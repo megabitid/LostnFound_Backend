@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\v1\Admin;
+namespace App\Http\Controllers\v2\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -28,17 +28,21 @@ class AuthController extends Controller
         }
 
         $validatedData = $validator->validated();
-        if (!$token = JWTAuth::attempt($validatedData)) {
-            return response()->json(['message' => 'Authentication credentials were missing or incorrect'], 401);
-        } else {
-            $user = Auth::user();
-            $token = auth('api')->setTTL($this::$JWT_TTL)->login($user); 
-            $exp = JWTAuth::setToken($token)->getPayload()->get('exp'); 
-            $responseData = $user->toArray()+[
-                'token'=>$token,
-                'exp'=>$exp
-            ];
-            return response()->json($responseData, 200);
+        try {
+            if (!$token = JWTAuth::attempt($validatedData)) {
+                return response()->json(['message' => 'Authentication credentials were missing or incorrect'], 401);
+            } else {
+                $user = Auth::user();
+                $token = auth('api')->setTTL($this::$JWT_TTL)->login($user); 
+                $exp = JWTAuth::setToken($token)->getPayload()->get('exp'); 
+                $responseData = $user->toArray()+[
+                    'token'=>$token,
+                    'exp'=>$exp
+                ];
+                return response()->json($responseData, 200);
+            }
+        } catch (Exception $e) {
+            return response()->json(['message' => 'Whoops', 'error' => $e->getMessage()], 400);
         }
     }
 
@@ -68,13 +72,12 @@ class AuthController extends Controller
         $uri = FirebaseStorage::imageUpload($base64, 'users/image/'.$user->id);
         // update database
         $user->update(['image'=>$uri]);
-
         $token = auth('api')->setTTL($this::$JWT_TTL)->login($user); 
         $exp = JWTAuth::setToken($token)->getPayload()->get('exp'); 
         $responseData = $user->toArray()+[
             'token'=>$token,
             'exp'=>$exp
-        ];
+        ];            
         return response()->json($responseData, 201);
     }
 
