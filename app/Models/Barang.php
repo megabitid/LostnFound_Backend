@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Barang extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'nama_barang',
         'lokasi',
@@ -32,12 +32,12 @@ class Barang extends Model
     {
         return $this->belongsTo('App\Models\Stasiun');
     }
-    
+
     public function kategori()
     {
         return $this->belongsTo('App\Models\BarangKategori', 'kategori_id');
     }
-    
+
     public function status()
     {
         return $this->belongsTo('App\Models\BarangStatus', 'status_id');
@@ -47,5 +47,11 @@ class Barang extends Model
     public function barangimages()
     {
         return $this->hasMany('App\Models\BarangImage');
+    }
+
+    // Relation one(barang) to many (history)
+    public function histories()
+    {
+        return $this->hasMany('App\Models\History');
     }
 }

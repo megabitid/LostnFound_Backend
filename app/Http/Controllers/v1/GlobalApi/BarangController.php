@@ -5,6 +5,7 @@ namespace App\Http\Controllers\v1\GlobalApi;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Resource;
 use App\Models\Barang;
+use App\Models\History;
 use App\Traits\Permissions;
 use App\Traits\ValidationError;
 use Carbon\Carbon;
@@ -56,7 +57,7 @@ class BarangController extends Controller
             });
         }
         $barangs = $query->paginate(20);
-        
+
         return Resource::collection($barangs);
     }
 
@@ -85,6 +86,11 @@ class BarangController extends Controller
         $validatedData = $validator->validated();
         $validatedData['tanggal'] = Carbon::now()->format('Y-m-d');
         $barang = Barang::create($validatedData);
+        $history = History::create([
+            'user_id'   => $request->user_id,
+            'barang_id' => $barang['id'],
+            'status'    => $barang->status()->nama
+        ]);
         return response()->json($barang, 201);
     }
 
@@ -128,6 +134,11 @@ class BarangController extends Controller
         $validatedData = $validator->validated();
         $validatedData['tanggal'] = Carbon::now()->format('Y-m-d');
         $barang->update($validatedData);
+        $history = History::create([
+            'user_id'   => $request->user_id,
+            'barang_id' => $barang['id'],
+            'status'    => $barang->status()->nama
+        ]);
         return response()->json($barang, 201);
     }
 
