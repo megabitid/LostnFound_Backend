@@ -9,5 +9,5 @@ class Claim extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['user_id', 'barang_id', 'alamat', 'uri_tiket'];
+    protected $fillable = ['user_id', 'barang_id', 'alamat', 'uri_tiket', 'no_telp', 'verified'];
 }
