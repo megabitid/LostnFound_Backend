@@ -28,13 +28,13 @@ class BarangImageController extends Controller
             'barang_id'
         ];
         // limit query by specific field. Example: ?id=1
-        foreach($fields as $field){
-            if(!empty($request->$field)){
+        foreach ($fields as $field) {
+            if (!empty($request->$field)) {
                 $query->where($field, '=', $request->$field);
             }
         }
         // order by desc or asc in field specified: use "?orderBy=-id" to order by id descending, and "?orderBy=id" to order by ascending.
-        if(!empty($request->orderBy)){
+        if (!empty($request->orderBy)) {
             $query = $query->orderByRaw($request->orderBy);
         }
         $barangImages = $query->paginate(20);
@@ -51,25 +51,25 @@ class BarangImageController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'nama'=>'required|string|max:255',
-            'uri'=>'required|string',
-            'barang_id'=>'required|numeric',
+            'nama' => 'required|string|max:255',
+            'uri' => 'required|string',
+            'barang_id' => 'required|numeric',
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
 
         $validatedData = $validator->validated();
-        if(StringValidator::isImageBase64($validatedData['uri']) == null) {
-            return ValidationError::response(['uri'=>'You must use urlBase64 image format.']);
+        if (StringValidator::isImageBase64($validatedData['uri']) == null) {
+            return ValidationError::response(['uri' => 'You must use urlBase64 image format.']);
         }
         $uriBase64 = $validatedData['uri'];
         $validatedData['uri'] = "";
         $barang = Barang::findOrFail($validatedData['barang_id']);
         Permissions::isOwnerOrAdminOrSuperAdmin($request, $barang->user_id);
         $barangImage = BarangImage::create($validatedData);
-        $uri = FirebaseStorage::imageUpload($uriBase64, 'barangs/image/'.$barangImage->id);
-        $barangImage->update(['uri'=>$uri]);        
+        $uri = FirebaseStorage::imageUpload($uriBase64, 'barangs/image/' . $barangImage->id);
+        $barangImage->update(['uri' => $uri]);
         return response()->json($barangImage, 201);
     }
 
@@ -97,21 +97,21 @@ class BarangImageController extends Controller
         $barangImage = BarangImage::findOrFail($id);
         Permissions::isOwnerOrAdminOrSuperAdmin($request, $barangImage->barang()->user_id);
         $validator = Validator::make($request->all(), [
-            'nama'=>'required|string|max:255',
-            'uri'=>'required|string',
-            'barang_id'=>'required|numeric',
+            'nama' => 'required|string|max:255',
+            'uri' => 'required|string',
+            'barang_id' => 'required|numeric',
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
 
         $validatedData = $validator->validated();
-        if(StringValidator::isImageBase64($validatedData['uri']) == null) {
-            return ValidationError::response(['uri'=>'You must use urlBase64 image format.']);
+        if (StringValidator::isImageBase64($validatedData['uri']) == null) {
+            return ValidationError::response(['uri' => 'You must use urlBase64 image format.']);
         }
-        $uri = FirebaseStorage::imageUpload($validatedData['uri'], 'barangs/image/'.$barangImage->id);
+        $uri = FirebaseStorage::imageUpload($validatedData['uri'], 'barangs/image/' . $barangImage->id);
         $validatedData['uri'] = $uri;
-        $barangImage->update($validatedData);        
+        $barangImage->update($validatedData);
         return response()->json($barangImage, 201);
     }
 

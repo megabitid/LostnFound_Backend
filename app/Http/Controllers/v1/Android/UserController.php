@@ -37,7 +37,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $user = User::where('role','=', 0)->find($id);;
+        $user = User::where('role', '=', 0)->find($id);;
         if (is_null($user)) {
             throw new ApiException('User not found.', 404);
         }
@@ -53,7 +53,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::where('role','=', 0)->find($id);
+        $user = User::where('role', '=', 0)->find($id);
         if (is_null($user)) {
             throw new ApiException('User not found.', 404);
         }
@@ -62,25 +62,25 @@ class UserController extends Controller
             'nama' => 'required|string',
             'email' => ['required', 'max:254', "regex:{$this::$rfc5322}"],
             'password' => 'required|string',
-            'image'=>'required|string',
+            'image' => 'required|string',
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
         $validatedData = $validator->validated();
-        if(StringValidator::isImageBase64($validatedData['image']) == null) {
-            return ValidationError::response(['image'=>'You must use urlBase64 image format.']);
+        if (StringValidator::isImageBase64($validatedData['image']) == null) {
+            return ValidationError::response(['image' => 'You must use urlBase64 image format.']);
         }
 
         $someUser = User::where('email', '=', $validatedData['email'])->first();
-        if($someUser) {
+        if ($someUser) {
             if ($someUser->id != $user->id) {
-                return ValidationError::response(['email'=>'Someone already use this email.']);
+                return ValidationError::response(['email' => 'Someone already use this email.']);
             }
         }
         $validatedData['password'] = bcrypt($validatedData['password']);
         // upload image to storage
-        $uri = FirebaseStorage::imageUpload($validatedData['image'], 'users/image/'.$id);
+        $uri = FirebaseStorage::imageUpload($validatedData['image'], 'users/image/' . $id);
         $validatedData['image'] = $uri;
         // update database
         $user->update($validatedData);

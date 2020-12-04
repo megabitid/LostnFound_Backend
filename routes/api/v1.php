@@ -23,11 +23,11 @@ use App\Http\Controllers\v1\GlobalApi;
 |
 */
 
-Route::prefix('v1')->group(function() {
+Route::prefix('v1')->group(function () {
     //API for admin web
-    Route::prefix('web')->group(function () {      
+    Route::prefix('web')->group(function () {
         // admin users
-        Route::middleware('jwt.auth')->prefix('users')->group(function() {
+        Route::middleware('jwt.auth')->prefix('users')->group(function () {
             Route::get('{id}', [AdminController::class, 'show']);
             Route::put('{id}', [AdminController::class, 'update']);
             // Route::delete('{id}', [AdminControllerV1::class, 'destroy']); // to do: soft delete
@@ -41,13 +41,12 @@ Route::prefix('v1')->group(function() {
             Route::middleware('jwt.auth')->get('logout', [AdminAuthController::class, 'logout']);
             Route::middleware('jwt.auth')->get('refresh', [AdminAuthController::class, 'refreshToken']);
         });
-
     });
 
     //API for Android
     Route::prefix('android')->group(function () {
         //users
-        Route::middleware('jwt.auth')->prefix('users')->group(function() {
+        Route::middleware('jwt.auth')->prefix('users')->group(function () {
             Route::get('{id}', [UserController::class, 'show']);
             Route::put('{id}', [UserController::class, 'update']);
             Route::get('', [UserController::class, 'index']);
@@ -64,40 +63,51 @@ Route::prefix('v1')->group(function() {
     });
 
     // global route
-    
-    Route::prefix('barang')->middleware('jwt.auth')->group(function() {
+
+    //barang
+    Route::prefix('barang')->middleware('jwt.auth')->group(function () {
         Route::delete('{id}', [GlobalApi\BarangController::class, 'destroy']);
         Route::put('{id}', [GlobalApi\BarangController::class, 'update']);
         Route::get('{id}', [GlobalApi\BarangController::class, 'show']);
         Route::post('', [GlobalApi\BarangController::class, 'store']);
         Route::get('', [GlobalApi\BarangController::class, 'index']);
     });
-    Route::prefix('stasiun')->middleware('jwt.auth')->group(function() {
+    Route::prefix('stasiun')->middleware('jwt.auth')->group(function () {
         Route::delete('{id}', [GlobalApi\StasiunController::class, 'destroy']);
         Route::put('{id}', [GlobalApi\StasiunController::class, 'update']);
         Route::get('{id}', [GlobalApi\StasiunController::class, 'show']);
         Route::post('', [GlobalApi\StasiunController::class, 'store']);
         Route::get('', [GlobalApi\StasiunController::class, 'index']);
     });
-    Route::prefix('barang-kategori')->middleware('jwt.auth')->group(function() {
+    Route::prefix('barang-kategori')->middleware('jwt.auth')->group(function () {
         Route::delete('{id}', [GlobalApi\BarangKategoriController::class, 'destroy']);
         Route::put('{id}', [GlobalApi\BarangKategoriController::class, 'update']);
         Route::get('{id}', [GlobalApi\BarangKategoriController::class, 'show']);
         Route::post('', [GlobalApi\BarangKategoriController::class, 'store']);
         Route::get('', [GlobalApi\BarangKategoriController::class, 'index']);;
     });
-    Route::prefix('barang-images')->middleware('jwt.auth')->group(function() {
+    Route::prefix('barang-images')->middleware('jwt.auth')->group(function () {
         Route::delete('{id}', [GlobalApi\BarangImageController::class, 'destroy']);
         Route::put('{id}', [GlobalApi\BarangImageController::class, 'update']);
         Route::get('{id}', [GlobalApi\BarangImageController::class, 'show']);
         Route::post('', [GlobalApi\BarangImageController::class, 'store']);
         Route::get('', [GlobalApi\BarangImageController::class, 'index']);;
     });
-    Route::prefix('barang-status')->middleware('jwt.auth')->group(function() {
+    Route::prefix('barang-status')->middleware('jwt.auth')->group(function () {
         Route::delete('{id}', [GlobalApi\BarangStatusController::class, 'destroy']);
         Route::put('{id}', [GlobalApi\BarangStatusController::class, 'update']);
         Route::get('{id}', [GlobalApi\BarangStatusController::class, 'show']);
         Route::post('', [GlobalApi\BarangStatusController::class, 'store']);
         Route::get('', [GlobalApi\BarangStatusController::class, 'index']);;
+    });
+
+    //claims
+    Route::prefix('claims')->middleware('jwt.auth')->group(function () {
+        Route::delete('{id}', [GlobalApi\ClaimController::class, 'destroy']);
+        Route::put('{id}', [GlobalApi\ClaimController::class, 'update']);
+        Route::put('{id}/verified', [GlobalApi\ClaimController::class, 'updateVerified']);
+        Route::get('{id}', [GlobalApi\ClaimController::class, 'show']);
+        Route::post('', [GlobalApi\ClaimController::class, 'store']);
+        Route::get('', [GlobalApi\ClaimController::class, 'index']);
     });
 });
