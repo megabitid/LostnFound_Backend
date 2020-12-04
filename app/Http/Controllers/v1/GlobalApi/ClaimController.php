@@ -22,7 +22,38 @@ class ClaimController extends Controller
     public function index(Request $request)
     {
        Permissions::isAdminOrSuperAdmin($request);
-       $claims = Claim::paginate(20);
+        $query = Claim::select('*');
+        $fields = [
+            'id',
+            'user_id',
+            'verified',
+            'no_telp',
+            'barang_id',
+        ];
+        // limit query by specific field. Example: ?id=1
+        foreach($fields as $field){
+            if(!empty($request->$field)){
+                $query->where($field, '=', $request->$field);
+            }
+        }
+        // order by desc or asc in field specified: use "?orderBy=-created_at" to order by id descending, and "?orderBy=id" to order by ascending.
+        if(!empty($request->orderBy)){
+            $query = $query->orderByRaw($request->orderBy);
+        }
+        // search text contains in this field.
+        if (!empty($request->search)) {
+            $searchFields = [
+                'alamat',
+                'no_telp'
+            ];
+            $query->where(function ($query) use ($request, $searchFields) {
+                $searchWildcard = '%' . $request->search . '%';
+                foreach ($searchFields as $field) {
+                    $query->orWhere($field, 'LIKE', $searchWildcard);
+                }
+            });
+        }
+       $claims = $query->paginate(20);
        return Resource::collection($claims);
 
     }
