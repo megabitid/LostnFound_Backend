@@ -21,7 +21,7 @@ class CreateHistoriesTable extends Migration
             $table->foreignId('barang_id')->nullable()
                 ->constrained('barangs')
                 ->onDelete('set null');
-            $table->string('status');
+            $table->string('status', 32);
             $table->timestamps();
         });
     }

@@ -98,6 +98,10 @@ Route::prefix('v1')->group(function() {
         Route::put('{id}', [GlobalApi\BarangStatusController::class, 'update']);
         Route::get('{id}', [GlobalApi\BarangStatusController::class, 'show']);
         Route::post('', [GlobalApi\BarangStatusController::class, 'store']);
-        Route::get('', [GlobalApi\BarangStatusController::class, 'index']);;
+        Route::get('', [GlobalApi\BarangStatusController::class, 'index']);
+    });
+
+    Route::prefix('histories')->middleware('jwt.auth')->group(function() {
+        Route::get('', [GlobalApi\HistoryController::class, 'index']);
     });
 });

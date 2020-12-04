@@ -11,6 +11,7 @@ use App\Traits\ValidationError;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class BarangController extends Controller
 {
@@ -86,12 +87,13 @@ class BarangController extends Controller
         $validatedData = $validator->validated();
         $validatedData['tanggal'] = Carbon::now()->format('Y-m-d');
         $barang = Barang::create($validatedData);
-        $history = History::create([
-            'user_id'   => $request->user_id,
+        $responseData = $barang->toArray();
+        History::create([
+            'user_id'   => $validatedData['user_id'],
             'barang_id' => $barang['id'],
-            'status'    => $barang->status()->nama
+            'status'    => $barang->status->nama
         ]);
-        return response()->json($barang, 201);
+        return response()->json($responseData, 201);
     }
 
     /**
@@ -134,12 +136,13 @@ class BarangController extends Controller
         $validatedData = $validator->validated();
         $validatedData['tanggal'] = Carbon::now()->format('Y-m-d');
         $barang->update($validatedData);
-        $history = History::create([
-            'user_id'   => $request->user_id,
+        $responseData = $barang->toArray();
+        History::create([
+            'user_id'   => JWTAuth::user()->id,
             'barang_id' => $barang['id'],
-            'status'    => $barang->status()->nama
+            'status'    => $barang->status->nama
         ]);
-        return response()->json($barang, 201);
+        return response()->json($responseData, 201);
     }
 
     /**

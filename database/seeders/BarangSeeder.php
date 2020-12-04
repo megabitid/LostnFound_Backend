@@ -24,7 +24,7 @@ class BarangSeeder extends Seeder
         $faker = Factory::create();
 
         $limit = 5;
-        $statusArray = ['hilang', 'ditemukan', 'didonasikan'];
+        $statusArray = ['hilang', 'ditemukan', 'didonasikan', 'diklaim'];
         foreach ($statusArray as &$status) {
             DB::table('barang_statuses')->insert(
                 [
@@ -62,7 +62,7 @@ class BarangSeeder extends Seeder
                 'email'=>"testemail1@mail.com",
                 'password'=>bcrypt('testpassword1'),
                 'image'=>$faker->imageUrl,
-                'role'=>$faker->numberBetween(0, 2),
+                'role'=>2,
                 'email_verified_at'=>Carbon::now()->format('Y-m-d H:i:s'),
             ]
         );
