@@ -5,11 +5,13 @@ namespace App\Http\Controllers\v1\GlobalApi;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Resource;
 use App\Models\Barang;
+use App\Models\History;
 use App\Traits\Permissions;
 use App\Traits\ValidationError;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class BarangController extends Controller
 {
@@ -29,17 +31,17 @@ class BarangController extends Controller
             'kategori_id'
         ];
         // limit query by specific field. Example: ?id=1
-        foreach($fields as $field){
-            if(!empty($request->$field)){
+        foreach ($fields as $field) {
+            if (!empty($request->$field)) {
                 $query->where($field, '=', $request->$field);
             }
         }
         // order by desc or asc in field specified: use "?orderBy=-id" to order by id descending, and "?orderBy=id" to order by ascending.
-        if(!empty($request->orderBy)){
+        if (!empty($request->orderBy)) {
             $query = $query->orderByRaw($request->orderBy);
         }
         // search text contains in this field.
-        if(!empty($request->search)){
+        if (!empty($request->search)) {
             $searchFields = [
                 'nama_barang',
                 'lokasi',
@@ -48,15 +50,15 @@ class BarangController extends Controller
                 'warna',
                 'merek'
             ];
-            $query->where(function($query) use($request, $searchFields){
+            $query->where(function ($query) use ($request, $searchFields) {
                 $searchWildcard = '%' . $request->search . '%';
-                foreach($searchFields as $field){
+                foreach ($searchFields as $field) {
                     $query->orWhere($field, 'LIKE', $searchWildcard);
                 }
             });
         }
         $barangs = $query->paginate(20);
-        
+
         return Resource::collection($barangs);
     }
 
@@ -69,23 +71,31 @@ class BarangController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'nama_barang'=>'required|string|max:255',
-            'lokasi'=>'required|string',
-            'deskripsi'=>'required|string',
-            'warna'=>'required|string',
-            'merek'=>'required|string',
-            'user_id'=>'required|numeric',
-            'stasiun_id'=>'required|numeric',
-            'status_id'=>'required|numeric',
-            'kategori_id'=>'required|numeric'
+            'nama_barang' => 'required|string|max:255',
+            'lokasi' => 'required|string',
+            'deskripsi' => 'required|string',
+            'warna' => 'required|string',
+            'merek' => 'required|string',
+            'user_id' => 'required|numeric',
+            'stasiun_id' => 'required|numeric',
+            'status_id' => 'required|numeric',
+            'kategori_id' => 'required|numeric'
         ]);
+
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
+
         $validatedData = $validator->validated();
         $validatedData['tanggal'] = Carbon::now()->format('Y-m-d');
         $barang = Barang::create($validatedData);
-        return response()->json($barang, 201);
+        $responseData = $barang->toArray();
+        History::create([
+            'user_id'   => $validatedData['user_id'],
+            'barang_id' => $barang['id'],
+            'status'    => $barang->status->nama
+        ]);
+        return response()->json($responseData, 201);
     }
 
     /**
@@ -112,15 +122,15 @@ class BarangController extends Controller
         $barang = Barang::findOrFail($id);
         Permissions::isOwnerOrAdminOrSuperAdmin($request, $barang->user_id);
         $validator = Validator::make($request->all(), [
-            'nama_barang'=>'required|string|max:255',
-            'lokasi'=>'required|string',
-            'deskripsi'=>'required|string',
-            'warna'=>'required|string',
-            'merek'=>'required|string',
-            'user_id'=>'required|numeric',
-            'stasiun_id'=>'required|numeric',
-            'status_id'=>'required|numeric',
-            'kategori_id'=>'required|numeric'
+            'nama_barang' => 'required|string|max:255',
+            'lokasi' => 'required|string',
+            'deskripsi' => 'required|string',
+            'warna' => 'required|string',
+            'merek' => 'required|string',
+            'user_id' => 'required|numeric',
+            'stasiun_id' => 'required|numeric',
+            'status_id' => 'required|numeric',
+            'kategori_id' => 'required|numeric'
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
@@ -128,7 +138,13 @@ class BarangController extends Controller
         $validatedData = $validator->validated();
         $validatedData['tanggal'] = Carbon::now()->format('Y-m-d');
         $barang->update($validatedData);
-        return response()->json($barang, 201);
+        $responseData = $barang->toArray();
+        History::create([
+            'user_id'   => JWTAuth::user()->id,
+            'barang_id' => $barang['id'],
+            'status'    => $barang->status->nama
+        ]);
+        return response()->json($responseData, 201);
     }
 
     /**
@@ -142,6 +158,6 @@ class BarangController extends Controller
         $barang = Barang::findOrFail($id);
         Permissions::isOwnerOrAdminOrSuperAdmin($request, $barang->user_id);
         $barang->delete();
-        return response()->json(['message'=>'Barang deleted.'], 204);
+        return response()->json(['message' => 'Barang deleted.'], 204);
     }
 }

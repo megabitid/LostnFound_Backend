@@ -15,8 +15,6 @@ use JWTAuth;
 use Validator;
 use App\Traits\ValidationError;
 use Carbon\Carbon;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Mail;
 
 class AuthController extends Controller
 {
