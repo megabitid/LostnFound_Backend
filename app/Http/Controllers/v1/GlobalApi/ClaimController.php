@@ -38,9 +38,9 @@ class ClaimController extends Controller
         $validator =  Validator::make($request->all(), [
             'user_id' => 'required|numeric',
             'barang_id' => 'required|numeric',
-            'alamat' => 'string',
-            'uri_tiket' => 'string',
-            'no_telp' => 'required'
+            'alamat' => 'required|string',
+            'uri_tiket' => 'required|string',
+            'no_telp' => 'required|string'
         ]);
 
         if ($validator->fails()) {
@@ -96,9 +96,9 @@ class ClaimController extends Controller
         $validator =  Validator::make($request->all(), [
             'user_id' => 'required|numeric',
             'barang_id' => 'required|numeric',
-            'alamat' => 'string',
-            'uri_tiket' => 'string',
-            'no_telp' => 'required'
+            'alamat' => 'required|string',
+            'uri_tiket' => 'required|string',
+            'no_telp' => 'required|string'
         ]);
 
         if ($validator->fails()) {
