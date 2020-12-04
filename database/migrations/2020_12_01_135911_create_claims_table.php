@@ -15,11 +15,17 @@ class CreateClaimsTable extends Migration
     {
         Schema::create('claims', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->unsignedBigInteger('barang_id')->nullable();
             $table->text('alamat');
+            $table->string('no_telp');
             $table->string('uri_tiket');
+            $table->boolean('verified')->default(0);
             $table->timestamps();
+            $table->foreignId('user_id')->nullable()
+                ->constrained('users')
+                ->onDelete('cascade');
+            $table->foreignId('barang_id')->nullable()
+                ->constrained('barangs')
+                ->onDelete('cascade');
         });
     }
 

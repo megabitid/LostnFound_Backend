@@ -102,7 +102,12 @@ Route::prefix('v1')->group(function () {
     });
 
     //claims
-    Route::prefix('claim-barang')->middleware('jwt.auth')->group(function () {
+    Route::prefix('claims')->middleware('jwt.auth')->group(function () {
+        Route::delete('{id}', [GlobalApi\ClaimController::class, 'destroy']);
+        Route::put('{id}', [GlobalApi\ClaimController::class, 'update']);
+        Route::put('{id}/verified', [GlobalApi\ClaimController::class, 'updateVerified']);
+        Route::get('{id}', [GlobalApi\ClaimController::class, 'show']);
         Route::post('', [GlobalApi\ClaimController::class, 'store']);
+        Route::get('', [GlobalApi\ClaimController::class, 'index']);
     });
 });
