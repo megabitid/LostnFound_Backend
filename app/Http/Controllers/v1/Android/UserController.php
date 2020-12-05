@@ -23,8 +23,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        Permissions::isAdminOrSuperAdmin($request);
         $users = User::where('role', '=', 0)->paginate(20);
         return UserResource::collection($users);
     }
@@ -35,12 +36,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        $user = User::where('role', '=', 0)->find($id);;
-        if (is_null($user)) {
-            throw new ApiException('User not found.', 404);
-        }
+        $user = User::where('role', '=', 0)->findOrFail($id);
+        Permissions::isOwnerOrAdminOrSuperAdmin($request, $user->id);
         return response()->json($user, 200);
     }
 
@@ -53,11 +52,8 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $user = User::where('role', '=', 0)->find($id);
-        if (is_null($user)) {
-            throw new ApiException('User not found.', 404);
-        }
-        Permissions::isOwner($request, $user->id);
+        $user = User::where('role', '=', 0)->findOrFail($id);
+        Permissions::isOwnerOrSuperAdmin($request, $user->id);
         $validator = Validator::make($request->all(), [
             'nama' => 'required|string',
             'email' => ['required', 'max:254', "regex:{$this::$rfc5322}"],

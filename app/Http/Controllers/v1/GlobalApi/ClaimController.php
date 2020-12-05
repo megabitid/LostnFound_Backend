@@ -5,6 +5,7 @@ namespace App\Http\Controllers\v1\GlobalApi;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Resource;
 use App\Models\Claim;
+use App\Traits\database\QueryBuilder;
 use Illuminate\Http\Request;
 use App\Traits\ValidationError;
 use App\Traits\StringValidator;
@@ -21,7 +22,7 @@ class ClaimController extends Controller
      */
     public function index(Request $request)
     {
-       Permissions::isAdminOrSuperAdmin($request);
+        Permissions::isAdminOrSuperAdmin($request);
         $query = Claim::select('*');
         $fields = [
             'id',
@@ -31,30 +32,18 @@ class ClaimController extends Controller
             'barang_id',
         ];
         // limit query by specific field. Example: ?id=1
-        foreach($fields as $field){
-            if(!empty($request->$field)){
-                $query->where($field, '=', $request->$field);
-            }
-        }
+        $query = QueryBuilder::whereFields($request, $query, $fields);
+
         // order by desc or asc in field specified: use "?orderBy=-created_at" to order by id descending, and "?orderBy=id" to order by ascending.
-        if(!empty($request->orderBy)){
-            $query = $query->orderByRaw($request->orderBy);
-        }
-        // search text contains in this field.
-        if (!empty($request->search)) {
-            $searchFields = [
+        $query = QueryBuilder::orderBy($request, $query);
+        // search text contains in this field.            
+        $searchFields = [
                 'alamat',
                 'no_telp'
             ];
-            $query->where(function ($query) use ($request, $searchFields) {
-                $searchWildcard = '%' . $request->search . '%';
-                foreach ($searchFields as $field) {
-                    $query->orWhere($field, 'LIKE', $searchWildcard);
-                }
-            });
-        }
-       $claims = $query->paginate(20);
-       return Resource::collection($claims);
+        $query = QueryBuilder::searchIn($request, $query, $searchFields);
+        $claims = $query->paginate(20);
+        return Resource::collection($claims);
 
     }
 
