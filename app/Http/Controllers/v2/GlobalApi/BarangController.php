@@ -5,6 +5,7 @@ namespace App\Http\Controllers\v2\GlobalApi;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Resource;
 use App\Models\Barang;
+use App\Models\History;
 use App\Traits\Permissions;
 use App\Traits\ValidationError;
 use Illuminate\Http\Request;
