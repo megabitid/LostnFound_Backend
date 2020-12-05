@@ -9,6 +9,7 @@ use App\Traits\Permissions;
 use App\Traits\ValidationError;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 class BarangController extends Controller
 {
@@ -85,7 +86,13 @@ class BarangController extends Controller
         }
         $validatedData = $validator->validated();
         $barang = Barang::create($validatedData);
-        return response()->json($barang, 201);
+        $responseData = $barang->toArray();
+        History::create([
+            'user_id'   => $validatedData['user_id'],
+            'barang_id' => $barang['id'],
+            'status'    => $barang->status->nama
+        ]);
+        return response()->json($responseData, 201);
     }
 
     /**
@@ -129,7 +136,13 @@ class BarangController extends Controller
         }
         $validatedData = $validator->validated();
         $barang->update($validatedData);
-        return response()->json($barang, 201);
+        $responseData = $barang->toArray();
+        History::create([
+            'user_id'   => JWTAuth::user()->id,
+            'barang_id' => $barang['id'],
+            'status'    => $barang->status->nama
+        ]);
+        return response()->json($responseData, 201);
     }
 
     /**
