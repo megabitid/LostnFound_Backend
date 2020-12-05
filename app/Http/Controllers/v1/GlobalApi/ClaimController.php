@@ -122,7 +122,7 @@ class ClaimController extends Controller
     public function update(Request $request, $id)
     {
         $claim = Claim::findOrFail($id);
-        Permissions::isOwnerOrAdminOrSuperAdmin($request, $id);
+        Permissions::isOwnerOrAdminOrSuperAdmin($request, $claim->user_id);
 
         $validator =  Validator::make($request->all(), [
             'user_id' => 'required|numeric',
@@ -178,7 +178,7 @@ class ClaimController extends Controller
     public function destroy(Request $request, $id)
     {
         $claim = Claim::findOrFail($id);
-        Permissions::isOwnerOrAdminOrSuperAdmin($request, $id);
+        Permissions::isOwnerOrAdminOrSuperAdmin($request, $claim->user_id);
         $claim->delete();
         return response()->json(['message'=>'Claim data deleted.'], 204);
     }
