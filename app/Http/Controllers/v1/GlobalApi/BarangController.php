@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Resources\Resource;
 use App\Models\Barang;
 use App\Models\History;
+use App\Traits\database\QueryBuilder;
 use App\Traits\Permissions;
 use App\Traits\ValidationError;
 use Carbon\Carbon;
@@ -31,34 +32,22 @@ class BarangController extends Controller
             'kategori_id'
         ];
         // limit query by specific field. Example: ?id=1
-        foreach ($fields as $field) {
-            if (!empty($request->$field)) {
-                $query->where($field, '=', $request->$field);
-            }
-        }
+        $query = QueryBuilder::whereFields($request, $query, $fields);
+
         // order by desc or asc in field specified: use "?orderBy=-id" to order by id descending, and "?orderBy=id" to order by ascending.
-        if (!empty($request->orderBy)) {
-            $query = $query->orderByRaw($request->orderBy);
-        }
+        $query = QueryBuilder::orderBy($request, $query);
+
         // search text contains in this field.
-        if (!empty($request->search)) {
-            $searchFields = [
+        $searchFields = [
                 'nama_barang',
                 'lokasi',
                 'tanggal',
                 'deskripsi',
                 'warna',
                 'merek'
-            ];
-            $query->where(function ($query) use ($request, $searchFields) {
-                $searchWildcard = '%' . $request->search . '%';
-                foreach ($searchFields as $field) {
-                    $query->orWhere($field, 'LIKE', $searchWildcard);
-                }
-            });
-        }
+        ];
+        $query = QueryBuilder::searchIn($request, $query, $searchFields);
         $barangs = $query->paginate(20);
-
         return Resource::collection($barangs);
     }
 

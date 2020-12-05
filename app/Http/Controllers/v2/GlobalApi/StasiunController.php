@@ -5,6 +5,7 @@ namespace App\Http\Controllers\v2\GlobalApi;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Resource;
 use App\Models\Stasiun;
+use App\Traits\database\QueryBuilder;
 use App\Traits\Permissions;
 use App\Traits\ValidationError;
 use Illuminate\Http\Request;
@@ -17,9 +18,19 @@ class StasiunController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $stasiuns = Stasiun::paginate(20);
+        $query = Stasiun::select('*');
+
+        // order by desc or asc in field specified: use "?orderBy=-id" to order by id descending, and "?orderBy=id" to order by ascending.
+        $query = QueryBuilder::orderBy($request, $query);
+
+        // search text contains in this field.
+        $searchFields = [
+            'nama',
+        ];
+        $query = QueryBuilder::searchIn($request, $query, $searchFields);
+        $stasiuns = $query->paginate(20);
         return Resource::collection($stasiuns);
     }
     
