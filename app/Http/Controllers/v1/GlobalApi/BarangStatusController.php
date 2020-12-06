@@ -5,6 +5,7 @@ namespace App\Http\Controllers\v1\GlobalApi;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Resource;
 use App\Models\BarangStatus;
+use App\Traits\database\QueryBuilder;
 use App\Traits\Permissions;
 use App\Traits\ValidationError;
 use Illuminate\Http\Request;
@@ -19,7 +20,9 @@ class BarangStatusController extends Controller
      */
     public function index()
     {
-        $barangStatuses = BarangStatus::paginate(20);
+        $query = BarangStatus::select('*');
+        $query = QueryBuilder::orderBy($request, $query);
+        $barangStatuses = $query->paginate(20);
         return Resource::collection($barangStatuses);
     }
 

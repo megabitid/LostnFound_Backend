@@ -6,6 +6,7 @@ use App\Exceptions\ApiException;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
 use App\Models\User;
+use App\Traits\database\QueryBuilder;
 use App\Traits\FirebaseStorage;
 use App\Traits\Permissions;
 use App\Traits\StringValidator;
@@ -24,7 +25,9 @@ class AdminController extends Controller
     public function index(Request $request)
     {
         Permissions::isAdminOrSuperAdmin($request);
-        $users = User::where('role', '>', 0)->paginate(20);
+        $query = User::where('role', '>', 0);
+        $query = QueryBuilder::orderBy($request, $query);
+        $users = $query->paginate(20);
         return UserResource::collection($users);
     }
 

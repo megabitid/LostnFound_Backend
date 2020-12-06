@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Traits\Permissions;
 use App\Traits\ValidationError;
 use App\Exceptions\ApiException;
+use App\Traits\database\QueryBuilder;
 use App\Traits\FirebaseStorage;
 use App\Traits\StringValidator;
 use Validator;
@@ -25,7 +26,9 @@ class UserController extends Controller
     public function index(Request $request)
     {
         Permissions::isAdminOrSuperAdmin($request);
-        $users = User::where('role', '=', 0)->paginate(20);
+        $query = User::where('role', '=', 0);
+        $query = QueryBuilder::orderBy($request, $query);
+        $users = $query->paginate(20);
         return UserResource::collection($users);
     }
 
@@ -52,7 +55,7 @@ class UserController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::where('role','=', 0)->findOrFail($id);
-        Permissions::isOwnerOrSuperAdmin($request, $user->id);
+        Permissions::isOwnerOrAdminOrSuperAdmin($request, $user->id);
         $validator = Validator::make($request->all(), [
             'nama' => 'required|string',
             'email' => ['required', 'max:254', "regex:{$this::$rfc5322}"],

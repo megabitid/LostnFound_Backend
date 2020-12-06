@@ -5,6 +5,7 @@ namespace App\Http\Controllers\v2\GlobalApi;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Resource;
 use App\Models\BarangKategori;
+use App\Traits\database\QueryBuilder;
 use App\Traits\Permissions;
 use App\Traits\ValidationError;
 use Illuminate\Http\Request;
@@ -19,7 +20,9 @@ class BarangKategoriController extends Controller
      */
     public function index()
     {
-        $barangKategoris = BarangKategori::paginate(20);
+        $query = BarangKategori::select('*');
+        $query = QueryBuilder::orderBy($request, $query);
+        $barangKategoris = $query->paginate(20);
         return Resource::collection($barangKategoris);
     }
 
