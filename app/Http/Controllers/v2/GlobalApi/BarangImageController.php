@@ -157,7 +157,7 @@ class BarangImageController extends Controller
     public function destroy(Request $request, $id)
     {
         $barangImage = BarangImage::findOrFail($id);
-        Permissions::isOwnerOrAdminOrSuperAdmin($request, $barangImage->barang()->user_id);
+        Permissions::isOwnerOrAdminOrSuperAdmin($request, $barangImage->barang->user_id);
         FirebaseStorage::imageDelete('barangs/image/' . $barangImage->id);
         $barangImage->delete();
         return response()->json(['message' => 'Image barang deleted successfully'], 204);
