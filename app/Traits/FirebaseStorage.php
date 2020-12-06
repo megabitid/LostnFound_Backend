@@ -2,6 +2,8 @@
 
 namespace App\Traits;
 
+use Google\Cloud\Core\Exception\NotFoundException;
+
 trait FirebaseStorage {
     public static function imageUpload($urlBase64, $name) {
         $storage = app('firebase.storage');
@@ -24,7 +26,12 @@ trait FirebaseStorage {
         $storage = app('firebase.storage');
         $bucket = $storage->getBucket();
         $object = $bucket->object($name);
-        $object->delete();
+        try {
+            $object->delete();
+        } catch (NotFoundException $e) {
+            // just continure if file not found.
+        }
+        
     }
     public static function getUrl($name) {
         $storage = app('firebase.storage');

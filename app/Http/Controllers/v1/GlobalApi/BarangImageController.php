@@ -92,7 +92,7 @@ class BarangImageController extends Controller
     public function update(Request $request, $id)
     {
         $barangImage = BarangImage::findOrFail($id);
-        Permissions::isOwnerOrAdminOrSuperAdmin($request, $barangImage->barang()->user_id);
+        Permissions::isOwnerOrAdminOrSuperAdmin($request, $barangImage->barang->user_id);
         $validator = Validator::make($request->all(), [
             'nama' => 'required|string|max:255',
             'uri' => 'required|string',
@@ -109,7 +109,9 @@ class BarangImageController extends Controller
         $uri = FirebaseStorage::imageUpload($validatedData['uri'], 'barangs/image/' . $barangImage->id);
         $validatedData['uri'] = $uri;
         $barangImage->update($validatedData);
-        return response()->json($barangImage, 201);
+        $responseData = $barangImage->toArray();
+        unset($responseData['barang']); // dirty orm
+        return response()->json($responseData, 201);
     }
 
     /**
@@ -122,7 +124,7 @@ class BarangImageController extends Controller
     public function updatePartial(Request $request, $id)
     {
         $barangImage = BarangImage::findOrFail($id);
-        Permissions::isOwnerOrAdminOrSuperAdmin($request, $barangImage->barang()->user_id);
+        Permissions::isOwnerOrAdminOrSuperAdmin($request, $barangImage->barang->user_id);
         $validator = Validator::make($request->all(), [
             'nama' => 'string|max:255',
             'uri' => 'string',
@@ -141,7 +143,9 @@ class BarangImageController extends Controller
             $validatedData['uri'] = $uri;
         }
         $barangImage->update($validatedData);
-        return response()->json($barangImage, 201);
+        $responseData = $barangImage->toArray();
+        unset($responseData['barang']); // dirty orm
+        return response()->json($responseData, 201);
     }
 
     /**
