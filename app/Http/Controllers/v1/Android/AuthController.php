@@ -11,8 +11,6 @@ use App\Traits\StringValidator;
 use JWTAuth;
 use Validator;
 use App\Traits\ValidationError;
-use Exception;
-use Tymon\JWTAuth\Facades\JWTAuth as FacadesJWTAuth;
 
 class AuthController extends Controller
 {

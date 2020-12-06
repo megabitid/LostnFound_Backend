@@ -91,7 +91,8 @@ class BarangImageController extends Controller
     public function update(Request $request, $id)
     {
         $barangImage = BarangImage::findOrFail($id);
-        Permissions::isOwnerOrAdminOrSuperAdmin($request, $barangImage->barang()->user_id);
+        $barangImageCloned = clone $barangImage; // dirty orm
+        Permissions::isOwnerOrAdminOrSuperAdmin($request, $barangImageCloned->barang->user_id);
         $validator = Validator::make($request->all(), [
             'nama'=>'required|string|max:255',
             'uri'=>'required|string',
@@ -107,8 +108,44 @@ class BarangImageController extends Controller
         }
         $uri = FirebaseStorage::imageUpload($validatedData['uri'], 'barangs/image/'.$barangImage->id);
         $validatedData['uri'] = $uri;
-        $barangImage->update($validatedData);        
-        return response()->json($barangImage, 201);
+        $barangImage->update($validatedData);
+        $responseData = $barangImage->toArray();
+        unset($responseData['barang']); // dirty orm
+        return response()->json($responseData, 201);
+    }
+
+    /**
+     * Update partially the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updatePartial(Request $request, $id)
+    {
+        $barangImage = BarangImage::findOrFail($id);
+        Permissions::isOwnerOrAdminOrSuperAdmin($request, $barangImage->barang->user_id);
+        $validator = Validator::make($request->all(), [
+            'nama' => 'string|max:255',
+            'uri' => 'string',
+            'barang_id' => 'numeric',
+        ]);
+        if ($validator->fails()) {
+            return ValidationError::response($validator->errors());
+        }
+
+        $validatedData = $validator->validated();
+        if (array_key_exists("uri", $validatedData)) {
+            if (StringValidator::isImageBase64($validatedData['uri']) == null) {
+                return ValidationError::response(['uri' => 'You must use urlBase64 image format.']);
+            }
+            $uri = FirebaseStorage::imageUpload($validatedData['uri'], 'barangs/image/' . $barangImage->id);
+            $validatedData['uri'] = $uri;
+        }
+        $barangImage->update($validatedData);
+        $responseData = $barangImage->toArray();
+        unset($responseData['barang']); // dirty orm
+        return response()->json($responseData, 201);
     }
 
     /**
@@ -121,6 +158,7 @@ class BarangImageController extends Controller
     {
         $barangImage = BarangImage::findOrFail($id);
         Permissions::isOwnerOrAdminOrSuperAdmin($request, $barangImage->barang()->user_id);
+        FirebaseStorage::imageDelete('barangs/image/' . $barangImage->id);
         $barangImage->delete();
         return response()->json(['message' => 'Image barang deleted successfully'], 204);
     }
