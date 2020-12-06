@@ -137,11 +137,6 @@ class BarangController extends Controller
         }
         $barang->update($validatedData);
         $responseData = $barang->toArray();
-        History::create([
-            'user_id'   => JWTAuth::user()->id,
-            'barang_id' => $barang['id'],
-            'status'    => $barang->status->nama
-        ]);
         return response()->json($responseData, 201);
     }
 
