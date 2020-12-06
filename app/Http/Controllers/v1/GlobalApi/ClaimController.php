@@ -142,6 +142,46 @@ class ClaimController extends Controller
         return response()->json($claim, 201);
     }
 
+    /**
+     * Update partially the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updatePartial(Request $request, $id)
+    {
+        $claim = Claim::findOrFail($id);
+        Permissions::isOwnerOrAdminOrSuperAdmin($request, $claim->user_id);
+
+        $validator =  Validator::make($request->all(), [
+            'user_id' => 'numeric',
+            'barang_id' => 'numeric',
+            'alamat' => 'string',
+            'uri_tiket' => 'string',
+            'no_telp' => 'string'
+        ]);
+
+        if ($validator->fails()) {
+            return ValidationError::response($validator->errors());
+        }
+
+        $validatedData = $validator->validated();
+
+        if (array_key_exists("uri_tiket", $validatedData)) {
+            if (StringValidator::isImageBase64($validatedData['uri_tiket']) == null) {
+                return ValidationError::response(['uri_tiket' => 'You must use urlBase64 image format.']);
+            }
+            $uriBase64 = $validatedData['uri_tiket'];
+
+            // upload image to firebase
+            $uri = FirebaseStorage::imageUpload($uriBase64, 'claims/ticket_image/' . $claim->id);
+            $validatedData['uri_tiket'] = $uri;
+        }
+        $claim->update($validatedData);
+        return response()->json($claim, 201);
+    }
+
     public function updateVerified(Request $request, $id)
     {
         Permissions::isAdminOrSuperAdmin($request);
@@ -168,6 +208,7 @@ class ClaimController extends Controller
     {
         $claim = Claim::findOrFail($id);
         Permissions::isOwnerOrAdminOrSuperAdmin($request, $claim->user_id);
+        FirebaseStorage::imageDelete('claims/ticket_image/' . $claim->id);
         $claim->delete();
         return response()->json(['message'=>'Claim data deleted.'], 204);
     }

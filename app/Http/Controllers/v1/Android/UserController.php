@@ -8,11 +8,9 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Traits\Permissions;
 use App\Traits\ValidationError;
-use App\Exceptions\ApiException;
 use App\Traits\database\QueryBuilder;
 use App\Traits\FirebaseStorage;
 use App\Traits\StringValidator;
-use Exception;
 use Validator;
 
 
@@ -81,6 +79,54 @@ class UserController extends Controller
         // upload image to storage
         $uri = FirebaseStorage::imageUpload($validatedData['image'], 'users/image/' . $id);
         $validatedData['image'] = $uri;
+        // update database
+        $user->update($validatedData);
+        return response()->json($user, 201);
+    }
+
+    /**
+     * Update partially the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updatePartial(Request $request, $id)
+    {
+        $user = User::where('role', '=', 0)->findOrFail($id);
+        Permissions::isOwnerOrSuperAdmin($request, $user->id);
+        $validator = Validator::make($request->all(), [
+            'nama' => 'string',
+            'email' => ['max:254', "regex:{$this::$rfc5322}"],
+            'password' => 'string',
+            'image' => 'string',
+        ]);
+        if ($validator->fails()) {
+            return ValidationError::response($validator->errors());
+        }
+
+        $validatedData = $validator->validated();
+        if (array_key_exists("image", $validatedData)) {
+            if (StringValidator::isImageBase64($validatedData['image']) == null) {
+                return ValidationError::response(['image' => 'You must use urlBase64 image format.']);
+            }
+            // upload image to storage
+            $uri = FirebaseStorage::imageUpload($validatedData['image'], 'users/image/' . $id);
+            $validatedData['image'] = $uri;
+        }
+
+        if (array_key_exists("email", $validatedData)) {
+            $someUser = User::where('email', '=', $validatedData['email'])->first();
+            if ($someUser) {
+                if ($someUser->id != $user->id) {
+                    return ValidationError::response(['email' => 'Someone already use this email.']);
+                }
+            }
+        }
+
+        if (array_key_exists("password", $validatedData)) {
+            $validatedData['password'] = bcrypt($validatedData['password']);
+        }
         // update database
         $user->update($validatedData);
         return response()->json($user, 201);
