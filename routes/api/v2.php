@@ -16,6 +16,7 @@ Route::prefix('v2')->group(function () {
         Route::middleware('jwt.auth')->prefix('users')->group(function () {
             Route::get('{id}', [AdminController::class, 'show']);
             Route::put('{id}', [AdminController::class, 'update']);
+            Route::patch('{id}', [AdminController::class, 'updatePartial']);
             // Route::delete('{id}', [AdminControllerV2::class, 'destroy']); // to do: soft delete
             Route::get('', [AdminController::class, 'index']);
         });
@@ -35,6 +36,7 @@ Route::prefix('v2')->group(function () {
         Route::middleware('jwt.auth')->prefix('users')->group(function () {
             Route::get('{id}', [UserController::class, 'show']);
             Route::put('{id}', [UserController::class, 'update']);
+            Route::patch('{id}', [UserController::class, 'updatePartial']);
             Route::get('', [UserController::class, 'index']);
         });
         // auth users
@@ -56,6 +58,7 @@ Route::prefix('v2')->group(function () {
     Route::prefix('barang')->middleware('jwt.auth')->group(function () {
         Route::delete('{id}', [GlobalApi\BarangController::class, 'destroy']);
         Route::put('{id}', [GlobalApi\BarangController::class, 'update']);
+        Route::patch('{id}', [GlobalApi\BarangController::class, 'updatePartial']);
         Route::get('{id}', [GlobalApi\BarangController::class, 'show']);
         Route::post('', [GlobalApi\BarangController::class, 'store']);
         Route::get('', [GlobalApi\BarangController::class, 'index']);
@@ -77,6 +80,7 @@ Route::prefix('v2')->group(function () {
     Route::prefix('barang-images')->middleware('jwt.auth')->group(function () {
         Route::delete('{id}', [GlobalApi\BarangImageController::class, 'destroy']);
         Route::put('{id}', [GlobalApi\BarangImageController::class, 'update']);
+        Route::patch('{id}', [GlobalApi\BarangImageController::class, 'updatePartial']);
         Route::get('{id}', [GlobalApi\BarangImageController::class, 'show']);
         Route::post('', [GlobalApi\BarangImageController::class, 'store']);
         Route::get('', [GlobalApi\BarangImageController::class, 'index']);;

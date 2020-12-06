@@ -20,6 +20,12 @@ trait FirebaseStorage {
         $uri = "https://storage.googleapis.com/".$bucket->name()."/".$name;
         return $uri;
     }
+    public static function imageDelete($name) {
+        $storage = app('firebase.storage');
+        $bucket = $storage->getBucket();
+        $object = $bucket->object($name);
+        $object->delete();
+    }
     public static function getUrl($name) {
         $storage = app('firebase.storage');
         $bucket = $storage->getBucket();

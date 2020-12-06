@@ -5,8 +5,11 @@ namespace App\Http\Controllers\v1\GlobalApi;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Resource;
 use App\Models\Barang;
+use App\Models\BarangImage;
+use App\Models\BarangStatus;
 use App\Models\History;
 use App\Traits\database\QueryBuilder;
+use App\Traits\FirebaseStorage;
 use App\Traits\Permissions;
 use App\Traits\ValidationError;
 use Carbon\Carbon;
@@ -125,7 +128,13 @@ class BarangController extends Controller
             return ValidationError::response($validator->errors());
         }
         $validatedData = $validator->validated();
-        $validatedData['tanggal'] = Carbon::now()->format('Y-m-d');
+        if ($validatedData["status_id"] != $barang->status_id){
+            History::create([
+                'user_id'   => JWTAuth::user()->id,
+                'barang_id' => $barang['id'],
+                'status'    => BarangStatus::findOrFail($validatedData['status_id'])->nama
+            ]);
+        }
         $barang->update($validatedData);
         $responseData = $barang->toArray();
         History::create([
@@ -133,6 +142,47 @@ class BarangController extends Controller
             'barang_id' => $barang['id'],
             'status'    => $barang->status->nama
         ]);
+        return response()->json($responseData, 201);
+    }
+
+    /**
+     * Update partially the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updatePartial(Request $request, $id)
+    {
+        $barang = Barang::findOrFail($id);
+        Permissions::isOwnerOrAdminOrSuperAdmin($request, $barang->user_id);
+        $validator = Validator::make($request->all(), [
+            'nama_barang' => 'string|max:255',
+            'lokasi' => 'string',
+            'deskripsi' => 'string',
+            'warna' => 'string',
+            'merek' => 'string',
+            'user_id' => 'numeric',
+            'stasiun_id' => 'numeric',
+            'status_id' => 'numeric',
+            'kategori_id' => 'numeric'
+        ]);
+        if ($validator->fails()) {
+            return ValidationError::response($validator->errors());
+        }
+        
+        $validatedData = $validator->validated();
+        if (array_key_exists("status_id", $validatedData)) {
+            if ($validatedData["status_id"] != $barang->status_id){
+                History::create([
+                    'user_id'   => JWTAuth::user()->id,
+                    'barang_id' => $barang['id'],
+                    'status'    => BarangStatus::findOrFail($validatedData['status_id'])->nama
+                ]);
+            }
+        }
+        $barang->update($validatedData);
+        $responseData = $barang->toArray();
         return response()->json($responseData, 201);
     }
 
@@ -146,6 +196,10 @@ class BarangController extends Controller
     {
         $barang = Barang::findOrFail($id);
         Permissions::isOwnerOrAdminOrSuperAdmin($request, $barang->user_id);
+        $images = $barang->barangimages()->get();
+        foreach ($images as $image) {
+            FirebaseStorage::imageDelete('barangs/image/'. $image->id);
+        }        
         $barang->delete();
         return response()->json(['message' => 'Barang deleted.'], 204);
     }

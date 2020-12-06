@@ -12,7 +12,6 @@ use App\Traits\StringValidator;
 use JWTAuth;
 use Validator;
 use App\Traits\ValidationError;
-use Exception;
 
 class AuthController extends Controller
 {

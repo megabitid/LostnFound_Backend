@@ -112,6 +112,38 @@ class BarangImageController extends Controller
     }
 
     /**
+     * Update partially the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updatePartial(Request $request, $id)
+    {
+        $barangImage = BarangImage::findOrFail($id);
+        Permissions::isOwnerOrAdminOrSuperAdmin($request, $barangImage->barang()->user_id);
+        $validator = Validator::make($request->all(), [
+            'nama' => 'string|max:255',
+            'uri' => 'string',
+            'barang_id' => 'numeric',
+        ]);
+        if ($validator->fails()) {
+            return ValidationError::response($validator->errors());
+        }
+
+        $validatedData = $validator->validated();
+        if (array_key_exists("uri", $validatedData)) {
+            if (StringValidator::isImageBase64($validatedData['uri']) == null) {
+                return ValidationError::response(['uri' => 'You must use urlBase64 image format.']);
+            }
+            $uri = FirebaseStorage::imageUpload($validatedData['uri'], 'barangs/image/' . $barangImage->id);
+            $validatedData['uri'] = $uri;
+        }
+        $barangImage->update($validatedData);
+        return response()->json($barangImage, 201);
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  int  $id
@@ -121,6 +153,7 @@ class BarangImageController extends Controller
     {
         $barangImage = BarangImage::findOrFail($id);
         Permissions::isOwnerOrAdminOrSuperAdmin($request, $barangImage->barang()->user_id);
+        FirebaseStorage::imageDelete('barangs/image/' . $barangImage->id);
         $barangImage->delete();
         return response()->json(['message' => 'Image barang deleted successfully'], 204);
     }
