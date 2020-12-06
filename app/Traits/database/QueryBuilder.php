@@ -21,6 +21,8 @@ trait QueryBuilder {
             } else {
                 $query = $query->orderBy($request->orderBy, 'ASC');
             }
+        } else {
+            $query = $query->orderBy('id', 'ASC');
         }
         return $query;
     }
