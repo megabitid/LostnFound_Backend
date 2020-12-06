@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use Laravel\Socialite\Facades\Socialite;
 use Google_Client;
+use Tymon\JWTAuth\Facades\JWTAuth;
 
 // reference https://www.codesenior.com/en/tutorial/Php-Laravel-Socialite-And-Android-Google-Sign-In-Operation
 class Oauth2Controller extends Controller
@@ -68,8 +69,10 @@ class Oauth2Controller extends Controller
         // Auth success! give him jwt token.
         $user=User::where('email','=',$userData['email'])->first();
         $jwtToken = auth('api')->login($user);
+        $exp = JWTAuth::setToken($jwtToken)->getPayload()->get('exp'); 
         $responseData = $user->toArray()+[
-            'token'=>$jwtToken
+            'token'=>$jwtToken,
+            'exp'=>$exp
         ];
         return response()->json($responseData, $statusCode);
     }
