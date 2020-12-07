@@ -18,7 +18,7 @@ class BarangStatusController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $query = BarangStatus::select('*');
         $query = QueryBuilder::orderBy($request, $query);
