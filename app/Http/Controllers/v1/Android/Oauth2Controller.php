@@ -15,6 +15,7 @@ use Tymon\JWTAuth\Facades\JWTAuth;
 // reference https://www.codesenior.com/en/tutorial/Php-Laravel-Socialite-And-Android-Google-Sign-In-Operation
 class Oauth2Controller extends Controller
 {
+    private static $JWT_TTL = 60*24*30;
     // if you use xampp you might find error when hit handleGoogleCallback
     // go to https://stackoverflow.com/a/55263864/11683936
     public function redirectToGoogle()
@@ -68,10 +69,10 @@ class Oauth2Controller extends Controller
 
         // Auth success! give him jwt token.
         $user=User::where('email','=',$userData['email'])->first();
-        $jwtToken = auth('api')->login($user);
-        $exp = JWTAuth::setToken($jwtToken)->getPayload()->get('exp'); 
+        $token = auth('api')->setTTL($this::$JWT_TTL)->login($user); 
+        $exp = JWTAuth::setToken($token)->getPayload()->get('exp'); 
         $responseData = $user->toArray()+[
-            'token'=>$jwtToken,
+            'token'=>$token,
             'exp'=>$exp
         ];
         return response()->json($responseData, $statusCode);
