@@ -29,6 +29,9 @@ class HistoryController extends Controller
         // limit query by specific field. Example: ?id=1
         $query = QueryBuilder::whereFields($request, $query, $fields);
 
+        // limit query by how many days
+        $query = QueryBuilder::limitDay($request, $query);
+
         // order by desc or asc in field specified: use "?orderBy=-id" to order by id descending, and "?orderBy=id" to order by ascending.
         $query = QueryBuilder::orderBy($request, $query);
         $histories = $query->paginate(20);
