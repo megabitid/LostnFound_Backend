@@ -5,6 +5,10 @@ namespace App\Traits;
 use Google\Cloud\Core\Exception\NotFoundException;
 
 trait FirebaseStorage {
+    // google cloud storage permission work around
+    // signedUrl seem to be best to work with
+    // you can still add ACL for each user who responsible for this object.
+    // https://github.com/googleapis/nodejs-storage/issues/697#issuecomment-610603232
     public static function imageUpload($urlBase64, $name) {
         $storage = app('firebase.storage');
         $bucket = $storage->getBucket();
