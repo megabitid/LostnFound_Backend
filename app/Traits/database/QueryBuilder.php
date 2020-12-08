@@ -2,6 +2,8 @@
 
 namespace App\Traits\database;
 
+use Illuminate\Support\Carbon;
+
 trait QueryBuilder {
     public static function whereFields($request, $query, $fields) {
         foreach($fields as $field){
@@ -23,6 +25,14 @@ trait QueryBuilder {
             }
         } else {
             $query = $query->orderBy('id', 'ASC');
+        }
+        return $query;
+    }
+
+    public static function limitDay($request, $query) {
+        if(!empty($request->limitDay)) {
+            $date = Carbon::today()->subDays($request->limitDay);
+            $query = $query->where('created_at', '>=', $date);
         }
         return $query;
     }
