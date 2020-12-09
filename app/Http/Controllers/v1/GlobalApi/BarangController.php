@@ -50,6 +50,7 @@ class BarangController extends Controller
                 'merek'
         ];
         $query = QueryBuilder::searchIn($request, $query, $searchFields);
+        $query = $query->with('stasiun');
         $barangs = QueryBuilder::paginate($request, $query);
         return Resource::collection($barangs);
     }
@@ -98,7 +99,7 @@ class BarangController extends Controller
      */
     public function show($id)
     {
-        $barang = Barang::findOrFail($id);
+        $barang = Barang::with('stasiun')->findOrFail($id);
         return response()->json($barang, 200);
     }
 
