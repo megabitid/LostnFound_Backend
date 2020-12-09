@@ -10,6 +10,7 @@ use App\Traits\Permissions;
 use App\Traits\ValidationError;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Traits\database\Paginator;
 
 class StasiunController extends Controller
 {
@@ -30,7 +31,7 @@ class StasiunController extends Controller
             'nama',
         ];
         $query = QueryBuilder::searchIn($request, $query, $searchFields);
-        $stasiuns = QueryBuilder::paginate($request, $query);
+        $stasiuns = Paginator::paginate($request, $query);
         return Resource::collection($stasiuns);
     }
     

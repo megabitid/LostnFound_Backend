@@ -13,6 +13,7 @@ use App\Traits\StringValidator;
 use App\Traits\ValidationError;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Traits\database\Paginator;
 
 class BarangImageController extends Controller
 {
@@ -34,7 +35,7 @@ class BarangImageController extends Controller
         // order by desc or asc in field specified: use "?orderBy=-id" to order by id descending, and "?orderBy=id" to order by ascending.
         $query = QueryBuilder::orderBy($request, $query);
 
-        $barangImages = QueryBuilder::paginate($request, $query);
+        $barangImages = Paginator::paginate($request, $query);
         return Resource::collection($barangImages);
     }
 
