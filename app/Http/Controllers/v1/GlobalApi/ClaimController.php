@@ -42,7 +42,7 @@ class ClaimController extends Controller
                 'no_telp'
             ];
         $query = QueryBuilder::searchIn($request, $query, $searchFields);
-        $claims = $query->paginate(20);
+        $claims = QueryBuilder::paginate($request, $query);
         return Resource::collection($claims);
 
     }

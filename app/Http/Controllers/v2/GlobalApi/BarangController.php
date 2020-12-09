@@ -48,7 +48,7 @@ class BarangController extends Controller
                 'merek'
         ];
         $query = QueryBuilder::searchIn($request, $query, $searchFields);
-        $barangs = $query->paginate(20);
+        $barangs = QueryBuilder::paginate($request, $query);
         return Resource::collection($barangs);
     }
 
