@@ -12,6 +12,7 @@ use App\Traits\StringValidator;
 use App\Traits\FirebaseStorage;
 use Validator;
 use App\Traits\Permissions;
+use App\Traits\database\Paginator;
 
 class ClaimController extends Controller
 {
@@ -43,7 +44,7 @@ class ClaimController extends Controller
             ];
         $query = QueryBuilder::searchIn($request, $query, $searchFields);
         $query = $query->with('barang:id,nama_barang');
-        $claims = QueryBuilder::paginate($request, $query);
+        $claims = Paginator::paginate($request, $query);
         return Resource::collection($claims);
 
     }

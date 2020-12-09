@@ -39,11 +39,6 @@ trait QueryBuilder {
         return $query;
     }
 
-    public static function paginate($request, $query, $per_page=20) {
-        $query = $query->paginate($per_page)->appends($request->query());
-        return $query;
-    }
-
     public static function limitDay($request, $query) {
         if(!empty($request->limitDay)) {
             $date = Carbon::today()->subDays($request->limitDay);

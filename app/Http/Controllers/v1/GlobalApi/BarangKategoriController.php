@@ -10,6 +10,7 @@ use App\Traits\Permissions;
 use App\Traits\ValidationError;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Traits\database\Paginator;
 
 class BarangKategoriController extends Controller
 {
@@ -22,7 +23,7 @@ class BarangKategoriController extends Controller
     {
         $query = BarangKategori::select('*');
         $query = QueryBuilder::orderBy($request, $query);
-        $barangKategoris = QueryBuilder::paginate($request, $query);
+        $barangKategoris = Paginator::paginate($request, $query);
         return Resource::collection($barangKategoris);
     }
 

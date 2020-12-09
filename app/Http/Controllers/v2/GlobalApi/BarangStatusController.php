@@ -10,6 +10,7 @@ use App\Traits\Permissions;
 use App\Traits\ValidationError;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Traits\database\Paginator;
 
 class BarangStatusController extends Controller
 {
@@ -22,7 +23,7 @@ class BarangStatusController extends Controller
     {
         $query = BarangStatus::select('*');
         $query = QueryBuilder::orderBy($request, $query);
-        $barangStatuses = QueryBuilder::paginate($request, $query);
+        $barangStatuses = Paginator::paginate($request, $query);
         return Resource::collection($barangStatuses);
     }
 

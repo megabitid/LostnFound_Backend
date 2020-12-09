@@ -8,6 +8,7 @@ use App\Models\History;
 use App\Traits\database\QueryBuilder;
 use App\Traits\Permissions;
 use Illuminate\Http\Request;
+use App\Traits\database\Paginator;
 
 class HistoryController extends Controller
 {
@@ -34,7 +35,7 @@ class HistoryController extends Controller
 
         // order by desc or asc in field specified: use "?orderBy=-id" to order by id descending, and "?orderBy=id" to order by ascending.
         $query = QueryBuilder::orderBy($request, $query);
-        $histories = QueryBuilder::paginate($request, $query);
+        $histories = Paginator::paginate($request, $query);
         return Resource::collection($histories);
     }
 }

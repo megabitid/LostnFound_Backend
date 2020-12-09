@@ -11,6 +11,7 @@ use App\Traits\ValidationError;
 use App\Traits\database\QueryBuilder;
 use App\Traits\FirebaseStorage;
 use App\Traits\StringValidator;
+use App\Traits\database\Paginator;
 use Validator;
 
 
@@ -27,7 +28,16 @@ class UserController extends Controller
         Permissions::isAdminOrSuperAdmin($request);
         $query = User::where('role', '=', 0);
         $query = QueryBuilder::orderBy($request, $query);
-        $users = QueryBuilder::paginate($request, $query);
+        
+        $paginator = Paginator::paginate($request, $query);
+        $excludeFields = [
+            'nip',
+            'stasiun_id',
+            'role',
+            'created_at',
+            'updated_at'
+        ];
+        $users = Paginator::exclude($paginator, $excludeFields);
         return UserResource::collection($users);
     }
 
@@ -41,6 +51,12 @@ class UserController extends Controller
     {
         $user = User::where('role','=', 0)->findOrFail($id);
         Permissions::isOwnerOrAdminOrSuperAdmin($request, $user->id);
+        $excludeFields = [
+            'nip',
+            'stasiun_id',
+            'role',
+        ];
+        $user = $user->makeHidden($excludeFields);
         return response()->json($user, 200);
     }
 

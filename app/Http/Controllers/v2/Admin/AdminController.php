@@ -12,6 +12,7 @@ use App\Traits\StringValidator;
 use App\Traits\ValidationError;
 use Validator;
 use Illuminate\Http\Request;
+use App\Traits\database\Paginator;
 
 class AdminController extends Controller
 {
@@ -26,7 +27,16 @@ class AdminController extends Controller
         $query = User::where('role', '>', 0);
         $query = QueryBuilder::orderBy($request, $query);
         $query = QueryBuilder::onlyTrashed($request, $query);
-        $users = QueryBuilder::paginate($request, $query);
+
+
+        $paginator = Paginator::paginate($request, $query);
+        $excludeFields = [
+            'email',
+            'email_verified_at',
+            'created_at',
+            'updated_at'
+        ];
+        $users = Paginator::exclude($paginator, $excludeFields);
         return UserResource::collection($users);
     }
 
@@ -40,6 +50,12 @@ class AdminController extends Controller
     {
         $user = User::where('role','>', 0)->findOrFail($id);
         Permissions::isOwnerOrSuperAdmin($request, $user->id);
+
+        $excludeFields = [
+            'email',
+            'email_verified_at'
+        ];
+        $user = $user->makeHidden($excludeFields);
         return response()->json($user, 200);
     }
 

@@ -15,6 +15,7 @@ use App\Traits\ValidationError;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\Traits\database\Paginator;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
 class BarangController extends Controller
@@ -51,7 +52,17 @@ class BarangController extends Controller
         ];
         $query = QueryBuilder::searchIn($request, $query, $searchFields);
         $query = $query->with('stasiun');
-        $barangs = QueryBuilder::paginate($request, $query);
+
+
+        // paginate
+        $paginator = Paginator::paginate($request, $query);
+        $excludeFields = [
+            'stasiun_id',
+            'deskripsi',
+            'created_at',
+            'updated_at',
+        ];
+        $barangs = Paginator::exclude($paginator, $excludeFields);
         return Resource::collection($barangs);
     }
 
@@ -99,7 +110,12 @@ class BarangController extends Controller
      */
     public function show($id)
     {
-        $barang = Barang::with('stasiun')->findOrFail($id);
+        $barang = Barang::with(['stasiun','kategori'])->findOrFail($id);
+        $excludeFields = [
+            'stasiun_id',
+            'kategori_id',
+        ];
+        $barang = $barang->makeHidden($excludeFields);
         return response()->json($barang, 200);
     }
 
