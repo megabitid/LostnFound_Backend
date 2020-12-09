@@ -16,7 +16,9 @@ Route::prefix('v2')->group(function () {
         Route::middleware('jwt.auth')->prefix('users')->group(function () {
             Route::get('{id}', [AdminController::class, 'show']);
             Route::put('{id}', [AdminController::class, 'update']);
+            Route::delete('{id}', [AdminController::class, 'delete']);
             Route::patch('{id}', [AdminController::class, 'updatePartial']);
+            Route::patch('{id}/restore', [AdminController::class, 'restore']);
             // Route::delete('{id}', [AdminControllerV2::class, 'destroy']); // to do: soft delete
             Route::get('', [AdminController::class, 'index']);
         });
