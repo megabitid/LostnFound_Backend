@@ -54,7 +54,8 @@ class AuthController extends Controller
             'nip' => 'required|unique:users|string',
             'password' => 'required|string',
             'image'=>'required|string',
-            'stasiun_id'=>'numeric'
+            'stasiun_id'=>'numeric',
+            'role'=>'numeric|max:2'
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
@@ -67,7 +68,9 @@ class AuthController extends Controller
         $validatedData['password'] = bcrypt($validatedData['password']);
         $base64 = $validatedData['image'];
         $validatedData['image'] = "";
-        $validatedData['role'] = 1; // regular admin.
+        if (!array_key_exists('role', $validatedData)) {
+            $validatedData['role'] = 1; // regular admin.
+        }
         $user = User::create($validatedData);
         // upload image to storage
         $uri = FirebaseStorage::imageUpload($base64, 'users/image/'.$user->id);
