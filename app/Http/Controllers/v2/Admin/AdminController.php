@@ -26,7 +26,7 @@ class AdminController extends Controller
         $query = User::where('role', '>', 0);
         $query = QueryBuilder::orderBy($request, $query);
         $query = QueryBuilder::onlyTrashed($request, $query);
-        $users = $query->paginate(20);
+        $users = QueryBuilder::paginate($request, $query);
         return UserResource::collection($users);
     }
 

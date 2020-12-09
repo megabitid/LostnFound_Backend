@@ -22,7 +22,7 @@ class BarangStatusController extends Controller
     {
         $query = BarangStatus::select('*');
         $query = QueryBuilder::orderBy($request, $query);
-        $barangStatuses = $query->paginate(20);
+        $barangStatuses = QueryBuilder::paginate($request, $query);
         return Resource::collection($barangStatuses);
     }
 

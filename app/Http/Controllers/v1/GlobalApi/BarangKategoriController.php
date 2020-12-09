@@ -22,7 +22,7 @@ class BarangKategoriController extends Controller
     {
         $query = BarangKategori::select('*');
         $query = QueryBuilder::orderBy($request, $query);
-        $barangKategoris = $query->paginate(20);
+        $barangKategoris = QueryBuilder::paginate($request, $query);
         return Resource::collection($barangKategoris);
     }
 

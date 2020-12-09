@@ -34,7 +34,7 @@ class BarangImageController extends Controller
         // order by desc or asc in field specified: use "?orderBy=-id" to order by id descending, and "?orderBy=id" to order by ascending.
         $query = QueryBuilder::orderBy($request, $query);
 
-        $barangImages = $query->paginate(20);
+        $barangImages = QueryBuilder::paginate($request, $query);
         return Resource::collection($barangImages);
     }
 
