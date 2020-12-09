@@ -42,6 +42,7 @@ class ClaimController extends Controller
                 'no_telp'
             ];
         $query = QueryBuilder::searchIn($request, $query, $searchFields);
+        $query = $query->with('barang:id,nama_barang');
         $claims = QueryBuilder::paginate($request, $query);
         return Resource::collection($claims);
 
@@ -95,7 +96,7 @@ class ClaimController extends Controller
      */
     public function show(Request $request, $id)
     {
-        $claim = Claim::findOrFail($id);
+        $claim = Claim::with('barang:id,nama_barang')->findOrFail($id);
         Permissions::isOwnerOrAdminOrSuperAdmin($request, $claim->user_id);
         return response()->json($claim);
         
