@@ -59,7 +59,8 @@ class AdminController extends Controller
             'nip' => 'required|string',
             'password' => 'required|string',
             'image'=>'required|string',
-            'stasiun_id'=>'numeric'
+            'stasiun_id'=>'numeric',
+            'role'=>'numeric'
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
@@ -67,6 +68,10 @@ class AdminController extends Controller
         $validatedData = $validator->validated();
         if(StringValidator::isImageBase64($validatedData['image']) == null) {
             return ValidationError::response(['image'=>'You must use urlBase64 image format.']);
+        }
+
+        if(array_key_exists('role', $validatedData)) {
+            Permissions::isSuperAdmin($request);
         }
 
         $someUser = User::where('nip', '=', $validatedData['nip'])->first();
@@ -101,12 +106,16 @@ class AdminController extends Controller
             'password' => 'string',
             'stasiun_id'=>'numeric',
             'image'=>'string',
+            'role'=>'numeric'
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
         
         $validatedData = $validator->validated();
+        if(array_key_exists('role', $validatedData)) {
+            Permissions::isSuperAdmin($request);
+        }
         if (array_key_exists("image", $validatedData)) {
             if(StringValidator::isImageBase64($validatedData['image']) == null) {
                 return ValidationError::response(['image'=>'You must use urlBase64 image format.']);
