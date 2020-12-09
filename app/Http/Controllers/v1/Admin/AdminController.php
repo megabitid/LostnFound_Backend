@@ -25,6 +25,7 @@ class AdminController extends Controller
         Permissions::isAdminOrSuperAdmin($request);
         $query = User::where('role', '>', 0);
         $query = QueryBuilder::orderBy($request, $query);
+        $query = QueryBuilder::onlyTrashed($request, $query);
         $users = $query->paginate(20);
         return UserResource::collection($users);
     }
@@ -37,7 +38,7 @@ class AdminController extends Controller
      */
     public function show(Request $request, $id)
     {
-        $user = User::where('role','>', 0)->findOrFail($id);;
+        $user = User::where('role','>', 0)->findOrFail($id);
         Permissions::isOwnerOrSuperAdmin($request, $user->id);
         return response()->json($user, 200);
     }
@@ -128,5 +129,19 @@ class AdminController extends Controller
         // update database
         $user->update($validatedData);
         return response()->json($user, 201);
+    }
+
+    public function delete(Request $request, $id) {
+        Permissions::isSuperAdmin($request);
+        $user = User::where('role','>', 0)->findOrFail($id);
+        $user->delete();
+        return response()->json(['message'=>'User deleted.'], 204);
+    }
+
+    public function restore(Request $request, $id) {
+        Permissions::isSuperAdmin($request);
+        $deletedUser = User::onlyTrashed()->where('role','>',0)->findOrFail($id);
+        $deletedUser->restore();
+        return response()->json(['message'=>'User restored.']);
     }
 }

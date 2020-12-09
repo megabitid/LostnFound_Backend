@@ -29,6 +29,16 @@ trait QueryBuilder {
         return $query;
     }
 
+    public static function onlyTrashed($request, $query) {
+        if(!empty($request->onlyTrashed)) {
+            $option = $request->onlyTrashed === "true" ? true:false;
+            if ($option) {
+                $query = $query->onlyTrashed();
+            }
+        }
+        return $query;
+    }
+
     public static function limitDay($request, $query) {
         if(!empty($request->limitDay)) {
             $date = Carbon::today()->subDays($request->limitDay);
