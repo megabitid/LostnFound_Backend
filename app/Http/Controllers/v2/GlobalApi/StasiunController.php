@@ -30,7 +30,7 @@ class StasiunController extends Controller
             'nama',
         ];
         $query = QueryBuilder::searchIn($request, $query, $searchFields);
-        $stasiuns = $query->paginate(20);
+        $stasiuns = QueryBuilder::paginate($request, $query);
         return Resource::collection($stasiuns);
     }
     
