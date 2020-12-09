@@ -60,7 +60,7 @@ class AdminController extends Controller
             'password' => 'required|string',
             'image'=>'required|string',
             'stasiun_id'=>'numeric',
-            'role'=>'numeric'
+            'role'=>'numeric|max:2'
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
@@ -106,7 +106,7 @@ class AdminController extends Controller
             'password' => 'string',
             'stasiun_id'=>'numeric',
             'image'=>'string',
-            'role'=>'numeric'
+            'role'=>'numeric|max:2'
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
