@@ -25,6 +25,7 @@ class AdminController extends Controller
         Permissions::isSuperAdmin($request);
         $query = User::where('role', '>', 0);
         $query = QueryBuilder::orderBy($request, $query);
+        $query = QueryBuilder::onlyTrashed($request, $query);
         $users = $query->paginate(20);
         return UserResource::collection($users);
     }
