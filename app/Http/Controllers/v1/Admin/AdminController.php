@@ -59,6 +59,7 @@ class AdminController extends Controller
             'nip' => 'required|string',
             'password' => 'required|string',
             'image'=>'required|string',
+            'stasiun_id'=>'numeric'
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
@@ -98,6 +99,7 @@ class AdminController extends Controller
             'nama' => 'string',
             'nip' => 'string',
             'password' => 'string',
+            'stasiun_id'=>'numeric',
             'image'=>'string',
         ]);
         if ($validator->fails()) {

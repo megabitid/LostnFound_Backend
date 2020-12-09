@@ -49,6 +49,7 @@ class AuthController extends Controller
             'nip' => 'required|unique:users|string',
             'password' => 'required|string',
             'image'=>'required|string',
+            'stasiun_id'=>'numeric'
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
