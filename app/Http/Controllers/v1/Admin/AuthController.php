@@ -81,6 +81,9 @@ class AuthController extends Controller
         return response()->json($responseData, 201);
     }
 
+    /**
+     * @unauthenticated
+     */
     public function refreshToken()
     {
         $token = auth('api')->setTTL($this::$JWT_TTL)->refresh(); 
@@ -92,6 +95,10 @@ class AuthController extends Controller
         return response()->json($responseData, 200);
     }
 
+
+    /**
+     * @unauthenticated
+     */
     public function logout()
     {
         auth('api')->logout();
