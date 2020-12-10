@@ -50,7 +50,7 @@ jobs:
           heroku config:add APP_ENV=production
           heroku config:add APP_KEY=${{ secrets.APP_KEY }}
           heroku config:add APP_DEBUG=false
-          heroku config:add APP_URL=${{ secrets.APP_URL }}
+          heroku config:add APP_URL=${{ secrets.APP_URL_TEST }}
           heroku config:add DB_CONNECTION=pgsql
           heroku config:add DB_HOST=${{ secrets.DB_HOST_TEST }}
           heroku config:add DB_PORT=${{ secrets.DB_PORT_TEST }}
