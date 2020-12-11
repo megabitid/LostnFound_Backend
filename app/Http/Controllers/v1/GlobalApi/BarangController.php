@@ -22,7 +22,7 @@ use Tymon\JWTAuth\Facades\JWTAuth;
  * 
  * ### API for Manage Barang.
  * 
- * This API is used to manage barang. 
+ * This API is used to managing barang. 
  * Including barang hilang, ditemukan, didonasikan, diklaim; 
  * depending with its status.
  */

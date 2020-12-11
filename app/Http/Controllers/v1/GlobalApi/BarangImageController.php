@@ -18,7 +18,7 @@ use App\Traits\database\Paginator;
 /** 
  * @group v1 - Barang Image
  * 
- * ### API for Manage Barang Image.
+ * ### API for Managing Barang Image.
  * 
  * This API is used to manage barang image. 
  * A barang can have multiple images. 
@@ -26,7 +26,7 @@ use App\Traits\database\Paginator;
 class BarangImageController extends Controller
 {
     /**
-     * Get List Barnag Image
+     * Get List Barang Image
      * 
      * ### Barang Image parameter query supported:
      * * id

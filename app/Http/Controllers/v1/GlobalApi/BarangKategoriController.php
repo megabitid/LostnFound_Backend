@@ -15,7 +15,7 @@ use App\Traits\database\Paginator;
 /** 
  * @group v1 - Barang Kategori
  * 
- * ### API for Manage Barang Kategori.
+ * ### API for Managing Barang Kategori.
  * 
  * This API is used to manage barang kategori. 
  * A barang can have only one category. 
@@ -23,7 +23,7 @@ use App\Traits\database\Paginator;
 class BarangKategoriController extends Controller
 {
     /**
-     * Get List Barnag Kategori
+     * Get List Barang Kategori
      * 
      * ### orderBy query supported fields:
      * * All field of barang kategori detail
@@ -116,7 +116,7 @@ class BarangKategoriController extends Controller
     /**
      * Update Barang Kategori.
      * 
-     * Barang kategori can be added using this API.
+     * Barang kategori can be updated using this API.
      * 
      * @urlParam id integer required The id of barang kategori. Example: 6 
      * 
