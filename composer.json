@@ -15,10 +15,12 @@
         "fruitcake/laravel-cors": "^2.0",
         "google/apiclient": "^2.8",
         "guzzlehttp/guzzle": "^7.0.1",
+        "knuckleswtf/scribe": "^2.4",
         "kreait/laravel-firebase": "^3.0",
         "laravel/framework": "^8.12",
         "laravel/socialite": "^5.1",
         "laravel/tinker": "^2.5",
+        "symfony/yaml": "^5.2",
         "tymon/jwt-auth": "dev-develop"
     },
     "require-dev": {

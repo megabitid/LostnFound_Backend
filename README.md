@@ -29,3 +29,11 @@ composer update && composer install
   php artisan serve
   ```
 * The development server will run on [http://localhost:8000](http://localhost:8000)
+* Generate documentation.
+  ```bash
+  php artisan scribe:generate
+  ```
+
+  Go to [http://localhost:8000/docs](http://localhost:8000/docs) to view documentation.
+
+  https://laracasts.com/discuss/channels/laravel/how-to-apply-https-to-the-helpers-asset-and-url
