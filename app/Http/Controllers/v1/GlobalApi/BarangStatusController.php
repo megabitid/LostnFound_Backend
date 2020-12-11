@@ -12,12 +12,31 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Traits\database\Paginator;
 
+/** 
+ * @group v1 - Barang Status
+ * 
+ * ### API for Managing Barang Status.
+ * 
+ * This API is used to manage barang status. 
+ * A barang can have only one status. 
+ */
 class BarangStatusController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Get List Barang Status
+     * 
+     * ### orderBy query supported fields:
+     * * All field of barang status detail
+     *       
+     * <aside class="warning"> We still use limit offset pagination. In future will be replaced with cursor based pagination.</aside>
+     * 
+     * @queryParam orderBy string Apply ordering based on specific field. 
+     *              Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending).
+     *              No-example
+     * 
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
      */
     public function index(Request $request)
     {
@@ -30,10 +49,30 @@ class BarangStatusController extends Controller
 
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * Add Barang Status.
+     * 
+     * Barang status can be added using this API.
+     * 
+     * @bodyParam nama string required Nama status. Example: ditemukan
+     * 
+     * @response status=201 scenario="success" {
+     *  "nama": "ditemukan",
+     *  "id": 4
+     * }
+     * @response status=400 scenario="bad request" {
+     *  "message": "Validation Error",
+     *  "errors": {
+     *      "nama": [
+     *          "The nama field is required."
+     *      ]
+     *  }
+     * }
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
+     * @response status=403 scenario="not admin" {
+     *  "message": "You must be admin or super admin to do this."
+     * } 
      */
     public function store(Request $request)
     {
@@ -51,10 +90,22 @@ class BarangStatusController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Get Detail Barang Status.
+     * 
+     * Barang status detail can be retrieved using this API.
+     * 
+     * @urlParam id integer required The id of barang status. Example: 4
+     * 
+     * @response status=200 scenario="success" {
+     *  "id": 4
+     *  "nama": "ditemukan",
+     * }
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
+     * @response status=404 scenario="data not found" {
+     *  "message": "Not Found"
+     * }
      */
     public function show($id)
     {
@@ -64,11 +115,35 @@ class BarangStatusController extends Controller
 
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Update Barang Status.
+     * 
+     * Barang status can be updated using this API.
+     * 
+     * @urlParam id integer required The id of barang status. Example: 4
+     * 
+     * @bodyParam nama string required Nama status. Example: dijual
+     * 
+     * @response status=201 scenario="success" {
+     *  "id": 4
+     *  "nama": "dijual",
+     * }
+     * @response status=400 scenario="bad request" {
+     *  "message": "Validation Error",
+     *  "errors": {
+     *      "nama": [
+     *          "The nama field is required."
+     *      ]
+     *  }
+     * }
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
+     * @response status=403 scenario="not admin" {
+     *  "message": "You must be admin or super admin to do this."
+     * } 
+     * @response status=404 scenario="data not found" {
+     *  "message": "Not Found"
+     * } 
      */
     public function update(Request $request, $id)
     {
@@ -87,10 +162,25 @@ class BarangStatusController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Delete Barang Status.
+     * 
+     * Barang status can be deleted using this API.
+     * 
+     * @urlParam id integer required The id of barang status. Example: 4
+     * 
+     * @response status=204 scenario="delete success" {
+     *  "message": "Status barang deleted successfully"
+     * } 
+     * }
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
+     * @response status=403 scenario="not admin" {
+     *  "message": "You must be admin or super admin to do this."
+     * } 
+     * @response status=404 scenario="data not found" {
+     *  "message": "Not Found"
+     * } 
      */
     public function destroy(Request $request, $id)
     {

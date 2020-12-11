@@ -22,9 +22,9 @@ use Tymon\JWTAuth\Facades\JWTAuth;
  * 
  * ### API for Manage Barang.
  * 
- * This API is used to manage barang. 
+ * This API is used to managing barang. 
  * Including barang hilang, ditemukan, didonasikan, diklaim; 
- * depending with it's status.
+ * depending with its status.
  */
 class BarangController extends Controller
 {
@@ -41,7 +41,7 @@ class BarangController extends Controller
      * ### orderBy query supported fields:
      * * All field of barang detail
      * 
-     * ### search query will search string inside theese fields:
+     * ### search query will search string inside these fields:
      * * nama_barang
      * * lokasi
      * * tanggl
@@ -125,7 +125,7 @@ class BarangController extends Controller
      * @bodyParam stasiun_id integer required id Stasiun barang. Example: 4
      * @bodyParam kategori_id integer required id Kategori barang. Example: 3
      * 
-     * @response status=201 scenario="update success" {
+     * @response status=201 scenario="success" {
      *  "id": 3,
      *  "nama_barang": "Clair Rowe",
      *  "tanggal": "2020-12-04",

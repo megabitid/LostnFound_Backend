@@ -12,12 +12,33 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Traits\database\Paginator;
 
+/** 
+ * @group v1 - Stasiun
+ * 
+ * ### API for Managing Stasiun.
+ * 
+ * This API is used to manage stasiun. 
+ * An user/barang can only have one stasiun.
+ */
 class StasiunController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Get List Stasiun
+     * 
+     * ### orderBy query supported fields:
+     * * All field of stasiun detail
+     *       
+     * ### search query will search string inside these fields:
+     * * nama
+     * <aside class="warning"> We still use limit offset pagination. In future will be replaced with cursor based pagination.</aside>
+     * 
+     * @queryParam orderBy string Apply ordering based on specific field. 
+     *              Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending).
+     *              No-example
+     * 
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
      */
     public function index(Request $request)
     {
@@ -36,10 +57,30 @@ class StasiunController extends Controller
     }
     
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * Add Stasiun
+     * 
+     * Stasiun can be added using this API.
+     * 
+     * @bodyParam nama string required Nama stasiun. Example: Stasiun Banjar
+     * 
+     * @response status=201 scenario="success" {
+     *  "nama": "Stasiun Banjar",
+     *  "id": 10 
+     * }
+     * @response status=400 scenario="bad request" {
+     *  "message": "Validation Error",
+     *  "errors": {
+     *      "nama": [
+     *          "The nama field is required."
+     *      ]
+     *  }
+     * }
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
+     * @response status=403 scenario="not admin" {
+     *  "message": "You must be admin or super admin to do this."
+     * } 
      */
     public function store(Request $request)
     {
@@ -57,10 +98,22 @@ class StasiunController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Get Detail Stasiun
+     * 
+     * Stasiun detail can be retrieved using this API.
+     * 
+     * @urlParam id integer required The id of stasiun. Example: 10
+     * 
+     * @response status=200 scenario="success" {
+     *  "id": 10
+     *  "nama": "Stasiun Banjar",
+     * }
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
+     * @response status=404 scenario="data not found" {
+     *  "message": "Not Found"
+     * }
      */
     public function show($id)
     {
@@ -69,11 +122,35 @@ class StasiunController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Update Stasiun
+     * 
+     * Stasiun can be updated using this API.
+     * 
+     * @urlParam id integer required The id of stasiun. Example: 10
+     * 
+     * @bodyParam nama string required Nama status. Example: Stasiun Maju
+     * 
+     * @response status=201 scenario="success" {
+     *  "id": 10
+     *  "nama": "Stasiun Maju",
+     * }
+     * @response status=400 scenario="bad request" {
+     *  "message": "Validation Error",
+     *  "errors": {
+     *      "nama": [
+     *          "The nama field is required."
+     *      ]
+     *  }
+     * }
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
+     * @response status=403 scenario="not admin" {
+     *  "message": "You must be admin or super admin to do this."
+     * } 
+     * @response status=404 scenario="data not found" {
+     *  "message": "Not Found"
+     * } 
      */
     public function update(Request $request, $id)
     {
@@ -92,10 +169,25 @@ class StasiunController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Delete Barang Stasiun.
+     * 
+     * Stasiun can be deleted using this API.
+     * 
+     * @urlParam id integer required The id of stasiun. Example: 10
+     * 
+     * @response status=204 scenario="delete success" {
+     *  "message": "Stasiun data deleted successfully"
+     * } 
+     * }
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
+     * @response status=403 scenario="not admin" {
+     *  "message": "You must be admin or super admin to do this."
+     * } 
+     * @response status=404 scenario="data not found" {
+     *  "message": "Not Found"
+     * } 
      */
     public function destroy(Request $request, $id)
     {

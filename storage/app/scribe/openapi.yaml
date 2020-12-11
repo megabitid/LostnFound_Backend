@@ -135,7 +135,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: provident
+                example: voluptas
                 required: true
                 schema:
                     type: string
@@ -173,7 +173,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: quis
+                example: laboriosam
                 required: true
                 schema:
                     type: string
@@ -444,7 +444,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: in
+                example: quod
                 required: true
                 schema:
                     type: string
@@ -658,734 +658,6 @@ paths:
                                     trace: { type: array, example: [{ file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\guzzlehttp\guzzle\src\Middleware.php', line: 69, function: create, class: GuzzleHttp\Exception\RequestException, type: '::', args: [{  }, {  }, null, [], null] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\guzzlehttp\promises\src\Promise.php', line: 204, function: 'GuzzleHttp\{closure}', class: GuzzleHttp\Middleware, type: '::', args: [{  }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\guzzlehttp\promises\src\Promise.php', line: 153, function: callHandler, class: GuzzleHttp\Promise\Promise, type: '::', args: [1, {  }, null] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\guzzlehttp\promises\src\TaskQueue.php', line: 48, function: 'GuzzleHttp\Promise\{closure}', class: GuzzleHttp\Promise\Promise, type: '::', args: [] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\guzzlehttp\promises\src\Promise.php', line: 248, function: run, class: GuzzleHttp\Promise\TaskQueue, type: '->', args: [true] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\guzzlehttp\promises\src\Promise.php', line: 224, function: invokeWaitFn, class: GuzzleHttp\Promise\Promise, type: '->', args: [] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\guzzlehttp\promises\src\Promise.php', line: 269, function: waitIfPending, class: GuzzleHttp\Promise\Promise, type: '->', args: [] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\guzzlehttp\promises\src\Promise.php', line: 226, function: invokeWaitList, class: GuzzleHttp\Promise\Promise, type: '->', args: [] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\guzzlehttp\promises\src\Promise.php', line: 62, function: waitIfPending, class: GuzzleHttp\Promise\Promise, type: '->', args: [] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\guzzlehttp\guzzle\src\Client.php', line: 187, function: wait, class: GuzzleHttp\Promise\Promise, type: '->', args: [] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\guzzlehttp\guzzle\src\ClientTrait.php', line: 95, function: request, class: GuzzleHttp\Client, type: '->', args: [POST, 'https://www.googleapis.com/oauth2/v4/token', { headers: { Accept: application/json }, form_params: { grant_type: authorization_code, client_id: 304092645592-42g8iugfoohtdgq3jqgio9h67ojb7vhh.apps.googleusercontent.com, client_secret: noXkPSo7ZalqZoMeYJXgvnmt, code: null, redirect_uri: 'http://localhost:8000/api/v1/android/auth/oauth2/google/authorize' }, synchronous: true }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\socialite\src\Two\AbstractProvider.php', line: 273, function: post, class: GuzzleHttp\Client, type: '->', args: ['https://www.googleapis.com/oauth2/v4/token', { headers: { Accept: application/json }, form_params: { grant_type: authorization_code, client_id: 304092645592-42g8iugfoohtdgq3jqgio9h67ojb7vhh.apps.googleusercontent.com, client_secret: noXkPSo7ZalqZoMeYJXgvnmt, code: null, redirect_uri: 'http://localhost:8000/api/v1/android/auth/oauth2/google/authorize' } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\app\Http\Controllers\v1\Android\Oauth2Controller.php', line: 30, function: getAccessTokenResponse, class: Laravel\Socialite\Two\AbstractProvider, type: '->', args: [null] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Routing\Controller.php', line: 54, function: handleGoogleCallback, class: App\Http\Controllers\v1\Android\Oauth2Controller, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php', line: 45, function: callAction, class: Illuminate\Routing\Controller, type: '->', args: [handleGoogleCallback, [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }]] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Routing\Route.php', line: 254, function: dispatch, class: Illuminate\Routing\ControllerDispatcher, type: '->', args: [{ uri: api/v1/android/auth/oauth2/google/authorize, methods: [GET, HEAD], action: { middleware: [api], uses: App\Http\Controllers\v1\Android\Oauth2Controller@handleGoogleCallback, controller: App\Http\Controllers\v1\Android\Oauth2Controller@handleGoogleCallback, namespace: null, prefix: api/v1/android/auth, where: [] }, isFallback: false, controller: {  }, defaults: [], wheres: [], parameters: [], parameterNames: [], computedMiddleware: [api], compiled: {  } }, {  }, handleGoogleCallback] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Routing\Route.php', line: 197, function: runController, class: Illuminate\Routing\Route, type: '->', args: [] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 692, function: run, class: Illuminate\Routing\Route, type: '->', args: [] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 128, function: 'Illuminate\Routing\{closure}', class: Illuminate\Routing\Router, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Routing\Middleware\SubstituteBindings.php', line: 41, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 167, function: handle, class: Illuminate\Routing\Middleware\SubstituteBindings, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }, {  }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Routing\Middleware\ThrottleRequests.php', line: 127, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Routing\Middleware\ThrottleRequests.php', line: 103, function: handleRequest, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }, {  }, [{ key: e7cf66797159dc3cd3e85f72e15bb551, maxAttempts: 60, decayMinutes: 1, responseCallback: null }]] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Routing\Middleware\ThrottleRequests.php', line: 55, function: handleRequestUsingNamedLimiter, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }, {  }, api, {  }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 167, function: handle, class: Illuminate\Routing\Middleware\ThrottleRequests, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }, {  }, api] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 694, function: then, class: Illuminate\Pipeline\Pipeline, type: '->', args: [{  }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 669, function: runRouteWithinStack, class: Illuminate\Routing\Router, type: '->', args: [{ uri: api/v1/android/auth/oauth2/google/authorize, methods: [GET, HEAD], action: { middleware: [api], uses: App\Http\Controllers\v1\Android\Oauth2Controller@handleGoogleCallback, controller: App\Http\Controllers\v1\Android\Oauth2Controller@handleGoogleCallback, namespace: null, prefix: api/v1/android/auth, where: [] }, isFallback: false, controller: {  }, defaults: [], wheres: [], parameters: [], parameterNames: [], computedMiddleware: [api], compiled: {  } }, { attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 635, function: runRoute, class: Illuminate\Routing\Router, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }, { uri: api/v1/android/auth/oauth2/google/authorize, methods: [GET, HEAD], action: { middleware: [api], uses: App\Http\Controllers\v1\Android\Oauth2Controller@handleGoogleCallback, controller: App\Http\Controllers\v1\Android\Oauth2Controller@handleGoogleCallback, namespace: null, prefix: api/v1/android/auth, where: [] }, isFallback: false, controller: {  }, defaults: [], wheres: [], parameters: [], parameterNames: [], computedMiddleware: [api], compiled: {  } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Routing\Router.php', line: 624, function: dispatchToRoute, class: Illuminate\Routing\Router, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 166, function: dispatch, class: Illuminate\Routing\Router, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 128, function: 'Illuminate\Foundation\Http\{closure}', class: Illuminate\Foundation\Http\Kernel, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }, {  }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\TransformsRequest.php', line: 21, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\TransformsRequest, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }, {  }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\ValidatePostSize.php', line: 27, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\ValidatePostSize, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }, {  }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance.php', line: 87, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 167, function: handle, class: Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }, {  }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\fruitcake\laravel-cors\src\HandleCors.php', line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 167, function: handle, class: Fruitcake\Cors\HandleCors, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }, {  }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\fideloper\proxy\src\TrustProxies.php', line: 57, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 167, function: handle, class: Fideloper\Proxy\TrustProxies, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }, {  }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php', line: 103, function: 'Illuminate\Pipeline\{closure}', class: Illuminate\Pipeline\Pipeline, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 141, function: then, class: Illuminate\Pipeline\Pipeline, type: '->', args: [{  }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php', line: 110, function: sendRequestThroughRouter, class: Illuminate\Foundation\Http\Kernel, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 324, function: handle, class: Illuminate\Foundation\Http\Kernel, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 305, function: callLaravelOrLumenRoute, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 76, function: makeApiCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->', args: [{ attributes: {  }, request: {  }, query: {  }, server: {  }, files: {  }, cookies: {  }, headers: {  } }, { uri: api/v1/android/auth/oauth2/google/authorize, methods: [GET, HEAD], action: { middleware: [api], uses: App\Http\Controllers\v1\Android\Oauth2Controller@handleGoogleCallback, controller: App\Http\Controllers\v1\Android\Oauth2Controller@handleGoogleCallback, namespace: null, prefix: api/v1/android/auth, where: [] }, isFallback: false, controller: {  }, defaults: [], wheres: [], parameters: [], parameterNames: [], computedMiddleware: [api], compiled: {  } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 51, function: makeResponseCall, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->', args: [{ uri: api/v1/android/auth/oauth2/google/authorize, methods: [GET, HEAD], action: { middleware: [api], uses: App\Http\Controllers\v1\Android\Oauth2Controller@handleGoogleCallback, controller: App\Http\Controllers\v1\Android\Oauth2Controller@handleGoogleCallback, namespace: null, prefix: api/v1/android/auth, where: [] }, isFallback: false, controller: {  }, defaults: [], wheres: [], parameters: [], parameterNames: [], computedMiddleware: [api], compiled: {  } }, { id: d7770fbdcc266a6e29f94b49f98f9dcd, methods: [GET], uri: api/v1/android/auth/oauth2/google/authorize, metadata: { groupName: Endpoints, groupDescription: '', title: '', description: '', authenticated: true }, urlParameters: [], cleanUrlParameters: [], boundUri: api/v1/android/auth/oauth2/google/authorize, auth: 'headers.Authorization.Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvYW5kcm9pZFwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MDc2MDY3ODcsImV4cCI6MTYxMDE5ODc4NywibmJmIjoxNjA3NjA2Nzg3LCJqdGkiOiJtME45NGtocDI0T2VGMXNDIiwic3ViIjo2LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ej0YJMNMf3-z9apdeaOFjBN30m7jdkh7gjqn3bQLl40', headers: { Authorization: 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvYW5kcm9pZFwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MDc2MDY3ODcsImV4cCI6MTYxMDE5ODc4NywibmJmIjoxNjA3NjA2Nzg3LCJqdGkiOiJtME45NGtocDI0T2VGMXNDIiwic3ViIjo2LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ej0YJMNMf3-z9apdeaOFjBN30m7jdkh7gjqn3bQLl40', Content-Type: application/json, Accept: application/json }, queryParameters: [], cleanQueryParameters: [], bodyParameters: [], cleanBodyParameters: [], fileParameters: [], responses: [] }, { methods: [GET], config: { app.env: documentation }, queryParams: [], bodyParams: [], fileParams: [], cookies: [] }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\knuckleswtf\scribe\src\Extracting\Strategies\Responses\ResponseCalls.php', line: 41, function: makeResponseCallIfEnabledAndNoSuccessResponses, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->', args: [{ uri: api/v1/android/auth/oauth2/google/authorize, methods: [GET, HEAD], action: { middleware: [api], uses: App\Http\Controllers\v1\Android\Oauth2Controller@handleGoogleCallback, controller: App\Http\Controllers\v1\Android\Oauth2Controller@handleGoogleCallback, namespace: null, prefix: api/v1/android/auth, where: [] }, isFallback: false, controller: {  }, defaults: [], wheres: [], parameters: [], parameterNames: [], computedMiddleware: [api], compiled: {  } }, { headers: { Content-Type: application/json, Accept: application/json }, response_calls: { methods: [GET], config: { app.env: documentation }, queryParams: [], bodyParams: [], fileParams: [], cookies: [] } }, { id: d7770fbdcc266a6e29f94b49f98f9dcd, methods: [GET], uri: api/v1/android/auth/oauth2/google/authorize, metadata: { groupName: Endpoints, groupDescription: '', title: '', description: '', authenticated: true }, urlParameters: [], cleanUrlParameters: [], boundUri: api/v1/android/auth/oauth2/google/authorize, auth: 'headers.Authorization.Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvYW5kcm9pZFwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MDc2MDY3ODcsImV4cCI6MTYxMDE5ODc4NywibmJmIjoxNjA3NjA2Nzg3LCJqdGkiOiJtME45NGtocDI0T2VGMXNDIiwic3ViIjo2LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ej0YJMNMf3-z9apdeaOFjBN30m7jdkh7gjqn3bQLl40', headers: { Authorization: 'Bearer {YOUR_AUTH_KEY}', Content-Type: application/json, Accept: application/json }, queryParameters: [], cleanQueryParameters: [], bodyParameters: [], cleanBodyParameters: [], fileParameters: [], responses: [] }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 236, function: __invoke, class: Knuckles\Scribe\Extracting\Strategies\Responses\ResponseCalls, type: '->', args: [{ uri: api/v1/android/auth/oauth2/google/authorize, methods: [GET, HEAD], action: { middleware: [api], uses: App\Http\Controllers\v1\Android\Oauth2Controller@handleGoogleCallback, controller: App\Http\Controllers\v1\Android\Oauth2Controller@handleGoogleCallback, namespace: null, prefix: api/v1/android/auth, where: [] }, isFallback: false, controller: {  }, defaults: [], wheres: [], parameters: [], parameterNames: [], computedMiddleware: [api], compiled: {  } }, { name: App\Http\Controllers\v1\Android\Oauth2Controller }, { name: handleGoogleCallback, class: App\Http\Controllers\v1\Android\Oauth2Controller }, { headers: { Content-Type: application/json, Accept: application/json }, response_calls: { methods: [GET], config: { app.env: documentation }, queryParams: [], bodyParams: [], fileParams: [], cookies: [] } }, { id: d7770fbdcc266a6e29f94b49f98f9dcd, methods: [GET], uri: api/v1/android/auth/oauth2/google/authorize, metadata: { groupName: Endpoints, groupDescription: '', title: '', description: '', authenticated: true }, urlParameters: [], cleanUrlParameters: [], boundUri: api/v1/android/auth/oauth2/google/authorize, auth: 'headers.Authorization.Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvYW5kcm9pZFwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MDc2MDY3ODcsImV4cCI6MTYxMDE5ODc4NywibmJmIjoxNjA3NjA2Nzg3LCJqdGkiOiJtME45NGtocDI0T2VGMXNDIiwic3ViIjo2LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ej0YJMNMf3-z9apdeaOFjBN30m7jdkh7gjqn3bQLl40', headers: { Authorization: 'Bearer {YOUR_AUTH_KEY}', Content-Type: application/json, Accept: application/json }, queryParameters: [], cleanQueryParameters: [], bodyParameters: [], cleanBodyParameters: [], fileParameters: [], responses: [] }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 172, function: iterateThroughStrategies, class: Knuckles\Scribe\Extracting\Generator, type: '->', args: [responses, { id: d7770fbdcc266a6e29f94b49f98f9dcd, methods: [GET], uri: api/v1/android/auth/oauth2/google/authorize, metadata: { groupName: Endpoints, groupDescription: '', title: '', description: '', authenticated: true }, urlParameters: [], cleanUrlParameters: [], boundUri: api/v1/android/auth/oauth2/google/authorize, auth: 'headers.Authorization.Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvYW5kcm9pZFwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MDc2MDY3ODcsImV4cCI6MTYxMDE5ODc4NywibmJmIjoxNjA3NjA2Nzg3LCJqdGkiOiJtME45NGtocDI0T2VGMXNDIiwic3ViIjo2LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ej0YJMNMf3-z9apdeaOFjBN30m7jdkh7gjqn3bQLl40', headers: { Authorization: 'Bearer {YOUR_AUTH_KEY}', Content-Type: application/json, Accept: application/json }, queryParameters: [], cleanQueryParameters: [], bodyParameters: [], cleanBodyParameters: [], fileParameters: [], responses: [] }, [{ uri: api/v1/android/auth/oauth2/google/authorize, methods: [GET, HEAD], action: { middleware: [api], uses: App\Http\Controllers\v1\Android\Oauth2Controller@handleGoogleCallback, controller: App\Http\Controllers\v1\Android\Oauth2Controller@handleGoogleCallback, namespace: null, prefix: api/v1/android/auth, where: [] }, isFallback: false, controller: {  }, defaults: [], wheres: [], parameters: [], parameterNames: [], computedMiddleware: [api], compiled: {  } }, { name: App\Http\Controllers\v1\Android\Oauth2Controller }, { name: handleGoogleCallback, class: App\Http\Controllers\v1\Android\Oauth2Controller }, { headers: { Content-Type: application/json, Accept: application/json }, response_calls: { methods: [GET], config: { app.env: documentation }, queryParams: [], bodyParams: [], fileParams: [], cookies: [] } }]] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\knuckleswtf\scribe\src\Extracting\Generator.php', line: 127, function: fetchResponses, class: Knuckles\Scribe\Extracting\Generator, type: '->', args: [{ name: App\Http\Controllers\v1\Android\Oauth2Controller }, { name: handleGoogleCallback, class: App\Http\Controllers\v1\Android\Oauth2Controller }, { uri: api/v1/android/auth/oauth2/google/authorize, methods: [GET, HEAD], action: { middleware: [api], uses: App\Http\Controllers\v1\Android\Oauth2Controller@handleGoogleCallback, controller: App\Http\Controllers\v1\Android\Oauth2Controller@handleGoogleCallback, namespace: null, prefix: api/v1/android/auth, where: [] }, isFallback: false, controller: {  }, defaults: [], wheres: [], parameters: [], parameterNames: [], computedMiddleware: [api], compiled: {  } }, { headers: { Content-Type: application/json, Accept: application/json }, response_calls: { methods: [GET], config: { app.env: documentation }, queryParams: [], bodyParams: [], fileParams: [], cookies: [] } }, { id: d7770fbdcc266a6e29f94b49f98f9dcd, methods: [GET], uri: api/v1/android/auth/oauth2/google/authorize, metadata: { groupName: Endpoints, groupDescription: '', title: '', description: '', authenticated: true }, urlParameters: [], cleanUrlParameters: [], boundUri: api/v1/android/auth/oauth2/google/authorize, auth: 'headers.Authorization.Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvYW5kcm9pZFwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MDc2MDY3ODcsImV4cCI6MTYxMDE5ODc4NywibmJmIjoxNjA3NjA2Nzg3LCJqdGkiOiJtME45NGtocDI0T2VGMXNDIiwic3ViIjo2LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ej0YJMNMf3-z9apdeaOFjBN30m7jdkh7gjqn3bQLl40', headers: { Authorization: 'Bearer {YOUR_AUTH_KEY}', Content-Type: application/json, Accept: application/json }, queryParameters: [], cleanQueryParameters: [], bodyParameters: [], cleanBodyParameters: [], fileParameters: [] }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 119, function: processRoute, class: Knuckles\Scribe\Extracting\Generator, type: '->', args: [{ uri: api/v1/android/auth/oauth2/google/authorize, methods: [GET, HEAD], action: { middleware: [api], uses: App\Http\Controllers\v1\Android\Oauth2Controller@handleGoogleCallback, controller: App\Http\Controllers\v1\Android\Oauth2Controller@handleGoogleCallback, namespace: null, prefix: api/v1/android/auth, where: [] }, isFallback: false, controller: {  }, defaults: [], wheres: [], parameters: [], parameterNames: [], computedMiddleware: [api], compiled: {  } }, { headers: { Content-Type: application/json, Accept: application/json }, response_calls: { methods: [GET], config: { app.env: documentation }, queryParams: [], bodyParams: [], fileParams: [], cookies: [] } }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\knuckleswtf\scribe\src\Commands\GenerateDocumentation.php', line: 73, function: processRoutes, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->', args: [[{  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }, {  }]] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 36, function: handle, class: Knuckles\Scribe\Commands\GenerateDocumentation, type: '->', args: [{  }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Container\Util.php', line: 40, function: 'Illuminate\Container\{closure}', class: Illuminate\Container\BoundMethod, type: '::', args: [] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 93, function: unwrapIfClosure, class: Illuminate\Container\Util, type: '::', args: [{  }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Container\BoundMethod.php', line: 37, function: callBoundMethod, class: Illuminate\Container\BoundMethod, type: '::', args: [{ contextual: [] }, [{  }, handle], {  }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Container\Container.php', line: 610, function: call, class: Illuminate\Container\BoundMethod, type: '::', args: [{ contextual: [] }, [{  }, handle], [], null] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 136, function: call, class: Illuminate\Container\Container, type: '->', args: [[{  }, handle]] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\symfony\console\Command\Command.php', line: 255, function: execute, class: Illuminate\Console\Command, type: '->', args: [{  }, {  }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Console\Command.php', line: 121, function: run, class: Symfony\Component\Console\Command\Command, type: '->', args: [{  }, {  }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\symfony\console\Application.php', line: 971, function: run, class: Illuminate\Console\Command, type: '->', args: [{  }, {  }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\symfony\console\Application.php', line: 290, function: doRunCommand, class: Symfony\Component\Console\Application, type: '->', args: [{  }, {  }, {  }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\symfony\console\Application.php', line: 166, function: doRun, class: Symfony\Component\Console\Application, type: '->', args: [{  }, {  }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Console\Application.php', line: 93, function: run, class: Symfony\Component\Console\Application, type: '->', args: [{  }, {  }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\vendor\laravel\framework\src\Illuminate\Foundation\Console\Kernel.php', line: 129, function: run, class: Illuminate\Console\Application, type: '->', args: [{  }, {  }] }, { file: 'D:\Megabit\LostnFound_Backend\lost_n_found\artisan', line: 37, function: handle, class: Illuminate\Foundation\Console\Kernel, type: '->', args: [{  }, {  }] }], items: { type: object } }
             tags:
                 - Endpoints
-    '/api/v1/stasiun/{id}':
-        delete:
-            summary: 'Remove the specified resource from storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        put:
-            summary: 'Update the specified resource in storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        get:
-            summary: 'Display the specified resource.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses:
-                404:
-                    description: ''
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                example:
-                                    message: 'Not Found'
-                                properties:
-                                    message: { type: string, example: 'Not Found' }
-            tags:
-                - Endpoints
-        parameters:
-            -
-                in: path
-                name: id
-                description: ''
-                example: sit
-                required: true
-                schema:
-                    type: string
-    /api/v1/stasiun:
-        post:
-            summary: 'Store a newly created resource in storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        get:
-            summary: 'Display a listing of the resource.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses:
-                200:
-                    description: ''
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                example:
-                                    data: [{ id: 1, nama: 'Norval Goyette IV' }, { id: 2, nama: 'Dr. Abbigail Price' }, { id: 3, nama: 'Prof. Kamren Dickens DVM' }, { id: 4, nama: 'Minerva Hirthe' }, { id: 5, nama: 'Muriel Gibson' }]
-                                    links: { first: 'http://localhost/api/v1/stasiun?page=1', last: 'http://localhost/api/v1/stasiun?page=1', prev: null, next: null }
-                                    meta: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/stasiun?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/stasiun', per_page: 20, to: 5, total: 5 }
-                                properties:
-                                    data: { type: array, example: [{ id: 1, nama: 'Norval Goyette IV' }, { id: 2, nama: 'Dr. Abbigail Price' }, { id: 3, nama: 'Prof. Kamren Dickens DVM' }, { id: 4, nama: 'Minerva Hirthe' }, { id: 5, nama: 'Muriel Gibson' }], items: { type: object } }
-                                    links: { type: object, example: { first: 'http://localhost/api/v1/stasiun?page=1', last: 'http://localhost/api/v1/stasiun?page=1', prev: null, next: null } }
-                                    meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/stasiun?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/stasiun', per_page: 20, to: 5, total: 5 } }
-            tags:
-                - Endpoints
-    '/api/v1/barang-kategori/{id}':
-        delete:
-            summary: 'Remove the specified resource from storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        put:
-            summary: 'Update the specified resource in storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        get:
-            summary: 'Display the specified resource.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses:
-                404:
-                    description: ''
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                example:
-                                    message: 'Not Found'
-                                properties:
-                                    message: { type: string, example: 'Not Found' }
-            tags:
-                - Endpoints
-        parameters:
-            -
-                in: path
-                name: id
-                description: ''
-                example: reiciendis
-                required: true
-                schema:
-                    type: string
-    /api/v1/barang-kategori:
-        post:
-            summary: 'Store a newly created resource in storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        get:
-            summary: 'Display a listing of the resource.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses:
-                200:
-                    description: ''
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                example:
-                                    data: [{ id: 1, nama: 'Mrs. Hosea Hyatt' }, { id: 2, nama: 'Isaac Jacobs' }, { id: 3, nama: 'Ben Bailey' }, { id: 4, nama: 'Lionel Hartmann I' }, { id: 5, nama: 'Mariane Eichmann' }]
-                                    links: { first: 'http://localhost/api/v1/barang-kategori?page=1', last: 'http://localhost/api/v1/barang-kategori?page=1', prev: null, next: null }
-                                    meta: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/barang-kategori?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/barang-kategori', per_page: 20, to: 5, total: 5 }
-                                properties:
-                                    data: { type: array, example: [{ id: 1, nama: 'Mrs. Hosea Hyatt' }, { id: 2, nama: 'Isaac Jacobs' }, { id: 3, nama: 'Ben Bailey' }, { id: 4, nama: 'Lionel Hartmann I' }, { id: 5, nama: 'Mariane Eichmann' }], items: { type: object } }
-                                    links: { type: object, example: { first: 'http://localhost/api/v1/barang-kategori?page=1', last: 'http://localhost/api/v1/barang-kategori?page=1', prev: null, next: null } }
-                                    meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/barang-kategori?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/barang-kategori', per_page: 20, to: 5, total: 5 } }
-            tags:
-                - Endpoints
-    '/api/v1/barang-images/{id}':
-        delete:
-            summary: 'Remove the specified resource from storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        put:
-            summary: 'Update the specified resource in storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        patch:
-            summary: 'Update partially the specified resource in storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        get:
-            summary: 'Display the specified resource.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses:
-                404:
-                    description: ''
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                example:
-                                    message: 'Not Found'
-                                properties:
-                                    message: { type: string, example: 'Not Found' }
-            tags:
-                - Endpoints
-        parameters:
-            -
-                in: path
-                name: id
-                description: ''
-                example: repellat
-                required: true
-                schema:
-                    type: string
-    /api/v1/barang-images:
-        post:
-            summary: 'Store a newly created resource in storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        get:
-            summary: 'Display a listing of the resource.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses:
-                200:
-                    description: ''
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                example:
-                                    data: [{ id: 1, nama: 'Teresa Hettinger', uri: 'https://via.placeholder.com/640x480.png/00cc66?text=tenetur', barang_id: 3 }, { id: 2, nama: 'Laverne Jacobs III', uri: 'https://via.placeholder.com/640x480.png/0044ee?text=sed', barang_id: 1 }, { id: 3, nama: 'Aylin Rosenbaum', uri: 'https://via.placeholder.com/640x480.png/003322?text=quos', barang_id: 2 }, { id: 4, nama: 'Emmett Schmitt V', uri: 'https://via.placeholder.com/640x480.png/00eedd?text=quis', barang_id: 1 }, { id: 5, nama: 'Miss Queen Batz', uri: 'https://via.placeholder.com/640x480.png/00cc22?text=non', barang_id: 5 }]
-                                    links: { first: 'http://localhost/api/v1/barang-images?page=1', last: 'http://localhost/api/v1/barang-images?page=1', prev: null, next: null }
-                                    meta: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/barang-images?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/barang-images', per_page: 20, to: 5, total: 5 }
-                                properties:
-                                    data: { type: array, example: [{ id: 1, nama: 'Teresa Hettinger', uri: 'https://via.placeholder.com/640x480.png/00cc66?text=tenetur', barang_id: 3 }, { id: 2, nama: 'Laverne Jacobs III', uri: 'https://via.placeholder.com/640x480.png/0044ee?text=sed', barang_id: 1 }, { id: 3, nama: 'Aylin Rosenbaum', uri: 'https://via.placeholder.com/640x480.png/003322?text=quos', barang_id: 2 }, { id: 4, nama: 'Emmett Schmitt V', uri: 'https://via.placeholder.com/640x480.png/00eedd?text=quis', barang_id: 1 }, { id: 5, nama: 'Miss Queen Batz', uri: 'https://via.placeholder.com/640x480.png/00cc22?text=non', barang_id: 5 }], items: { type: object } }
-                                    links: { type: object, example: { first: 'http://localhost/api/v1/barang-images?page=1', last: 'http://localhost/api/v1/barang-images?page=1', prev: null, next: null } }
-                                    meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/barang-images?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/barang-images', per_page: 20, to: 5, total: 5 } }
-            tags:
-                - Endpoints
-    '/api/v1/barang-status/{id}':
-        delete:
-            summary: 'Remove the specified resource from storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        put:
-            summary: 'Update the specified resource in storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        get:
-            summary: 'Display the specified resource.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses:
-                404:
-                    description: ''
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                example:
-                                    message: 'Not Found'
-                                properties:
-                                    message: { type: string, example: 'Not Found' }
-            tags:
-                - Endpoints
-        parameters:
-            -
-                in: path
-                name: id
-                description: ''
-                example: aut
-                required: true
-                schema:
-                    type: string
-    /api/v1/barang-status:
-        post:
-            summary: 'Store a newly created resource in storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        get:
-            summary: 'Display a listing of the resource.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses:
-                200:
-                    description: ''
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                example:
-                                    data: [{ id: 1, nama: hilang }, { id: 2, nama: ditemukan }, { id: 3, nama: didonasikan }, { id: 4, nama: diklaim }]
-                                    links: { first: 'http://localhost/api/v1/barang-status?page=1', last: 'http://localhost/api/v1/barang-status?page=1', prev: null, next: null }
-                                    meta: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/barang-status?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/barang-status', per_page: 20, to: 4, total: 4 }
-                                properties:
-                                    data: { type: array, example: [{ id: 1, nama: hilang }, { id: 2, nama: ditemukan }, { id: 3, nama: didonasikan }, { id: 4, nama: diklaim }], items: { type: object } }
-                                    links: { type: object, example: { first: 'http://localhost/api/v1/barang-status?page=1', last: 'http://localhost/api/v1/barang-status?page=1', prev: null, next: null } }
-                                    meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/barang-status?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/barang-status', per_page: 20, to: 4, total: 4 } }
-            tags:
-                - Endpoints
     /api/v1/histories:
         get:
             summary: 'Display a listing of the resource.'
@@ -1427,247 +699,6 @@ paths:
                                     data: { type: array, example: [] }
                                     links: { type: object, example: { first: 'http://localhost/api/v1/histories?page=1', last: 'http://localhost/api/v1/histories?page=1', prev: null, next: null } }
                                     meta: { type: object, example: { current_page: 1, from: null, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/histories?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/histories', per_page: 20, to: null, total: 0 } }
-            tags:
-                - Endpoints
-    '/api/v1/claims/{id}':
-        delete:
-            summary: 'Remove the specified resource from storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        put:
-            summary: 'Update the specified resource in storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        patch:
-            summary: 'Update partially the specified resource in storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        get:
-            summary: 'Display the specified resource.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses:
-                404:
-                    description: ''
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                example:
-                                    message: 'Not Found'
-                                properties:
-                                    message: { type: string, example: 'Not Found' }
-            tags:
-                - Endpoints
-        parameters:
-            -
-                in: path
-                name: id
-                description: ''
-                example: mollitia
-                required: true
-                schema:
-                    type: string
-    '/api/v1/claims/{id}/verified':
-        put:
-            summary: ''
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        parameters:
-            -
-                in: path
-                name: id
-                description: ''
-                example: dolor
-                required: true
-                schema:
-                    type: string
-    /api/v1/claims:
-        post:
-            summary: 'Store a newly created resource in storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        get:
-            summary: 'Display a listing of the resource.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses:
-                200:
-                    description: ''
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                example:
-                                    data: []
-                                    links: { first: 'http://localhost/api/v1/claims?page=1', last: 'http://localhost/api/v1/claims?page=1', prev: null, next: null }
-                                    meta: { current_page: 1, from: null, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/claims?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/claims', per_page: 20, to: null, total: 0 }
-                                properties:
-                                    data: { type: array, example: [] }
-                                    links: { type: object, example: { first: 'http://localhost/api/v1/claims?page=1', last: 'http://localhost/api/v1/claims?page=1', prev: null, next: null } }
-                                    meta: { type: object, example: { current_page: 1, from: null, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/claims?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/claims', per_page: 20, to: null, total: 0 } }
             tags:
                 - Endpoints
     '/api/v2/web/users/{id}':
@@ -1798,7 +829,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: omnis
+                example: repellat
                 required: true
                 schema:
                     type: string
@@ -1836,7 +867,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: neque
+                example: et
                 required: true
                 schema:
                     type: string
@@ -2107,7 +1138,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: quam
+                example: libero
                 required: true
                 schema:
                     type: string
@@ -2322,7 +1353,7 @@ paths:
                 in: path
                 name: token
                 description: ''
-                example: id
+                example: soluta
                 required: true
                 schema:
                     type: string
@@ -2424,7 +1455,7 @@ paths:
                 in: path
                 name: token
                 description: ''
-                example: facilis
+                example: cupiditate
                 required: true
                 schema:
                     type: string
@@ -2599,7 +1630,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: ut
+                example: minus
                 required: true
                 schema:
                     type: string
@@ -2774,7 +1805,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: non
+                example: aliquid
                 required: true
                 schema:
                     type: string
@@ -2949,7 +1980,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: laudantium
+                example: id
                 required: true
                 schema:
                     type: string
@@ -3152,7 +2183,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: qui
+                example: tempore
                 required: true
                 schema:
                     type: string
@@ -3218,13 +2249,13 @@ paths:
                             schema:
                                 type: object
                                 example:
-                                    data: [{ id: 1, nama: 'Teresa Hettinger', uri: 'https://via.placeholder.com/640x480.png/00cc66?text=tenetur', barang_id: 3 }, { id: 2, nama: 'Laverne Jacobs III', uri: 'https://via.placeholder.com/640x480.png/0044ee?text=sed', barang_id: 1 }, { id: 3, nama: 'Aylin Rosenbaum', uri: 'https://via.placeholder.com/640x480.png/003322?text=quos', barang_id: 2 }, { id: 4, nama: 'Emmett Schmitt V', uri: 'https://via.placeholder.com/640x480.png/00eedd?text=quis', barang_id: 1 }, { id: 5, nama: 'Miss Queen Batz', uri: 'https://via.placeholder.com/640x480.png/00cc22?text=non', barang_id: 5 }]
+                                    data: [{ id: 1, nama: 'Teresa Hettinger', uri: 'https://via.placeholder.com/640x480.png/00cc66?text=tenetur', barang_id: 3 }, { id: 2, nama: 'Laverne Jacobs III', uri: 'https://via.placeholder.com/640x480.png/0044ee?text=sed', barang_id: 1 }, { id: 3, nama: 'Aylin Rosenbaum', uri: 'https://via.placeholder.com/640x480.png/003322?text=quos', barang_id: 2 }, { id: 4, nama: 'Emmett Schmitt V', uri: 'https://via.placeholder.com/640x480.png/00eedd?text=quis', barang_id: 1 }, { id: 5, nama: 'Miss Queen Batz', uri: 'https://via.placeholder.com/640x480.png/00cc22?text=non', barang_id: 5 }, { id: 6, nama: 'Tas Besar', uri: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6', barang_id: 3 }]
                                     links: { first: 'http://localhost/api/v2/barang-images?page=1', last: 'http://localhost/api/v2/barang-images?page=1', prev: null, next: null }
-                                    meta: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v2/barang-images?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v2/barang-images', per_page: 20, to: 5, total: 5 }
+                                    meta: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v2/barang-images?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v2/barang-images', per_page: 20, to: 6, total: 6 }
                                 properties:
-                                    data: { type: array, example: [{ id: 1, nama: 'Teresa Hettinger', uri: 'https://via.placeholder.com/640x480.png/00cc66?text=tenetur', barang_id: 3 }, { id: 2, nama: 'Laverne Jacobs III', uri: 'https://via.placeholder.com/640x480.png/0044ee?text=sed', barang_id: 1 }, { id: 3, nama: 'Aylin Rosenbaum', uri: 'https://via.placeholder.com/640x480.png/003322?text=quos', barang_id: 2 }, { id: 4, nama: 'Emmett Schmitt V', uri: 'https://via.placeholder.com/640x480.png/00eedd?text=quis', barang_id: 1 }, { id: 5, nama: 'Miss Queen Batz', uri: 'https://via.placeholder.com/640x480.png/00cc22?text=non', barang_id: 5 }], items: { type: object } }
+                                    data: { type: array, example: [{ id: 1, nama: 'Teresa Hettinger', uri: 'https://via.placeholder.com/640x480.png/00cc66?text=tenetur', barang_id: 3 }, { id: 2, nama: 'Laverne Jacobs III', uri: 'https://via.placeholder.com/640x480.png/0044ee?text=sed', barang_id: 1 }, { id: 3, nama: 'Aylin Rosenbaum', uri: 'https://via.placeholder.com/640x480.png/003322?text=quos', barang_id: 2 }, { id: 4, nama: 'Emmett Schmitt V', uri: 'https://via.placeholder.com/640x480.png/00eedd?text=quis', barang_id: 1 }, { id: 5, nama: 'Miss Queen Batz', uri: 'https://via.placeholder.com/640x480.png/00cc22?text=non', barang_id: 5 }, { id: 6, nama: 'Tas Besar', uri: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6', barang_id: 3 }], items: { type: object } }
                                     links: { type: object, example: { first: 'http://localhost/api/v2/barang-images?page=1', last: 'http://localhost/api/v2/barang-images?page=1', prev: null, next: null } }
-                                    meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v2/barang-images?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v2/barang-images', per_page: 20, to: 5, total: 5 } }
+                                    meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v2/barang-images?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v2/barang-images', per_page: 20, to: 6, total: 6 } }
             tags:
                 - Endpoints
     '/api/v2/barang-status/{id}':
@@ -3327,7 +2358,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: laudantium
+                example: omnis
                 required: true
                 schema:
                     type: string
@@ -3976,7 +3007,7 @@ paths:
                         type: string
             responses:
                 201:
-                    description: '201, update success'
+                    description: '201, success'
                     content:
                         application/json:
                             schema:
@@ -4093,7 +3124,7 @@ paths:
                                 - kategori_id
         get:
             summary: 'Get List Barang.'
-            description: "### Barang parameter query supported:\n* id\n* user_id\n* stasiun_id\n* status_id\n* kategori_id\n\n### orderBy query supported fields:\n* All field of barang detail\n\n### search query will search string inside theese fields:\n* nama_barang\n* lokasi\n* tanggl\n* deskrpi\n* warna\n* merek\n\n<aside class=\"warning\"> We still use limit offset pagination. In future will be replaced with cursor based pagination.</aside>"
+            description: "### Barang parameter query supported:\n* id\n* user_id\n* stasiun_id\n* status_id\n* kategori_id\n\n### orderBy query supported fields:\n* All field of barang detail\n\n### search query will search string inside these fields:\n* nama_barang\n* lokasi\n* tanggl\n* deskrpi\n* warna\n* merek\n\n<aside class=\"warning\"> We still use limit offset pagination. In future will be replaced with cursor based pagination.</aside>"
             parameters:
                 -
                     in: query
@@ -4213,6 +3244,2197 @@ paths:
                                     meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/barang?orderBy=-id&search=2020&page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/barang', per_page: 20, to: 5, total: 5 } }
             tags:
                 - 'v1 - Barang'
+    '/api/v1/barang-images/{id}':
+        delete:
+            summary: 'Delete Barang Image.'
+            description: 'Barang image will be deleted in database and in storage.'
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                204:
+                    description: '204, delete success'
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                403:
+                    description: '403, not owner or admin'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'You must be the owner or admin to do this.'
+                                properties:
+                                    message: { type: string, example: 'You must be the owner or admin to do this.' }
+                404:
+                    description: '404, barang not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Not Found'
+                                properties:
+                                    message: { type: string, example: 'Not Found' }
+            tags:
+                - 'v1 - Barang Image'
+        put:
+            summary: 'Update Barang Image.'
+            description: 'Update all of the field except id in barang image data.'
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                201:
+                    description: '201, success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    nama: 'Tas Besar Updated'
+                                    uri: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6'
+                                    barang_id: 3
+                                    id: 6
+                                properties:
+                                    nama: { type: string, example: 'Tas Besar Updated' }
+                                    uri: { type: string, example: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6' }
+                                    barang_id: { type: integer, example: 3 }
+                                    id: { type: integer, example: 6 }
+                400:
+                    description: '400, bad request'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Validation Error'
+                                    errors: { nama: ['The nama field is required.'], uri: ['The uri field is required.'], barang_id: ['The barang id field is required.'] }
+                                properties:
+                                    message: { type: string, example: 'Validation Error' }
+                                    errors: { type: object, example: { nama: ['The nama field is required.'], uri: ['The uri field is required.'], barang_id: ['The barang id field is required.'] } }
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                403:
+                    description: '403, not owner or admin'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'You must be the owner or admin to do this.'
+                                properties:
+                                    message: { type: string, example: 'You must be the owner or admin to do this.' }
+                404:
+                    description: '404, data not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Not Found'
+                                properties:
+                                    message: { type: string, example: 'Not Found' }
+            tags:
+                - 'v1 - Barang Image'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                nama:
+                                    type: string
+                                    description: 'Nama image.'
+                                    example: 'Tas Besar Updated'
+                                uri:
+                                    type: string
+                                    description: 'URI Base64 image.'
+                                    example: base64string
+                                barang_id:
+                                    type: integer
+                                    description: 'id Barang that owned this image. Example 3'
+                                    example: 3
+                            required:
+                                - nama
+                                - uri
+                                - barang_id
+        patch:
+            summary: 'Partial Update Barang Image.'
+            description: 'Update some field of barang image data.'
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                201:
+                    description: '201, success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    nama: 'Tas Besar Partial Update'
+                                    uri: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6'
+                                    barang_id: 3
+                                    id: 6
+                                properties:
+                                    nama: { type: string, example: 'Tas Besar Partial Update' }
+                                    uri: { type: string, example: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6' }
+                                    barang_id: { type: integer, example: 3 }
+                                    id: { type: integer, example: 6 }
+                400:
+                    description: '400, bad request'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Validation Error'
+                                    errors: { nama: ['The nama field is required.'], uri: ['The uri field is required.'], barang_id: ['The barang id field is required.'] }
+                                properties:
+                                    message: { type: string, example: 'Validation Error' }
+                                    errors: { type: object, example: { nama: ['The nama field is required.'], uri: ['The uri field is required.'], barang_id: ['The barang id field is required.'] } }
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                403:
+                    description: '403, not owner or admin'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'You must be the owner or admin to do this.'
+                                properties:
+                                    message: { type: string, example: 'You must be the owner or admin to do this.' }
+                404:
+                    description: '404, data not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Not Found'
+                                properties:
+                                    message: { type: string, example: 'Not Found' }
+            tags:
+                - 'v1 - Barang Image'
+            requestBody:
+                required: false
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                nama:
+                                    type: string
+                                    description: 'Nama image.'
+                                    example: 'Tas Besar Partial Update'
+                                uri:
+                                    type: string
+                                    description: 'URI Base64 image.'
+                                    example: null
+                                barang_id:
+                                    type: integer
+                                    description: 'id Barang that owned this image.'
+                                    example: 1
+        get:
+            summary: 'Get Detail Barang Image.'
+            description: 'Returns barang image details.'
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200, success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    nama: 'Tas Besar Updated'
+                                    uri: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6'
+                                    barang_id: 3
+                                    id: 6
+                                properties:
+                                    nama: { type: string, example: 'Tas Besar Updated' }
+                                    uri: { type: string, example: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6' }
+                                    barang_id: { type: integer, example: 3 }
+                                    id: { type: integer, example: 6 }
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+            tags:
+                - 'v1 - Barang Image'
+        parameters:
+            -
+                in: path
+                name: id
+                description: 'The id of barang image.'
+                example: 6
+                required: true
+                schema:
+                    type: integer
+    /api/v1/barang-images:
+        post:
+            summary: 'Add Barang Image.'
+            description: "Barang image will be uploaded in firebase storage/google cloud storage.\nAfter that, the url will be saved in database."
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                201:
+                    description: '201, success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    nama: 'Tas Besar'
+                                    uri: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6'
+                                    barang_id: 3
+                                    id: 6
+                                properties:
+                                    nama: { type: string, example: 'Tas Besar' }
+                                    uri: { type: string, example: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6' }
+                                    barang_id: { type: integer, example: 3 }
+                                    id: { type: integer, example: 6 }
+                400:
+                    description: '400, bad request'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Validation Error'
+                                    errors: { nama: ['The nama field is required.'], uri: ['The uri field is required.'], barang_id: ['The barang id field is required.'] }
+                                properties:
+                                    message: { type: string, example: 'Validation Error' }
+                                    errors: { type: object, example: { nama: ['The nama field is required.'], uri: ['The uri field is required.'], barang_id: ['The barang id field is required.'] } }
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+            tags:
+                - 'v1 - Barang Image'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                nama:
+                                    type: string
+                                    description: 'Nama image.'
+                                    example: 'Tas Besar'
+                                uri:
+                                    type: string
+                                    description: 'URI Base64 image.'
+                                    example: base64string
+                                barang_id:
+                                    type: integer
+                                    description: 'id Barang that owned this image. Example 3'
+                                    example: 13
+                            required:
+                                - nama
+                                - uri
+                                - barang_id
+        get:
+            summary: 'Get List Barang Image'
+            description: "### Barang Image parameter query supported:\n* id\n* barang_id\n\n### orderBy query supported fields:\n* All field of barang image detail\n\n<aside class=\"warning\"> We still use limit offset pagination. In future will be replaced with cursor based pagination.</aside>"
+            parameters:
+                -
+                    in: query
+                    name: id
+                    description: 'Apply filter with id.'
+                    example: null
+                    required: false
+                    schema:
+                        type: integer
+                        description: 'Apply filter with id.'
+                        example: null
+                -
+                    in: query
+                    name: barang_id
+                    description: 'Apply filter with barang_id.'
+                    example: null
+                    required: false
+                    schema:
+                        type: integer
+                        description: 'Apply filter with barang_id.'
+                        example: null
+                -
+                    in: query
+                    name: orderBy
+                    description: "Apply ordering based on specific field.\n             Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending)."
+                    example: null
+                    required: false
+                    schema:
+                        type: string
+                        description: "Apply ordering based on specific field.\n             Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending)."
+                        example: null
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    data: [{ id: 1, nama: 'Teresa Hettinger', uri: 'https://via.placeholder.com/640x480.png/00cc66?text=tenetur', barang_id: 3 }, { id: 2, nama: 'Laverne Jacobs III', uri: 'https://via.placeholder.com/640x480.png/0044ee?text=sed', barang_id: 1 }, { id: 3, nama: 'Aylin Rosenbaum', uri: 'https://via.placeholder.com/640x480.png/003322?text=quos', barang_id: 2 }, { id: 4, nama: 'Emmett Schmitt V', uri: 'https://via.placeholder.com/640x480.png/00eedd?text=quis', barang_id: 1 }, { id: 5, nama: 'Miss Queen Batz', uri: 'https://via.placeholder.com/640x480.png/00cc22?text=non', barang_id: 5 }, { id: 6, nama: 'Tas Besar', uri: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6', barang_id: 3 }]
+                                    links: { first: 'http://localhost/api/v1/barang-images?page=1', last: 'http://localhost/api/v1/barang-images?page=1', prev: null, next: null }
+                                    meta: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/barang-images?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/barang-images', per_page: 20, to: 6, total: 6 }
+                                properties:
+                                    data: { type: array, example: [{ id: 1, nama: 'Teresa Hettinger', uri: 'https://via.placeholder.com/640x480.png/00cc66?text=tenetur', barang_id: 3 }, { id: 2, nama: 'Laverne Jacobs III', uri: 'https://via.placeholder.com/640x480.png/0044ee?text=sed', barang_id: 1 }, { id: 3, nama: 'Aylin Rosenbaum', uri: 'https://via.placeholder.com/640x480.png/003322?text=quos', barang_id: 2 }, { id: 4, nama: 'Emmett Schmitt V', uri: 'https://via.placeholder.com/640x480.png/00eedd?text=quis', barang_id: 1 }, { id: 5, nama: 'Miss Queen Batz', uri: 'https://via.placeholder.com/640x480.png/00cc22?text=non', barang_id: 5 }, { id: 6, nama: 'Tas Besar', uri: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6', barang_id: 3 }], items: { type: object } }
+                                    links: { type: object, example: { first: 'http://localhost/api/v1/barang-images?page=1', last: 'http://localhost/api/v1/barang-images?page=1', prev: null, next: null } }
+                                    meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/barang-images?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/barang-images', per_page: 20, to: 6, total: 6 } }
+            tags:
+                - 'v1 - Barang Image'
+    '/api/v1/barang-kategori/{id}':
+        delete:
+            summary: 'Delete Barang Kategori.'
+            description: 'Barang kategori can be deleted using this API.'
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                204:
+                    description: '204, delete success'
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                403:
+                    description: '403, not admin'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'You must be admin or super admin to do this.'
+                                properties:
+                                    message: { type: string, example: 'You must be admin or super admin to do this.' }
+                404:
+                    description: '404, data not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Not Found'
+                                properties:
+                                    message: { type: string, example: 'Not Found' }
+            tags:
+                - 'v1 - Barang Kategori'
+        put:
+            summary: 'Update Barang Kategori.'
+            description: 'Barang kategori can be updated using this API.'
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                201:
+                    description: '201, success'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n \"id\": 6\n \"nama\": \"Aksesoris Updated\",\n}"
+                400:
+                    description: '400, bad request'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Validation Error'
+                                    errors: { nama: ['The nama field is required.'] }
+                                properties:
+                                    message: { type: string, example: 'Validation Error' }
+                                    errors: { type: object, example: { nama: ['The nama field is required.'] } }
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                403:
+                    description: '403, not admin'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'You must be admin or super admin to do this.'
+                                properties:
+                                    message: { type: string, example: 'You must be admin or super admin to do this.' }
+                404:
+                    description: '404, data not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Not Found'
+                                properties:
+                                    message: { type: string, example: 'Not Found' }
+            tags:
+                - 'v1 - Barang Kategori'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                nama:
+                                    type: string
+                                    description: 'Nama kategori.'
+                                    example: 'Aksesoris Updated'
+                            required:
+                                - nama
+        get:
+            summary: 'Get Detail Barang Kategori.'
+            description: 'Barang kategori detail can be retrieved using this API.'
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200, success'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n \"id\": 6\n \"nama\": \"Aksesoris\",\n}"
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                404:
+                    description: '404, data not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Not Found'
+                                properties:
+                                    message: { type: string, example: 'Not Found' }
+            tags:
+                - 'v1 - Barang Kategori'
+        parameters:
+            -
+                in: path
+                name: id
+                description: 'The id of barang kategori.'
+                example: 6
+                required: true
+                schema:
+                    type: integer
+    /api/v1/barang-kategori:
+        post:
+            summary: 'Add Barang Kategori.'
+            description: 'Barang kategori can be added using this API.'
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                201:
+                    description: '201, success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    nama: Aksesoris
+                                    id: 6
+                                properties:
+                                    nama: { type: string, example: Aksesoris }
+                                    id: { type: integer, example: 6 }
+                400:
+                    description: '400, bad request'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Validation Error'
+                                    errors: { nama: ['The nama field is required.'] }
+                                properties:
+                                    message: { type: string, example: 'Validation Error' }
+                                    errors: { type: object, example: { nama: ['The nama field is required.'] } }
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                403:
+                    description: '403, not admin'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'You must be admin or super admin to do this.'
+                                properties:
+                                    message: { type: string, example: 'You must be admin or super admin to do this.' }
+            tags:
+                - 'v1 - Barang Kategori'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                nama:
+                                    type: string
+                                    description: 'Nama kategori.'
+                                    example: Aksesoris
+                            required:
+                                - nama
+        get:
+            summary: 'Get List Barang Kategori'
+            description: "### orderBy query supported fields:\n* All field of barang kategori detail\n\n<aside class=\"warning\"> We still use limit offset pagination. In future will be replaced with cursor based pagination.</aside>"
+            parameters:
+                -
+                    in: query
+                    name: orderBy
+                    description: "Apply ordering based on specific field.\n             Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending)."
+                    example: null
+                    required: false
+                    schema:
+                        type: string
+                        description: "Apply ordering based on specific field.\n             Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending)."
+                        example: null
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    data: [{ id: 1, nama: 'Mrs. Hosea Hyatt' }, { id: 2, nama: 'Isaac Jacobs' }, { id: 3, nama: 'Ben Bailey' }, { id: 4, nama: 'Lionel Hartmann I' }, { id: 5, nama: 'Mariane Eichmann' }]
+                                    links: { first: 'http://localhost/api/v1/barang-kategori?page=1', last: 'http://localhost/api/v1/barang-kategori?page=1', prev: null, next: null }
+                                    meta: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/barang-kategori?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/barang-kategori', per_page: 20, to: 5, total: 5 }
+                                properties:
+                                    data: { type: array, example: [{ id: 1, nama: 'Mrs. Hosea Hyatt' }, { id: 2, nama: 'Isaac Jacobs' }, { id: 3, nama: 'Ben Bailey' }, { id: 4, nama: 'Lionel Hartmann I' }, { id: 5, nama: 'Mariane Eichmann' }], items: { type: object } }
+                                    links: { type: object, example: { first: 'http://localhost/api/v1/barang-kategori?page=1', last: 'http://localhost/api/v1/barang-kategori?page=1', prev: null, next: null } }
+                                    meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/barang-kategori?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/barang-kategori', per_page: 20, to: 5, total: 5 } }
+            tags:
+                - 'v1 - Barang Kategori'
+    '/api/v1/barang-status/{id}':
+        delete:
+            summary: 'Delete Barang Status.'
+            description: 'Barang status can be deleted using this API.'
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                204:
+                    description: '204, delete success'
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                403:
+                    description: '403, not admin'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'You must be admin or super admin to do this.'
+                                properties:
+                                    message: { type: string, example: 'You must be admin or super admin to do this.' }
+                404:
+                    description: '404, data not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Not Found'
+                                properties:
+                                    message: { type: string, example: 'Not Found' }
+            tags:
+                - 'v1 - Barang Status'
+        put:
+            summary: 'Update Barang Status.'
+            description: 'Barang status can be updated using this API.'
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                201:
+                    description: '201, success'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n \"id\": 4\n \"nama\": \"dijual\",\n}"
+                400:
+                    description: '400, bad request'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Validation Error'
+                                    errors: { nama: ['The nama field is required.'] }
+                                properties:
+                                    message: { type: string, example: 'Validation Error' }
+                                    errors: { type: object, example: { nama: ['The nama field is required.'] } }
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                403:
+                    description: '403, not admin'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'You must be admin or super admin to do this.'
+                                properties:
+                                    message: { type: string, example: 'You must be admin or super admin to do this.' }
+                404:
+                    description: '404, data not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Not Found'
+                                properties:
+                                    message: { type: string, example: 'Not Found' }
+            tags:
+                - 'v1 - Barang Status'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                nama:
+                                    type: string
+                                    description: 'Nama status.'
+                                    example: dijual
+                            required:
+                                - nama
+        get:
+            summary: 'Get Detail Barang Status.'
+            description: 'Barang status detail can be retrieved using this API.'
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200, success'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n \"id\": 4\n \"nama\": \"ditemukan\",\n}"
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                404:
+                    description: '404, data not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Not Found'
+                                properties:
+                                    message: { type: string, example: 'Not Found' }
+            tags:
+                - 'v1 - Barang Status'
+        parameters:
+            -
+                in: path
+                name: id
+                description: 'The id of barang status.'
+                example: 4
+                required: true
+                schema:
+                    type: integer
+    /api/v1/barang-status:
+        post:
+            summary: 'Add Barang Status.'
+            description: 'Barang status can be added using this API.'
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                201:
+                    description: '201, success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    nama: ditemukan
+                                    id: 4
+                                properties:
+                                    nama: { type: string, example: ditemukan }
+                                    id: { type: integer, example: 4 }
+                400:
+                    description: '400, bad request'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Validation Error'
+                                    errors: { nama: ['The nama field is required.'] }
+                                properties:
+                                    message: { type: string, example: 'Validation Error' }
+                                    errors: { type: object, example: { nama: ['The nama field is required.'] } }
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                403:
+                    description: '403, not admin'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'You must be admin or super admin to do this.'
+                                properties:
+                                    message: { type: string, example: 'You must be admin or super admin to do this.' }
+            tags:
+                - 'v1 - Barang Status'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                nama:
+                                    type: string
+                                    description: 'Nama status.'
+                                    example: ditemukan
+                            required:
+                                - nama
+        get:
+            summary: 'Get List Barang Status'
+            description: "### orderBy query supported fields:\n* All field of barang status detail\n\n<aside class=\"warning\"> We still use limit offset pagination. In future will be replaced with cursor based pagination.</aside>"
+            parameters:
+                -
+                    in: query
+                    name: orderBy
+                    description: "Apply ordering based on specific field.\n             Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending)."
+                    example: null
+                    required: false
+                    schema:
+                        type: string
+                        description: "Apply ordering based on specific field.\n             Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending)."
+                        example: null
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    data: [{ id: 1, nama: hilang }, { id: 2, nama: ditemukan }, { id: 3, nama: didonasikan }, { id: 4, nama: diklaim }]
+                                    links: { first: 'http://localhost/api/v1/barang-status?page=1', last: 'http://localhost/api/v1/barang-status?page=1', prev: null, next: null }
+                                    meta: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/barang-status?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/barang-status', per_page: 20, to: 4, total: 4 }
+                                properties:
+                                    data: { type: array, example: [{ id: 1, nama: hilang }, { id: 2, nama: ditemukan }, { id: 3, nama: didonasikan }, { id: 4, nama: diklaim }], items: { type: object } }
+                                    links: { type: object, example: { first: 'http://localhost/api/v1/barang-status?page=1', last: 'http://localhost/api/v1/barang-status?page=1', prev: null, next: null } }
+                                    meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/barang-status?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/barang-status', per_page: 20, to: 4, total: 4 } }
+            tags:
+                - 'v1 - Barang Status'
+    '/api/v1/claims/{id}':
+        delete:
+            summary: 'Delete Claim.'
+            description: "Claim can be deleted using this API.\nTicket image also deleted in storage."
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                204:
+                    description: '204, delete success'
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                403:
+                    description: '403, not owner or admin'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'You must be the owner or admin to do this.'
+                                properties:
+                                    message: { type: string, example: 'You must be the owner or admin to do this.' }
+                404:
+                    description: '404, data not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Not Found'
+                                properties:
+                                    message: { type: string, example: 'Not Found' }
+            tags:
+                - 'v1 - Claim'
+        put:
+            summary: 'Update Claim.'
+            description: "Claim can be updated using this API.\nClaim can be updated for barang hilang only."
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                201:
+                    description: '201, success'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n \"id\": 4\n \"user_id\": 1,\n \"barang_id\": 1,\n \"alamat\": \"Jalan Mangga, Block X/21\",\n \"uri_tiket\": \"https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4\",\n \"no_telp\": \"08123456789\",\n \"verified\": 0,\n \"updated_at\": \"2020-12-11T12:40:49.000000Z\",\n \"created_at\": \"2020-12-11T12:30:48.000000Z\",\n}"
+                400:
+                    description: '400, bad request'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Validation Error'
+                                    errors: { user_id: ['The user id field is required.'], barang_id: ['The barang id field is required.'], alamat: ['The alamat field is required.'], uri_tiket: ['The uri tiket field is required.'], no_telp: ['The no telp field is required.'] }
+                                properties:
+                                    message: { type: string, example: 'Validation Error' }
+                                    errors: { type: object, example: { user_id: ['The user id field is required.'], barang_id: ['The barang id field is required.'], alamat: ['The alamat field is required.'], uri_tiket: ['The uri tiket field is required.'], no_telp: ['The no telp field is required.'] } }
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                403:
+                    description: '403, not owner or admin'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'You must be the owner or admin to do this.'
+                                properties:
+                                    message: { type: string, example: 'You must be the owner or admin to do this.' }
+                404:
+                    description: '404, data not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Not Found'
+                                properties:
+                                    message: { type: string, example: 'Not Found' }
+            tags:
+                - 'v1 - Claim'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                user_id:
+                                    type: string
+                                    description: 'id user that want to claim.'
+                                    example: '1'
+                                barang_id:
+                                    type: integer
+                                    description: 'id barang that user want to claim.'
+                                    example: 1
+                                alamat:
+                                    type: string
+                                    description: 'Alamat of user.'
+                                    example: 'Jalan Mangga, Block X/21'
+                                uri_tiket:
+                                    type: string
+                                    description: 'Ticket image of user in URI Base64 format.'
+                                    example: uribase64
+                                no_telp:
+                                    type: string
+                                    description: 'Phone number of user.'
+                                    example: '08123456789'
+                            required:
+                                - user_id
+                                - barang_id
+                                - alamat
+                                - uri_tiket
+                                - no_telp
+        patch:
+            summary: 'Partial Update Claim.'
+            description: "Claim can be updated using this API.\nClaim can be updated for barang hilang only."
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                201:
+                    description: '201, success'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n \"id\": 4\n \"user_id\": 1,\n \"barang_id\": 1,\n \"alamat\": \"Jalan Mangga, Block X/21\",\n \"uri_tiket\": \"https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4\",\n \"no_telp\": \"0999999999\",\n \"verified\": 0,\n \"updated_at\": \"2020-12-11T12:40:49.000000Z\",\n \"created_at\": \"2020-12-11T12:30:48.000000Z\",\n}"
+                400:
+                    description: '400, bad request'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Validation Error'
+                                    errors: { user_id: ['The user id field is required.'], barang_id: ['The barang id field is required.'], alamat: ['The alamat field is required.'], uri_tiket: ['The uri tiket field is required.'], no_telp: ['The no telp field is required.'] }
+                                properties:
+                                    message: { type: string, example: 'Validation Error' }
+                                    errors: { type: object, example: { user_id: ['The user id field is required.'], barang_id: ['The barang id field is required.'], alamat: ['The alamat field is required.'], uri_tiket: ['The uri tiket field is required.'], no_telp: ['The no telp field is required.'] } }
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                403:
+                    description: '403, not owner or admin'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'You must be the owner or admin to do this.'
+                                properties:
+                                    message: { type: string, example: 'You must be the owner or admin to do this.' }
+                404:
+                    description: '404, data not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Not Found'
+                                properties:
+                                    message: { type: string, example: 'Not Found' }
+            tags:
+                - 'v1 - Claim'
+            requestBody:
+                required: false
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                user_id:
+                                    type: string
+                                    description: 'id user that want to claim.'
+                                    example: null
+                                barang_id:
+                                    type: integer
+                                    description: 'id barang that user want to claim.'
+                                    example: null
+                                alamat:
+                                    type: string
+                                    description: 'Alamat of user. Example:'
+                                    example: null
+                                uri_tiket:
+                                    type: string
+                                    description: 'Ticket image of user in URI Base64 format.'
+                                    example: null
+                                no_telp:
+                                    type: string
+                                    description: 'Phone number of user.'
+                                    example: '0999999999'
+        get:
+            summary: ''
+            description: ''
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                404:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Not Found'
+                                properties:
+                                    message: { type: string, example: 'Not Found' }
+            tags:
+                - 'v1 - Claim'
+        parameters:
+            -
+                in: path
+                name: id
+                description: 'The id of barang status.'
+                example: 4
+                required: true
+                schema:
+                    type: integer
+    '/api/v1/claims/{id}/verified':
+        put:
+            summary: 'Verify Claim.'
+            description: 'Claim can be verified by admin only using this api.'
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                201:
+                    description: '201, success'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n \"id\": 4\n \"user_id\": 1,\n \"barang_id\": 1,\n \"alamat\": \"Jalan Mangga, Block X/21\",\n \"uri_tiket\": \"https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4\",\n \"no_telp\": \"0999999999\",\n \"verified\": 1,\n \"updated_at\": \"2020-12-11T12:45:49.000000Z\",\n \"created_at\": \"2020-12-11T12:30:48.000000Z\",\n}"
+                400:
+                    description: '400, bad request'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Validation Error'
+                                    errors: { verified: ['The verified field is required.'] }
+                                properties:
+                                    message: { type: string, example: 'Validation Error' }
+                                    errors: { type: object, example: { verified: ['The verified field is required.'] } }
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                403:
+                    description: '403, not admin'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'You must be admin or super admin to do this.'
+                                properties:
+                                    message: { type: string, example: 'You must be admin or super admin to do this.' }
+                404:
+                    description: '404, data not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Not Found'
+                                properties:
+                                    message: { type: string, example: 'Not Found' }
+            tags:
+                - 'v1 - Claim'
+            requestBody:
+                required: false
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                verified:
+                                    type: boolean
+                                    description: 'id user that want to claim.'
+                                    example: true
+        parameters:
+            -
+                in: path
+                name: id
+                description: ''
+                example: maxime
+                required: true
+                schema:
+                    type: string
+    /api/v1/claims:
+        post:
+            summary: 'Add Claim.'
+            description: "Claim can be added using this API.\nClaim can be added for barang hilang only."
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                201:
+                    description: '201, success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    user_id: 1
+                                    barang_id: 1
+                                    alamat: 'Jalan Mangga, Block X/20'
+                                    uri_tiket: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4'
+                                    no_telp: '08123456789'
+                                    verified: 0
+                                    updated_at: '2020-12-11T12:30:49.000000Z'
+                                    created_at: '2020-12-11T12:30:48.000000Z'
+                                    id: 4
+                                properties:
+                                    user_id: { type: integer, example: 1 }
+                                    barang_id: { type: integer, example: 1 }
+                                    alamat: { type: string, example: 'Jalan Mangga, Block X/20' }
+                                    uri_tiket: { type: string, example: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4' }
+                                    no_telp: { type: string, example: '08123456789' }
+                                    verified: { type: integer, example: 0 }
+                                    updated_at: { type: string, example: '2020-12-11T12:30:49.000000Z' }
+                                    created_at: { type: string, example: '2020-12-11T12:30:48.000000Z' }
+                                    id: { type: integer, example: 4 }
+                400:
+                    description: '400, bad request'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Validation Error'
+                                    errors: { user_id: ['The user id field is required.'], barang_id: ['The barang id field is required.'], alamat: ['The alamat field is required.'], uri_tiket: ['The uri tiket field is required.'], no_telp: ['The no telp field is required.'] }
+                                properties:
+                                    message: { type: string, example: 'Validation Error' }
+                                    errors: { type: object, example: { user_id: ['The user id field is required.'], barang_id: ['The barang id field is required.'], alamat: ['The alamat field is required.'], uri_tiket: ['The uri tiket field is required.'], no_telp: ['The no telp field is required.'] } }
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+            tags:
+                - 'v1 - Claim'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                user_id:
+                                    type: string
+                                    description: 'id user that want to claim.'
+                                    example: '1'
+                                barang_id:
+                                    type: integer
+                                    description: 'id barang that user want to claim.'
+                                    example: 1
+                                alamat:
+                                    type: string
+                                    description: 'Alamat of user.'
+                                    example: 'Jalan Mangga, Block X/20'
+                                uri_tiket:
+                                    type: string
+                                    description: 'Ticket image of user in URI Base64 format.'
+                                    example: uribase64
+                                no_telp:
+                                    type: string
+                                    description: 'Phone number of user.'
+                                    example: '08123456789'
+                            required:
+                                - user_id
+                                - barang_id
+                                - alamat
+                                - uri_tiket
+                                - no_telp
+        get:
+            summary: 'Get List Claim'
+            description: "### Claim parameter query supported:\n* id\n* user_id\n* verified\n* barang_id\n* no_telp\n\n### orderBy query supported fields:\n* All field of claim detail\n\n### search query will search string inside these fields:\n* alamat\n* no_telp\n\n<aside class=\"warning\"> We still use limit offset pagination. In future will be replaced with cursor based pagination.</aside>"
+            parameters:
+                -
+                    in: query
+                    name: orderBy
+                    description: "Apply ordering based on specific field.\n             Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending)."
+                    example: null
+                    required: false
+                    schema:
+                        type: string
+                        description: "Apply ordering based on specific field.\n             Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending)."
+                        example: null
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    data: [{ id: 1, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: '', verified: 0, created_at: '2020-12-11T12:23:34.000000Z', updated_at: '2020-12-11T12:23:34.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }, { id: 2, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: '', verified: 0, created_at: '2020-12-11T12:26:06.000000Z', updated_at: '2020-12-11T12:26:06.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }, { id: 3, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: '', verified: 0, created_at: '2020-12-11T12:28:17.000000Z', updated_at: '2020-12-11T12:28:17.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }, { id: 4, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4', verified: 0, created_at: '2020-12-11T12:30:48.000000Z', updated_at: '2020-12-11T12:30:49.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }]
+                                    links: { first: 'http://localhost/api/v1/claims?page=1', last: 'http://localhost/api/v1/claims?page=1', prev: null, next: null }
+                                    meta: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/claims?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/claims', per_page: 20, to: 4, total: 4 }
+                                properties:
+                                    data: { type: array, example: [{ id: 1, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: '', verified: 0, created_at: '2020-12-11T12:23:34.000000Z', updated_at: '2020-12-11T12:23:34.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }, { id: 2, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: '', verified: 0, created_at: '2020-12-11T12:26:06.000000Z', updated_at: '2020-12-11T12:26:06.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }, { id: 3, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: '', verified: 0, created_at: '2020-12-11T12:28:17.000000Z', updated_at: '2020-12-11T12:28:17.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }, { id: 4, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4', verified: 0, created_at: '2020-12-11T12:30:48.000000Z', updated_at: '2020-12-11T12:30:49.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }], items: { type: object } }
+                                    links: { type: object, example: { first: 'http://localhost/api/v1/claims?page=1', last: 'http://localhost/api/v1/claims?page=1', prev: null, next: null } }
+                                    meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/claims?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/claims', per_page: 20, to: 4, total: 4 } }
+            tags:
+                - 'v1 - Claim'
+    '/api/v1/stasiun/{id}':
+        delete:
+            summary: 'Delete Barang Stasiun.'
+            description: 'Stasiun can be deleted using this API.'
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                204:
+                    description: '204, delete success'
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                403:
+                    description: '403, not admin'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'You must be admin or super admin to do this.'
+                                properties:
+                                    message: { type: string, example: 'You must be admin or super admin to do this.' }
+                404:
+                    description: '404, data not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Not Found'
+                                properties:
+                                    message: { type: string, example: 'Not Found' }
+            tags:
+                - 'v1 - Stasiun'
+        put:
+            summary: 'Update Stasiun'
+            description: 'Stasiun can be updated using this API.'
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                201:
+                    description: '201, success'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n \"id\": 10\n \"nama\": \"Stasiun Maju\",\n}"
+                400:
+                    description: '400, bad request'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Validation Error'
+                                    errors: { nama: ['The nama field is required.'] }
+                                properties:
+                                    message: { type: string, example: 'Validation Error' }
+                                    errors: { type: object, example: { nama: ['The nama field is required.'] } }
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                403:
+                    description: '403, not admin'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'You must be admin or super admin to do this.'
+                                properties:
+                                    message: { type: string, example: 'You must be admin or super admin to do this.' }
+                404:
+                    description: '404, data not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Not Found'
+                                properties:
+                                    message: { type: string, example: 'Not Found' }
+            tags:
+                - 'v1 - Stasiun'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                nama:
+                                    type: string
+                                    description: 'Nama status.'
+                                    example: 'Stasiun Maju'
+                            required:
+                                - nama
+        get:
+            summary: 'Get Detail Stasiun'
+            description: 'Stasiun detail can be retrieved using this API.'
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200, success'
+                    content:
+                        text/plain:
+                            schema:
+                                type: string
+                                example: "{\n \"id\": 10\n \"nama\": \"Stasiun Banjar\",\n}"
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                404:
+                    description: '404, data not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Not Found'
+                                properties:
+                                    message: { type: string, example: 'Not Found' }
+            tags:
+                - 'v1 - Stasiun'
+        parameters:
+            -
+                in: path
+                name: id
+                description: 'The id of stasiun.'
+                example: 10
+                required: true
+                schema:
+                    type: integer
+    /api/v1/stasiun:
+        post:
+            summary: 'Add Stasiun'
+            description: 'Stasiun can be added using this API.'
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                201:
+                    description: '201, success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    nama: 'Stasiun Banjar'
+                                    id: 10
+                                properties:
+                                    nama: { type: string, example: 'Stasiun Banjar' }
+                                    id: { type: integer, example: 10 }
+                400:
+                    description: '400, bad request'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Validation Error'
+                                    errors: { nama: ['The nama field is required.'] }
+                                properties:
+                                    message: { type: string, example: 'Validation Error' }
+                                    errors: { type: object, example: { nama: ['The nama field is required.'] } }
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                403:
+                    description: '403, not admin'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'You must be admin or super admin to do this.'
+                                properties:
+                                    message: { type: string, example: 'You must be admin or super admin to do this.' }
+            tags:
+                - 'v1 - Stasiun'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                nama:
+                                    type: string
+                                    description: 'Nama stasiun.'
+                                    example: 'Stasiun Banjar'
+                            required:
+                                - nama
+        get:
+            summary: 'Get List Stasiun'
+            description: "### orderBy query supported fields:\n* All field of stasiun detail\n\n### search query will search string inside these fields:\n* nama\n<aside class=\"warning\"> We still use limit offset pagination. In future will be replaced with cursor based pagination.</aside>"
+            parameters:
+                -
+                    in: query
+                    name: orderBy
+                    description: "Apply ordering based on specific field.\n             Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending)."
+                    example: null
+                    required: false
+                    schema:
+                        type: string
+                        description: "Apply ordering based on specific field.\n             Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending)."
+                        example: null
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    data: [{ id: 1, nama: 'Norval Goyette IV' }, { id: 2, nama: 'Dr. Abbigail Price' }, { id: 3, nama: 'Prof. Kamren Dickens DVM' }, { id: 4, nama: 'Minerva Hirthe' }, { id: 5, nama: 'Muriel Gibson' }]
+                                    links: { first: 'http://localhost/api/v1/stasiun?page=1', last: 'http://localhost/api/v1/stasiun?page=1', prev: null, next: null }
+                                    meta: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/stasiun?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/stasiun', per_page: 20, to: 5, total: 5 }
+                                properties:
+                                    data: { type: array, example: [{ id: 1, nama: 'Norval Goyette IV' }, { id: 2, nama: 'Dr. Abbigail Price' }, { id: 3, nama: 'Prof. Kamren Dickens DVM' }, { id: 4, nama: 'Minerva Hirthe' }, { id: 5, nama: 'Muriel Gibson' }], items: { type: object } }
+                                    links: { type: object, example: { first: 'http://localhost/api/v1/stasiun?page=1', last: 'http://localhost/api/v1/stasiun?page=1', prev: null, next: null } }
+                                    meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/stasiun?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/stasiun', per_page: 20, to: 5, total: 5 } }
+            tags:
+                - 'v1 - Stasiun'
 components:
     securitySchemes:
         default:
