@@ -135,7 +135,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: ut
+                example: dolores
                 required: true
                 schema:
                     type: string
@@ -173,7 +173,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: esse
+                example: enim
                 required: true
                 schema:
                     type: string
@@ -444,7 +444,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: rem
+                example: ea
                 required: true
                 schema:
                     type: string
@@ -758,7 +758,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: ex
+                example: est
                 required: true
                 schema:
                     type: string
@@ -933,7 +933,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: sapiente
+                example: aut
                 required: true
                 schema:
                     type: string
@@ -1136,7 +1136,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: est
+                example: voluptatem
                 required: true
                 schema:
                     type: string
@@ -1311,7 +1311,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: nesciunt
+                example: impedit
                 required: true
                 schema:
                     type: string
@@ -1557,7 +1557,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: est
+                example: veniam
                 required: true
                 schema:
                     type: string
@@ -1595,7 +1595,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: aut
+                example: molestias
                 required: true
                 schema:
                     type: string
@@ -1798,7 +1798,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: excepturi
+                example: quis
                 required: true
                 schema:
                     type: string
@@ -1836,7 +1836,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: beatae
+                example: blanditiis
                 required: true
                 schema:
                     type: string
@@ -2107,7 +2107,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: eaque
+                example: sunt
                 required: true
                 schema:
                     type: string
@@ -2322,7 +2322,7 @@ paths:
                 in: path
                 name: token
                 description: ''
-                example: molestiae
+                example: maxime
                 required: true
                 schema:
                     type: string
@@ -2424,7 +2424,7 @@ paths:
                 in: path
                 name: token
                 description: ''
-                example: enim
+                example: voluptas
                 required: true
                 schema:
                     type: string
@@ -2599,7 +2599,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: ut
+                example: sunt
                 required: true
                 schema:
                     type: string
@@ -2774,7 +2774,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: assumenda
+                example: dolore
                 required: true
                 schema:
                     type: string
@@ -2949,7 +2949,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: voluptas
+                example: reiciendis
                 required: true
                 schema:
                     type: string
@@ -3152,7 +3152,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: ut
+                example: quae
                 required: true
                 schema:
                     type: string
@@ -3327,7 +3327,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: esse
+                example: aut
                 required: true
                 schema:
                     type: string
@@ -3478,7 +3478,7 @@ paths:
                         text/plain:
                             schema:
                                 type: string
-                                example: "<!-- HTML for static distribution bundle build -->\n<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>Swagger UI</title>\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"http://megabit-lostnfound.herokuapp.com/swagger/swagger-ui.css\" >\n    <link rel=\"icon\" type=\"image/png\" href=\"http://megabit-lostnfound.herokuapp.com/swagger/favicon-32x32.png\" sizes=\"32x32\" />\n    <link rel=\"icon\" type=\"image/png\" href=\"http://megabit-lostnfound.herokuapp.com/swagger/favicon-16x16.png\" sizes=\"16x16\" />\n    <style>\n      html\n      {\n        box-sizing: border-box;\n        overflow: -moz-scrollbars-vertical;\n        overflow-y: scroll;\n      }\n\n      *,\n      *:before,\n      *:after\n      {\n        box-sizing: inherit;\n      }\n\n      body\n      {\n        margin:0;\n        background: #fafafa;\n      }\n    </style>\n  </head>\n\n  <body>\n    <div id=\"swagger-ui\"></div>\n    <script src=\"http://megabit-lostnfound.herokuapp.com/swagger/swagger-ui-bundle.js\" charset=\"UTF-8\"> </script>\n    <script src=\"http://megabit-lostnfound.herokuapp.com/swagger/swagger-ui-standalone-preset.js\" charset=\"UTF-8\"> </script>\n    <script>\n    window.onload = function() {\n      // Begin Swagger UI call region\n      const ui = SwaggerUIBundle({\n        url: \"./openapi\",\n        dom_id: '#swagger-ui',\n        deepLinking: true,\n        presets: [\n          SwaggerUIBundle.presets.apis,\n          SwaggerUIStandalonePreset\n        ],\n        plugins: [\n          SwaggerUIBundle.plugins.DownloadUrl\n        ],\n        layout: \"StandaloneLayout\",\n        \n      })\n      // End Swagger UI call region\n\n      window.ui = ui;\n    }\n  </script>\n  </body>\n</html>\n"
+                                example: "<!-- HTML for static distribution bundle build -->\r\n<!DOCTYPE html>\r\n<html lang=\"en\">\r\n  <head>\r\n    <meta charset=\"UTF-8\">\r\n    <title>Swagger UI</title>\r\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"http://megabit-lostnfound.herokuapp.com/swagger/swagger-ui.css\" >\r\n    <link rel=\"icon\" type=\"image/png\" href=\"http://megabit-lostnfound.herokuapp.com/swagger/favicon-32x32.png\" sizes=\"32x32\" />\r\n    <link rel=\"icon\" type=\"image/png\" href=\"http://megabit-lostnfound.herokuapp.com/swagger/favicon-16x16.png\" sizes=\"16x16\" />\r\n    <style>\r\n      html\r\n      {\r\n        box-sizing: border-box;\r\n        overflow: -moz-scrollbars-vertical;\r\n        overflow-y: scroll;\r\n      }\r\n\r\n      *,\r\n      *:before,\r\n      *:after\r\n      {\r\n        box-sizing: inherit;\r\n      }\r\n\r\n      body\r\n      {\r\n        margin:0;\r\n        background: #fafafa;\r\n      }\r\n    </style>\r\n  </head>\r\n\r\n  <body>\r\n    <div id=\"swagger-ui\"></div>\r\n    <script src=\"http://megabit-lostnfound.herokuapp.com/swagger/swagger-ui-bundle.js\" charset=\"UTF-8\"> </script>\r\n    <script src=\"http://megabit-lostnfound.herokuapp.com/swagger/swagger-ui-standalone-preset.js\" charset=\"UTF-8\"> </script>\r\n    <script>\r\n    window.onload = function() {\r\n      // Begin Swagger UI call region\r\n      const ui = SwaggerUIBundle({\r\n        url: \"./openapi\",\r\n        dom_id: '#swagger-ui',\r\n        deepLinking: true,\r\n        presets: [\r\n          SwaggerUIBundle.presets.apis,\r\n          SwaggerUIStandalonePreset\r\n        ],\r\n        plugins: [\r\n          SwaggerUIBundle.plugins.DownloadUrl\r\n        ],\r\n        layout: \"StandaloneLayout\",\r\n        \r\n      })\r\n      // End Swagger UI call region\r\n\r\n      window.ui = ui;\r\n    }\r\n  </script>\r\n  </body>\r\n</html>\r\n"
             tags:
                 - Endpoints
     /documentation/openapi:
@@ -3913,37 +3913,10 @@ paths:
                 200:
                     description: '200, success'
                     content:
-                        application/json:
+                        text/plain:
                             schema:
-                                type: object
-                                example:
-                                    id: 3
-                                    nama_barang: 'Clair Rowe Updated Partially'
-                                    tanggal: '2020-12-04'
-                                    lokasi: "67934 Juvenal Place\nJeffport, OR 75023-4991"
-                                    deskripsi: 'Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.'
-                                    warna: Salmon
-                                    merek: Heaney-Hansen
-                                    user_id: 5
-                                    status_id: 4
-                                    created_at: null
-                                    updated_at: '2020-12-10T15:28:18.000000Z'
-                                    stasiun: { id: 4, nama: 'Lou Gutmann' }
-                                    kategori: { id: 3, nama: 'Mr. Toby Fadel' }
-                                properties:
-                                    id: { type: integer, example: 3 }
-                                    nama_barang: { type: string, example: 'Clair Rowe Updated Partially' }
-                                    tanggal: { type: string, example: '2020-12-04' }
-                                    lokasi: { type: string, example: "67934 Juvenal Place\nJeffport, OR 75023-4991" }
-                                    deskripsi: { type: string, example: 'Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.' }
-                                    warna: { type: string, example: Salmon }
-                                    merek: { type: string, example: Heaney-Hansen }
-                                    user_id: { type: integer, example: 5 }
-                                    status_id: { type: integer, example: 4 }
-                                    created_at: { type: string, example: null }
-                                    updated_at: { type: string, example: '2020-12-10T15:28:18.000000Z' }
-                                    stasiun: { type: object, example: { id: 4, nama: 'Lou Gutmann' } }
-                                    kategori: { type: object, example: { id: 3, nama: 'Mr. Toby Fadel' } }
+                                type: string
+                                example: "{\n \"id\": 3,\n \"nama_barang\": \"Clair Rowe Updated Partially\",\n \"tanggal\": \"2020-12-04\",\n \"lokasi\": \"67934 Juvenal Place\\nJeffport, OR 75023-4991\",\n \"deskripsi\": \"Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.\",\n \"warna\": \"Salmon\",\n \"merek\": \"Heaney-Hansen\",\n \"user_id\": 5,\n \"status_id\": 4,\n \"created_at\": null,\n \"updated_at\": \"2020-12-10T15:28:18.000000Z\",\n \"stasiun\": {\n     \"id\": 4,\n     \"nama\": \"Lou Gutmann\"\n },\n \"kategori\": {\n     \"id\": 3,\n     \"nama\": \"Mr. Toby Fadel\"\n }\n \"barangimages\": [\n     {\n       \"id\": 1,\n       \"nama\": \"Teresa Hettinger\",\n       \"uri\": \"https://via.placeholder.com/640x480.png/00cc66?text=tenetur\",\n       \"barang_id\": 3\n     }\n ]\n}"
                 401:
                     description: '401, Unauthorized'
                     content:
@@ -4231,11 +4204,11 @@ paths:
                             schema:
                                 type: object
                                 example:
-                                    data: [{ id: 5, nama_barang: 'Jolie Stroman', tanggal: '2020-12-10', lokasi: "5630 Santino Lakes Suite 696\nEast Ellenport, NC 76357-2264", warna: MediumTurquoise, merek: Klocko-Boyer, user_id: 2, status_id: 1, kategori_id: 3, stasiun: { id: 5, nama: 'Muriel Gibson' } }, { id: 4, nama_barang: 'Hanna Lynch PhD', tanggal: '2020-12-10', lokasi: "52976 Delilah Island\nLednerborough, KY 35522-5757", warna: LightCoral, merek: 'Ernser, Bernhard and Deckow', user_id: 5, status_id: 3, kategori_id: 1, stasiun: { id: 4, nama: 'Minerva Hirthe' } }, { id: 3, nama_barang: 'Ms. Aaliyah Mills Sr.', tanggal: '2020-12-10', lokasi: "7241 Milton Loaf\nReichelport, AK 28866-0297", warna: PapayaWhip, merek: 'Langworth PLC', user_id: 4, status_id: 3, kategori_id: 5, stasiun: { id: 2, nama: 'Dr. Abbigail Price' } }, { id: 2, nama_barang: 'Letha Stracke', tanggal: '2020-12-10', lokasi: "43960 Franecki Forest Apt. 980\nShainafurt, RI 37135", warna: Snow, merek: Crooks-Schmitt, user_id: 1, status_id: 2, kategori_id: 4, stasiun: { id: 2, nama: 'Dr. Abbigail Price' } }, { id: 1, nama_barang: 'Ms. Cecelia Mayer I', tanggal: '2020-12-10', lokasi: "9989 Anissa Pass\nKovacekland, NE 88768-3281", warna: MediumVioletRed, merek: 'Hartmann, Reinger and Jaskolski', user_id: 5, status_id: 1, kategori_id: 5, stasiun: { id: 5, nama: 'Muriel Gibson' } }]
+                                    data: [{ id: 5, nama_barang: 'Jolie Stroman', tanggal: '2020-12-10', lokasi: "5630 Santino Lakes Suite 696\nEast Ellenport, NC 76357-2264", warna: MediumTurquoise, merek: Klocko-Boyer, user_id: 2, status_id: 1, kategori_id: 3, stasiun: { id: 5, nama: 'Muriel Gibson' }, barangimages: [] }, { id: 4, nama_barang: 'Hanna Lynch PhD', tanggal: '2020-12-10', lokasi: "52976 Delilah Island\nLednerborough, KY 35522-5757", warna: LightCoral, merek: 'Ernser, Bernhard and Deckow', user_id: 5, status_id: 3, kategori_id: 1, stasiun: { id: 4, nama: 'Minerva Hirthe' }, barangimages: [] }, { id: 3, nama_barang: 'Ms. Aaliyah Mills Sr.', tanggal: '2020-12-10', lokasi: "7241 Milton Loaf\nReichelport, AK 28866-0297", warna: PapayaWhip, merek: 'Langworth PLC', user_id: 4, status_id: 3, kategori_id: 5, stasiun: { id: 2, nama: 'Dr. Abbigail Price' }, barangimages: [{ id: 1, nama: 'Teresa Hettinger', uri: 'https://via.placeholder.com/640x480.png/00cc66?text=tenetur', barang_id: 3 }] }, { id: 2, nama_barang: 'Letha Stracke', tanggal: '2020-12-10', lokasi: "43960 Franecki Forest Apt. 980\nShainafurt, RI 37135", warna: Snow, merek: Crooks-Schmitt, user_id: 1, status_id: 2, kategori_id: 4, stasiun: { id: 2, nama: 'Dr. Abbigail Price' }, barangimages: [] }, { id: 1, nama_barang: 'Ms. Cecelia Mayer I', tanggal: '2020-12-10', lokasi: "9989 Anissa Pass\nKovacekland, NE 88768-3281", warna: MediumVioletRed, merek: 'Hartmann, Reinger and Jaskolski', user_id: 5, status_id: 1, kategori_id: 5, stasiun: { id: 5, nama: 'Muriel Gibson' }, barangimages: [] }]
                                     links: { first: 'http://localhost/api/v1/barang?orderBy=-id&search=2020&page=1', last: 'http://localhost/api/v1/barang?orderBy=-id&search=2020&page=1', prev: null, next: null }
                                     meta: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/barang?orderBy=-id&search=2020&page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/barang', per_page: 20, to: 5, total: 5 }
                                 properties:
-                                    data: { type: array, example: [{ id: 5, nama_barang: 'Jolie Stroman', tanggal: '2020-12-10', lokasi: "5630 Santino Lakes Suite 696\nEast Ellenport, NC 76357-2264", warna: MediumTurquoise, merek: Klocko-Boyer, user_id: 2, status_id: 1, kategori_id: 3, stasiun: { id: 5, nama: 'Muriel Gibson' } }, { id: 4, nama_barang: 'Hanna Lynch PhD', tanggal: '2020-12-10', lokasi: "52976 Delilah Island\nLednerborough, KY 35522-5757", warna: LightCoral, merek: 'Ernser, Bernhard and Deckow', user_id: 5, status_id: 3, kategori_id: 1, stasiun: { id: 4, nama: 'Minerva Hirthe' } }, { id: 3, nama_barang: 'Ms. Aaliyah Mills Sr.', tanggal: '2020-12-10', lokasi: "7241 Milton Loaf\nReichelport, AK 28866-0297", warna: PapayaWhip, merek: 'Langworth PLC', user_id: 4, status_id: 3, kategori_id: 5, stasiun: { id: 2, nama: 'Dr. Abbigail Price' } }, { id: 2, nama_barang: 'Letha Stracke', tanggal: '2020-12-10', lokasi: "43960 Franecki Forest Apt. 980\nShainafurt, RI 37135", warna: Snow, merek: Crooks-Schmitt, user_id: 1, status_id: 2, kategori_id: 4, stasiun: { id: 2, nama: 'Dr. Abbigail Price' } }, { id: 1, nama_barang: 'Ms. Cecelia Mayer I', tanggal: '2020-12-10', lokasi: "9989 Anissa Pass\nKovacekland, NE 88768-3281", warna: MediumVioletRed, merek: 'Hartmann, Reinger and Jaskolski', user_id: 5, status_id: 1, kategori_id: 5, stasiun: { id: 5, nama: 'Muriel Gibson' } }], items: { type: object } }
+                                    data: { type: array, example: [{ id: 5, nama_barang: 'Jolie Stroman', tanggal: '2020-12-10', lokasi: "5630 Santino Lakes Suite 696\nEast Ellenport, NC 76357-2264", warna: MediumTurquoise, merek: Klocko-Boyer, user_id: 2, status_id: 1, kategori_id: 3, stasiun: { id: 5, nama: 'Muriel Gibson' }, barangimages: [] }, { id: 4, nama_barang: 'Hanna Lynch PhD', tanggal: '2020-12-10', lokasi: "52976 Delilah Island\nLednerborough, KY 35522-5757", warna: LightCoral, merek: 'Ernser, Bernhard and Deckow', user_id: 5, status_id: 3, kategori_id: 1, stasiun: { id: 4, nama: 'Minerva Hirthe' }, barangimages: [] }, { id: 3, nama_barang: 'Ms. Aaliyah Mills Sr.', tanggal: '2020-12-10', lokasi: "7241 Milton Loaf\nReichelport, AK 28866-0297", warna: PapayaWhip, merek: 'Langworth PLC', user_id: 4, status_id: 3, kategori_id: 5, stasiun: { id: 2, nama: 'Dr. Abbigail Price' }, barangimages: [{ id: 1, nama: 'Teresa Hettinger', uri: 'https://via.placeholder.com/640x480.png/00cc66?text=tenetur', barang_id: 3 }] }, { id: 2, nama_barang: 'Letha Stracke', tanggal: '2020-12-10', lokasi: "43960 Franecki Forest Apt. 980\nShainafurt, RI 37135", warna: Snow, merek: Crooks-Schmitt, user_id: 1, status_id: 2, kategori_id: 4, stasiun: { id: 2, nama: 'Dr. Abbigail Price' }, barangimages: [] }, { id: 1, nama_barang: 'Ms. Cecelia Mayer I', tanggal: '2020-12-10', lokasi: "9989 Anissa Pass\nKovacekland, NE 88768-3281", warna: MediumVioletRed, merek: 'Hartmann, Reinger and Jaskolski', user_id: 5, status_id: 1, kategori_id: 5, stasiun: { id: 5, nama: 'Muriel Gibson' }, barangimages: [] }], items: { type: object } }
                                     links: { type: object, example: { first: 'http://localhost/api/v1/barang?orderBy=-id&search=2020&page=1', last: 'http://localhost/api/v1/barang?orderBy=-id&search=2020&page=1', prev: null, next: null } }
                                     meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/barang?orderBy=-id&search=2020&page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/barang', per_page: 20, to: 5, total: 5 } }
             tags:
