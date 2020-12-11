@@ -620,26 +620,35 @@ response.json()
 > Example response (200, success):
 
 ```json
+
 {
-    "id": 3,
-    "nama_barang": "Clair Rowe Updated Partially",
-    "tanggal": "2020-12-04",
-    "lokasi": "67934 Juvenal Place\nJeffport, OR 75023-4991",
-    "deskripsi": "Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.",
-    "warna": "Salmon",
-    "merek": "Heaney-Hansen",
-    "user_id": 5,
-    "status_id": 4,
-    "created_at": null,
-    "updated_at": "2020-12-10T15:28:18.000000Z",
-    "stasiun": {
-        "id": 4,
-        "nama": "Lou Gutmann"
-    },
-    "kategori": {
-        "id": 3,
-        "nama": "Mr. Toby Fadel"
-    }
+ "id": 3,
+ "nama_barang": "Clair Rowe Updated Partially",
+ "tanggal": "2020-12-04",
+ "lokasi": "67934 Juvenal Place\nJeffport, OR 75023-4991",
+ "deskripsi": "Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.",
+ "warna": "Salmon",
+ "merek": "Heaney-Hansen",
+ "user_id": 5,
+ "status_id": 4,
+ "created_at": null,
+ "updated_at": "2020-12-10T15:28:18.000000Z",
+ "stasiun": {
+     "id": 4,
+     "nama": "Lou Gutmann"
+ },
+ "kategori": {
+     "id": 3,
+     "nama": "Mr. Toby Fadel"
+ }
+ "barangimages": [
+     {
+       "id": 1,
+       "nama": "Teresa Hettinger",
+       "uri": "https://via.placeholder.com/640x480.png/00cc66?text=tenetur",
+       "barang_id": 3
+     }
+ ]
 }
 ```
 > Example response (401, Unauthorized):
@@ -1007,7 +1016,8 @@ response.json()
             "stasiun": {
                 "id": 5,
                 "nama": "Muriel Gibson"
-            }
+            },
+            "barangimages": []
         },
         {
             "id": 4,
@@ -1022,7 +1032,8 @@ response.json()
             "stasiun": {
                 "id": 4,
                 "nama": "Minerva Hirthe"
-            }
+            },
+            "barangimages": []
         },
         {
             "id": 3,
@@ -1037,7 +1048,15 @@ response.json()
             "stasiun": {
                 "id": 2,
                 "nama": "Dr. Abbigail Price"
-            }
+            },
+            "barangimages": [
+                {
+                    "id": 1,
+                    "nama": "Teresa Hettinger",
+                    "uri": "https:\/\/via.placeholder.com\/640x480.png\/00cc66?text=tenetur",
+                    "barang_id": 3
+                }
+            ]
         },
         {
             "id": 2,
@@ -1052,7 +1071,8 @@ response.json()
             "stasiun": {
                 "id": 2,
                 "nama": "Dr. Abbigail Price"
-            }
+            },
+            "barangimages": []
         },
         {
             "id": 1,
@@ -1067,7 +1087,8 @@ response.json()
             "stasiun": {
                 "id": 5,
                 "nama": "Muriel Gibson"
-            }
+            },
+            "barangimages": []
         }
     ],
     "links": {

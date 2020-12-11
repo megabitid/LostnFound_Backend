@@ -135,7 +135,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: dolores
+                example: provident
                 required: true
                 schema:
                     type: string
@@ -173,7 +173,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: enim
+                example: quis
                 required: true
                 schema:
                     type: string
@@ -444,7 +444,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: ea
+                example: in
                 required: true
                 schema:
                     type: string
@@ -758,7 +758,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: est
+                example: sit
                 required: true
                 schema:
                     type: string
@@ -933,7 +933,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: aut
+                example: reiciendis
                 required: true
                 schema:
                     type: string
@@ -1136,7 +1136,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: voluptatem
+                example: repellat
                 required: true
                 schema:
                     type: string
@@ -1311,7 +1311,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: impedit
+                example: aut
                 required: true
                 schema:
                     type: string
@@ -1557,7 +1557,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: veniam
+                example: mollitia
                 required: true
                 schema:
                     type: string
@@ -1595,7 +1595,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: molestias
+                example: dolor
                 required: true
                 schema:
                     type: string
@@ -1798,7 +1798,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: quis
+                example: omnis
                 required: true
                 schema:
                     type: string
@@ -1836,7 +1836,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: blanditiis
+                example: neque
                 required: true
                 schema:
                     type: string
@@ -2107,7 +2107,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: sunt
+                example: quam
                 required: true
                 schema:
                     type: string
@@ -2322,7 +2322,7 @@ paths:
                 in: path
                 name: token
                 description: ''
-                example: maxime
+                example: id
                 required: true
                 schema:
                     type: string
@@ -2424,7 +2424,7 @@ paths:
                 in: path
                 name: token
                 description: ''
-                example: voluptas
+                example: facilis
                 required: true
                 schema:
                     type: string
@@ -2599,7 +2599,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: sunt
+                example: ut
                 required: true
                 schema:
                     type: string
@@ -2774,7 +2774,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: dolore
+                example: non
                 required: true
                 schema:
                     type: string
@@ -2949,7 +2949,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: reiciendis
+                example: laudantium
                 required: true
                 schema:
                     type: string
@@ -3152,7 +3152,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: quae
+                example: qui
                 required: true
                 schema:
                     type: string
@@ -3327,7 +3327,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: aut
+                example: laudantium
                 required: true
                 schema:
                     type: string
