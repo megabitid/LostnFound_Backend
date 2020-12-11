@@ -2,9 +2,9 @@
 
 ### API for Manage Barang.
 
-This API is used to manage barang. 
+This API is used to managing barang. 
 Including barang hilang, ditemukan, didonasikan, diklaim; 
-depending with it's status.
+depending with its status.
 
 ## Delete Barang.
 
@@ -773,7 +773,7 @@ response.json()
 ```
 
 
-> Example response (201, update success):
+> Example response (201, success):
 
 ```json
 {
@@ -926,7 +926,7 @@ id Kategori barang.</p>
 ### orderBy query supported fields:
 * All field of barang detail
 
-### search query will search string inside theese fields:
+### search query will search string inside these fields:
 * nama_barang
 * lokasi
 * tanggl
