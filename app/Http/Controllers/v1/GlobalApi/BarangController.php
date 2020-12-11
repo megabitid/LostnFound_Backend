@@ -92,6 +92,9 @@ class BarangController extends Controller
         ];
         $query = QueryBuilder::searchIn($request, $query, $searchFields);
         $query = $query->with('stasiun');
+        $query = $query->with(array('barangimages'=>function($query){
+            $query->first();
+        }));
 
 
         // paginate
@@ -227,6 +230,14 @@ class BarangController extends Controller
      *      "id": 3,
      *      "nama": "Mr. Toby Fadel"
      *  }
+     *  "barangimages": [
+     *      {
+     *        "id": 1,
+     *        "nama": "Teresa Hettinger",
+     *        "uri": "https://via.placeholder.com/640x480.png/00cc66?text=tenetur",
+     *        "barang_id": 3
+     *      }
+     *  ]
      * }
      * @response status=401 scenario="Unauthorized" {
      *  "message": "Token not provided"
@@ -237,7 +248,7 @@ class BarangController extends Controller
      */
     public function show($id)
     {
-        $barang = Barang::with(['stasiun','kategori'])->findOrFail($id);
+        $barang = Barang::with(['stasiun','kategori','barangimages'])->findOrFail($id);
         $excludeFields = [
             'stasiun_id',
             'kategori_id',
