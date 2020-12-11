@@ -46,7 +46,7 @@
                             <li><a href='http://github.com/knuckleswtf/scribe'>Documentation powered by Scribe ✍</a></li>
                     </ul>
             <ul class="toc-footer" id="last-updated">
-            <li>Last updated: December 10 2020</li>
+            <li>Last updated: December 11 2020</li>
         </ul>
 </div>
 <div class="page-wrapper">
@@ -66,7 +66,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 <p>Base URL</p>
 </blockquote>
 <pre><code class="language-yaml">https://megabit-lostnfound.herokuapp.com</code></pre><h1>Authenticating requests</h1>
-<p>This API is authenticated by sending an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
+<p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 <p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p><h1>Endpoints</h1>
 <h2>Display the specified resource.</h2>
@@ -75,12 +75,12 @@ You can switch the language used with the tabs at the top right (or from the nav
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/recusandae" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/ut" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/recusandae"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/ut"
 );
 
 let headers = {
@@ -96,7 +96,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/users/recusandae'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/users/ut'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -146,12 +146,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/quaerat" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/nulla" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/quaerat"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/nulla"
 );
 
 let headers = {
@@ -167,7 +167,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/users/quaerat'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/users/nulla'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -211,12 +211,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/ducimus" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/voluptas" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/ducimus"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/voluptas"
 );
 
 let headers = {
@@ -232,7 +232,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/users/ducimus'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/users/voluptas'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -276,12 +276,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/tempore" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/ut" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/tempore"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/ut"
 );
 
 let headers = {
@@ -297,7 +297,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/users/tempore'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/users/ut'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -341,12 +341,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/a/restore" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/esse/restore" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/a/restore"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/esse/restore"
 );
 
 let headers = {
@@ -362,7 +362,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/users/a/restore'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/users/esse/restore'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -443,26 +443,10 @@ response.json()</code></pre>
     "data": [
         {
             "id": 6,
-            "nama": "Sammy Wolf",
-            "nip": "4556066534106639",
-            "image": "https:\/\/via.placeholder.com\/640x480.png\/00bb33?text=voluptate",
+            "nama": "Dr. Mathias Rohan II",
+            "nip": "4539422570508851",
+            "image": "https:\/\/via.placeholder.com\/640x480.png\/008800?text=doloribus",
             "role": 2,
-            "stasiun_id": null
-        },
-        {
-            "id": 8,
-            "nama": "Tono",
-            "nip": "124",
-            "image": "",
-            "role": 1,
-            "stasiun_id": null
-        },
-        {
-            "id": 9,
-            "nama": "Tono",
-            "nip": "125",
-            "image": "",
-            "role": 1,
             "stasiun_id": null
         }
     ],
@@ -495,8 +479,8 @@ response.json()</code></pre>
         ],
         "path": "http:\/\/localhost\/api\/v1\/web\/users",
         "per_page": 20,
-        "to": 3,
-        "total": 3
+        "to": 1,
+        "total": 1
     }
 }</code></pre>
 <div id="execution-results-GETapi-v1-web-users" hidden>
@@ -762,12 +746,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/est" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/rem" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/est"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/rem"
 );
 
 let headers = {
@@ -783,7 +767,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/est'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/rem'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -833,12 +817,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/iure" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/corrupti" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/iure"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/corrupti"
 );
 
 let headers = {
@@ -854,7 +838,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/iure'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/corrupti'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -898,12 +882,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/veritatis" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/iure" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/veritatis"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/iure"
 );
 
 let headers = {
@@ -919,7 +903,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/veritatis'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/iure'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -1000,38 +984,38 @@ response.json()</code></pre>
     "data": [
         {
             "id": 1,
-            "nama": "Pierre Jacobi",
-            "email": "cebert@gmail.com",
-            "email_verified_at": "2020-12-04T15:26:50.000000Z",
-            "image": "https:\/\/via.placeholder.com\/640x480.png\/0011ff?text=rerum"
+            "nama": "Yoshiko Gottlieb",
+            "email": "katheryn42@okeefe.biz",
+            "email_verified_at": "2020-12-10T17:18:48.000000Z",
+            "image": "https:\/\/via.placeholder.com\/640x480.png\/00ddee?text=nostrum"
         },
         {
             "id": 2,
-            "nama": "Ted Johns",
-            "email": "merlin35@yahoo.com",
-            "email_verified_at": "2020-12-04T15:26:50.000000Z",
-            "image": "https:\/\/via.placeholder.com\/640x480.png\/00cc88?text=quisquam"
+            "nama": "Tressa Kling",
+            "email": "lgrimes@hodkiewicz.com",
+            "email_verified_at": "2020-12-10T17:18:49.000000Z",
+            "image": "https:\/\/via.placeholder.com\/640x480.png\/00ffbb?text=cum"
         },
         {
             "id": 3,
-            "nama": "Carter Sporer",
-            "email": "jordy.keeling@gmail.com",
-            "email_verified_at": "2020-12-04T15:26:51.000000Z",
-            "image": "https:\/\/via.placeholder.com\/640x480.png\/004433?text=quo"
+            "nama": "Trystan Bogisich",
+            "email": "amalia.murray@hotmail.com",
+            "email_verified_at": "2020-12-10T17:18:49.000000Z",
+            "image": "https:\/\/via.placeholder.com\/640x480.png\/00ff11?text=quia"
         },
         {
             "id": 4,
-            "nama": "Marlin Gleichner II",
-            "email": "gorn@yahoo.com",
-            "email_verified_at": "2020-12-04T15:26:51.000000Z",
-            "image": "https:\/\/via.placeholder.com\/640x480.png\/0077bb?text=aliquam"
+            "nama": "Mrs. Blanche Wisoky",
+            "email": "vstanton@monahan.info",
+            "email_verified_at": "2020-12-10T17:18:49.000000Z",
+            "image": "https:\/\/via.placeholder.com\/640x480.png\/00ff33?text=et"
         },
         {
             "id": 5,
-            "nama": "Polly Dickinson",
-            "email": "noemi.reilly@gmail.com",
-            "email_verified_at": "2020-12-04T15:26:52.000000Z",
-            "image": "https:\/\/via.placeholder.com\/640x480.png\/003355?text=ex"
+            "nama": "Ms. Josie Macejkovic",
+            "email": "hmonahan@bergnaum.net",
+            "email_verified_at": "2020-12-10T17:18:49.000000Z",
+            "image": "https:\/\/via.placeholder.com\/640x480.png\/0077aa?text=odio"
         }
     ],
     "links": {
@@ -2870,6 +2854,8 @@ response.json()</code></pre>
                     {},
                     {},
                     {},
+                    {},
+                    {},
                     {}
                 ]
             ]
@@ -3070,12 +3056,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/stasiun/et" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/stasiun/ex" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/stasiun/et"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/stasiun/ex"
 );
 
 let headers = {
@@ -3091,7 +3077,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/stasiun/et'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/stasiun/ex'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -3135,12 +3121,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/stasiun/omnis" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/stasiun/sed" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/stasiun/omnis"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/stasiun/sed"
 );
 
 let headers = {
@@ -3156,7 +3142,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/stasiun/omnis'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/stasiun/sed'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -3200,12 +3186,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/stasiun/nisi" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/stasiun/quia" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/stasiun/nisi"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/stasiun/quia"
 );
 
 let headers = {
@@ -3221,7 +3207,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/stasiun/nisi'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/stasiun/quia'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -3367,23 +3353,23 @@ response.json()</code></pre>
     "data": [
         {
             "id": 1,
-            "nama": "Bobbie Haley V"
+            "nama": "Norval Goyette IV"
         },
         {
             "id": 2,
-            "nama": "Filiberto Predovic"
+            "nama": "Dr. Abbigail Price"
         },
         {
             "id": 3,
-            "nama": "Delia Pollich Jr."
+            "nama": "Prof. Kamren Dickens DVM"
         },
         {
             "id": 4,
-            "nama": "Lou Gutmann"
+            "nama": "Minerva Hirthe"
         },
         {
             "id": 5,
-            "nama": "Taurean Davis I"
+            "nama": "Muriel Gibson"
         }
     ],
     "links": {
@@ -3448,12 +3434,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-kategori/expedita" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-kategori/sapiente" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-kategori/expedita"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-kategori/sapiente"
 );
 
 let headers = {
@@ -3469,7 +3455,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-kategori/expedita'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-kategori/sapiente'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -3578,12 +3564,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/barang-kategori/pariatur" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/barang-kategori/est" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-kategori/pariatur"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-kategori/est"
 );
 
 let headers = {
@@ -3599,7 +3585,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-kategori/pariatur'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-kategori/est'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -3745,23 +3731,23 @@ response.json()</code></pre>
     "data": [
         {
             "id": 1,
-            "nama": "Desmond Hilpert"
+            "nama": "Mrs. Hosea Hyatt"
         },
         {
             "id": 2,
-            "nama": "Eryn Stark"
+            "nama": "Isaac Jacobs"
         },
         {
             "id": 3,
-            "nama": "Mr. Toby Fadel"
+            "nama": "Ben Bailey"
         },
         {
             "id": 4,
-            "nama": "Willie Muller"
+            "nama": "Lionel Hartmann I"
         },
         {
             "id": 5,
-            "nama": "Veda Botsford"
+            "nama": "Mariane Eichmann"
         }
     ],
     "links": {
@@ -3826,12 +3812,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/impedit" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/est" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/impedit"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/est"
 );
 
 let headers = {
@@ -3847,7 +3833,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/impedit'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/est'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -3891,12 +3877,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/est" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/repellendus" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/est"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/repellendus"
 );
 
 let headers = {
@@ -3912,7 +3898,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/est'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/repellendus'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -3956,12 +3942,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/excepturi" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/aliquid" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/excepturi"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/aliquid"
 );
 
 let headers = {
@@ -3977,7 +3963,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/excepturi'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/aliquid'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -4021,12 +4007,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/veniam" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/tenetur" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/veniam"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/tenetur"
 );
 
 let headers = {
@@ -4042,7 +4028,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/veniam'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/tenetur'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -4188,27 +4174,33 @@ response.json()</code></pre>
     "data": [
         {
             "id": 1,
-            "nama": "Alexane Muller",
-            "uri": "https:\/\/via.placeholder.com\/640x480.png\/00ffcc?text=perspiciatis",
-            "barang_id": 5
-        },
-        {
-            "id": 2,
-            "nama": "Jayce Romaguera",
-            "uri": "https:\/\/via.placeholder.com\/640x480.png\/00aa22?text=sunt",
-            "barang_id": 4
-        },
-        {
-            "id": 3,
-            "nama": "Dwight Murphy",
-            "uri": "https:\/\/via.placeholder.com\/640x480.png\/00aa33?text=animi",
+            "nama": "Teresa Hettinger",
+            "uri": "https:\/\/via.placeholder.com\/640x480.png\/00cc66?text=tenetur",
             "barang_id": 3
         },
         {
+            "id": 2,
+            "nama": "Laverne Jacobs III",
+            "uri": "https:\/\/via.placeholder.com\/640x480.png\/0044ee?text=sed",
+            "barang_id": 1
+        },
+        {
+            "id": 3,
+            "nama": "Aylin Rosenbaum",
+            "uri": "https:\/\/via.placeholder.com\/640x480.png\/003322?text=quos",
+            "barang_id": 2
+        },
+        {
+            "id": 4,
+            "nama": "Emmett Schmitt V",
+            "uri": "https:\/\/via.placeholder.com\/640x480.png\/00eedd?text=quis",
+            "barang_id": 1
+        },
+        {
             "id": 5,
-            "nama": "Mr. Cristina Gerlach",
-            "uri": "https:\/\/via.placeholder.com\/640x480.png\/00bb99?text=repellendus",
-            "barang_id": 4
+            "nama": "Miss Queen Batz",
+            "uri": "https:\/\/via.placeholder.com\/640x480.png\/00cc22?text=non",
+            "barang_id": 5
         }
     ],
     "links": {
@@ -4240,8 +4232,8 @@ response.json()</code></pre>
         ],
         "path": "http:\/\/localhost\/api\/v1\/barang-images",
         "per_page": 20,
-        "to": 4,
-        "total": 4
+        "to": 5,
+        "total": 5
     }
 }</code></pre>
 <div id="execution-results-GETapi-v1-barang-images" hidden>
@@ -4273,12 +4265,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-status/doloribus" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-status/nesciunt" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-status/doloribus"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-status/nesciunt"
 );
 
 let headers = {
@@ -4294,7 +4286,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-status/doloribus'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-status/nesciunt'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -4338,12 +4330,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-status/molestias" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-status/dolorem" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-status/molestias"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-status/dolorem"
 );
 
 let headers = {
@@ -4359,7 +4351,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-status/molestias'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-status/dolorem'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -4403,12 +4395,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/barang-status/maxime" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/barang-status/sint" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-status/maxime"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/barang-status/sint"
 );
 
 let headers = {
@@ -4424,7 +4416,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-status/maxime'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-status/sint'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -4681,32 +4673,7 @@ response.json()</code></pre>
 <p>Example response (200):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "data": [
-        {
-            "id": 1,
-            "user_id": 6,
-            "barang_id": null,
-            "status": "ditemukan",
-            "created_at": "2020-12-06T02:09:03.000000Z",
-            "updated_at": "2020-12-06T02:09:03.000000Z"
-        },
-        {
-            "id": 2,
-            "user_id": 6,
-            "barang_id": null,
-            "status": "ditemukan",
-            "created_at": "2020-12-06T02:17:13.000000Z",
-            "updated_at": "2020-12-06T02:17:13.000000Z"
-        },
-        {
-            "id": 3,
-            "user_id": 6,
-            "barang_id": null,
-            "status": "hilang",
-            "created_at": "2020-12-06T02:24:08.000000Z",
-            "updated_at": "2020-12-06T02:24:08.000000Z"
-        }
-    ],
+    "data": [],
     "links": {
         "first": "http:\/\/localhost\/api\/v1\/histories?page=1",
         "last": "http:\/\/localhost\/api\/v1\/histories?page=1",
@@ -4715,7 +4682,7 @@ response.json()</code></pre>
     },
     "meta": {
         "current_page": 1,
-        "from": 1,
+        "from": null,
         "last_page": 1,
         "links": [
             {
@@ -4736,8 +4703,8 @@ response.json()</code></pre>
         ],
         "path": "http:\/\/localhost\/api\/v1\/histories",
         "per_page": 20,
-        "to": 3,
-        "total": 3
+        "to": null,
+        "total": 0
     }
 }</code></pre>
 <div id="execution-results-GETapi-v1-histories" hidden>
@@ -4769,12 +4736,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/quidem" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/est" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/quidem"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/est"
 );
 
 let headers = {
@@ -4790,7 +4757,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/quidem'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/est'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -4834,12 +4801,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/dolor/verified" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/aut/verified" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/dolor/verified"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/aut/verified"
 );
 
 let headers = {
@@ -4855,7 +4822,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/dolor/verified'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/aut/verified'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -4899,12 +4866,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/quaerat" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/et" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/quaerat"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/et"
 );
 
 let headers = {
@@ -4920,7 +4887,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/quaerat'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/et'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -4964,12 +4931,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/vel" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/omnis" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/vel"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/omnis"
 );
 
 let headers = {
@@ -4985,7 +4952,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/vel'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/omnis'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -5029,12 +4996,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/claims/nulla" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/claims/reiciendis" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/nulla"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/reiciendis"
 );
 
 let headers = {
@@ -5050,7 +5017,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/nulla'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/reiciendis'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -5193,68 +5160,7 @@ response.json()</code></pre>
 <p>Example response (200):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "data": [
-        {
-            "id": 3,
-            "alamat": "wkwkw",
-            "no_telp": "08",
-            "uri_tiket": "",
-            "verified": 0,
-            "created_at": "2020-12-09T08:05:27.000000Z",
-            "updated_at": "2020-12-09T08:05:27.000000Z",
-            "user_id": 1,
-            "barang_id": 3,
-            "barang": {
-                "id": 3,
-                "nama_barang": "Clair Rowe Updated Partially"
-            }
-        },
-        {
-            "id": 4,
-            "alamat": "wkwkw",
-            "no_telp": "08",
-            "uri_tiket": "",
-            "verified": 0,
-            "created_at": "2020-12-09T08:05:39.000000Z",
-            "updated_at": "2020-12-09T08:05:39.000000Z",
-            "user_id": 1,
-            "barang_id": 3,
-            "barang": {
-                "id": 3,
-                "nama_barang": "Clair Rowe Updated Partially"
-            }
-        },
-        {
-            "id": 5,
-            "alamat": "wkwkw",
-            "no_telp": "08",
-            "uri_tiket": "",
-            "verified": 0,
-            "created_at": "2020-12-09T08:05:41.000000Z",
-            "updated_at": "2020-12-09T08:05:41.000000Z",
-            "user_id": 1,
-            "barang_id": 3,
-            "barang": {
-                "id": 3,
-                "nama_barang": "Clair Rowe Updated Partially"
-            }
-        },
-        {
-            "id": 6,
-            "alamat": "wkwkw",
-            "no_telp": "08",
-            "uri_tiket": "",
-            "verified": 0,
-            "created_at": "2020-12-09T08:05:43.000000Z",
-            "updated_at": "2020-12-09T08:05:43.000000Z",
-            "user_id": 1,
-            "barang_id": 3,
-            "barang": {
-                "id": 3,
-                "nama_barang": "Clair Rowe Updated Partially"
-            }
-        }
-    ],
+    "data": [],
     "links": {
         "first": "http:\/\/localhost\/api\/v1\/claims?page=1",
         "last": "http:\/\/localhost\/api\/v1\/claims?page=1",
@@ -5263,7 +5169,7 @@ response.json()</code></pre>
     },
     "meta": {
         "current_page": 1,
-        "from": 1,
+        "from": null,
         "last_page": 1,
         "links": [
             {
@@ -5284,8 +5190,8 @@ response.json()</code></pre>
         ],
         "path": "http:\/\/localhost\/api\/v1\/claims",
         "per_page": 20,
-        "to": 4,
-        "total": 4
+        "to": null,
+        "total": 0
     }
 }</code></pre>
 <div id="execution-results-GETapi-v1-claims" hidden>
@@ -5317,12 +5223,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/commodi" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/excepturi" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/commodi"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/excepturi"
 );
 
 let headers = {
@@ -5338,7 +5244,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/users/commodi'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/users/excepturi'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -5388,12 +5294,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/modi" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/eveniet" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/modi"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/eveniet"
 );
 
 let headers = {
@@ -5409,7 +5315,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/users/modi'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/users/eveniet'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -5453,12 +5359,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/eum" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/optio" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/eum"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/optio"
 );
 
 let headers = {
@@ -5474,7 +5380,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/users/eum'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/users/optio'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -5518,12 +5424,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/omnis" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/atque" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/omnis"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/atque"
 );
 
 let headers = {
@@ -5539,7 +5445,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/users/omnis'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/users/atque'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -5583,12 +5489,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/sint/restore" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/beatae/restore" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/sint/restore"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/beatae/restore"
 );
 
 let headers = {
@@ -5604,7 +5510,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/users/sint/restore'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/users/beatae/restore'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -5685,26 +5591,10 @@ response.json()</code></pre>
     "data": [
         {
             "id": 6,
-            "nama": "Sammy Wolf",
-            "nip": "4556066534106639",
-            "image": "https:\/\/via.placeholder.com\/640x480.png\/00bb33?text=voluptate",
+            "nama": "Dr. Mathias Rohan II",
+            "nip": "4539422570508851",
+            "image": "https:\/\/via.placeholder.com\/640x480.png\/008800?text=doloribus",
             "role": 2,
-            "stasiun_id": null
-        },
-        {
-            "id": 8,
-            "nama": "Tono",
-            "nip": "124",
-            "image": "",
-            "role": 1,
-            "stasiun_id": null
-        },
-        {
-            "id": 9,
-            "nama": "Tono",
-            "nip": "125",
-            "image": "",
-            "role": 1,
             "stasiun_id": null
         }
     ],
@@ -5737,8 +5627,8 @@ response.json()</code></pre>
         ],
         "path": "http:\/\/localhost\/api\/v2\/web\/users",
         "per_page": 20,
-        "to": 3,
-        "total": 3
+        "to": 1,
+        "total": 1
     }
 }</code></pre>
 <div id="execution-results-GETapi-v2-web-users" hidden>
@@ -6004,12 +5894,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/sed" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/eaque" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/sed"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/eaque"
 );
 
 let headers = {
@@ -6025,7 +5915,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/users/sed'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/users/eaque'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -6075,12 +5965,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/autem" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/et" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/autem"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/et"
 );
 
 let headers = {
@@ -6096,7 +5986,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/users/autem'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/users/et'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -6140,12 +6030,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/molestiae" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/ad" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/molestiae"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/ad"
 );
 
 let headers = {
@@ -6161,7 +6051,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/users/molestiae'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/users/ad'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -6242,38 +6132,38 @@ response.json()</code></pre>
     "data": [
         {
             "id": 1,
-            "nama": "Pierre Jacobi",
-            "email": "cebert@gmail.com",
-            "email_verified_at": "2020-12-04T15:26:50.000000Z",
-            "image": "https:\/\/via.placeholder.com\/640x480.png\/0011ff?text=rerum"
+            "nama": "Yoshiko Gottlieb",
+            "email": "katheryn42@okeefe.biz",
+            "email_verified_at": "2020-12-10T17:18:48.000000Z",
+            "image": "https:\/\/via.placeholder.com\/640x480.png\/00ddee?text=nostrum"
         },
         {
             "id": 2,
-            "nama": "Ted Johns",
-            "email": "merlin35@yahoo.com",
-            "email_verified_at": "2020-12-04T15:26:50.000000Z",
-            "image": "https:\/\/via.placeholder.com\/640x480.png\/00cc88?text=quisquam"
+            "nama": "Tressa Kling",
+            "email": "lgrimes@hodkiewicz.com",
+            "email_verified_at": "2020-12-10T17:18:49.000000Z",
+            "image": "https:\/\/via.placeholder.com\/640x480.png\/00ffbb?text=cum"
         },
         {
             "id": 3,
-            "nama": "Carter Sporer",
-            "email": "jordy.keeling@gmail.com",
-            "email_verified_at": "2020-12-04T15:26:51.000000Z",
-            "image": "https:\/\/via.placeholder.com\/640x480.png\/004433?text=quo"
+            "nama": "Trystan Bogisich",
+            "email": "amalia.murray@hotmail.com",
+            "email_verified_at": "2020-12-10T17:18:49.000000Z",
+            "image": "https:\/\/via.placeholder.com\/640x480.png\/00ff11?text=quia"
         },
         {
             "id": 4,
-            "nama": "Marlin Gleichner II",
-            "email": "gorn@yahoo.com",
-            "email_verified_at": "2020-12-04T15:26:51.000000Z",
-            "image": "https:\/\/via.placeholder.com\/640x480.png\/0077bb?text=aliquam"
+            "nama": "Mrs. Blanche Wisoky",
+            "email": "vstanton@monahan.info",
+            "email_verified_at": "2020-12-10T17:18:49.000000Z",
+            "image": "https:\/\/via.placeholder.com\/640x480.png\/00ff33?text=et"
         },
         {
             "id": 5,
-            "nama": "Polly Dickinson",
-            "email": "noemi.reilly@gmail.com",
-            "email_verified_at": "2020-12-04T15:26:52.000000Z",
-            "image": "https:\/\/via.placeholder.com\/640x480.png\/003355?text=ex"
+            "nama": "Ms. Josie Macejkovic",
+            "email": "hmonahan@bergnaum.net",
+            "email_verified_at": "2020-12-10T17:18:49.000000Z",
+            "image": "https:\/\/via.placeholder.com\/640x480.png\/0077aa?text=odio"
         }
     ],
     "links": {
@@ -6572,12 +6462,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/verify/corrupti" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/verify/molestiae" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/verify/corrupti"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/verify/molestiae"
 );
 
 let headers = {
@@ -6593,7 +6483,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/verify/corrupti'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/verify/molestiae'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -6702,12 +6592,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/placeat" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/enim" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/placeat"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/enim"
 );
 
 let headers = {
@@ -6723,7 +6613,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/placeat'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/enim'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -6871,12 +6761,12 @@ hr {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X POST \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/eum" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/inventore" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/eum"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/inventore"
 );
 
 let headers = {
@@ -6892,7 +6782,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/eum'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/inventore'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -8476,6 +8366,8 @@ response.json()</code></pre>
                     {},
                     {},
                     {},
+                    {},
+                    {},
                     {}
                 ]
             ]
@@ -8676,12 +8568,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/fuga" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/ut" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/fuga"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/ut"
 );
 
 let headers = {
@@ -8697,7 +8589,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang/fuga'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang/ut'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -8741,12 +8633,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/autem" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/et" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/autem"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/et"
 );
 
 let headers = {
@@ -8762,7 +8654,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang/autem'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang/et'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -8806,12 +8698,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/et" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/nam" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/et"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/nam"
 );
 
 let headers = {
@@ -8827,7 +8719,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang/et'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang/nam'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -8871,12 +8763,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/barang/eligendi" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/barang/odit" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/eligendi"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/odit"
 );
 
 let headers = {
@@ -8892,7 +8784,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang/eligendi'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang/odit'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -9037,48 +8929,78 @@ response.json()</code></pre>
 <pre><code class="language-json">{
     "data": [
         {
-            "id": 3,
-            "nama_barang": "Clair Rowe Updated Partially",
-            "tanggal": "2020-12-04",
-            "lokasi": "67934 Juvenal Place\nJeffport, OR 75023-4991",
-            "warna": "Salmon",
-            "merek": "Heaney-Hansen",
+            "id": 1,
+            "nama_barang": "Ms. Cecelia Mayer I",
+            "tanggal": "2020-12-10",
+            "lokasi": "9989 Anissa Pass\nKovacekland, NE 88768-3281",
+            "warna": "MediumVioletRed",
+            "merek": "Hartmann, Reinger and Jaskolski",
             "user_id": 5,
-            "status_id": 4,
-            "kategori_id": 3,
+            "status_id": 1,
+            "kategori_id": 5,
             "stasiun": {
-                "id": 4,
-                "nama": "Lou Gutmann"
+                "id": 5,
+                "nama": "Muriel Gibson"
+            }
+        },
+        {
+            "id": 2,
+            "nama_barang": "Letha Stracke",
+            "tanggal": "2020-12-10",
+            "lokasi": "43960 Franecki Forest Apt. 980\nShainafurt, RI 37135",
+            "warna": "Snow",
+            "merek": "Crooks-Schmitt",
+            "user_id": 1,
+            "status_id": 2,
+            "kategori_id": 4,
+            "stasiun": {
+                "id": 2,
+                "nama": "Dr. Abbigail Price"
+            }
+        },
+        {
+            "id": 3,
+            "nama_barang": "Ms. Aaliyah Mills Sr.",
+            "tanggal": "2020-12-10",
+            "lokasi": "7241 Milton Loaf\nReichelport, AK 28866-0297",
+            "warna": "PapayaWhip",
+            "merek": "Langworth PLC",
+            "user_id": 4,
+            "status_id": 3,
+            "kategori_id": 5,
+            "stasiun": {
+                "id": 2,
+                "nama": "Dr. Abbigail Price"
             }
         },
         {
             "id": 4,
-            "nama_barang": "Howell Herman",
-            "tanggal": "2020-12-04",
-            "lokasi": "86652 Kovacek Lane Suite 799\nZiemehaven, NM 82483-6929",
-            "warna": "CadetBlue",
-            "merek": "Beier-Green",
-            "user_id": 1,
-            "status_id": 1,
-            "kategori_id": 2,
+            "nama_barang": "Hanna Lynch PhD",
+            "tanggal": "2020-12-10",
+            "lokasi": "52976 Delilah Island\nLednerborough, KY 35522-5757",
+            "warna": "LightCoral",
+            "merek": "Ernser, Bernhard and Deckow",
+            "user_id": 5,
+            "status_id": 3,
+            "kategori_id": 1,
             "stasiun": {
-                "id": 5,
-                "nama": "Taurean Davis I"
+                "id": 4,
+                "nama": "Minerva Hirthe"
             }
         },
         {
             "id": 5,
-            "nama_barang": "Jacques Dietrich DVM",
-            "tanggal": "2020-12-04",
-            "lokasi": "63070 Christiansen Viaduct\nMargarettachester, MT 82331-1192",
-            "warna": "PapayaWhip",
-            "merek": "Orn-Herman",
-            "user_id": 6,
-            "status_id": 4,
-            "kategori_id": 2,
+            "nama_barang": "Jolie Stroman",
+            "tanggal": "2020-12-10",
+            "lokasi": "5630 Santino Lakes Suite 696\nEast Ellenport, NC 76357-2264",
+            "warna": "MediumTurquoise",
+            "merek": "Klocko-Boyer",
+            "user_id": 2,
+            "status_id": 1,
+            "kategori_id": 3,
             "stasiun": {
-                "id": 3,
-                "nama": "Delia Pollich Jr."
+                "id": 5,
+                "nama": "Muriel Gibson"
             }
         }
     ],
@@ -9111,8 +9033,8 @@ response.json()</code></pre>
         ],
         "path": "http:\/\/localhost\/api\/v2\/barang",
         "per_page": 20,
-        "to": 3,
-        "total": 3
+        "to": 5,
+        "total": 5
     }
 }</code></pre>
 <div id="execution-results-GETapi-v2-barang" hidden>
@@ -9144,12 +9066,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/quibusdam" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/assumenda" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/quibusdam"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/assumenda"
 );
 
 let headers = {
@@ -9165,7 +9087,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/quibusdam'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/assumenda'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -9209,12 +9131,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/molestiae" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/dolores" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/molestiae"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/dolores"
 );
 
 let headers = {
@@ -9230,7 +9152,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/molestiae'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/dolores'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -9274,12 +9196,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/ea" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/provident" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/ea"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/provident"
 );
 
 let headers = {
@@ -9295,7 +9217,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/ea'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/provident'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -9441,23 +9363,23 @@ response.json()</code></pre>
     "data": [
         {
             "id": 1,
-            "nama": "Bobbie Haley V"
+            "nama": "Norval Goyette IV"
         },
         {
             "id": 2,
-            "nama": "Filiberto Predovic"
+            "nama": "Dr. Abbigail Price"
         },
         {
             "id": 3,
-            "nama": "Delia Pollich Jr."
+            "nama": "Prof. Kamren Dickens DVM"
         },
         {
             "id": 4,
-            "nama": "Lou Gutmann"
+            "nama": "Minerva Hirthe"
         },
         {
             "id": 5,
-            "nama": "Taurean Davis I"
+            "nama": "Muriel Gibson"
         }
     ],
     "links": {
@@ -9522,12 +9444,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/eius" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/voluptas" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/eius"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/voluptas"
 );
 
 let headers = {
@@ -9543,7 +9465,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/eius'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/voluptas'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -9587,12 +9509,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/est" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/autem" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/est"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/autem"
 );
 
 let headers = {
@@ -9608,7 +9530,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/est'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/autem'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -9819,23 +9741,23 @@ response.json()</code></pre>
     "data": [
         {
             "id": 1,
-            "nama": "Desmond Hilpert"
+            "nama": "Mrs. Hosea Hyatt"
         },
         {
             "id": 2,
-            "nama": "Eryn Stark"
+            "nama": "Isaac Jacobs"
         },
         {
             "id": 3,
-            "nama": "Mr. Toby Fadel"
+            "nama": "Ben Bailey"
         },
         {
             "id": 4,
-            "nama": "Willie Muller"
+            "nama": "Lionel Hartmann I"
         },
         {
             "id": 5,
-            "nama": "Veda Botsford"
+            "nama": "Mariane Eichmann"
         }
     ],
     "links": {
@@ -9900,12 +9822,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/omnis" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/ut" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/omnis"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/ut"
 );
 
 let headers = {
@@ -9921,7 +9843,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/omnis'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/ut'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -9965,12 +9887,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/doloremque" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/aut" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/doloremque"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/aut"
 );
 
 let headers = {
@@ -9986,7 +9908,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/doloremque'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/aut'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -10030,12 +9952,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/eligendi" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/libero" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/eligendi"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/libero"
 );
 
 let headers = {
@@ -10051,7 +9973,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/eligendi'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/libero'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -10095,12 +10017,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/et" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/neque" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/et"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/neque"
 );
 
 let headers = {
@@ -10116,7 +10038,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/et'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/neque'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -10262,27 +10184,33 @@ response.json()</code></pre>
     "data": [
         {
             "id": 1,
-            "nama": "Alexane Muller",
-            "uri": "https:\/\/via.placeholder.com\/640x480.png\/00ffcc?text=perspiciatis",
-            "barang_id": 5
-        },
-        {
-            "id": 2,
-            "nama": "Jayce Romaguera",
-            "uri": "https:\/\/via.placeholder.com\/640x480.png\/00aa22?text=sunt",
-            "barang_id": 4
-        },
-        {
-            "id": 3,
-            "nama": "Dwight Murphy",
-            "uri": "https:\/\/via.placeholder.com\/640x480.png\/00aa33?text=animi",
+            "nama": "Teresa Hettinger",
+            "uri": "https:\/\/via.placeholder.com\/640x480.png\/00cc66?text=tenetur",
             "barang_id": 3
         },
         {
+            "id": 2,
+            "nama": "Laverne Jacobs III",
+            "uri": "https:\/\/via.placeholder.com\/640x480.png\/0044ee?text=sed",
+            "barang_id": 1
+        },
+        {
+            "id": 3,
+            "nama": "Aylin Rosenbaum",
+            "uri": "https:\/\/via.placeholder.com\/640x480.png\/003322?text=quos",
+            "barang_id": 2
+        },
+        {
+            "id": 4,
+            "nama": "Emmett Schmitt V",
+            "uri": "https:\/\/via.placeholder.com\/640x480.png\/00eedd?text=quis",
+            "barang_id": 1
+        },
+        {
             "id": 5,
-            "nama": "Mr. Cristina Gerlach",
-            "uri": "https:\/\/via.placeholder.com\/640x480.png\/00bb99?text=repellendus",
-            "barang_id": 4
+            "nama": "Miss Queen Batz",
+            "uri": "https:\/\/via.placeholder.com\/640x480.png\/00cc22?text=non",
+            "barang_id": 5
         }
     ],
     "links": {
@@ -10314,8 +10242,8 @@ response.json()</code></pre>
         ],
         "path": "http:\/\/localhost\/api\/v2\/barang-images",
         "per_page": 20,
-        "to": 4,
-        "total": 4
+        "to": 5,
+        "total": 5
     }
 }</code></pre>
 <div id="execution-results-GETapi-v2-barang-images" hidden>
@@ -10347,12 +10275,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/et" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/esse" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/et"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/esse"
 );
 
 let headers = {
@@ -10368,7 +10296,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/et'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/esse'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -10477,12 +10405,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/explicabo" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/incidunt" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/explicabo"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/incidunt"
 );
 
 let headers = {
@@ -10498,7 +10426,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/explicabo'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/incidunt'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -12226,6 +12154,8 @@ response.json()</code></pre>
                     {},
                     {},
                     {},
+                    {},
+                    {},
                     {}
                 ]
             ]
@@ -12418,6 +12348,189 @@ response.json()</code></pre>
 </p>
 <p>
 <label id="auth-GETauth-oauth2-google" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETauth-oauth2-google" data-component="header"></label>
+</p>
+</form>
+<h2>documentation/swagger</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "https://megabit-lostnfound.herokuapp.com/documentation/swagger" \
+    -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "https://megabit-lostnfound.herokuapp.com/documentation/swagger"
+);
+
+let headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'https://megabit-lostnfound.herokuapp.com/documentation/swagger'
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">
+&lt;!-- HTML for static distribution bundle build --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Swagger UI&lt;/title&gt;
+    &lt;link rel="stylesheet" type="text/css" href="http://megabit-lostnfound.herokuapp.com/swagger/swagger-ui.css" &gt;
+    &lt;link rel="icon" type="image/png" href="http://megabit-lostnfound.herokuapp.com/swagger/favicon-32x32.png" sizes="32x32" /&gt;
+    &lt;link rel="icon" type="image/png" href="http://megabit-lostnfound.herokuapp.com/swagger/favicon-16x16.png" sizes="16x16" /&gt;
+    &lt;style&gt;
+      html
+      {
+        box-sizing: border-box;
+        overflow: -moz-scrollbars-vertical;
+        overflow-y: scroll;
+      }
+
+      *,
+      *:before,
+      *:after
+      {
+        box-sizing: inherit;
+      }
+
+      body
+      {
+        margin:0;
+        background: #fafafa;
+      }
+    &lt;/style&gt;
+  &lt;/head&gt;
+
+  &lt;body&gt;
+    &lt;div id="swagger-ui"&gt;&lt;/div&gt;
+    &lt;script src="http://megabit-lostnfound.herokuapp.com/swagger/swagger-ui-bundle.js" charset="UTF-8"&gt; &lt;/script&gt;
+    &lt;script src="http://megabit-lostnfound.herokuapp.com/swagger/swagger-ui-standalone-preset.js" charset="UTF-8"&gt; &lt;/script&gt;
+    &lt;script&gt;
+    window.onload = function() {
+      // Begin Swagger UI call region
+      const ui = SwaggerUIBundle({
+        url: "./openapi",
+        dom_id: '#swagger-ui',
+        deepLinking: true,
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ],
+        plugins: [
+          SwaggerUIBundle.plugins.DownloadUrl
+        ],
+        layout: "StandaloneLayout",
+
+      })
+      // End Swagger UI call region
+
+      window.ui = ui;
+    }
+  &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<div id="execution-results-GETdocumentation-swagger" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETdocumentation-swagger"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETdocumentation-swagger"></code></pre>
+</div>
+<div id="execution-error-GETdocumentation-swagger" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETdocumentation-swagger"></code></pre>
+</div>
+<form id="form-GETdocumentation-swagger" data-method="GET" data-path="documentation/swagger" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETdocumentation-swagger', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETdocumentation-swagger" onclick="tryItOut('GETdocumentation-swagger');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETdocumentation-swagger" onclick="cancelTryOut('GETdocumentation-swagger');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETdocumentation-swagger" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>documentation/swagger</code></b>
+</p>
+<p>
+<label id="auth-GETdocumentation-swagger" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETdocumentation-swagger" data-component="header"></label>
+</p>
+</form>
+<h2>documentation/openapi</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "https://megabit-lostnfound.herokuapp.com/documentation/openapi" \
+    -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "https://megabit-lostnfound.herokuapp.com/documentation/openapi"
+);
+
+let headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'https://megabit-lostnfound.herokuapp.com/documentation/openapi'
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre>
+<div id="execution-results-GETdocumentation-openapi" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETdocumentation-openapi"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETdocumentation-openapi"></code></pre>
+</div>
+<div id="execution-error-GETdocumentation-openapi" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETdocumentation-openapi"></code></pre>
+</div>
+<form id="form-GETdocumentation-openapi" data-method="GET" data-path="documentation/openapi" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETdocumentation-openapi', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETdocumentation-openapi" onclick="tryItOut('GETdocumentation-openapi');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETdocumentation-openapi" onclick="cancelTryOut('GETdocumentation-openapi');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETdocumentation-openapi" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>documentation/openapi</code></b>
+</p>
+<p>
+<label id="auth-GETdocumentation-openapi" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETdocumentation-openapi" data-component="header"></label>
 </p>
 </form><h1>v1 - Barang</h1>
 <h3>API for Manage Barang.</h3>
@@ -13310,47 +13423,77 @@ response.json()</code></pre>
     "data": [
         {
             "id": 5,
-            "nama_barang": "Jacques Dietrich DVM",
-            "tanggal": "2020-12-04",
-            "lokasi": "63070 Christiansen Viaduct\nMargarettachester, MT 82331-1192",
-            "warna": "PapayaWhip",
-            "merek": "Orn-Herman",
-            "user_id": 6,
-            "status_id": 4,
-            "kategori_id": 2,
+            "nama_barang": "Jolie Stroman",
+            "tanggal": "2020-12-10",
+            "lokasi": "5630 Santino Lakes Suite 696\nEast Ellenport, NC 76357-2264",
+            "warna": "MediumTurquoise",
+            "merek": "Klocko-Boyer",
+            "user_id": 2,
+            "status_id": 1,
+            "kategori_id": 3,
             "stasiun": {
-                "id": 3,
-                "nama": "Delia Pollich Jr."
+                "id": 5,
+                "nama": "Muriel Gibson"
             }
         },
         {
             "id": 4,
-            "nama_barang": "Howell Herman",
-            "tanggal": "2020-12-04",
-            "lokasi": "86652 Kovacek Lane Suite 799\nZiemehaven, NM 82483-6929",
-            "warna": "CadetBlue",
-            "merek": "Beier-Green",
-            "user_id": 1,
-            "status_id": 1,
-            "kategori_id": 2,
+            "nama_barang": "Hanna Lynch PhD",
+            "tanggal": "2020-12-10",
+            "lokasi": "52976 Delilah Island\nLednerborough, KY 35522-5757",
+            "warna": "LightCoral",
+            "merek": "Ernser, Bernhard and Deckow",
+            "user_id": 5,
+            "status_id": 3,
+            "kategori_id": 1,
             "stasiun": {
-                "id": 5,
-                "nama": "Taurean Davis I"
+                "id": 4,
+                "nama": "Minerva Hirthe"
             }
         },
         {
             "id": 3,
-            "nama_barang": "Clair Rowe Updated Partially",
-            "tanggal": "2020-12-04",
-            "lokasi": "67934 Juvenal Place\nJeffport, OR 75023-4991",
-            "warna": "Salmon",
-            "merek": "Heaney-Hansen",
-            "user_id": 5,
-            "status_id": 4,
-            "kategori_id": 3,
+            "nama_barang": "Ms. Aaliyah Mills Sr.",
+            "tanggal": "2020-12-10",
+            "lokasi": "7241 Milton Loaf\nReichelport, AK 28866-0297",
+            "warna": "PapayaWhip",
+            "merek": "Langworth PLC",
+            "user_id": 4,
+            "status_id": 3,
+            "kategori_id": 5,
             "stasiun": {
-                "id": 4,
-                "nama": "Lou Gutmann"
+                "id": 2,
+                "nama": "Dr. Abbigail Price"
+            }
+        },
+        {
+            "id": 2,
+            "nama_barang": "Letha Stracke",
+            "tanggal": "2020-12-10",
+            "lokasi": "43960 Franecki Forest Apt. 980\nShainafurt, RI 37135",
+            "warna": "Snow",
+            "merek": "Crooks-Schmitt",
+            "user_id": 1,
+            "status_id": 2,
+            "kategori_id": 4,
+            "stasiun": {
+                "id": 2,
+                "nama": "Dr. Abbigail Price"
+            }
+        },
+        {
+            "id": 1,
+            "nama_barang": "Ms. Cecelia Mayer I",
+            "tanggal": "2020-12-10",
+            "lokasi": "9989 Anissa Pass\nKovacekland, NE 88768-3281",
+            "warna": "MediumVioletRed",
+            "merek": "Hartmann, Reinger and Jaskolski",
+            "user_id": 5,
+            "status_id": 1,
+            "kategori_id": 5,
+            "stasiun": {
+                "id": 5,
+                "nama": "Muriel Gibson"
             }
         }
     ],
@@ -13383,8 +13526,8 @@ response.json()</code></pre>
         ],
         "path": "http:\/\/localhost\/api\/v1\/barang",
         "per_page": 20,
-        "to": 3,
-        "total": 3
+        "to": 5,
+        "total": 5
     }
 }</code></pre>
 <div id="execution-results-GETapi-v1-barang" hidden>

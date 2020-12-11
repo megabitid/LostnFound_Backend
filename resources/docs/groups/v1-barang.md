@@ -996,47 +996,77 @@ response.json()
     "data": [
         {
             "id": 5,
-            "nama_barang": "Jacques Dietrich DVM",
-            "tanggal": "2020-12-04",
-            "lokasi": "63070 Christiansen Viaduct\nMargarettachester, MT 82331-1192",
-            "warna": "PapayaWhip",
-            "merek": "Orn-Herman",
-            "user_id": 6,
-            "status_id": 4,
-            "kategori_id": 2,
+            "nama_barang": "Jolie Stroman",
+            "tanggal": "2020-12-10",
+            "lokasi": "5630 Santino Lakes Suite 696\nEast Ellenport, NC 76357-2264",
+            "warna": "MediumTurquoise",
+            "merek": "Klocko-Boyer",
+            "user_id": 2,
+            "status_id": 1,
+            "kategori_id": 3,
             "stasiun": {
-                "id": 3,
-                "nama": "Delia Pollich Jr."
+                "id": 5,
+                "nama": "Muriel Gibson"
             }
         },
         {
             "id": 4,
-            "nama_barang": "Howell Herman",
-            "tanggal": "2020-12-04",
-            "lokasi": "86652 Kovacek Lane Suite 799\nZiemehaven, NM 82483-6929",
-            "warna": "CadetBlue",
-            "merek": "Beier-Green",
-            "user_id": 1,
-            "status_id": 1,
-            "kategori_id": 2,
+            "nama_barang": "Hanna Lynch PhD",
+            "tanggal": "2020-12-10",
+            "lokasi": "52976 Delilah Island\nLednerborough, KY 35522-5757",
+            "warna": "LightCoral",
+            "merek": "Ernser, Bernhard and Deckow",
+            "user_id": 5,
+            "status_id": 3,
+            "kategori_id": 1,
             "stasiun": {
-                "id": 5,
-                "nama": "Taurean Davis I"
+                "id": 4,
+                "nama": "Minerva Hirthe"
             }
         },
         {
             "id": 3,
-            "nama_barang": "Clair Rowe Updated Partially",
-            "tanggal": "2020-12-04",
-            "lokasi": "67934 Juvenal Place\nJeffport, OR 75023-4991",
-            "warna": "Salmon",
-            "merek": "Heaney-Hansen",
-            "user_id": 5,
-            "status_id": 4,
-            "kategori_id": 3,
+            "nama_barang": "Ms. Aaliyah Mills Sr.",
+            "tanggal": "2020-12-10",
+            "lokasi": "7241 Milton Loaf\nReichelport, AK 28866-0297",
+            "warna": "PapayaWhip",
+            "merek": "Langworth PLC",
+            "user_id": 4,
+            "status_id": 3,
+            "kategori_id": 5,
             "stasiun": {
-                "id": 4,
-                "nama": "Lou Gutmann"
+                "id": 2,
+                "nama": "Dr. Abbigail Price"
+            }
+        },
+        {
+            "id": 2,
+            "nama_barang": "Letha Stracke",
+            "tanggal": "2020-12-10",
+            "lokasi": "43960 Franecki Forest Apt. 980\nShainafurt, RI 37135",
+            "warna": "Snow",
+            "merek": "Crooks-Schmitt",
+            "user_id": 1,
+            "status_id": 2,
+            "kategori_id": 4,
+            "stasiun": {
+                "id": 2,
+                "nama": "Dr. Abbigail Price"
+            }
+        },
+        {
+            "id": 1,
+            "nama_barang": "Ms. Cecelia Mayer I",
+            "tanggal": "2020-12-10",
+            "lokasi": "9989 Anissa Pass\nKovacekland, NE 88768-3281",
+            "warna": "MediumVioletRed",
+            "merek": "Hartmann, Reinger and Jaskolski",
+            "user_id": 5,
+            "status_id": 1,
+            "kategori_id": 5,
+            "stasiun": {
+                "id": 5,
+                "nama": "Muriel Gibson"
             }
         }
     ],
@@ -1069,8 +1099,8 @@ response.json()
         ],
         "path": "http:\/\/localhost\/api\/v1\/barang",
         "per_page": 20,
-        "to": 3,
-        "total": 3
+        "to": 5,
+        "total": 5
     }
 }
 ```
