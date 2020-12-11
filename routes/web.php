@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\docs\SwaggerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\v1\Android\Oauth2Controller;
 /*
@@ -14,3 +15,5 @@ use App\Http\Controllers\v1\Android\Oauth2Controller;
 */
 
 Route::get('auth/oauth2/google', [Oauth2Controller::class, 'redirectToGoogle']);
+Route::get('documentation/swagger', [SwaggerController::class, 'show']);
+Route::get('documentation/openapi', [SwaggerController::class, 'apispec']);

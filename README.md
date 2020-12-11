@@ -35,3 +35,5 @@ composer update && composer install
   ```
 
   Go to [http://localhost:8000/docs](http://localhost:8000/docs) to view documentation.
+
+  https://laracasts.com/discuss/channels/laravel/how-to-apply-https-to-the-helpers-asset-and-url
