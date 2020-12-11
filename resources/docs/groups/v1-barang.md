@@ -773,7 +773,7 @@ response.json()
 ```
 
 
-> Example response (201, update success):
+> Example response (201, success):
 
 ```json
 {

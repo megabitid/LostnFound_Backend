@@ -125,7 +125,7 @@ class BarangController extends Controller
      * @bodyParam stasiun_id integer required id Stasiun barang. Example: 4
      * @bodyParam kategori_id integer required id Kategori barang. Example: 3
      * 
-     * @response status=201 scenario="update success" {
+     * @response status=201 scenario="success" {
      *  "id": 3,
      *  "nama_barang": "Clair Rowe",
      *  "tanggal": "2020-12-04",

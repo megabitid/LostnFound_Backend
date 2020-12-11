@@ -135,7 +135,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: provident
+                example: deserunt
                 required: true
                 schema:
                     type: string
@@ -173,7 +173,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: quis
+                example: nisi
                 required: true
                 schema:
                     type: string
@@ -444,7 +444,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: in
+                example: distinctio
                 required: true
                 schema:
                     type: string
@@ -758,7 +758,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: sit
+                example: qui
                 required: true
                 schema:
                     type: string
@@ -933,7 +933,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: reiciendis
+                example: quod
                 required: true
                 schema:
                     type: string
@@ -1006,209 +1006,6 @@ paths:
                                     data: { type: array, example: [{ id: 1, nama: 'Mrs. Hosea Hyatt' }, { id: 2, nama: 'Isaac Jacobs' }, { id: 3, nama: 'Ben Bailey' }, { id: 4, nama: 'Lionel Hartmann I' }, { id: 5, nama: 'Mariane Eichmann' }], items: { type: object } }
                                     links: { type: object, example: { first: 'http://localhost/api/v1/barang-kategori?page=1', last: 'http://localhost/api/v1/barang-kategori?page=1', prev: null, next: null } }
                                     meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/barang-kategori?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/barang-kategori', per_page: 20, to: 5, total: 5 } }
-            tags:
-                - Endpoints
-    '/api/v1/barang-images/{id}':
-        delete:
-            summary: 'Remove the specified resource from storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        put:
-            summary: 'Update the specified resource in storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        patch:
-            summary: 'Update partially the specified resource in storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        get:
-            summary: 'Display the specified resource.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses:
-                404:
-                    description: ''
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                example:
-                                    message: 'Not Found'
-                                properties:
-                                    message: { type: string, example: 'Not Found' }
-            tags:
-                - Endpoints
-        parameters:
-            -
-                in: path
-                name: id
-                description: ''
-                example: repellat
-                required: true
-                schema:
-                    type: string
-    /api/v1/barang-images:
-        post:
-            summary: 'Store a newly created resource in storage.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses: {  }
-            tags:
-                - Endpoints
-        get:
-            summary: 'Display a listing of the resource.'
-            description: ''
-            parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Content-Type
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-                -
-                    in: header
-                    name: Accept
-                    description: ''
-                    example: application/json
-                    schema:
-                        type: string
-            responses:
-                200:
-                    description: ''
-                    content:
-                        application/json:
-                            schema:
-                                type: object
-                                example:
-                                    data: [{ id: 1, nama: 'Teresa Hettinger', uri: 'https://via.placeholder.com/640x480.png/00cc66?text=tenetur', barang_id: 3 }, { id: 2, nama: 'Laverne Jacobs III', uri: 'https://via.placeholder.com/640x480.png/0044ee?text=sed', barang_id: 1 }, { id: 3, nama: 'Aylin Rosenbaum', uri: 'https://via.placeholder.com/640x480.png/003322?text=quos', barang_id: 2 }, { id: 4, nama: 'Emmett Schmitt V', uri: 'https://via.placeholder.com/640x480.png/00eedd?text=quis', barang_id: 1 }, { id: 5, nama: 'Miss Queen Batz', uri: 'https://via.placeholder.com/640x480.png/00cc22?text=non', barang_id: 5 }]
-                                    links: { first: 'http://localhost/api/v1/barang-images?page=1', last: 'http://localhost/api/v1/barang-images?page=1', prev: null, next: null }
-                                    meta: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/barang-images?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/barang-images', per_page: 20, to: 5, total: 5 }
-                                properties:
-                                    data: { type: array, example: [{ id: 1, nama: 'Teresa Hettinger', uri: 'https://via.placeholder.com/640x480.png/00cc66?text=tenetur', barang_id: 3 }, { id: 2, nama: 'Laverne Jacobs III', uri: 'https://via.placeholder.com/640x480.png/0044ee?text=sed', barang_id: 1 }, { id: 3, nama: 'Aylin Rosenbaum', uri: 'https://via.placeholder.com/640x480.png/003322?text=quos', barang_id: 2 }, { id: 4, nama: 'Emmett Schmitt V', uri: 'https://via.placeholder.com/640x480.png/00eedd?text=quis', barang_id: 1 }, { id: 5, nama: 'Miss Queen Batz', uri: 'https://via.placeholder.com/640x480.png/00cc22?text=non', barang_id: 5 }], items: { type: object } }
-                                    links: { type: object, example: { first: 'http://localhost/api/v1/barang-images?page=1', last: 'http://localhost/api/v1/barang-images?page=1', prev: null, next: null } }
-                                    meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/barang-images?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/barang-images', per_page: 20, to: 5, total: 5 } }
             tags:
                 - Endpoints
     '/api/v1/barang-status/{id}':
@@ -1311,7 +1108,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: aut
+                example: cupiditate
                 required: true
                 schema:
                     type: string
@@ -1557,7 +1354,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: mollitia
+                example: ipsum
                 required: true
                 schema:
                     type: string
@@ -1595,7 +1392,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: dolor
+                example: voluptatem
                 required: true
                 schema:
                     type: string
@@ -1798,7 +1595,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: omnis
+                example: tempore
                 required: true
                 schema:
                     type: string
@@ -1836,7 +1633,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: neque
+                example: corrupti
                 required: true
                 schema:
                     type: string
@@ -2107,7 +1904,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: quam
+                example: rerum
                 required: true
                 schema:
                     type: string
@@ -2322,7 +2119,7 @@ paths:
                 in: path
                 name: token
                 description: ''
-                example: id
+                example: animi
                 required: true
                 schema:
                     type: string
@@ -2424,7 +2221,7 @@ paths:
                 in: path
                 name: token
                 description: ''
-                example: facilis
+                example: et
                 required: true
                 schema:
                     type: string
@@ -2599,7 +2396,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: ut
+                example: cupiditate
                 required: true
                 schema:
                     type: string
@@ -2774,7 +2571,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: non
+                example: quidem
                 required: true
                 schema:
                     type: string
@@ -2949,7 +2746,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: laudantium
+                example: ab
                 required: true
                 schema:
                     type: string
@@ -3152,7 +2949,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: qui
+                example: fugiat
                 required: true
                 schema:
                     type: string
@@ -3218,13 +3015,13 @@ paths:
                             schema:
                                 type: object
                                 example:
-                                    data: [{ id: 1, nama: 'Teresa Hettinger', uri: 'https://via.placeholder.com/640x480.png/00cc66?text=tenetur', barang_id: 3 }, { id: 2, nama: 'Laverne Jacobs III', uri: 'https://via.placeholder.com/640x480.png/0044ee?text=sed', barang_id: 1 }, { id: 3, nama: 'Aylin Rosenbaum', uri: 'https://via.placeholder.com/640x480.png/003322?text=quos', barang_id: 2 }, { id: 4, nama: 'Emmett Schmitt V', uri: 'https://via.placeholder.com/640x480.png/00eedd?text=quis', barang_id: 1 }, { id: 5, nama: 'Miss Queen Batz', uri: 'https://via.placeholder.com/640x480.png/00cc22?text=non', barang_id: 5 }]
+                                    data: [{ id: 1, nama: 'Teresa Hettinger', uri: 'https://via.placeholder.com/640x480.png/00cc66?text=tenetur', barang_id: 3 }, { id: 2, nama: 'Laverne Jacobs III', uri: 'https://via.placeholder.com/640x480.png/0044ee?text=sed', barang_id: 1 }, { id: 3, nama: 'Aylin Rosenbaum', uri: 'https://via.placeholder.com/640x480.png/003322?text=quos', barang_id: 2 }, { id: 4, nama: 'Emmett Schmitt V', uri: 'https://via.placeholder.com/640x480.png/00eedd?text=quis', barang_id: 1 }, { id: 5, nama: 'Miss Queen Batz', uri: 'https://via.placeholder.com/640x480.png/00cc22?text=non', barang_id: 5 }, { id: 6, nama: 'Tas Besar', uri: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6', barang_id: 3 }]
                                     links: { first: 'http://localhost/api/v2/barang-images?page=1', last: 'http://localhost/api/v2/barang-images?page=1', prev: null, next: null }
-                                    meta: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v2/barang-images?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v2/barang-images', per_page: 20, to: 5, total: 5 }
+                                    meta: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v2/barang-images?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v2/barang-images', per_page: 20, to: 6, total: 6 }
                                 properties:
-                                    data: { type: array, example: [{ id: 1, nama: 'Teresa Hettinger', uri: 'https://via.placeholder.com/640x480.png/00cc66?text=tenetur', barang_id: 3 }, { id: 2, nama: 'Laverne Jacobs III', uri: 'https://via.placeholder.com/640x480.png/0044ee?text=sed', barang_id: 1 }, { id: 3, nama: 'Aylin Rosenbaum', uri: 'https://via.placeholder.com/640x480.png/003322?text=quos', barang_id: 2 }, { id: 4, nama: 'Emmett Schmitt V', uri: 'https://via.placeholder.com/640x480.png/00eedd?text=quis', barang_id: 1 }, { id: 5, nama: 'Miss Queen Batz', uri: 'https://via.placeholder.com/640x480.png/00cc22?text=non', barang_id: 5 }], items: { type: object } }
+                                    data: { type: array, example: [{ id: 1, nama: 'Teresa Hettinger', uri: 'https://via.placeholder.com/640x480.png/00cc66?text=tenetur', barang_id: 3 }, { id: 2, nama: 'Laverne Jacobs III', uri: 'https://via.placeholder.com/640x480.png/0044ee?text=sed', barang_id: 1 }, { id: 3, nama: 'Aylin Rosenbaum', uri: 'https://via.placeholder.com/640x480.png/003322?text=quos', barang_id: 2 }, { id: 4, nama: 'Emmett Schmitt V', uri: 'https://via.placeholder.com/640x480.png/00eedd?text=quis', barang_id: 1 }, { id: 5, nama: 'Miss Queen Batz', uri: 'https://via.placeholder.com/640x480.png/00cc22?text=non', barang_id: 5 }, { id: 6, nama: 'Tas Besar', uri: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6', barang_id: 3 }], items: { type: object } }
                                     links: { type: object, example: { first: 'http://localhost/api/v2/barang-images?page=1', last: 'http://localhost/api/v2/barang-images?page=1', prev: null, next: null } }
-                                    meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v2/barang-images?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v2/barang-images', per_page: 20, to: 5, total: 5 } }
+                                    meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v2/barang-images?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v2/barang-images', per_page: 20, to: 6, total: 6 } }
             tags:
                 - Endpoints
     '/api/v2/barang-status/{id}':
@@ -3327,7 +3124,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: laudantium
+                example: quaerat
                 required: true
                 schema:
                     type: string
@@ -3976,7 +3773,7 @@ paths:
                         type: string
             responses:
                 201:
-                    description: '201, update success'
+                    description: '201, success'
                     content:
                         application/json:
                             schema:
@@ -4213,6 +4010,516 @@ paths:
                                     meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/barang?orderBy=-id&search=2020&page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/barang', per_page: 20, to: 5, total: 5 } }
             tags:
                 - 'v1 - Barang'
+    '/api/v1/barang-images/{id}':
+        delete:
+            summary: 'Delete Barang Image.'
+            description: 'Barang image will be deleted in database and in storage.'
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                204:
+                    description: '204, delete success'
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                403:
+                    description: '403, not owner or admin'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'You must be the owner or admin to do this.'
+                                properties:
+                                    message: { type: string, example: 'You must be the owner or admin to do this.' }
+                404:
+                    description: '404, barang not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Not Found'
+                                properties:
+                                    message: { type: string, example: 'Not Found' }
+            tags:
+                - 'v1 - Barang Image'
+        put:
+            summary: 'Update Barang Image.'
+            description: 'Update all of the field except id in barang image data.'
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                201:
+                    description: '201, success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    nama: 'Tas Besar Updated'
+                                    uri: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6'
+                                    barang_id: 3
+                                    id: 6
+                                properties:
+                                    nama: { type: string, example: 'Tas Besar Updated' }
+                                    uri: { type: string, example: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6' }
+                                    barang_id: { type: integer, example: 3 }
+                                    id: { type: integer, example: 6 }
+                400:
+                    description: '400, bad request'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Validation Error'
+                                    errors: { nama: ['The nama field is required.'], uri: ['The uri field is required.'], barang_id: ['The barang id field is required.'] }
+                                properties:
+                                    message: { type: string, example: 'Validation Error' }
+                                    errors: { type: object, example: { nama: ['The nama field is required.'], uri: ['The uri field is required.'], barang_id: ['The barang id field is required.'] } }
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                403:
+                    description: '403, not owner or admin'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'You must be the owner or admin to do this.'
+                                properties:
+                                    message: { type: string, example: 'You must be the owner or admin to do this.' }
+                404:
+                    description: '404, data not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Not Found'
+                                properties:
+                                    message: { type: string, example: 'Not Found' }
+            tags:
+                - 'v1 - Barang Image'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                nama:
+                                    type: string
+                                    description: 'Nama image.'
+                                    example: 'Tas Besar Updated'
+                                uri:
+                                    type: string
+                                    description: 'URI Base64 image.'
+                                    example: base64string
+                                barang_id:
+                                    type: integer
+                                    description: 'id Barang that owned this image. Example 3'
+                                    example: 15
+                            required:
+                                - nama
+                                - uri
+                                - barang_id
+        patch:
+            summary: 'Partial Update Barang Image.'
+            description: 'Update some field of barang image data.'
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                201:
+                    description: '201, success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    nama: 'Tas Besar Partial Update'
+                                    uri: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6'
+                                    barang_id: 3
+                                    id: 6
+                                properties:
+                                    nama: { type: string, example: 'Tas Besar Partial Update' }
+                                    uri: { type: string, example: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6' }
+                                    barang_id: { type: integer, example: 3 }
+                                    id: { type: integer, example: 6 }
+                400:
+                    description: '400, bad request'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Validation Error'
+                                    errors: { nama: ['The nama field is required.'], uri: ['The uri field is required.'], barang_id: ['The barang id field is required.'] }
+                                properties:
+                                    message: { type: string, example: 'Validation Error' }
+                                    errors: { type: object, example: { nama: ['The nama field is required.'], uri: ['The uri field is required.'], barang_id: ['The barang id field is required.'] } }
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                403:
+                    description: '403, not owner or admin'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'You must be the owner or admin to do this.'
+                                properties:
+                                    message: { type: string, example: 'You must be the owner or admin to do this.' }
+                404:
+                    description: '404, data not found'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Not Found'
+                                properties:
+                                    message: { type: string, example: 'Not Found' }
+            tags:
+                - 'v1 - Barang Image'
+            requestBody:
+                required: false
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                nama:
+                                    type: string
+                                    description: 'Nama image.'
+                                    example: 'Tas Besar Partial Update'
+                                uri:
+                                    type: string
+                                    description: 'URI Base64 image.'
+                                    example: null
+                                barang_id:
+                                    type: integer
+                                    description: 'id Barang that owned this image.'
+                                    example: 8
+        get:
+            summary: 'Get Detail Barang Image.'
+            description: 'Returns barang image details.'
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                200:
+                    description: '200, success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    nama: 'Tas Besar Updated'
+                                    uri: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6'
+                                    barang_id: 3
+                                    id: 6
+                                properties:
+                                    nama: { type: string, example: 'Tas Besar Updated' }
+                                    uri: { type: string, example: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6' }
+                                    barang_id: { type: integer, example: 3 }
+                                    id: { type: integer, example: 6 }
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+            tags:
+                - 'v1 - Barang Image'
+        parameters:
+            -
+                in: path
+                name: id
+                description: 'The id of barang image.'
+                example: 6
+                required: true
+                schema:
+                    type: integer
+    /api/v1/barang-images:
+        post:
+            summary: 'Add Barang Image.'
+            description: "Barang image will be uploaded in firebase storage/google cloud storage.\nAfter that, the url will be saved in database."
+            parameters:
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                201:
+                    description: '201, success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    nama: 'Tas Besar'
+                                    uri: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6'
+                                    barang_id: 3
+                                    id: 6
+                                properties:
+                                    nama: { type: string, example: 'Tas Besar' }
+                                    uri: { type: string, example: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6' }
+                                    barang_id: { type: integer, example: 3 }
+                                    id: { type: integer, example: 6 }
+                400:
+                    description: '400, bad request'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Validation Error'
+                                    errors: { nama: ['The nama field is required.'], uri: ['The uri field is required.'], barang_id: ['The barang id field is required.'] }
+                                properties:
+                                    message: { type: string, example: 'Validation Error' }
+                                    errors: { type: object, example: { nama: ['The nama field is required.'], uri: ['The uri field is required.'], barang_id: ['The barang id field is required.'] } }
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+            tags:
+                - 'v1 - Barang Image'
+            requestBody:
+                required: true
+                content:
+                    application/json:
+                        schema:
+                            type: object
+                            properties:
+                                nama:
+                                    type: string
+                                    description: 'Nama image.'
+                                    example: 'Tas Besar'
+                                uri:
+                                    type: string
+                                    description: 'URI Base64 image.'
+                                    example: base64string
+                                barang_id:
+                                    type: integer
+                                    description: 'id Barang that owned this image. Example 3'
+                                    example: 3
+                            required:
+                                - nama
+                                - uri
+                                - barang_id
+        get:
+            summary: 'Get List Barnag Image'
+            description: "### Image Barang parameter query supported:\n* id\n* barang_id\n\n### orderBy query supported fields:\n* All field of barang image detail\n\n<aside class=\"warning\"> We still use limit offset pagination. In future will be replaced with cursor based pagination.</aside>"
+            parameters:
+                -
+                    in: query
+                    name: id
+                    description: 'Apply filter with id.'
+                    example: null
+                    required: false
+                    schema:
+                        type: integer
+                        description: 'Apply filter with id.'
+                        example: null
+                -
+                    in: query
+                    name: barang_id
+                    description: 'Apply filter with barang_id.'
+                    example: null
+                    required: false
+                    schema:
+                        type: integer
+                        description: 'Apply filter with barang_id.'
+                        example: null
+                -
+                    in: query
+                    name: orderBy
+                    description: "Apply ordering based on specific field.\n             Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending)."
+                    example: null
+                    required: false
+                    schema:
+                        type: string
+                        description: "Apply ordering based on specific field.\n             Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending)."
+                        example: null
+                -
+                    in: header
+                    name: Authorization
+                    description: ''
+                    example: 'Bearer {YOUR_AUTH_KEY}'
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Content-Type
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+                -
+                    in: header
+                    name: Accept
+                    description: ''
+                    example: application/json
+                    schema:
+                        type: string
+            responses:
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                200:
+                    description: ''
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    data: [{ id: 1, nama: 'Teresa Hettinger', uri: 'https://via.placeholder.com/640x480.png/00cc66?text=tenetur', barang_id: 3 }, { id: 2, nama: 'Laverne Jacobs III', uri: 'https://via.placeholder.com/640x480.png/0044ee?text=sed', barang_id: 1 }, { id: 3, nama: 'Aylin Rosenbaum', uri: 'https://via.placeholder.com/640x480.png/003322?text=quos', barang_id: 2 }, { id: 4, nama: 'Emmett Schmitt V', uri: 'https://via.placeholder.com/640x480.png/00eedd?text=quis', barang_id: 1 }, { id: 5, nama: 'Miss Queen Batz', uri: 'https://via.placeholder.com/640x480.png/00cc22?text=non', barang_id: 5 }, { id: 6, nama: 'Tas Besar', uri: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6', barang_id: 3 }]
+                                    links: { first: 'http://localhost/api/v1/barang-images?page=1', last: 'http://localhost/api/v1/barang-images?page=1', prev: null, next: null }
+                                    meta: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/barang-images?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/barang-images', per_page: 20, to: 6, total: 6 }
+                                properties:
+                                    data: { type: array, example: [{ id: 1, nama: 'Teresa Hettinger', uri: 'https://via.placeholder.com/640x480.png/00cc66?text=tenetur', barang_id: 3 }, { id: 2, nama: 'Laverne Jacobs III', uri: 'https://via.placeholder.com/640x480.png/0044ee?text=sed', barang_id: 1 }, { id: 3, nama: 'Aylin Rosenbaum', uri: 'https://via.placeholder.com/640x480.png/003322?text=quos', barang_id: 2 }, { id: 4, nama: 'Emmett Schmitt V', uri: 'https://via.placeholder.com/640x480.png/00eedd?text=quis', barang_id: 1 }, { id: 5, nama: 'Miss Queen Batz', uri: 'https://via.placeholder.com/640x480.png/00cc22?text=non', barang_id: 5 }, { id: 6, nama: 'Tas Besar', uri: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6', barang_id: 3 }], items: { type: object } }
+                                    links: { type: object, example: { first: 'http://localhost/api/v1/barang-images?page=1', last: 'http://localhost/api/v1/barang-images?page=1', prev: null, next: null } }
+                                    meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/barang-images?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/barang-images', per_page: 20, to: 6, total: 6 } }
+            tags:
+                - 'v1 - Barang Image'
 components:
     securitySchemes:
         default:
