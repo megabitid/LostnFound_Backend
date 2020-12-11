@@ -24,7 +24,7 @@ use Tymon\JWTAuth\Facades\JWTAuth;
  * 
  * This API is used to manage barang. 
  * Including barang hilang, ditemukan, didonasikan, diklaim; 
- * depending with it's status.
+ * depending with its status.
  */
 class BarangController extends Controller
 {

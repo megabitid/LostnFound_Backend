@@ -28,7 +28,7 @@ class BarangImageController extends Controller
     /**
      * Get List Barnag Image
      * 
-     * ### Image Barang parameter query supported:
+     * ### Barang Image parameter query supported:
      * * id
      * * barang_id
      * 
