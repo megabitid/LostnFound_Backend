@@ -135,7 +135,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: voluptas
+                example: placeat
                 required: true
                 schema:
                     type: string
@@ -173,7 +173,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: laboriosam
+                example: harum
                 required: true
                 schema:
                     type: string
@@ -444,7 +444,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: quod
+                example: consequatur
                 required: true
                 schema:
                     type: string
@@ -829,7 +829,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: repellat
+                example: aut
                 required: true
                 schema:
                     type: string
@@ -867,7 +867,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: et
+                example: omnis
                 required: true
                 schema:
                     type: string
@@ -1138,7 +1138,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: libero
+                example: quibusdam
                 required: true
                 schema:
                     type: string
@@ -1353,7 +1353,7 @@ paths:
                 in: path
                 name: token
                 description: ''
-                example: soluta
+                example: voluptatem
                 required: true
                 schema:
                     type: string
@@ -1455,7 +1455,7 @@ paths:
                 in: path
                 name: token
                 description: ''
-                example: cupiditate
+                example: accusantium
                 required: true
                 schema:
                     type: string
@@ -1630,7 +1630,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: minus
+                example: velit
                 required: true
                 schema:
                     type: string
@@ -1805,7 +1805,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: aliquid
+                example: nisi
                 required: true
                 schema:
                     type: string
@@ -1980,7 +1980,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: id
+                example: omnis
                 required: true
                 schema:
                     type: string
@@ -2183,7 +2183,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: tempore
+                example: error
                 required: true
                 schema:
                     type: string
@@ -2358,7 +2358,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: omnis
+                example: asperiores
                 required: true
                 schema:
                     type: string
@@ -2944,10 +2944,39 @@ paths:
                 200:
                     description: '200, success'
                     content:
-                        text/plain:
+                        application/json:
                             schema:
-                                type: string
-                                example: "{\n \"id\": 3,\n \"nama_barang\": \"Clair Rowe Updated Partially\",\n \"tanggal\": \"2020-12-04\",\n \"lokasi\": \"67934 Juvenal Place\\nJeffport, OR 75023-4991\",\n \"deskripsi\": \"Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.\",\n \"warna\": \"Salmon\",\n \"merek\": \"Heaney-Hansen\",\n \"user_id\": 5,\n \"status_id\": 4,\n \"created_at\": null,\n \"updated_at\": \"2020-12-10T15:28:18.000000Z\",\n \"stasiun\": {\n     \"id\": 4,\n     \"nama\": \"Lou Gutmann\"\n },\n \"kategori\": {\n     \"id\": 3,\n     \"nama\": \"Mr. Toby Fadel\"\n }\n \"barangimages\": [\n     {\n       \"id\": 1,\n       \"nama\": \"Teresa Hettinger\",\n       \"uri\": \"https://via.placeholder.com/640x480.png/00cc66?text=tenetur\",\n       \"barang_id\": 3\n     }\n ]\n}"
+                                type: object
+                                example:
+                                    id: 3
+                                    nama_barang: 'Clair Rowe Updated Partially'
+                                    tanggal: '2020-12-04'
+                                    lokasi: "67934 Juvenal Place\nJeffport, OR 75023-4991"
+                                    deskripsi: 'Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.'
+                                    warna: Salmon
+                                    merek: Heaney-Hansen
+                                    user_id: 5
+                                    status_id: 4
+                                    created_at: null
+                                    updated_at: '2020-12-10T15:28:18.000000Z'
+                                    stasiun: { id: 4, nama: 'Lou Gutmann' }
+                                    kategori: { id: 3, nama: 'Mr. Toby Fadel' }
+                                    barangimages: [{ id: 1, nama: 'Teresa Hettinger', uri: 'https://via.placeholder.com/640x480.png/00cc66?text=tenetur', barang_id: 3 }]
+                                properties:
+                                    id: { type: integer, example: 3 }
+                                    nama_barang: { type: string, example: 'Clair Rowe Updated Partially' }
+                                    tanggal: { type: string, example: '2020-12-04' }
+                                    lokasi: { type: string, example: "67934 Juvenal Place\nJeffport, OR 75023-4991" }
+                                    deskripsi: { type: string, example: 'Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.' }
+                                    warna: { type: string, example: Salmon }
+                                    merek: { type: string, example: Heaney-Hansen }
+                                    user_id: { type: integer, example: 5 }
+                                    status_id: { type: integer, example: 4 }
+                                    created_at: { type: string, example: null }
+                                    updated_at: { type: string, example: '2020-12-10T15:28:18.000000Z' }
+                                    stasiun: { type: object, example: { id: 4, nama: 'Lou Gutmann' } }
+                                    kategori: { type: object, example: { id: 3, nama: 'Mr. Toby Fadel' } }
+                                    barangimages: { type: array, example: [{ id: 1, nama: 'Teresa Hettinger', uri: 'https://via.placeholder.com/640x480.png/00cc66?text=tenetur', barang_id: 3 }], items: { type: object } }
                 401:
                     description: '401, Unauthorized'
                     content:
@@ -3338,15 +3367,15 @@ paths:
                             schema:
                                 type: object
                                 example:
+                                    id: 6
                                     nama: 'Tas Besar Updated'
                                     uri: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6'
                                     barang_id: 3
-                                    id: 6
                                 properties:
+                                    id: { type: integer, example: 6 }
                                     nama: { type: string, example: 'Tas Besar Updated' }
                                     uri: { type: string, example: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6' }
                                     barang_id: { type: integer, example: 3 }
-                                    id: { type: integer, example: 6 }
                 400:
                     description: '400, bad request'
                     content:
@@ -3409,7 +3438,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image. Example 3'
-                                    example: 3
+                                    example: 19
                             required:
                                 - nama
                                 - uri
@@ -3447,15 +3476,15 @@ paths:
                             schema:
                                 type: object
                                 example:
+                                    id: 6
                                     nama: 'Tas Besar Partial Update'
                                     uri: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6'
                                     barang_id: 3
-                                    id: 6
                                 properties:
+                                    id: { type: integer, example: 6 }
                                     nama: { type: string, example: 'Tas Besar Partial Update' }
                                     uri: { type: string, example: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6' }
                                     barang_id: { type: integer, example: 3 }
-                                    id: { type: integer, example: 6 }
                 400:
                     description: '400, bad request'
                     content:
@@ -3518,7 +3547,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image.'
-                                    example: 1
+                                    example: 7
         get:
             summary: 'Get Detail Barang Image.'
             description: 'Returns barang image details.'
@@ -3552,15 +3581,15 @@ paths:
                             schema:
                                 type: object
                                 example:
+                                    id: 6
                                     nama: 'Tas Besar Updated'
                                     uri: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6'
                                     barang_id: 3
-                                    id: 6
                                 properties:
+                                    id: { type: integer, example: 6 }
                                     nama: { type: string, example: 'Tas Besar Updated' }
                                     uri: { type: string, example: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6' }
                                     barang_id: { type: integer, example: 3 }
-                                    id: { type: integer, example: 6 }
                 401:
                     description: '401, Unauthorized'
                     content:
@@ -3667,7 +3696,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image. Example 3'
-                                    example: 13
+                                    example: 5
                             required:
                                 - nama
                                 - uri
@@ -3844,10 +3873,15 @@ paths:
                 201:
                     description: '201, success'
                     content:
-                        text/plain:
+                        application/json:
                             schema:
-                                type: string
-                                example: "{\n \"id\": 6\n \"nama\": \"Aksesoris Updated\",\n}"
+                                type: object
+                                example:
+                                    id: 6
+                                    nama: 'Aksesoris Updated'
+                                properties:
+                                    id: { type: integer, example: 6 }
+                                    nama: { type: string, example: 'Aksesoris Updated' }
                 400:
                     description: '400, bad request'
                     content:
@@ -3934,10 +3968,15 @@ paths:
                 200:
                     description: '200, success'
                     content:
-                        text/plain:
+                        application/json:
                             schema:
-                                type: string
-                                example: "{\n \"id\": 6\n \"nama\": \"Aksesoris\",\n}"
+                                type: object
+                                example:
+                                    id: 6
+                                    nama: Aksesoris
+                                properties:
+                                    id: { type: integer, example: 6 }
+                                    nama: { type: string, example: Aksesoris }
                 401:
                     description: '401, Unauthorized'
                     content:
@@ -4207,10 +4246,15 @@ paths:
                 201:
                     description: '201, success'
                     content:
-                        text/plain:
+                        application/json:
                             schema:
-                                type: string
-                                example: "{\n \"id\": 4\n \"nama\": \"dijual\",\n}"
+                                type: object
+                                example:
+                                    id: 4
+                                    nama: dijual
+                                properties:
+                                    id: { type: integer, example: 4 }
+                                    nama: { type: string, example: dijual }
                 400:
                     description: '400, bad request'
                     content:
@@ -4297,10 +4341,15 @@ paths:
                 200:
                     description: '200, success'
                     content:
-                        text/plain:
+                        application/json:
                             schema:
-                                type: string
-                                example: "{\n \"id\": 4\n \"nama\": \"ditemukan\",\n}"
+                                type: object
+                                example:
+                                    id: 4
+                                    nama: ditemukan
+                                properties:
+                                    id: { type: integer, example: 4 }
+                                    nama: { type: string, example: ditemukan }
                 401:
                     description: '401, Unauthorized'
                     content:
@@ -4570,10 +4619,29 @@ paths:
                 201:
                     description: '201, success'
                     content:
-                        text/plain:
+                        application/json:
                             schema:
-                                type: string
-                                example: "{\n \"id\": 4\n \"user_id\": 1,\n \"barang_id\": 1,\n \"alamat\": \"Jalan Mangga, Block X/21\",\n \"uri_tiket\": \"https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4\",\n \"no_telp\": \"08123456789\",\n \"verified\": 0,\n \"updated_at\": \"2020-12-11T12:40:49.000000Z\",\n \"created_at\": \"2020-12-11T12:30:48.000000Z\",\n}"
+                                type: object
+                                example:
+                                    id: 4
+                                    user_id: 1
+                                    barang_id: 1
+                                    alamat: 'Jalan Mangga, Block X/21'
+                                    uri_tiket: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4'
+                                    no_telp: '08123456789'
+                                    verified: 0
+                                    updated_at: '2020-12-11T12:40:49.000000Z'
+                                    created_at: '2020-12-11T12:30:48.000000Z'
+                                properties:
+                                    id: { type: integer, example: 4 }
+                                    user_id: { type: integer, example: 1 }
+                                    barang_id: { type: integer, example: 1 }
+                                    alamat: { type: string, example: 'Jalan Mangga, Block X/21' }
+                                    uri_tiket: { type: string, example: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4' }
+                                    no_telp: { type: string, example: '08123456789' }
+                                    verified: { type: integer, example: 0 }
+                                    updated_at: { type: string, example: '2020-12-11T12:40:49.000000Z' }
+                                    created_at: { type: string, example: '2020-12-11T12:30:48.000000Z' }
                 400:
                     description: '400, bad request'
                     content:
@@ -4680,10 +4748,29 @@ paths:
                 201:
                     description: '201, success'
                     content:
-                        text/plain:
+                        application/json:
                             schema:
-                                type: string
-                                example: "{\n \"id\": 4\n \"user_id\": 1,\n \"barang_id\": 1,\n \"alamat\": \"Jalan Mangga, Block X/21\",\n \"uri_tiket\": \"https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4\",\n \"no_telp\": \"0999999999\",\n \"verified\": 0,\n \"updated_at\": \"2020-12-11T12:40:49.000000Z\",\n \"created_at\": \"2020-12-11T12:30:48.000000Z\",\n}"
+                                type: object
+                                example:
+                                    id: 4
+                                    user_id: 1
+                                    barang_id: 1
+                                    alamat: 'Jalan Mangga, Block X/21'
+                                    uri_tiket: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4'
+                                    no_telp: '0999999999'
+                                    verified: 0
+                                    updated_at: '2020-12-11T12:40:49.000000Z'
+                                    created_at: '2020-12-11T12:30:48.000000Z'
+                                properties:
+                                    id: { type: integer, example: 4 }
+                                    user_id: { type: integer, example: 1 }
+                                    barang_id: { type: integer, example: 1 }
+                                    alamat: { type: string, example: 'Jalan Mangga, Block X/21' }
+                                    uri_tiket: { type: string, example: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4' }
+                                    no_telp: { type: string, example: '0999999999' }
+                                    verified: { type: integer, example: 0 }
+                                    updated_at: { type: string, example: '2020-12-11T12:40:49.000000Z' }
+                                    created_at: { type: string, example: '2020-12-11T12:30:48.000000Z' }
                 400:
                     description: '400, bad request'
                     content:
@@ -4756,8 +4843,8 @@ paths:
                                     description: 'Phone number of user.'
                                     example: '0999999999'
         get:
-            summary: ''
-            description: ''
+            summary: 'Detail Claim.'
+            description: 'Claim detail can be retrieved using this API.'
             parameters:
                 -
                     in: header
@@ -4781,8 +4868,56 @@ paths:
                     schema:
                         type: string
             responses:
+                200:
+                    description: '200, success'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    id: 4
+                                    alamat: 'Jalan Mangga, Block X/20'
+                                    no_telp: '08123456789'
+                                    uri_tiket: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4'
+                                    verified: 0
+                                    created_at: '2020-12-11T12:30:48.000000Z'
+                                    updated_at: '2020-12-11T12:30:49.000000Z'
+                                    user_id: 1
+                                    barang_id: 1
+                                    barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' }
+                                properties:
+                                    id: { type: integer, example: 4 }
+                                    alamat: { type: string, example: 'Jalan Mangga, Block X/20' }
+                                    no_telp: { type: string, example: '08123456789' }
+                                    uri_tiket: { type: string, example: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4' }
+                                    verified: { type: integer, example: 0 }
+                                    created_at: { type: string, example: '2020-12-11T12:30:48.000000Z' }
+                                    updated_at: { type: string, example: '2020-12-11T12:30:49.000000Z' }
+                                    user_id: { type: integer, example: 1 }
+                                    barang_id: { type: integer, example: 1 }
+                                    barang: { type: object, example: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }
+                401:
+                    description: '401, Unauthorized'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'Token not provided'
+                                properties:
+                                    message: { type: string, example: 'Token not provided' }
+                403:
+                    description: '403, not owner or admin'
+                    content:
+                        application/json:
+                            schema:
+                                type: object
+                                example:
+                                    message: 'You must be the owner or admin to do this.'
+                                properties:
+                                    message: { type: string, example: 'You must be the owner or admin to do this.' }
                 404:
-                    description: ''
+                    description: '404, data not found'
                     content:
                         application/json:
                             schema:
@@ -4832,10 +4967,29 @@ paths:
                 201:
                     description: '201, success'
                     content:
-                        text/plain:
+                        application/json:
                             schema:
-                                type: string
-                                example: "{\n \"id\": 4\n \"user_id\": 1,\n \"barang_id\": 1,\n \"alamat\": \"Jalan Mangga, Block X/21\",\n \"uri_tiket\": \"https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4\",\n \"no_telp\": \"0999999999\",\n \"verified\": 1,\n \"updated_at\": \"2020-12-11T12:45:49.000000Z\",\n \"created_at\": \"2020-12-11T12:30:48.000000Z\",\n}"
+                                type: object
+                                example:
+                                    id: 4
+                                    user_id: 1
+                                    barang_id: 1
+                                    alamat: 'Jalan Mangga, Block X/21'
+                                    uri_tiket: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4'
+                                    no_telp: '0999999999'
+                                    verified: 1
+                                    updated_at: '2020-12-11T12:45:49.000000Z'
+                                    created_at: '2020-12-11T12:30:48.000000Z'
+                                properties:
+                                    id: { type: integer, example: 4 }
+                                    user_id: { type: integer, example: 1 }
+                                    barang_id: { type: integer, example: 1 }
+                                    alamat: { type: string, example: 'Jalan Mangga, Block X/21' }
+                                    uri_tiket: { type: string, example: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4' }
+                                    no_telp: { type: string, example: '0999999999' }
+                                    verified: { type: integer, example: 1 }
+                                    updated_at: { type: string, example: '2020-12-11T12:45:49.000000Z' }
+                                    created_at: { type: string, example: '2020-12-11T12:30:48.000000Z' }
                 400:
                     description: '400, bad request'
                     content:
@@ -4896,7 +5050,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: maxime
+                example: expedita
                 required: true
                 schema:
                     type: string
@@ -5063,13 +5217,13 @@ paths:
                             schema:
                                 type: object
                                 example:
-                                    data: [{ id: 1, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: '', verified: 0, created_at: '2020-12-11T12:23:34.000000Z', updated_at: '2020-12-11T12:23:34.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }, { id: 2, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: '', verified: 0, created_at: '2020-12-11T12:26:06.000000Z', updated_at: '2020-12-11T12:26:06.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }, { id: 3, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: '', verified: 0, created_at: '2020-12-11T12:28:17.000000Z', updated_at: '2020-12-11T12:28:17.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }, { id: 4, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4', verified: 0, created_at: '2020-12-11T12:30:48.000000Z', updated_at: '2020-12-11T12:30:49.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }]
+                                    data: [{ id: 1, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: '', verified: 0, created_at: '2020-12-11T12:23:34.000000Z', updated_at: '2020-12-11T12:23:34.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }, { id: 2, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: '', verified: 0, created_at: '2020-12-11T12:26:06.000000Z', updated_at: '2020-12-11T12:26:06.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }, { id: 3, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: '', verified: 0, created_at: '2020-12-11T12:28:17.000000Z', updated_at: '2020-12-11T12:28:17.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }, { id: 4, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4', verified: 0, created_at: '2020-12-11T12:30:48.000000Z', updated_at: '2020-12-11T12:30:49.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }, { id: 5, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/5', verified: 0, created_at: '2020-12-11T13:18:25.000000Z', updated_at: '2020-12-11T13:18:26.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }]
                                     links: { first: 'http://localhost/api/v1/claims?page=1', last: 'http://localhost/api/v1/claims?page=1', prev: null, next: null }
-                                    meta: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/claims?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/claims', per_page: 20, to: 4, total: 4 }
+                                    meta: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/claims?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/claims', per_page: 20, to: 5, total: 5 }
                                 properties:
-                                    data: { type: array, example: [{ id: 1, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: '', verified: 0, created_at: '2020-12-11T12:23:34.000000Z', updated_at: '2020-12-11T12:23:34.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }, { id: 2, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: '', verified: 0, created_at: '2020-12-11T12:26:06.000000Z', updated_at: '2020-12-11T12:26:06.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }, { id: 3, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: '', verified: 0, created_at: '2020-12-11T12:28:17.000000Z', updated_at: '2020-12-11T12:28:17.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }, { id: 4, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4', verified: 0, created_at: '2020-12-11T12:30:48.000000Z', updated_at: '2020-12-11T12:30:49.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }], items: { type: object } }
+                                    data: { type: array, example: [{ id: 1, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: '', verified: 0, created_at: '2020-12-11T12:23:34.000000Z', updated_at: '2020-12-11T12:23:34.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }, { id: 2, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: '', verified: 0, created_at: '2020-12-11T12:26:06.000000Z', updated_at: '2020-12-11T12:26:06.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }, { id: 3, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: '', verified: 0, created_at: '2020-12-11T12:28:17.000000Z', updated_at: '2020-12-11T12:28:17.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }, { id: 4, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4', verified: 0, created_at: '2020-12-11T12:30:48.000000Z', updated_at: '2020-12-11T12:30:49.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }, { id: 5, alamat: 'Jalan Mangga, Block X/20', no_telp: '08123456789', uri_tiket: 'https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/5', verified: 0, created_at: '2020-12-11T13:18:25.000000Z', updated_at: '2020-12-11T13:18:26.000000Z', user_id: 1, barang_id: 1, barang: { id: 1, nama_barang: 'Ms. Cecelia Mayer I' } }], items: { type: object } }
                                     links: { type: object, example: { first: 'http://localhost/api/v1/claims?page=1', last: 'http://localhost/api/v1/claims?page=1', prev: null, next: null } }
-                                    meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/claims?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/claims', per_page: 20, to: 4, total: 4 } }
+                                    meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/claims?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/claims', per_page: 20, to: 5, total: 5 } }
             tags:
                 - 'v1 - Claim'
     '/api/v1/stasiun/{id}':
@@ -5162,10 +5316,15 @@ paths:
                 201:
                     description: '201, success'
                     content:
-                        text/plain:
+                        application/json:
                             schema:
-                                type: string
-                                example: "{\n \"id\": 10\n \"nama\": \"Stasiun Maju\",\n}"
+                                type: object
+                                example:
+                                    id: 10
+                                    nama: 'Stasiun Maju'
+                                properties:
+                                    id: { type: integer, example: 10 }
+                                    nama: { type: string, example: 'Stasiun Maju' }
                 400:
                     description: '400, bad request'
                     content:
@@ -5252,10 +5411,15 @@ paths:
                 200:
                     description: '200, success'
                     content:
-                        text/plain:
+                        application/json:
                             schema:
-                                type: string
-                                example: "{\n \"id\": 10\n \"nama\": \"Stasiun Banjar\",\n}"
+                                type: object
+                                example:
+                                    id: 10
+                                    nama: 'Stasiun Banjar'
+                                properties:
+                                    id: { type: integer, example: 10 }
+                                    nama: { type: string, example: 'Stasiun Banjar' }
                 401:
                     description: '401, Unauthorized'
                     content:

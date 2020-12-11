@@ -105,8 +105,8 @@ class StasiunController extends Controller
      * @urlParam id integer required The id of stasiun. Example: 10
      * 
      * @response status=200 scenario="success" {
-     *  "id": 10
-     *  "nama": "Stasiun Banjar",
+     *  "id": 10,
+     *  "nama": "Stasiun Banjar"
      * }
      * @response status=401 scenario="Unauthorized" {
      *  "message": "Token not provided"
@@ -131,8 +131,8 @@ class StasiunController extends Controller
      * @bodyParam nama string required Nama status. Example: Stasiun Maju
      * 
      * @response status=201 scenario="success" {
-     *  "id": 10
-     *  "nama": "Stasiun Maju",
+     *  "id": 10,
+     *  "nama": "Stasiun Maju"
      * }
      * @response status=400 scenario="bad request" {
      *  "message": "Validation Error",

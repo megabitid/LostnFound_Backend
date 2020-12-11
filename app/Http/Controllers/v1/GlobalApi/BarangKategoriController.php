@@ -96,8 +96,8 @@ class BarangKategoriController extends Controller
      * @urlParam id integer required The id of barang kategori. Example: 6 
      * 
      * @response status=200 scenario="success" {
-     *  "id": 6
-     *  "nama": "Aksesoris",
+     *  "id": 6,
+     *  "nama": "Aksesoris"
      * }
      * @response status=401 scenario="Unauthorized" {
      *  "message": "Token not provided"
@@ -123,8 +123,8 @@ class BarangKategoriController extends Controller
      * @bodyParam nama string required Nama kategori. Example: Aksesoris Updated
      * 
      * @response status=201 scenario="success" {
-     *  "id": 6
-     *  "nama": "Aksesoris Updated",
+     *  "id": 6,
+     *  "nama": "Aksesoris Updated"
      * }
      * @response status=400 scenario="bad request" {
      *  "message": "Validation Error",

@@ -229,7 +229,7 @@ class BarangController extends Controller
      *  "kategori": {
      *      "id": 3,
      *      "nama": "Mr. Toby Fadel"
-     *  }
+     *  },
      *  "barangimages": [
      *      {
      *        "id": 1,

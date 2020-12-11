@@ -126,7 +126,7 @@ curl -X PUT \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar Updated","uri":"base64string","barang_id":3}'
+    -d '{"nama":"Tas Besar Updated","uri":"base64string","barang_id":19}'
 
 ```
 
@@ -144,7 +144,7 @@ let headers = {
 let body = {
     "nama": "Tas Besar Updated",
     "uri": "base64string",
-    "barang_id": 3
+    "barang_id": 19
 }
 
 fetch(url, {
@@ -162,7 +162,7 @@ url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/6'
 payload = {
     "nama": "Tas Besar Updated",
     "uri": "base64string",
-    "barang_id": 3
+    "barang_id": 19
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -179,10 +179,10 @@ response.json()
 
 ```json
 {
+    "id": 6,
     "nama": "Tas Besar Updated",
     "uri": "https:\/\/storage.googleapis.com\/megabitlostnfound.appspot.com\/barangs\/image\/6",
-    "barang_id": 3,
-    "id": 6
+    "barang_id": 3
 }
 ```
 > Example response (400, bad request):
@@ -286,7 +286,7 @@ curl -X PATCH \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar Partial Update","barang_id":1}'
+    -d '{"nama":"Tas Besar Partial Update","barang_id":7}'
 
 ```
 
@@ -303,7 +303,7 @@ let headers = {
 
 let body = {
     "nama": "Tas Besar Partial Update",
-    "barang_id": 1
+    "barang_id": 7
 }
 
 fetch(url, {
@@ -320,7 +320,7 @@ import json
 url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/6'
 payload = {
     "nama": "Tas Besar Partial Update",
-    "barang_id": 1
+    "barang_id": 7
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -337,10 +337,10 @@ response.json()
 
 ```json
 {
+    "id": 6,
     "nama": "Tas Besar Partial Update",
     "uri": "https:\/\/storage.googleapis.com\/megabitlostnfound.appspot.com\/barangs\/image\/6",
-    "barang_id": 3,
-    "id": 6
+    "barang_id": 3
 }
 ```
 > Example response (400, bad request):
@@ -484,10 +484,10 @@ response.json()
 
 ```json
 {
+    "id": 6,
     "nama": "Tas Besar Updated",
     "uri": "https:\/\/storage.googleapis.com\/megabitlostnfound.appspot.com\/barangs\/image\/6",
-    "barang_id": 3,
-    "id": 6
+    "barang_id": 3
 }
 ```
 > Example response (401, Unauthorized):
@@ -543,7 +543,7 @@ curl -X POST \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar","uri":"base64string","barang_id":13}'
+    -d '{"nama":"Tas Besar","uri":"base64string","barang_id":5}'
 
 ```
 
@@ -561,7 +561,7 @@ let headers = {
 let body = {
     "nama": "Tas Besar",
     "uri": "base64string",
-    "barang_id": 13
+    "barang_id": 5
 }
 
 fetch(url, {
@@ -579,7 +579,7 @@ url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images'
 payload = {
     "nama": "Tas Besar",
     "uri": "base64string",
-    "barang_id": 13
+    "barang_id": 5
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',

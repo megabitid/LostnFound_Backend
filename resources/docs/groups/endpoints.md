@@ -11,7 +11,7 @@
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/voluptas" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/placeat" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -19,7 +19,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/voluptas"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/placeat"
 );
 
 let headers = {
@@ -39,7 +39,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/users/voluptas'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/users/placeat'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ response.json()
 
 ```bash
 curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/voluptates" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/eum" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -107,7 +107,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/voluptates"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/eum"
 );
 
 let headers = {
@@ -127,7 +127,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/users/voluptates'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/users/eum'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -180,7 +180,7 @@ response.json()
 
 ```bash
 curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/sint" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/ut" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -188,7 +188,7 @@ curl -X PATCH \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/sint"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/ut"
 );
 
 let headers = {
@@ -208,7 +208,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/users/sint'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/users/ut'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -261,7 +261,7 @@ response.json()
 
 ```bash
 curl -X DELETE \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/quia" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/ducimus" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -269,7 +269,7 @@ curl -X DELETE \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/quia"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/ducimus"
 );
 
 let headers = {
@@ -289,7 +289,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/users/quia'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/users/ducimus'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -342,7 +342,7 @@ response.json()
 
 ```bash
 curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/laboriosam/restore" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/harum/restore" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -350,7 +350,7 @@ curl -X PATCH \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/laboriosam/restore"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/web/users/harum/restore"
 );
 
 let headers = {
@@ -370,7 +370,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/users/laboriosam/restore'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/users/harum/restore'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -846,7 +846,7 @@ response.json()
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/quod" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/consequatur" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -854,7 +854,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/quod"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/consequatur"
 );
 
 let headers = {
@@ -874,7 +874,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/quod'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/consequatur'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -934,7 +934,7 @@ response.json()
 
 ```bash
 curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/ea" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/dolor" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -942,7 +942,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/ea"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/dolor"
 );
 
 let headers = {
@@ -962,7 +962,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/ea'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/dolor'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -1015,7 +1015,7 @@ response.json()
 
 ```bash
 curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/et" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/aut" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -1023,7 +1023,7 @@ curl -X PATCH \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/et"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/aut"
 );
 
 let headers = {
@@ -1043,7 +1043,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/et'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/aut'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -3419,7 +3419,7 @@ response.json()
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/repellat" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/aut" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -3427,7 +3427,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/repellat"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/aut"
 );
 
 let headers = {
@@ -3447,7 +3447,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/users/repellat'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/users/aut'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -3507,7 +3507,7 @@ response.json()
 
 ```bash
 curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/eveniet" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/aut" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -3515,7 +3515,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/eveniet"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/aut"
 );
 
 let headers = {
@@ -3535,7 +3535,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/users/eveniet'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/users/aut'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -3588,7 +3588,7 @@ response.json()
 
 ```bash
 curl -X DELETE \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/quod" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/quis" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -3596,7 +3596,7 @@ curl -X DELETE \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/quod"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/quis"
 );
 
 let headers = {
@@ -3616,7 +3616,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/users/quod'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/users/quis'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -3669,7 +3669,7 @@ response.json()
 
 ```bash
 curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/quos" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/voluptatem" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -3677,7 +3677,7 @@ curl -X PATCH \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/quos"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/voluptatem"
 );
 
 let headers = {
@@ -3697,7 +3697,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/users/quos'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/users/voluptatem'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -3750,7 +3750,7 @@ response.json()
 
 ```bash
 curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/et/restore" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/omnis/restore" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -3758,7 +3758,7 @@ curl -X PATCH \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/et/restore"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/users/omnis/restore"
 );
 
 let headers = {
@@ -3778,7 +3778,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/users/et/restore'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/users/omnis/restore'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -4254,7 +4254,7 @@ response.json()
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/libero" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/quibusdam" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -4262,7 +4262,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/libero"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/quibusdam"
 );
 
 let headers = {
@@ -4282,7 +4282,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/users/libero'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/users/quibusdam'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -4342,7 +4342,7 @@ response.json()
 
 ```bash
 curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/non" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/sunt" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -4350,7 +4350,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/non"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/sunt"
 );
 
 let headers = {
@@ -4370,7 +4370,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/users/non'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/users/sunt'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -4423,7 +4423,7 @@ response.json()
 
 ```bash
 curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/voluptatem" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/error" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -4431,7 +4431,7 @@ curl -X PATCH \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/voluptatem"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/error"
 );
 
 let headers = {
@@ -4451,7 +4451,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/users/voluptatem'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/users/error'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -4954,7 +4954,7 @@ response.json()
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/verify/soluta" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/verify/voluptatem" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -4962,7 +4962,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/verify/soluta"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/verify/voluptatem"
 );
 
 let headers = {
@@ -4982,7 +4982,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/verify/soluta'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/verify/voluptatem'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -5117,7 +5117,7 @@ response.json()
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/cupiditate" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/accusantium" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -5125,7 +5125,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/cupiditate"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/accusantium"
 );
 
 let headers = {
@@ -5145,7 +5145,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/cupiditate'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/accusantium'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -5303,7 +5303,7 @@ hr {
 
 ```bash
 curl -X POST \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/debitis" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/aut" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -5311,7 +5311,7 @@ curl -X POST \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/debitis"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/aut"
 );
 
 let headers = {
@@ -5331,7 +5331,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/debitis'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/aut'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -7143,7 +7143,7 @@ response.json()
 
 ```bash
 curl -X DELETE \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/minus" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/velit" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -7151,7 +7151,7 @@ curl -X DELETE \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/minus"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/velit"
 );
 
 let headers = {
@@ -7171,7 +7171,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang/minus'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang/velit'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -7224,7 +7224,7 @@ response.json()
 
 ```bash
 curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/rerum" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/ut" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -7232,7 +7232,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/rerum"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/ut"
 );
 
 let headers = {
@@ -7252,7 +7252,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang/rerum'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang/ut'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -7305,7 +7305,7 @@ response.json()
 
 ```bash
 curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/et" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/eos" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -7313,7 +7313,7 @@ curl -X PATCH \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/et"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/eos"
 );
 
 let headers = {
@@ -7333,7 +7333,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang/et'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang/eos'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -7386,7 +7386,7 @@ response.json()
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/barang/sed" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/barang/tempora" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -7394,7 +7394,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/sed"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/tempora"
 );
 
 let headers = {
@@ -7414,7 +7414,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang/sed'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang/tempora'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -7739,7 +7739,7 @@ response.json()
 
 ```bash
 curl -X DELETE \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/aliquid" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/nisi" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -7747,7 +7747,7 @@ curl -X DELETE \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/aliquid"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/nisi"
 );
 
 let headers = {
@@ -7767,7 +7767,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/aliquid'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/nisi'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -7820,7 +7820,7 @@ response.json()
 
 ```bash
 curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/assumenda" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/aut" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -7828,7 +7828,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/assumenda"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/aut"
 );
 
 let headers = {
@@ -7848,7 +7848,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/assumenda'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/aut'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -7901,7 +7901,7 @@ response.json()
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/autem" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/pariatur" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -7909,7 +7909,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/autem"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/pariatur"
 );
 
 let headers = {
@@ -7929,7 +7929,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/autem'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/stasiun/pariatur'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -8199,7 +8199,7 @@ response.json()
 
 ```bash
 curl -X DELETE \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/id" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/omnis" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -8207,7 +8207,7 @@ curl -X DELETE \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/id"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/omnis"
 );
 
 let headers = {
@@ -8227,7 +8227,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/id'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/omnis'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -8280,7 +8280,7 @@ response.json()
 
 ```bash
 curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/vitae" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/quasi" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -8288,7 +8288,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/vitae"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/quasi"
 );
 
 let headers = {
@@ -8308,7 +8308,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/vitae'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/quasi'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -8361,7 +8361,7 @@ response.json()
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/delectus" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/aut" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -8369,7 +8369,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/delectus"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/aut"
 );
 
 let headers = {
@@ -8389,7 +8389,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/delectus'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-kategori/aut'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -8659,7 +8659,7 @@ response.json()
 
 ```bash
 curl -X DELETE \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/tempore" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/error" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -8667,7 +8667,7 @@ curl -X DELETE \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/tempore"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/error"
 );
 
 let headers = {
@@ -8687,7 +8687,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/tempore'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/error'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -8740,7 +8740,7 @@ response.json()
 
 ```bash
 curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/ut" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/assumenda" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -8748,7 +8748,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/ut"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/assumenda"
 );
 
 let headers = {
@@ -8768,7 +8768,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/ut'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/assumenda'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -8821,7 +8821,7 @@ response.json()
 
 ```bash
 curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/est" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/earum" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -8829,7 +8829,7 @@ curl -X PATCH \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/est"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/earum"
 );
 
 let headers = {
@@ -8849,7 +8849,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/est'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/earum'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -8902,7 +8902,7 @@ response.json()
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/et" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/laborum" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -8910,7 +8910,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/et"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/laborum"
 );
 
 let headers = {
@@ -8930,7 +8930,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/et'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/laborum'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -9216,7 +9216,7 @@ response.json()
 
 ```bash
 curl -X DELETE \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/omnis" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/asperiores" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -9224,7 +9224,7 @@ curl -X DELETE \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/omnis"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/asperiores"
 );
 
 let headers = {
@@ -9244,7 +9244,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/omnis'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/asperiores'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -9297,7 +9297,7 @@ response.json()
 
 ```bash
 curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/illo" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/voluptas" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -9305,7 +9305,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/illo"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/voluptas"
 );
 
 let headers = {
@@ -9325,7 +9325,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/illo'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/voluptas'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -9378,7 +9378,7 @@ response.json()
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/sunt" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/error" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -9386,7 +9386,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/sunt"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/error"
 );
 
 let headers = {
@@ -9406,7 +9406,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/sunt'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-status/error'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
