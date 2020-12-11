@@ -26,7 +26,7 @@ class BarangStatusController extends Controller
      * Get List Barang Status
      * 
      * ### orderBy query supported fields:
-     * * All field of barang kategori detail
+     * * All field of barang status detail
      *       
      * <aside class="warning"> We still use limit offset pagination. In future will be replaced with cursor based pagination.</aside>
      * 

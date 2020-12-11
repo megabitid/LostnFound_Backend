@@ -1,6 +1,6 @@
 # v1 - Barang Image
 
-### API for Manage Barang Image.
+### API for Managing Barang Image.
 
 This API is used to manage barang image. 
 A barang can have multiple images.
@@ -126,7 +126,7 @@ curl -X PUT \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar Updated","uri":"base64string","barang_id":15}'
+    -d '{"nama":"Tas Besar Updated","uri":"base64string","barang_id":3}'
 
 ```
 
@@ -144,7 +144,7 @@ let headers = {
 let body = {
     "nama": "Tas Besar Updated",
     "uri": "base64string",
-    "barang_id": 15
+    "barang_id": 3
 }
 
 fetch(url, {
@@ -162,7 +162,7 @@ url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/6'
 payload = {
     "nama": "Tas Besar Updated",
     "uri": "base64string",
-    "barang_id": 15
+    "barang_id": 3
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -286,7 +286,7 @@ curl -X PATCH \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar Partial Update","barang_id":8}'
+    -d '{"nama":"Tas Besar Partial Update","barang_id":1}'
 
 ```
 
@@ -303,7 +303,7 @@ let headers = {
 
 let body = {
     "nama": "Tas Besar Partial Update",
-    "barang_id": 8
+    "barang_id": 1
 }
 
 fetch(url, {
@@ -320,7 +320,7 @@ import json
 url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/6'
 payload = {
     "nama": "Tas Besar Partial Update",
-    "barang_id": 8
+    "barang_id": 1
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -543,7 +543,7 @@ curl -X POST \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar","uri":"base64string","barang_id":3}'
+    -d '{"nama":"Tas Besar","uri":"base64string","barang_id":13}'
 
 ```
 
@@ -561,7 +561,7 @@ let headers = {
 let body = {
     "nama": "Tas Besar",
     "uri": "base64string",
-    "barang_id": 3
+    "barang_id": 13
 }
 
 fetch(url, {
@@ -579,7 +579,7 @@ url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images'
 payload = {
     "nama": "Tas Besar",
     "uri": "base64string",
-    "barang_id": 3
+    "barang_id": 13
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -669,11 +669,11 @@ id Barang that owned this image. Example 3</p>
 </form>
 
 
-## Get List Barnag Image
+## Get List Barang Image
 
 <small class="badge badge-darkred">requires authentication</small>
 
-### Image Barang parameter query supported:
+### Barang Image parameter query supported:
 * id
 * barang_id
 
