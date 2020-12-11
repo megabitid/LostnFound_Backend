@@ -14,6 +14,12 @@ use Validator;
 use Illuminate\Http\Request;
 use App\Traits\database\Paginator;
 
+/** 
+ * @group v1 - User Admin
+ * 
+ * ### API for Managing User Admin
+ * 
+ */
 class AdminController extends Controller
 {
     /**

@@ -12,6 +12,9 @@ use Laravel\Socialite\Facades\Socialite;
 use Google_Client;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
+/** 
+ * @group v2 - Authenticate OAuth2 User
+ */
 // reference https://www.codesenior.com/en/tutorial/Php-Laravel-Socialite-And-Android-Google-Sign-In-Operation
 class Oauth2Controller extends Controller
 {

@@ -13,6 +13,9 @@ use JWTAuth;
 use Validator;
 use App\Traits\ValidationError;
 
+/** 
+ * @group v1 - Authenticate User Admin
+ */
 class AuthController extends Controller
 {
     private static $JWT_TTL = 60;

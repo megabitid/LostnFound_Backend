@@ -10,6 +10,9 @@ use App\Traits\Permissions;
 use Illuminate\Http\Request;
 use App\Traits\database\Paginator;
 
+/** 
+ * @group v1 - History
+ */
 class HistoryController extends Controller
 {
     /**
