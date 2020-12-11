@@ -166,7 +166,7 @@ class BarangStatusController extends Controller
      * 
      * Barang status can be deleted using this API.
      * 
-     * @urlParam id integer required The id of barang kategori. Example: 4
+     * @urlParam id integer required The id of barang status. Example: 4
      * 
      * @response status=204 scenario="delete success" {
      *  "message": "Status barang deleted successfully"

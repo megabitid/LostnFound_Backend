@@ -41,7 +41,7 @@ class BarangController extends Controller
      * ### orderBy query supported fields:
      * * All field of barang detail
      * 
-     * ### search query will search string inside theese fields:
+     * ### search query will search string inside these fields:
      * * nama_barang
      * * lokasi
      * * tanggl
