@@ -174,10 +174,9 @@ response.json()
 > Example response (201, success):
 
 ```json
-
 {
- "id": 6
- "nama": "Aksesoris Updated",
+    "id": 6,
+    "nama": "Aksesoris Updated"
 }
 ```
 > Example response (400, bad request):
@@ -304,10 +303,9 @@ response.json()
 > Example response (200, success):
 
 ```json
-
 {
- "id": 6
- "nama": "Aksesoris",
+    "id": 6,
+    "nama": "Aksesoris"
 }
 ```
 > Example response (401, Unauthorized):

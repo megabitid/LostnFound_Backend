@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\docs\SwaggerController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\v1\Android\Oauth2Controller;
+use App\Http\Controllers\v2\Android\Oauth2Controller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

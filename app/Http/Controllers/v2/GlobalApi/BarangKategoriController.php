@@ -12,12 +12,31 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Traits\database\Paginator;
 
+/** 
+ * @group v2 - Barang Kategori
+ * 
+ * ### API for Managing Barang Kategori.
+ * 
+ * This API is used to manage barang kategori. 
+ * A barang can have only one category. 
+ */
 class BarangKategoriController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Get List Barang Kategori
+     * 
+     * ### orderBy query supported fields:
+     * * All field of barang kategori detail
+     *       
+     * <aside class="warning"> We still use limit offset pagination. In future will be replaced with cursor based pagination.</aside>
+     * 
+     * @queryParam orderBy string Apply ordering based on specific field. 
+     *              Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending).
+     *              No-example
+     * 
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
      */
     public function index(Request $request)
     {
@@ -29,10 +48,30 @@ class BarangKategoriController extends Controller
 
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * Add Barang Kategori.
+     * 
+     * Barang kategori can be added using this API.
+     * 
+     * @bodyParam nama string required Nama kategori. Example: Aksesoris
+     * 
+     * @response status=201 scenario="success" {
+     *  "nama": "Aksesoris",
+     *  "id": 6
+     * }
+     * @response status=400 scenario="bad request" {
+     *  "message": "Validation Error",
+     *  "errors": {
+     *      "nama": [
+     *          "The nama field is required."
+     *      ]
+     *  }
+     * }
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
+     * @response status=403 scenario="not admin" {
+     *  "message": "You must be admin or super admin to do this."
+     * } 
      */
     public function store(Request $request)
     {
@@ -50,10 +89,22 @@ class BarangKategoriController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Get Detail Barang Kategori.
+     * 
+     * Barang kategori detail can be retrieved using this API.
+     * 
+     * @urlParam id integer required The id of barang kategori. Example: 6 
+     * 
+     * @response status=200 scenario="success" {
+     *  "id": 6,
+     *  "nama": "Aksesoris"
+     * }
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
+     * @response status=404 scenario="data not found" {
+     *  "message": "Not Found"
+     * }
      */
     public function show($id)
     {
@@ -63,11 +114,35 @@ class BarangKategoriController extends Controller
 
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Update Barang Kategori.
+     * 
+     * Barang kategori can be updated using this API.
+     * 
+     * @urlParam id integer required The id of barang kategori. Example: 6 
+     * 
+     * @bodyParam nama string required Nama kategori. Example: Aksesoris Updated
+     * 
+     * @response status=201 scenario="success" {
+     *  "id": 6,
+     *  "nama": "Aksesoris Updated"
+     * }
+     * @response status=400 scenario="bad request" {
+     *  "message": "Validation Error",
+     *  "errors": {
+     *      "nama": [
+     *          "The nama field is required."
+     *      ]
+     *  }
+     * }
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
+     * @response status=403 scenario="not admin" {
+     *  "message": "You must be admin or super admin to do this."
+     * } 
+     * @response status=404 scenario="data not found" {
+     *  "message": "Not Found"
+     * } 
      */
     public function update(Request $request, $id)
     {
@@ -86,16 +161,31 @@ class BarangKategoriController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Delete Barang Kategori.
+     * 
+     * Barang kategori can be deleted using this API.
+     * 
+     * @urlParam id integer required The id of barang kategori. Example: 6 
+     * 
+     * @response status=204 scenario="delete success" {
+     *  "message": "BarangKategori data deleted successfully"
+     * } 
+     * }
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
+     * @response status=403 scenario="not admin" {
+     *  "message": "You must be admin or super admin to do this."
+     * } 
+     * @response status=404 scenario="data not found" {
+     *  "message": "Not Found"
+     * } 
      */
     public function destroy(Request $request, $id)
     {
         Permissions::isAdminOrSuperAdmin($request);
         $barangKategori = BarangKategori::findOrFail($id);
         $barangKategori->delete();
-        return response()->json(['message' => 'BarangKategori data delete successfully'], 204);
+        return response()->json(['message' => 'BarangKategori data deleted successfully'], 204);
     }
 }

@@ -125,7 +125,7 @@ Claim can be verified by admin only using this api.
 
 ```bash
 curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/maxime/verified" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/ab/verified" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
@@ -135,7 +135,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/maxime/verified"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/ab/verified"
 );
 
 let headers = {
@@ -159,7 +159,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/maxime/verified'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/ab/verified'
 payload = {
     "verified": true
 }
@@ -177,17 +177,16 @@ response.json()
 > Example response (201, success):
 
 ```json
-
 {
- "id": 4
- "user_id": 1,
- "barang_id": 1,
- "alamat": "Jalan Mangga, Block X/21",
- "uri_tiket": "https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4",
- "no_telp": "0999999999",
- "verified": 1,
- "updated_at": "2020-12-11T12:45:49.000000Z",
- "created_at": "2020-12-11T12:30:48.000000Z",
+    "id": 4,
+    "user_id": 1,
+    "barang_id": 1,
+    "alamat": "Jalan Mangga, Block X\/21",
+    "uri_tiket": "https:\/\/storage.googleapis.com\/megabitlostnfound.appspot.com\/claims\/ticket_image\/4",
+    "no_telp": "0999999999",
+    "verified": 1,
+    "updated_at": "2020-12-11T12:45:49.000000Z",
+    "created_at": "2020-12-11T12:30:48.000000Z"
 }
 ```
 > Example response (400, bad request):
@@ -273,7 +272,7 @@ Claim can be updated for barang hilang only.
 
 ```bash
 curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/voluptatem" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/velit" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
@@ -283,7 +282,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/voluptatem"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/velit"
 );
 
 let headers = {
@@ -311,7 +310,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/voluptatem'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/velit'
 payload = {
     "user_id": "1",
     "barang_id": 1,
@@ -333,17 +332,16 @@ response.json()
 > Example response (201, success):
 
 ```json
-
 {
- "id": 4
- "user_id": 1,
- "barang_id": 1,
- "alamat": "Jalan Mangga, Block X/21",
- "uri_tiket": "https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4",
- "no_telp": "08123456789",
- "verified": 0,
- "updated_at": "2020-12-11T12:40:49.000000Z",
- "created_at": "2020-12-11T12:30:48.000000Z",
+    "id": 4,
+    "user_id": 1,
+    "barang_id": 1,
+    "alamat": "Jalan Mangga, Block X\/21",
+    "uri_tiket": "https:\/\/storage.googleapis.com\/megabitlostnfound.appspot.com\/claims\/ticket_image\/4",
+    "no_telp": "08123456789",
+    "verified": 0,
+    "updated_at": "2020-12-11T12:40:49.000000Z",
+    "created_at": "2020-12-11T12:30:48.000000Z"
 }
 ```
 > Example response (400, bad request):
@@ -460,7 +458,7 @@ Claim can be updated for barang hilang only.
 
 ```bash
 curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/non" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/rerum" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
@@ -470,7 +468,7 @@ curl -X PATCH \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/non"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/rerum"
 );
 
 let headers = {
@@ -494,7 +492,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/non'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/rerum'
 payload = {
     "no_telp": "0999999999"
 }
@@ -512,17 +510,16 @@ response.json()
 > Example response (201, success):
 
 ```json
-
 {
- "id": 4
- "user_id": 1,
- "barang_id": 1,
- "alamat": "Jalan Mangga, Block X/21",
- "uri_tiket": "https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4",
- "no_telp": "0999999999",
- "verified": 0,
- "updated_at": "2020-12-11T12:40:49.000000Z",
- "created_at": "2020-12-11T12:30:48.000000Z",
+    "id": 4,
+    "user_id": 1,
+    "barang_id": 1,
+    "alamat": "Jalan Mangga, Block X\/21",
+    "uri_tiket": "https:\/\/storage.googleapis.com\/megabitlostnfound.appspot.com\/claims\/ticket_image\/4",
+    "no_telp": "0999999999",
+    "verified": 0,
+    "updated_at": "2020-12-11T12:40:49.000000Z",
+    "created_at": "2020-12-11T12:30:48.000000Z"
 }
 ```
 > Example response (400, bad request):
@@ -628,17 +625,17 @@ Phone number of user.</p>
 </form>
 
 
-## api/v1/claims/{id}
+## Detail Claim.
 
 <small class="badge badge-darkred">requires authentication</small>
 
-
+Claim detail can be retrieved using this API.
 
 > Example request:
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/claims/voluptas" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/claims/ea" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -646,7 +643,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/voluptas"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/ea"
 );
 
 let headers = {
@@ -666,7 +663,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/voluptas'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/ea'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -678,7 +675,40 @@ response.json()
 ```
 
 
-> Example response (404):
+> Example response (200, success):
+
+```json
+{
+    "id": 4,
+    "alamat": "Jalan Mangga, Block X\/20",
+    "no_telp": "08123456789",
+    "uri_tiket": "https:\/\/storage.googleapis.com\/megabitlostnfound.appspot.com\/claims\/ticket_image\/4",
+    "verified": 0,
+    "created_at": "2020-12-11T12:30:48.000000Z",
+    "updated_at": "2020-12-11T12:30:49.000000Z",
+    "user_id": 1,
+    "barang_id": 1,
+    "barang": {
+        "id": 1,
+        "nama_barang": "Ms. Cecelia Mayer I"
+    }
+}
+```
+> Example response (401, Unauthorized):
+
+```json
+{
+    "message": "Token not provided"
+}
+```
+> Example response (403, not owner or admin):
+
+```json
+{
+    "message": "You must be the owner or admin to do this."
+}
+```
+> Example response (404, data not found):
 
 ```json
 {
@@ -1017,6 +1047,21 @@ response.json()
                 "id": 1,
                 "nama_barang": "Ms. Cecelia Mayer I"
             }
+        },
+        {
+            "id": 5,
+            "alamat": "Jalan Mangga, Block X\/20",
+            "no_telp": "08123456789",
+            "uri_tiket": "https:\/\/storage.googleapis.com\/megabitlostnfound.appspot.com\/claims\/ticket_image\/5",
+            "verified": 0,
+            "created_at": "2020-12-11T13:18:25.000000Z",
+            "updated_at": "2020-12-11T13:18:26.000000Z",
+            "user_id": 1,
+            "barang_id": 1,
+            "barang": {
+                "id": 1,
+                "nama_barang": "Ms. Cecelia Mayer I"
+            }
         }
     ],
     "links": {
@@ -1048,8 +1093,8 @@ response.json()
         ],
         "path": "http:\/\/localhost\/api\/v1\/claims",
         "per_page": 20,
-        "to": 4,
-        "total": 4
+        "to": 5,
+        "total": 5
     }
 }
 ```
