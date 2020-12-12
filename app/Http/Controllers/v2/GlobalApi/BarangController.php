@@ -16,12 +16,53 @@ use Illuminate\Support\Facades\Validator;
 use App\Traits\database\Paginator;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
+/** 
+ * @group v2 - Barang
+ * 
+ * ### API for Manage Barang.
+ * 
+ * This API is used to managing barang. 
+ * Including barang hilang, ditemukan, didonasikan, diklaim; 
+ * depending with its status.
+ */
 class BarangController extends Controller
 {
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * Get List Barang.
+     * 
+     * ### Barang parameter query supported:
+     * * id
+     * * user_id
+     * * stasiun_id
+     * * status_id
+     * * kategori_id
+     * 
+     * ### orderBy query supported fields:
+     * * All field of barang detail
+     * 
+     * ### search query will search string inside these fields:
+     * * nama_barang
+     * * lokasi
+     * * tanggl
+     * * deskrpi
+     * * warna
+     * * merek
+     *       
+     * <aside class="warning"> We still use limit offset pagination. In future will be replaced with cursor based pagination.</aside>
+     * 
+     * @queryParam id integer Apply filter with id. No-example
+     * @queryParam user_id integer Apply filter with user_id. No-example
+     * @queryParam stasiun_id integer Apply filter with stasiun_id. No-example
+     * @queryParam status_id integer Apply filter with status_id. No-example
+     * @queryParam kategori_id integer Apply filter with kategori_id. No-example
+     * @queryParam orderBy string Apply ordering based on specific field. 
+     *              Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending).
+     *              Example: -id
+     * @queryParam search string Apply filtering with string search. Example: 2020
+     * 
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
      */
     public function index(Request $request)
     {
@@ -50,6 +91,9 @@ class BarangController extends Controller
         ];
         $query = QueryBuilder::searchIn($request, $query, $searchFields);
         $query = $query->with('stasiun');
+        $query = $query->with(array('barangimages'=>function($query){
+            $query->first();
+        }));
         
         //paginate 
         $paginator = Paginator::paginate($request, $query);
@@ -64,10 +108,65 @@ class BarangController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * Add Barang.
+     * 
+     * Add barang with their status and its related field.
+     * 
+     * @bodyParam nama_barang string required Nama barang. Example: Clair Rowe
+     * @bodyParam deskripsi string required Deskripsi barang. Example: Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.
+     * @bodyParam user_id integer required id User yang terkait barang. Example: 5
+     * @bodyParam status_id integer required id Status barang. Example: 4
+     * @bodyParam stasiun_id integer required id Stasiun barang. Example: 4
+     * @bodyParam kategori_id integer required id Kategori barang. Example: 3
+     * @bodyParam tanggal date_format:Y-m-d required Tanggal pendataan. Example: 2020-12-04
+     * @bodyParam warna string Warna barang. Example: Salmon
+     * @bodyParam merek string Merek barang. Example: Heaney-Hansen
+     * @bodyParam lokasi string Lokasi detail barang. Example: 67934 Juvenal Place\nJeffport, OR 75023-4991
+     * 
+     * @response status=201 scenario="success" {
+     *  "id": 3,
+     *  "nama_barang": "Clair Rowe",
+     *  "tanggal": "2020-12-04",
+     *  "lokasi": "67934 Juvenal Place\nJeffport, OR 75023-4991",
+     *  "deskripsi": "Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.",
+     *  "warna": "Salmon",
+     *  "merek": "Heaney-Hansen",
+     *  "user_id": 5,
+     *  "status_id": 4,
+     *  "stasiun_id": 4,
+     *  "kategori_id": 3,
+     *  "created_at": "2020-12-10T15:25:46.000000Z",
+     *  "updated_at": null
+     * }
+     * @response status=400 scenario="bad request" {
+     *  "message": "Validation Error",
+     *   "errors": {
+     *       "nama_barang": [
+     *           "The nama barang field is required."
+     *       ],
+     *       "deskripsi": [
+     *           "The deskripsi field is required."
+     *       ],
+     *       "user_id": [
+     *           "The user id field is required."
+     *       ],
+     *       "stasiun_id": [
+     *           "The stasiun id field is required."
+     *       ],
+     *       "status_id": [
+     *           "The status id field is required."
+     *       ],
+     *       "kategori_id": [
+     *           "The kategori id field is required."
+     *       ],
+     *       "tanggal": [
+     *           "The tanggal field is required."
+     *       ]
+     *   }
+     * }
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
      */
     public function store(Request $request)
     {
@@ -99,14 +198,48 @@ class BarangController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Get Detail Barang.
+     * 
+     * @urlParam id integer required The id of barang. Example: 3
+     * @response status=200 scenario="success" {
+     *  "id": 3,
+     *  "nama_barang": "Clair Rowe Updated Partially",
+     *  "tanggal": "2020-12-04",
+     *  "lokasi": "67934 Juvenal Place\nJeffport, OR 75023-4991",
+     *  "deskripsi": "Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.",
+     *  "warna": "Salmon",
+     *  "merek": "Heaney-Hansen",
+     *  "user_id": 5,
+     *  "status_id": 4,
+     *  "created_at": null,
+     *  "updated_at": "2020-12-10T15:28:18.000000Z",
+     *  "stasiun": {
+     *      "id": 4,
+     *      "nama": "Lou Gutmann"
+     *  },
+     *  "kategori": {
+     *      "id": 3,
+     *      "nama": "Mr. Toby Fadel"
+     *  },
+     *  "barangimages": [
+     *      {
+     *        "id": 1,
+     *        "nama": "Teresa Hettinger",
+     *        "uri": "https://via.placeholder.com/640x480.png/00cc66?text=tenetur",
+     *        "barang_id": 3
+     *      }
+     *  ]
+     * }
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
+     * @response status=404 scenario="barang not found" {
+     *  "message": "Not Found"
+     * }
      */
     public function show($id)
     {
-        $barang = Barang::with(['stasiun', 'kategori'])->findOrFail($id);
+        $barang = Barang::with(['stasiun', 'kategori', 'barangimages'])->findOrFail($id);
         $excludeFields = [
             'stasiun_id',
             'kategori_id',
@@ -116,11 +249,81 @@ class BarangController extends Controller
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Update Barang.
+     * 
+     * Will update barang.
+     * 
+     * @bodyParam nama_barang string required Nama barang. Example: Clair Rowe Updated Partially
+     * @bodyParam deskripsi string required Deskripsi barang. Example: Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.
+     * @bodyParam user_id integer required id User yang terkait barang. Example: 5
+     * @bodyParam status_id integer required id Status barang. Example: 4
+     * @bodyParam stasiun_id integer required id Stasiun barang. Example: 4
+     * @bodyParam kategori_id integer required id Kategori barang. Example: 3
+     * @bodyParam tanggal date_format:Y-m-d required Tanggal pendataan. Example: 2020-12-04
+     * @bodyParam warna string Warna barang. Example: Salmon
+     * @bodyParam merek string Merek barang. Example: Heaney-Hansen
+     * @bodyParam lokasi string Lokasi detail barang. Example: 67934 Juvenal Place\nJeffport, OR 75023-4991
+     * 
+     * @urlParam id integer required The id of barang. Example: 3
+     * @response status=201 scenario="update success" {
+     *  "id": 3,
+     *  "nama_barang": "Clair Rowe Updated",
+     *  "tanggal": "2020-12-04",
+     *  "lokasi": "67934 Juvenal Place\nJeffport, OR 75023-4991",
+     *  "deskripsi": "Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.",
+     *  "warna": "Salmon",
+     *  "merek": "Heaney-Hansen",
+     *  "user_id": 5,
+     *  "status_id": 4,
+     *  "stasiun_id": 4,
+     *  "kategori_id": 3,
+     *  "created_at": null,
+     *  "updated_at": "2020-12-10T15:25:46.000000Z"
+     * }
+     * @response status=400 scenario="bad request" {
+     *  "message": "Validation Error",
+     *   "errors": {
+     *       "nama_barang": [
+     *           "The nama barang field is required."
+     *       ],
+     *       "lokasi": [
+     *           "The lokasi field is required."
+     *       ],
+     *       "deskripsi": [
+     *           "The deskripsi field is required."
+     *       ],
+     *       "warna": [
+     *           "The warna field is required."
+     *       ],
+     *       "merek": [
+     *           "The merek field is required."
+     *       ],
+     *       "user_id": [
+     *           "The user id field is required."
+     *       ],
+     *       "stasiun_id": [
+     *           "The stasiun id field is required."
+     *       ],
+     *       "status_id": [
+     *           "The status id field is required."
+     *       ],
+     *       "kategori_id": [
+     *           "The kategori id field is required."
+     *       ],
+     *       "tanggal": [
+     *           "The tanggal field is required."
+     *       ]
+     *   }
+     * }
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
+     * @response status=403 scenario="not owner or admin" {
+     *  "message": "You must be the owner or admin to do this."
+     * }
+     * @response status=404 scenario="barang not found" {
+     *  "message": "Not Found"
+     * }
      */
     public function update(Request $request, $id)
     {
@@ -156,11 +359,81 @@ class BarangController extends Controller
     }
 
     /**
-     * Update partially the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Partial Update Barang.
+     * 
+     * Will update barang partially.
+     * 
+     * @bodyParam nama_barang string Nama barang. Example: Clair Rowe Updated Partially
+     * @bodyParam deskripsi string Deskripsi barang. No-example
+     * @bodyParam user_id integer id User yang terkait barang. No-example
+     * @bodyParam status_id integer id Status barang. No-example
+     * @bodyParam stasiun_id integer id Stasiun barang. No-example
+     * @bodyParam kategori_id integer id Kategori barang. No-example
+     * @bodyParam tanggal date_format:Y-m-d Tanggal pendataan. No-example
+     * @bodyParam warna string Warna barang. No-example
+     * @bodyParam merek string Merek barang. No-example
+     * @bodyParam lokasi string Lokasi detail barang. No-example
+     * 
+     * @urlParam id integer required The id of barang. Example: 3
+     * @response status=201 scenario="update success" {
+     *  "id": 3,
+     *  "nama_barang": "Clair Rowe Updated Partially",
+     *  "tanggal": "2020-12-04",
+     *  "lokasi": "67934 Juvenal Place\nJeffport, OR 75023-4991",
+     *  "deskripsi": "Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.",
+     *  "warna": "Salmon",
+     *  "merek": "Heaney-Hansen",
+     *  "user_id": 5,
+     *  "status_id": 4,
+     *  "stasiun_id": 4,
+     *  "kategori_id": 3,
+     *  "created_at": null,
+     *  "updated_at": "2020-12-10T15:25:46.000000Z"
+     * }
+     * @response status=400 scenario="bad request" {
+     *  "message": "Validation Error",
+     *  "errors": {
+     *      "nama_barang": [
+     *          "The nama barang must be a string."
+     *      ],
+     *      "lokasi": [
+     *          "The lokasi must be a string."
+     *      ],
+     *      "deskripsi": [
+     *          "The deskripsi must be a string."
+     *      ],
+     *      "warna": [
+     *          "The warna must be a string."
+     *      ],
+     *      "merek": [
+     *          "The merek must be a string."
+     *      ],
+     *      "user_id": [
+     *          "The user id must be a number."
+     *      ],
+     *      "stasiun_id": [
+     *          "The stasiun id must be a number."
+     *      ],
+     *      "status_id": [
+     *          "The status id must be a number."
+     *      ],
+     *      "kategori_id": [
+     *          "The kategori id must be a number."
+     *      ],
+     *     "tanggal": [
+     *         "The tanggal does not match the format Y-m-d."
+     *     ] 
+     *  }
+     * }
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
+     * @response status=403 scenario="not owner or admin" {
+     *  "message": "You must be the owner or admin to do this."
+     * }
+     * @response status=404 scenario="barang not found" {
+     *  "message": "Not Found"
+     * }
      */
     public function updatePartial(Request $request, $id)
     {
@@ -198,10 +471,23 @@ class BarangController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * Delete Barang.
+     * 
+     * Will delete barang and all of its images.
+     * 
+     * @urlParam id integer required The id of barang. Example: 1
+     * @response status=204 scenario="delete success" {
+     *  "message": "Barang deleted."
+     * }
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
+     * @response status=403 scenario="not owner or admin" {
+     * "message": "You must be the owner or admin to do this."
+     * }
+     * @response status=404 scenario="barang not found" {
+     *  "message": "Not Found"
+     * }
      */
     public function destroy(Request $request, $id)
     {

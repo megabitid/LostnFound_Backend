@@ -132,10 +132,10 @@ class BarangImageController extends Controller
      * @urlParam id integer required The id of barang image. Example: 6 
      * 
      * @response status=200 scenario="success" {
+     *  "id": 6,
      *  "nama": "Tas Besar Updated",
      *  "uri": "https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6",
-     *  "barang_id": 3,
-     *  "id": 6
+     *  "barang_id": 3
      * }
      * @response status=401 scenario="Unauthorized" {
      *  "message": "Token not provided"
@@ -159,10 +159,10 @@ class BarangImageController extends Controller
      * @bodyParam barang_id integer required id Barang that owned this image. Example 3
      * 
      * @response status=201 scenario="success" {
+     *  "id": 6,
      *  "nama": "Tas Besar Updated",
      *  "uri": "https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6",
-     *  "barang_id": 3,
-     *  "id": 6
+     *  "barang_id": 3
      * }
      * @response status=400 scenario="bad request" {
      *  "message": "Validation Error",
@@ -225,10 +225,10 @@ class BarangImageController extends Controller
      * @bodyParam barang_id integer id Barang that owned this image.
      * 
      * @response status=201 scenario="success" {
+     *  "id": 6,
      *  "nama": "Tas Besar Partial Update",
      *  "uri": "https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6",
-     *  "barang_id": 3,
-     *  "id": 6
+     *  "barang_id": 3
      * }
      * @response status=400 scenario="bad request" {
      *  "message": "Validation Error",

@@ -8,6 +8,9 @@ use App\Traits\Permissions;
 
 class SwaggerController extends Controller
 {
+    /**
+     * @hideFromAPIDocumentation
+     */
     public function show(Request $request) {
         $jwt = $request->get('jwt');
         $externalSpec = $request->get('spec');
@@ -19,7 +22,9 @@ class SwaggerController extends Controller
         }
         return view('swagger.index',['apispec'=>'./openapi', 'token'=>$jwt]);
     }
-
+    /**
+     * @hideFromAPIDocumentation
+     */
     public function apispec(Request $request) {
         // uncemment line bellow and remove jwt middleware in route,
         // if you want private documentation. #hastag: closeapi

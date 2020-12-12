@@ -115,7 +115,6 @@ class BarangController extends Controller
      * Add barang with their status and its related field.
      * 
      * @bodyParam nama_barang string required Nama barang. Example: Clair Rowe
-     * @bodyParam tanggal date_format:Y-m-d required Tanggal pendataan. Example: 2020-12-04
      * @bodyParam lokasi string required Lokasi detail barang. Example: 67934 Juvenal Place\nJeffport, OR 75023-4991
      * @bodyParam deskripsi string required Deskripsi barang. Example: Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.
      * @bodyParam warna string required Warna barang. Example: Salmon
@@ -229,7 +228,7 @@ class BarangController extends Controller
      *  "kategori": {
      *      "id": 3,
      *      "nama": "Mr. Toby Fadel"
-     *  }
+     *  },
      *  "barangimages": [
      *      {
      *        "id": 1,
@@ -263,7 +262,6 @@ class BarangController extends Controller
      * Will update barang.
      * 
      * @bodyParam nama_barang string required Nama barang. Example: Clair Rowe Updated Partially
-     * @bodyParam tanggal date_format:Y-m-d required Tanggal pendataan. Example: 2020-12-04
      * @bodyParam lokasi string required Lokasi detail barang. Example: 67934 Juvenal Place\nJeffport, OR 75023-4991
      * @bodyParam deskripsi string required Deskripsi barang. Example: Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.
      * @bodyParam warna string required Warna barang. Example: Salmon
@@ -368,7 +366,6 @@ class BarangController extends Controller
      * Will update barang partially.
      * 
      * @bodyParam nama_barang string Nama barang. Example: Clair Rowe Updated Partially
-     * @bodyParam tanggal date_format:Y-m-d Tanggal pendataan. No-example
      * @bodyParam lokasi string Lokasi detail barang. No-example
      * @bodyParam deskripsi string Deskripsi barang. No-example
      * @bodyParam warna string Warna barang. No-example

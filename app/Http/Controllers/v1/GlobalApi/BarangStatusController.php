@@ -97,8 +97,8 @@ class BarangStatusController extends Controller
      * @urlParam id integer required The id of barang status. Example: 4
      * 
      * @response status=200 scenario="success" {
-     *  "id": 4
-     *  "nama": "ditemukan",
+     *  "id": 4,
+     *  "nama": "ditemukan"
      * }
      * @response status=401 scenario="Unauthorized" {
      *  "message": "Token not provided"
@@ -124,8 +124,8 @@ class BarangStatusController extends Controller
      * @bodyParam nama string required Nama status. Example: dijual
      * 
      * @response status=201 scenario="success" {
-     *  "id": 4
-     *  "nama": "dijual",
+     *  "id": 4,
+     *  "nama": "dijual"
      * }
      * @response status=400 scenario="bad request" {
      *  "message": "Validation Error",

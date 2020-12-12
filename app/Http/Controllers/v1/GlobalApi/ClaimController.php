@@ -162,6 +162,36 @@ class ClaimController extends Controller
         return response()->json($claim, 201);
     }
 
+    /**
+     * Detail Claim.
+     * 
+     * Claim detail can be retrieved using this API.
+     * 
+     * @response status=200 scenario="success" {
+     *  "id": 4,
+     *  "alamat": "Jalan Mangga, Block X/20",
+     *  "no_telp": "08123456789",
+     *  "uri_tiket": "https://storage.googleapis.com/megabitlostnfound.appspot.com/claims/ticket_image/4",
+     *  "verified": 0,
+     *  "created_at": "2020-12-11T12:30:48.000000Z",
+     *  "updated_at": "2020-12-11T12:30:49.000000Z",
+     *  "user_id": 1,
+     *  "barang_id": 1,
+     *  "barang": {
+     *      "id": 1,
+     *      "nama_barang": "Ms. Cecelia Mayer I"
+     *  }
+     * }
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
+     * @response status=403 scenario="not owner or admin" {
+     * "message": "You must be the owner or admin to do this."
+     * }
+     * @response status=404 scenario="data not found" {
+     *  "message": "Not Found"
+     * } 
+     */
     public function show(Request $request, $id)
     {
         $claim = Claim::with('barang:id,nama_barang')->findOrFail($id);
@@ -183,7 +213,7 @@ class ClaimController extends Controller
      * @bodyParam no_telp string required Phone number of user. Example: 08123456789
      * 
      * @response status=201 scenario="success" {
-     *  "id": 4
+     *  "id": 4,
      *  "user_id": 1,
      *  "barang_id": 1,
      *  "alamat": "Jalan Mangga, Block X/21",
@@ -191,7 +221,7 @@ class ClaimController extends Controller
      *  "no_telp": "08123456789",
      *  "verified": 0,
      *  "updated_at": "2020-12-11T12:40:49.000000Z",
-     *  "created_at": "2020-12-11T12:30:48.000000Z",
+     *  "created_at": "2020-12-11T12:30:48.000000Z"
      * }
      * @response status=400 scenario="bad request" {
      *  "message": "Validation Error",
@@ -270,7 +300,7 @@ class ClaimController extends Controller
      * @bodyParam no_telp string Phone number of user. Example: 0999999999
      * 
      * @response status=201 scenario="success" {
-     *  "id": 4
+     *  "id": 4,
      *  "user_id": 1,
      *  "barang_id": 1,
      *  "alamat": "Jalan Mangga, Block X/21",
@@ -278,7 +308,7 @@ class ClaimController extends Controller
      *  "no_telp": "0999999999",
      *  "verified": 0,
      *  "updated_at": "2020-12-11T12:40:49.000000Z",
-     *  "created_at": "2020-12-11T12:30:48.000000Z",
+     *  "created_at": "2020-12-11T12:30:48.000000Z"
      * }
      * @response status=400 scenario="bad request" {
      *  "message": "Validation Error",
@@ -351,7 +381,7 @@ class ClaimController extends Controller
      * @bodyParam verified boolean id user that want to claim. Example: 1
      * 
      * @response status=201 scenario="success" {
-     *  "id": 4
+     *  "id": 4,
      *  "user_id": 1,
      *  "barang_id": 1,
      *  "alamat": "Jalan Mangga, Block X/21",
@@ -359,7 +389,7 @@ class ClaimController extends Controller
      *  "no_telp": "0999999999",
      *  "verified": 1,
      *  "updated_at": "2020-12-11T12:45:49.000000Z",
-     *  "created_at": "2020-12-11T12:30:48.000000Z",
+     *  "created_at": "2020-12-11T12:30:48.000000Z"
      * }
      * @response status=400 scenario="bad request" {
      *  "message": "Validation Error",
