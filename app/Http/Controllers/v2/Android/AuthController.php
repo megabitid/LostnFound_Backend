@@ -54,6 +54,9 @@ class AuthController extends Controller
      *  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwPlwvXC9sv2NhbGhvc3Q6ODAwMFwvYXBpXC92MlwvYW5kcm9pZFwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MDc3MzYyNTYsImV4cCI6MTYxMDMyODI1NiwibmJmIjoxNjA3NzM2MjU2LCJqdGkiOiI5QlpjQ1lHZjlLdFdCcDhVIiwic3ViIjo2LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0._oVDa85ail2G-A5t2NWiKt0APMkr3yl0TbbdMjZNOMg",
      *  "exp": 1610328256
      * }
+     * @response status=202 scenario="not verify email" {
+     *  "message": "Verify your email first, we have send you an email."
+     * }
      * @response status=400 scenario="bad request" {
      *  "message": "Validation Error",
      *  "errors": {
