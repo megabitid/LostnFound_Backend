@@ -29,7 +29,7 @@ class UserController extends Controller
      * Will returns user list.
      * 
      * ### orderBy query supported fields:
-     * * All field of barang detail
+     * * All field of its detail
      * 
      * @queryParam orderBy string Apply ordering based on specific field. 
      *              Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending).
@@ -139,7 +139,7 @@ class UserController extends Controller
      * @response status=401 scenario="Unauthorized" {
      *  "message": "Token not provided"
      * }
-     * @response status=403 scenario="not owner or super admin" {
+     * @response status=403 scenario="not owner or admin" {
      *  "message": "You must be owner or admin to do this."
      * }  
      * @response status=404 scenario="data not found" {
@@ -220,7 +220,7 @@ class UserController extends Controller
      * @response status=401 scenario="Unauthorized" {
      *  "message": "Token not provided"
      * }
-     * @response status=403 scenario="not owner or super admin" {
+     * @response status=403 scenario="not owner or admin" {
      *  "message": "You must be owner or admin to do this."
      * }  
      * @response status=404 scenario="data not found" {
