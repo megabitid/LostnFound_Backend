@@ -14,7 +14,7 @@ use Validator;
 use App\Traits\ValidationError;
 
 /** 
- * @group v1 - Authenticate User Admin
+ * @group v2 - Authenticate User Admin
  * 
  * Authenticate admin/super admin to dashboard.
  */

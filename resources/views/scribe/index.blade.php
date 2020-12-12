@@ -66,7 +66,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 <p>Base URL</p>
 </blockquote>
 <pre><code class="language-yaml">https://megabit-lostnfound.herokuapp.com</code></pre><h1>Authenticating requests</h1>
-<p>Authenticate requests to this API's endpoints by sending an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
+<p>This API is authenticated by sending an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 <p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p><h1>v1 - Authenticate OAuth2 User (Deprecated, please use v2!)</h1>
 <h2>api/v1/android/auth/oauth2/google/authorize</h2>
@@ -106,105 +106,470 @@ headers = {
 response = requests.request('GET', url, headers=headers)
 response.json()</code></pre>
 <blockquote>
-<p>Example response (400):</p>
+<p>Example response (500):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "message": "Client error: `POST https:\/\/www.googleapis.com\/oauth2\/v4\/token` resulted in a `400 Bad Request` response:\n{\n  \"error\": \"invalid_request\",\n  \"error_description\": \"Missing required parameter: code\"\n}\n",
-    "exception": "GuzzleHttp\\Exception\\ClientException",
+    "message": "cURL error 6: Could not resolve host: www.googleapis.com (see https:\/\/curl.haxx.se\/libcurl\/c\/libcurl-errors.html) for https:\/\/www.googleapis.com\/oauth2\/v4\/token",
+    "class": "GuzzleHttp\\Exception\\ConnectException",
     "trace": [
         {
-            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Middleware.php",
-            "line": 69,
-            "function": "create",
-            "class": "GuzzleHttp\\Exception\\RequestException",
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Handler\\CurlFactory.php",
+            "line": 158,
+            "function": "createRejection",
+            "class": "GuzzleHttp\\Handler\\CurlFactory",
             "type": "::",
             "args": [
-                {},
-                {},
-                null,
-                [],
-                null
+                {
+                    "sink": {},
+                    "headers": [],
+                    "response": null,
+                    "request": {},
+                    "options": {
+                        "synchronous": true,
+                        "handler": {},
+                        "allow_redirects": {
+                            "max": 5,
+                            "protocols": [
+                                "http",
+                                "https"
+                            ],
+                            "strict": false,
+                            "referer": false,
+                            "track_redirects": false
+                        },
+                        "http_errors": true,
+                        "decode_content": true,
+                        "verify": true,
+                        "cookies": false,
+                        "idn_conversion": false
+                    },
+                    "errno": 6,
+                    "onHeadersException": null,
+                    "createResponseException": null
+                },
+                {
+                    "errno": 6,
+                    "error": "Could not resolve host: www.googleapis.com",
+                    "appconnect_time": 0,
+                    "url": "https:\/\/www.googleapis.com\/oauth2\/v4\/token",
+                    "content_type": null,
+                    "http_code": 0,
+                    "header_size": 0,
+                    "request_size": 0,
+                    "filetime": -1,
+                    "ssl_verify_result": 0,
+                    "redirect_count": 0,
+                    "total_time": 0.003536,
+                    "namelookup_time": 0,
+                    "connect_time": 0,
+                    "pretransfer_time": 0,
+                    "size_upload": 0,
+                    "size_download": 0,
+                    "speed_download": 0,
+                    "speed_upload": 0,
+                    "download_content_length": -1,
+                    "upload_content_length": -1,
+                    "starttransfer_time": 0,
+                    "redirect_time": 0,
+                    "redirect_url": "",
+                    "primary_ip": "",
+                    "certinfo": [],
+                    "primary_port": 0,
+                    "local_ip": "",
+                    "local_port": 0,
+                    "http_version": 0,
+                    "protocol": 0,
+                    "ssl_verifyresult": 0,
+                    "scheme": "",
+                    "appconnect_time_us": 0,
+                    "connect_time_us": 0,
+                    "namelookup_time_us": 0,
+                    "pretransfer_time_us": 0,
+                    "redirect_time_us": 0,
+                    "starttransfer_time_us": 0,
+                    "total_time_us": 3536,
+                    "curl_version": "7.70.0"
+                }
             ]
         },
         {
-            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\Promise.php",
-            "line": 204,
-            "function": "GuzzleHttp\\{closure}",
-            "class": "GuzzleHttp\\Middleware",
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Handler\\CurlFactory.php",
+            "line": 110,
+            "function": "finishError",
+            "class": "GuzzleHttp\\Handler\\CurlFactory",
             "type": "::",
             "args": [
+                {},
+                {
+                    "sink": {},
+                    "headers": [],
+                    "response": null,
+                    "request": {},
+                    "options": {
+                        "synchronous": true,
+                        "handler": {},
+                        "allow_redirects": {
+                            "max": 5,
+                            "protocols": [
+                                "http",
+                                "https"
+                            ],
+                            "strict": false,
+                            "referer": false,
+                            "track_redirects": false
+                        },
+                        "http_errors": true,
+                        "decode_content": true,
+                        "verify": true,
+                        "cookies": false,
+                        "idn_conversion": false
+                    },
+                    "errno": 6,
+                    "onHeadersException": null,
+                    "createResponseException": null
+                },
                 {}
             ]
         },
         {
-            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\Promise.php",
-            "line": 153,
-            "function": "callHandler",
-            "class": "GuzzleHttp\\Promise\\Promise",
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Handler\\CurlHandler.php",
+            "line": 47,
+            "function": "finish",
+            "class": "GuzzleHttp\\Handler\\CurlFactory",
             "type": "::",
             "args": [
-                1,
                 {},
-                null
+                {
+                    "sink": {},
+                    "headers": [],
+                    "response": null,
+                    "request": {},
+                    "options": {
+                        "synchronous": true,
+                        "handler": {},
+                        "allow_redirects": {
+                            "max": 5,
+                            "protocols": [
+                                "http",
+                                "https"
+                            ],
+                            "strict": false,
+                            "referer": false,
+                            "track_redirects": false
+                        },
+                        "http_errors": true,
+                        "decode_content": true,
+                        "verify": true,
+                        "cookies": false,
+                        "idn_conversion": false
+                    },
+                    "errno": 6,
+                    "onHeadersException": null,
+                    "createResponseException": null
+                },
+                {}
             ]
         },
         {
-            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\TaskQueue.php",
-            "line": 48,
-            "function": "GuzzleHttp\\Promise\\{closure}",
-            "class": "GuzzleHttp\\Promise\\Promise",
-            "type": "::",
-            "args": []
-        },
-        {
-            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\Promise.php",
-            "line": 248,
-            "function": "run",
-            "class": "GuzzleHttp\\Promise\\TaskQueue",
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Handler\\Proxy.php",
+            "line": 28,
+            "function": "__invoke",
+            "class": "GuzzleHttp\\Handler\\CurlHandler",
             "type": "-&gt;",
             "args": [
-                true
+                {},
+                {
+                    "synchronous": true,
+                    "handler": {},
+                    "allow_redirects": {
+                        "max": 5,
+                        "protocols": [
+                            "http",
+                            "https"
+                        ],
+                        "strict": false,
+                        "referer": false,
+                        "track_redirects": false
+                    },
+                    "http_errors": true,
+                    "decode_content": true,
+                    "verify": true,
+                    "cookies": false,
+                    "idn_conversion": false
+                }
             ]
         },
         {
-            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\Promise.php",
-            "line": 224,
-            "function": "invokeWaitFn",
-            "class": "GuzzleHttp\\Promise\\Promise",
-            "type": "-&gt;",
-            "args": []
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Handler\\Proxy.php",
+            "line": 48,
+            "function": "GuzzleHttp\\Handler\\{closure}",
+            "class": "GuzzleHttp\\Handler\\Proxy",
+            "type": "::",
+            "args": [
+                {},
+                {
+                    "synchronous": true,
+                    "handler": {},
+                    "allow_redirects": {
+                        "max": 5,
+                        "protocols": [
+                            "http",
+                            "https"
+                        ],
+                        "strict": false,
+                        "referer": false,
+                        "track_redirects": false
+                    },
+                    "http_errors": true,
+                    "decode_content": true,
+                    "verify": true,
+                    "cookies": false,
+                    "idn_conversion": false
+                }
+            ]
         },
         {
-            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\Promise.php",
-            "line": 269,
-            "function": "waitIfPending",
-            "class": "GuzzleHttp\\Promise\\Promise",
-            "type": "-&gt;",
-            "args": []
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\PrepareBodyMiddleware.php",
+            "line": 64,
+            "function": "GuzzleHttp\\Handler\\{closure}",
+            "class": "GuzzleHttp\\Handler\\Proxy",
+            "type": "::",
+            "args": [
+                {},
+                {
+                    "synchronous": true,
+                    "handler": {},
+                    "allow_redirects": {
+                        "max": 5,
+                        "protocols": [
+                            "http",
+                            "https"
+                        ],
+                        "strict": false,
+                        "referer": false,
+                        "track_redirects": false
+                    },
+                    "http_errors": true,
+                    "decode_content": true,
+                    "verify": true,
+                    "cookies": false,
+                    "idn_conversion": false
+                }
+            ]
         },
         {
-            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\Promise.php",
-            "line": 226,
-            "function": "invokeWaitList",
-            "class": "GuzzleHttp\\Promise\\Promise",
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Middleware.php",
+            "line": 31,
+            "function": "__invoke",
+            "class": "GuzzleHttp\\PrepareBodyMiddleware",
             "type": "-&gt;",
-            "args": []
+            "args": [
+                {},
+                {
+                    "synchronous": true,
+                    "handler": {},
+                    "allow_redirects": {
+                        "max": 5,
+                        "protocols": [
+                            "http",
+                            "https"
+                        ],
+                        "strict": false,
+                        "referer": false,
+                        "track_redirects": false
+                    },
+                    "http_errors": true,
+                    "decode_content": true,
+                    "verify": true,
+                    "cookies": false,
+                    "idn_conversion": false
+                }
+            ]
         },
         {
-            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\Promise.php",
-            "line": 62,
-            "function": "waitIfPending",
-            "class": "GuzzleHttp\\Promise\\Promise",
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\RedirectMiddleware.php",
+            "line": 71,
+            "function": "GuzzleHttp\\{closure}",
+            "class": "GuzzleHttp\\Middleware",
+            "type": "::",
+            "args": [
+                {},
+                {
+                    "synchronous": true,
+                    "handler": {},
+                    "allow_redirects": {
+                        "max": 5,
+                        "protocols": [
+                            "http",
+                            "https"
+                        ],
+                        "strict": false,
+                        "referer": false,
+                        "track_redirects": false
+                    },
+                    "http_errors": true,
+                    "decode_content": true,
+                    "verify": true,
+                    "cookies": false,
+                    "idn_conversion": false
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Middleware.php",
+            "line": 63,
+            "function": "__invoke",
+            "class": "GuzzleHttp\\RedirectMiddleware",
             "type": "-&gt;",
-            "args": []
+            "args": [
+                {},
+                {
+                    "synchronous": true,
+                    "handler": {},
+                    "allow_redirects": {
+                        "max": 5,
+                        "protocols": [
+                            "http",
+                            "https"
+                        ],
+                        "strict": false,
+                        "referer": false,
+                        "track_redirects": false
+                    },
+                    "http_errors": true,
+                    "decode_content": true,
+                    "verify": true,
+                    "cookies": false,
+                    "idn_conversion": false
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\HandlerStack.php",
+            "line": 75,
+            "function": "GuzzleHttp\\{closure}",
+            "class": "GuzzleHttp\\Middleware",
+            "type": "::",
+            "args": [
+                {},
+                {
+                    "synchronous": true,
+                    "handler": {},
+                    "allow_redirects": {
+                        "max": 5,
+                        "protocols": [
+                            "http",
+                            "https"
+                        ],
+                        "strict": false,
+                        "referer": false,
+                        "track_redirects": false
+                    },
+                    "http_errors": true,
+                    "decode_content": true,
+                    "verify": true,
+                    "cookies": false,
+                    "idn_conversion": false
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Client.php",
+            "line": 331,
+            "function": "__invoke",
+            "class": "GuzzleHttp\\HandlerStack",
+            "type": "-&gt;",
+            "args": [
+                {},
+                {
+                    "synchronous": true,
+                    "handler": {},
+                    "allow_redirects": {
+                        "max": 5,
+                        "protocols": [
+                            "http",
+                            "https"
+                        ],
+                        "strict": false,
+                        "referer": false,
+                        "track_redirects": false
+                    },
+                    "http_errors": true,
+                    "decode_content": true,
+                    "verify": true,
+                    "cookies": false,
+                    "idn_conversion": false
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Client.php",
+            "line": 168,
+            "function": "transfer",
+            "class": "GuzzleHttp\\Client",
+            "type": "-&gt;",
+            "args": [
+                {},
+                {
+                    "synchronous": true,
+                    "handler": {},
+                    "allow_redirects": {
+                        "max": 5,
+                        "protocols": [
+                            "http",
+                            "https"
+                        ],
+                        "strict": false,
+                        "referer": false,
+                        "track_redirects": false
+                    },
+                    "http_errors": true,
+                    "decode_content": true,
+                    "verify": true,
+                    "cookies": false,
+                    "idn_conversion": false
+                }
+            ]
         },
         {
             "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Client.php",
             "line": 187,
-            "function": "wait",
-            "class": "GuzzleHttp\\Promise\\Promise",
+            "function": "requestAsync",
+            "class": "GuzzleHttp\\Client",
             "type": "-&gt;",
-            "args": []
+            "args": [
+                "POST",
+                {},
+                {
+                    "form_params": {
+                        "grant_type": "authorization_code",
+                        "client_id": "304092645592-42g8iugfoohtdgq3jqgio9h67ojb7vhh.apps.googleusercontent.com",
+                        "client_secret": "noXkPSo7ZalqZoMeYJXgvnmt",
+                        "code": null,
+                        "redirect_uri": "http:\/\/localhost:8000\/api\/v1\/android\/auth\/oauth2\/google\/authorize"
+                    },
+                    "synchronous": true,
+                    "handler": {},
+                    "allow_redirects": {
+                        "max": 5,
+                        "protocols": [
+                            "http",
+                            "https"
+                        ],
+                        "strict": false,
+                        "referer": false,
+                        "track_redirects": false
+                    },
+                    "http_errors": true,
+                    "decode_content": true,
+                    "verify": true,
+                    "cookies": false,
+                    "idn_conversion": false,
+                    "_conditional": {
+                        "User-Agent": "GuzzleHttp\/7"
+                    }
+                }
+            ]
         },
         {
             "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\ClientTrait.php",
@@ -2234,429 +2599,6 @@ response.json()</code></pre>
 <p>
 <label id="auth-GETapi-v1-web-auth-refresh" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v1-web-auth-refresh" data-component="header"></label>
 </p>
-</form>
-<h2>Login Admin User.</h2>
-<p>Admin/super admin user can login using this API.</p>
-<p><em>Token lifetime for admin is 60 minutes.</em>
-You can check token expiration time using exp field returned.
-Visit here <a href="https://www.epochconverter.com/"><a href="https://www.epochconverter.com/">https://www.epochconverter.com/</a></a></p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/login" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -d '{"nip":"4539422570508851","password":"UnguessablePassword"}'
-</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/login"
-);
-
-let headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "nip": "4539422570508851",
-    "password": "UnguessablePassword"
-}
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre>
-<pre><code class="language-python">import requests
-import json
-
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/login'
-payload = {
-    "nip": "4539422570508851",
-    "password": "UnguessablePassword"
-}
-headers = {
-  'Content-Type': 'application/json',
-  'Accept': 'application/json'
-}
-
-response = requests.request('POST', url, headers=headers, json=payload)
-response.json()</code></pre>
-<blockquote>
-<p>Example response (200, success):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "id": 6,
-    "nama": "Dr. Mathias Rohan II",
-    "nip": "4539422570508851",
-    "email": null,
-    "email_verified_at": null,
-    "image": "https:\/\/via.placeholder.com\/640x480.png\/008800?text=doloribus",
-    "role": 2,
-    "stasiun_id": null,
-    "created_at": null,
-    "updated_at": null,
-    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvd2ViXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYwNzczMzU4NSwiZXhwIjoxNjA3NzM3MTg1LCJuYmYiOjE2MDc3MzM1ODUsImp0aSI6ImMzOE5PamNxQUpsQmtFd0UiLCJzdWIiOjYsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.JpDgBWIhpY3O3BubirPIIhcvbk-1QJ3epw7MGpbva8E",
-    "exp": 1607737185
-}</code></pre>
-<blockquote>
-<p>Example response (400, bad request):</p>
-</blockquote>
-<pre><code class="language-json">
-{
- "message": "Validation Error",
- "errors": {
-     "nip": [
-         "The nip field is required."
-     ],
-     "password": [
-         "The password field is required."
-     ]
- }</code></pre>
-<blockquote>
-<p>Example response (401, login failed):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "message": "Authentication credentials were missing or incorrect"
-}</code></pre>
-<div id="execution-results-POSTapi-v2-web-auth-login" hidden>
-    <blockquote>Received response<span id="execution-response-status-POSTapi-v2-web-auth-login"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-v2-web-auth-login"></code></pre>
-</div>
-<div id="execution-error-POSTapi-v2-web-auth-login" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-v2-web-auth-login"></code></pre>
-</div>
-<form id="form-POSTapi-v2-web-auth-login" data-method="POST" data-path="api/v2/web/auth/login" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v2-web-auth-login', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v2-web-auth-login" onclick="tryItOut('POSTapi-v2-web-auth-login');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-v2-web-auth-login" onclick="cancelTryOut('POSTapi-v2-web-auth-login');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-v2-web-auth-login" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-black">POST</small>
- <b><code>api/v2/web/auth/login</code></b>
-</p>
-<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-<p>
-<b><code>nip</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="nip" data-endpoint="POSTapi-v2-web-auth-login" data-component="body" required  hidden>
-<br>
-NIP admin/super admin.</p>
-<p>
-<b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="password" data-endpoint="POSTapi-v2-web-auth-login" data-component="body" required  hidden>
-<br>
-Account password.</p>
-
-</form>
-<h2>Register Admin User.</h2>
-<p><small class="badge badge-darkred">requires authentication</small></p>
-<p>Admin/super admin user can be registered by super admin using this API.</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X POST \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/register" \
-    -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json" \
-    -d '{"nama":"Admin","nip":"A12345","password":"UnguessablePassword","image":"uribase64","stasiun_id":"1","role":"1"}'
-</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/register"
-);
-
-let headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "nama": "Admin",
-    "nip": "A12345",
-    "password": "UnguessablePassword",
-    "image": "uribase64",
-    "stasiun_id": "1",
-    "role": "1"
-}
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre>
-<pre><code class="language-python">import requests
-import json
-
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/register'
-payload = {
-    "nama": "Admin",
-    "nip": "A12345",
-    "password": "UnguessablePassword",
-    "image": "uribase64",
-    "stasiun_id": "1",
-    "role": "1"
-}
-headers = {
-  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
-  'Content-Type': 'application/json',
-  'Accept': 'application/json'
-}
-
-response = requests.request('POST', url, headers=headers, json=payload)
-response.json()</code></pre>
-<blockquote>
-<p>Example response (201, success):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "nama": "Admin",
-    "nip": "A12345",
-    "image": "https:\/\/some-url-to-image",
-    "stasiun_id": 1,
-    "role": 1,
-    "updated_at": "2020-12-12T00:54:24.000000Z",
-    "created_at": "2020-12-12T00:54:21.000000Z",
-    "id": 7,
-    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvd2ViXC9hdXRoXC9yZWdpc3RlciIsImlhdCI6MTYwNzczNDQ2NCwiZXhwIjoxNjA3NzM4MDY0LCJuYmYiOjE2MDc3MzQ0NjQsImp0aSI6InBvamVxZWM2WFM5Z2lxMmwiLCJzdWIiOjcsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.wJrfZSmEEappLwT3nQHLq70y6ceAubIo8uI50amQp64",
-    "exp": 1607738064
-}</code></pre>
-<blockquote>
-<p>Example response (400, bad request):</p>
-</blockquote>
-<pre><code class="language-json">
-{
- "message": "Validation Error",
- "errors": {
-     "nama": [
-         "The nama field is required."
-     ],
-     "nip": [
-         "The nip field is required."
-     ],
-     "password": [
-         "The password field is required."
-     ],
-     "image": [
-         "The image field is required."
-     ]
-}</code></pre>
-<blockquote>
-<p>Example response (401, Unauthorized):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "message": "Token not provided"
-}</code></pre>
-<blockquote>
-<p>Example response (403, not owner or super admin):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "message": "You must be super admin to do this."
-}</code></pre>
-<div id="execution-results-POSTapi-v2-web-auth-register" hidden>
-    <blockquote>Received response<span id="execution-response-status-POSTapi-v2-web-auth-register"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-v2-web-auth-register"></code></pre>
-</div>
-<div id="execution-error-POSTapi-v2-web-auth-register" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-v2-web-auth-register"></code></pre>
-</div>
-<form id="form-POSTapi-v2-web-auth-register" data-method="POST" data-path="api/v2/web/auth/register" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v2-web-auth-register', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v2-web-auth-register" onclick="tryItOut('POSTapi-v2-web-auth-register');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-v2-web-auth-register" onclick="cancelTryOut('POSTapi-v2-web-auth-register');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-v2-web-auth-register" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-black">POST</small>
- <b><code>api/v2/web/auth/register</code></b>
-</p>
-<p>
-<label id="auth-POSTapi-v2-web-auth-register" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="POSTapi-v2-web-auth-register" data-component="header"></label>
-</p>
-<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-<p>
-<b><code>nama</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="nama" data-endpoint="POSTapi-v2-web-auth-register" data-component="body" required  hidden>
-<br>
-Admin/super admin name.</p>
-<p>
-<b><code>nip</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="nip" data-endpoint="POSTapi-v2-web-auth-register" data-component="body" required  hidden>
-<br>
-NIP admin/super admin.</p>
-<p>
-<b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="password" data-endpoint="POSTapi-v2-web-auth-register" data-component="body" required  hidden>
-<br>
-Account password.</p>
-<p>
-<b><code>image</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="image" data-endpoint="POSTapi-v2-web-auth-register" data-component="body" required  hidden>
-<br>
-Admin/super admin profile picture in URI Base64.</p>
-<p>
-<b><code>stasiun_id</code></b>&nbsp;&nbsp;<small>numeric</small>     <i>optional</i> &nbsp;
-<input type="text" name="stasiun_id" data-endpoint="POSTapi-v2-web-auth-register" data-component="body"  hidden>
-<br>
-id stasiun where admin/super admin work.</p>
-<p>
-<b><code>role</code></b>&nbsp;&nbsp;<small>numeric</small>     <i>optional</i> &nbsp;
-<input type="text" name="role" data-endpoint="POSTapi-v2-web-auth-register" data-component="body"  hidden>
-<br>
-Role code of admin (1) and super admin (2).</p>
-
-</form>
-<h2>Logout Admin User</h2>
-<p><small class="badge badge-darkred">requires authentication</small></p>
-<p>When logout authenticated token will not work anymore.</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/logout" \
-    -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/logout"
-);
-
-let headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<pre><code class="language-python">import requests
-import json
-
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/logout'
-headers = {
-  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
-  'Content-Type': 'application/json',
-  'Accept': 'application/json'
-}
-
-response = requests.request('GET', url, headers=headers)
-response.json()</code></pre>
-<blockquote>
-<p>Example response (200, success):</p>
-</blockquote>
-<pre><code class="language-json">
-{
- message": "successfully logout"
-}</code></pre>
-<blockquote>
-<p>Example response (401, failed):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "message": "The token has been blacklisted"
-}</code></pre>
-<div id="execution-results-GETapi-v2-web-auth-logout" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-v2-web-auth-logout"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v2-web-auth-logout"></code></pre>
-</div>
-<div id="execution-error-GETapi-v2-web-auth-logout" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v2-web-auth-logout"></code></pre>
-</div>
-<form id="form-GETapi-v2-web-auth-logout" data-method="GET" data-path="api/v2/web/auth/logout" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v2-web-auth-logout', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v2-web-auth-logout" onclick="tryItOut('GETapi-v2-web-auth-logout');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v2-web-auth-logout" onclick="cancelTryOut('GETapi-v2-web-auth-logout');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v2-web-auth-logout" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/v2/web/auth/logout</code></b>
-</p>
-<p>
-<label id="auth-GETapi-v2-web-auth-logout" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v2-web-auth-logout" data-component="header"></label>
-</p>
-</form>
-<h2>Refresh token</h2>
-<p><small class="badge badge-darkred">requires authentication</small></p>
-<p>Authenticated token can be refreshed to extend its lifetime before it's expired.
-Recommend: 15 minutes before it's expired</p>
-<blockquote>
-<p>Example request:</p>
-</blockquote>
-<pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/refresh" \
-    -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
-    -H "Content-Type: application/json" \
-    -H "Accept: application/json"</code></pre>
-<pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/refresh"
-);
-
-let headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre>
-<pre><code class="language-python">import requests
-import json
-
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/refresh'
-headers = {
-  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
-  'Content-Type': 'application/json',
-  'Accept': 'application/json'
-}
-
-response = requests.request('GET', url, headers=headers)
-response.json()</code></pre>
-<blockquote>
-<p>Example response (200, success):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvd2ViXC9hdXRoXC9yZWZyZXNoIiwiaWF0IjoxNjA3NjEzMjIzLCJleHAiOjE2MDc3Mzg1NDYsIm5iZiI6MTYwNzczNDk0NiwianRpIjoicDVueGl4M3o3TG56bkVrRyIsInN1YiI6NiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.-3IOo1c1Flt-bbHPT5DMuanWn_BwMOENYemhsPSzXdM",
-    "exp": 1607738546
-}</code></pre>
-<blockquote>
-<p>Example response (401, failed):</p>
-</blockquote>
-<pre><code class="language-json">{
-    "message": "The token has been blacklisted"
-}</code></pre>
-<div id="execution-results-GETapi-v2-web-auth-refresh" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-v2-web-auth-refresh"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v2-web-auth-refresh"></code></pre>
-</div>
-<div id="execution-error-GETapi-v2-web-auth-refresh" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v2-web-auth-refresh"></code></pre>
-</div>
-<form id="form-GETapi-v2-web-auth-refresh" data-method="GET" data-path="api/v2/web/auth/refresh" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v2-web-auth-refresh', this);">
-<h3>
-    Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v2-web-auth-refresh" onclick="tryItOut('GETapi-v2-web-auth-refresh');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v2-web-auth-refresh" onclick="cancelTryOut('GETapi-v2-web-auth-refresh');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v2-web-auth-refresh" hidden>Send Request 💥</button>
-    </h3>
-<p>
-<small class="badge badge-green">GET</small>
- <b><code>api/v2/web/auth/refresh</code></b>
-</p>
-<p>
-<label id="auth-GETapi-v2-web-auth-refresh" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v2-web-auth-refresh" data-component="header"></label>
-</p>
 </form><h1>v1 - Authenticate User (Deprecated, please use v2!)</h1>
 <h2>api/v1/android/auth/login</h2>
 <p><small class="badge badge-darkred">requires authentication</small></p>
@@ -2994,7 +2936,7 @@ The id of barang image.</p>
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar Updated","uri":"base64string","barang_id":17}'
+    -d '{"nama":"Tas Besar Updated","uri":"base64string","barang_id":3}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/6"
@@ -3009,7 +2951,7 @@ let headers = {
 let body = {
     "nama": "Tas Besar Updated",
     "uri": "base64string",
-    "barang_id": 17
+    "barang_id": 3
 }
 
 fetch(url, {
@@ -3024,7 +2966,7 @@ url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/6'
 payload = {
     "nama": "Tas Besar Updated",
     "uri": "base64string",
-    "barang_id": 17
+    "barang_id": 3
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -3135,7 +3077,7 @@ id Barang that owned this image. Example 3</p>
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar Partial Update","barang_id":7}'
+    -d '{"nama":"Tas Besar Partial Update","barang_id":4}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/6"
@@ -3149,7 +3091,7 @@ let headers = {
 
 let body = {
     "nama": "Tas Besar Partial Update",
-    "barang_id": 7
+    "barang_id": 4
 }
 
 fetch(url, {
@@ -3163,7 +3105,7 @@ import json
 url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/6'
 payload = {
     "nama": "Tas Besar Partial Update",
-    "barang_id": 7
+    "barang_id": 4
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -5865,14 +5807,14 @@ The id of barang status.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/ut/verified" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/et/verified" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"verified":true}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/ut/verified"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/et/verified"
 );
 
 let headers = {
@@ -5893,7 +5835,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/ut/verified'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/et/verified'
 payload = {
     "verified": true
 }
@@ -5993,14 +5935,14 @@ Claim can be updated for barang hilang only.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/alias" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/maiores" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"user_id":"1","barang_id":1,"alamat":"Jalan Mangga, Block X\/21","uri_tiket":"uribase64","no_telp":"08123456789"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/alias"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/maiores"
 );
 
 let headers = {
@@ -6025,7 +5967,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/alias'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/maiores'
 payload = {
     "user_id": "1",
     "barang_id": 1,
@@ -6160,14 +6102,14 @@ Claim can be updated for barang hilang only.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/libero" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/omnis" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"no_telp":"0999999999"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/libero"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/omnis"
 );
 
 let headers = {
@@ -6188,7 +6130,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/libero'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/omnis'
 payload = {
     "no_telp": "0999999999"
 }
@@ -6318,12 +6260,12 @@ Phone number of user.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/claims/similique" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/claims/harum" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/similique"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/harum"
 );
 
 let headers = {
@@ -6339,7 +6281,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/similique'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/harum'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -8174,12 +8116,12 @@ Retrive deleted admin user if true.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/tempora" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/minus" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/tempora"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/minus"
 );
 
 let headers = {
@@ -8195,7 +8137,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/tempora'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/minus'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -8245,12 +8187,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/sunt" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/ut" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/sunt"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/ut"
 );
 
 let headers = {
@@ -8266,7 +8208,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/sunt'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/ut'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -8310,12 +8252,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/saepe" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/quis" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/saepe"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/quis"
 );
 
 let headers = {
@@ -8331,7 +8273,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/saepe'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/quis'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -10337,6 +10279,430 @@ response.json()</code></pre>
 <p>
 <label id="auth-GETauth-oauth2-google" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETauth-oauth2-google" data-component="header"></label>
 </p>
+</form><h1>v2 - Authenticate User Admin</h1>
+<p>Authenticate admin/super admin to dashboard.</p>
+<h2>Login Admin User.</h2>
+<p>Admin/super admin user can login using this API.</p>
+<p><em>Token lifetime for admin is 60 minutes.</em>
+You can check token expiration time using exp field returned.
+Visit here <a href="https://www.epochconverter.com/"><a href="https://www.epochconverter.com/">https://www.epochconverter.com/</a></a></p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"nip":"4539422570508851","password":"UnguessablePassword"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "nip": "4539422570508851",
+    "password": "UnguessablePassword"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/login'
+payload = {
+    "nip": "4539422570508851",
+    "password": "UnguessablePassword"
+}
+headers = {
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200, success):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "id": 6,
+    "nama": "Dr. Mathias Rohan II",
+    "nip": "4539422570508851",
+    "email": null,
+    "email_verified_at": null,
+    "image": "https:\/\/via.placeholder.com\/640x480.png\/008800?text=doloribus",
+    "role": 2,
+    "stasiun_id": null,
+    "created_at": null,
+    "updated_at": null,
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvd2ViXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYwNzczMzU4NSwiZXhwIjoxNjA3NzM3MTg1LCJuYmYiOjE2MDc3MzM1ODUsImp0aSI6ImMzOE5PamNxQUpsQmtFd0UiLCJzdWIiOjYsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.JpDgBWIhpY3O3BubirPIIhcvbk-1QJ3epw7MGpbva8E",
+    "exp": 1607737185
+}</code></pre>
+<blockquote>
+<p>Example response (400, bad request):</p>
+</blockquote>
+<pre><code class="language-json">
+{
+ "message": "Validation Error",
+ "errors": {
+     "nip": [
+         "The nip field is required."
+     ],
+     "password": [
+         "The password field is required."
+     ]
+ }</code></pre>
+<blockquote>
+<p>Example response (401, login failed):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Authentication credentials were missing or incorrect"
+}</code></pre>
+<div id="execution-results-POSTapi-v2-web-auth-login" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-v2-web-auth-login"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v2-web-auth-login"></code></pre>
+</div>
+<div id="execution-error-POSTapi-v2-web-auth-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v2-web-auth-login"></code></pre>
+</div>
+<form id="form-POSTapi-v2-web-auth-login" data-method="POST" data-path="api/v2/web/auth/login" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v2-web-auth-login', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v2-web-auth-login" onclick="tryItOut('POSTapi-v2-web-auth-login');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-v2-web-auth-login" onclick="cancelTryOut('POSTapi-v2-web-auth-login');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-v2-web-auth-login" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>api/v2/web/auth/login</code></b>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>nip</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="nip" data-endpoint="POSTapi-v2-web-auth-login" data-component="body" required  hidden>
+<br>
+NIP admin/super admin.</p>
+<p>
+<b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="password" data-endpoint="POSTapi-v2-web-auth-login" data-component="body" required  hidden>
+<br>
+Account password.</p>
+
+</form>
+<h2>Register Admin User.</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<p>Admin/super admin user can be registered by super admin using this API.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/register" \
+    -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"nama":"Admin","nip":"A12345","password":"UnguessablePassword","image":"uribase64","stasiun_id":"1","role":"1"}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/register"
+);
+
+let headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "nama": "Admin",
+    "nip": "A12345",
+    "password": "UnguessablePassword",
+    "image": "uribase64",
+    "stasiun_id": "1",
+    "role": "1"
+}
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/register'
+payload = {
+    "nama": "Admin",
+    "nip": "A12345",
+    "password": "UnguessablePassword",
+    "image": "uribase64",
+    "stasiun_id": "1",
+    "role": "1"
+}
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('POST', url, headers=headers, json=payload)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (201, success):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "nama": "Admin",
+    "nip": "A12345",
+    "image": "https:\/\/some-url-to-image",
+    "stasiun_id": 1,
+    "role": 1,
+    "updated_at": "2020-12-12T00:54:24.000000Z",
+    "created_at": "2020-12-12T00:54:21.000000Z",
+    "id": 7,
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvd2ViXC9hdXRoXC9yZWdpc3RlciIsImlhdCI6MTYwNzczNDQ2NCwiZXhwIjoxNjA3NzM4MDY0LCJuYmYiOjE2MDc3MzQ0NjQsImp0aSI6InBvamVxZWM2WFM5Z2lxMmwiLCJzdWIiOjcsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.wJrfZSmEEappLwT3nQHLq70y6ceAubIo8uI50amQp64",
+    "exp": 1607738064
+}</code></pre>
+<blockquote>
+<p>Example response (400, bad request):</p>
+</blockquote>
+<pre><code class="language-json">
+{
+ "message": "Validation Error",
+ "errors": {
+     "nama": [
+         "The nama field is required."
+     ],
+     "nip": [
+         "The nip field is required."
+     ],
+     "password": [
+         "The password field is required."
+     ],
+     "image": [
+         "The image field is required."
+     ]
+}</code></pre>
+<blockquote>
+<p>Example response (401, Unauthorized):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Token not provided"
+}</code></pre>
+<blockquote>
+<p>Example response (403, not owner or super admin):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "You must be super admin to do this."
+}</code></pre>
+<div id="execution-results-POSTapi-v2-web-auth-register" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-v2-web-auth-register"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v2-web-auth-register"></code></pre>
+</div>
+<div id="execution-error-POSTapi-v2-web-auth-register" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v2-web-auth-register"></code></pre>
+</div>
+<form id="form-POSTapi-v2-web-auth-register" data-method="POST" data-path="api/v2/web/auth/register" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v2-web-auth-register', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v2-web-auth-register" onclick="tryItOut('POSTapi-v2-web-auth-register');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-v2-web-auth-register" onclick="cancelTryOut('POSTapi-v2-web-auth-register');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-v2-web-auth-register" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-black">POST</small>
+ <b><code>api/v2/web/auth/register</code></b>
+</p>
+<p>
+<label id="auth-POSTapi-v2-web-auth-register" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="POSTapi-v2-web-auth-register" data-component="header"></label>
+</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>nama</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="nama" data-endpoint="POSTapi-v2-web-auth-register" data-component="body" required  hidden>
+<br>
+Admin/super admin name.</p>
+<p>
+<b><code>nip</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="nip" data-endpoint="POSTapi-v2-web-auth-register" data-component="body" required  hidden>
+<br>
+NIP admin/super admin.</p>
+<p>
+<b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="password" data-endpoint="POSTapi-v2-web-auth-register" data-component="body" required  hidden>
+<br>
+Account password.</p>
+<p>
+<b><code>image</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="image" data-endpoint="POSTapi-v2-web-auth-register" data-component="body" required  hidden>
+<br>
+Admin/super admin profile picture in URI Base64.</p>
+<p>
+<b><code>stasiun_id</code></b>&nbsp;&nbsp;<small>numeric</small>     <i>optional</i> &nbsp;
+<input type="text" name="stasiun_id" data-endpoint="POSTapi-v2-web-auth-register" data-component="body"  hidden>
+<br>
+id stasiun where admin/super admin work.</p>
+<p>
+<b><code>role</code></b>&nbsp;&nbsp;<small>numeric</small>     <i>optional</i> &nbsp;
+<input type="text" name="role" data-endpoint="POSTapi-v2-web-auth-register" data-component="body"  hidden>
+<br>
+Role code of admin (1) and super admin (2).</p>
+
+</form>
+<h2>Logout Admin User</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<p>When logout authenticated token will not work anymore.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/logout" \
+    -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/logout"
+);
+
+let headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/logout'
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200, success):</p>
+</blockquote>
+<pre><code class="language-json">
+{
+ message": "successfully logout"
+}</code></pre>
+<blockquote>
+<p>Example response (401, failed):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "The token has been blacklisted"
+}</code></pre>
+<div id="execution-results-GETapi-v2-web-auth-logout" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-v2-web-auth-logout"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v2-web-auth-logout"></code></pre>
+</div>
+<div id="execution-error-GETapi-v2-web-auth-logout" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v2-web-auth-logout"></code></pre>
+</div>
+<form id="form-GETapi-v2-web-auth-logout" data-method="GET" data-path="api/v2/web/auth/logout" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v2-web-auth-logout', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v2-web-auth-logout" onclick="tryItOut('GETapi-v2-web-auth-logout');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v2-web-auth-logout" onclick="cancelTryOut('GETapi-v2-web-auth-logout');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v2-web-auth-logout" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/v2/web/auth/logout</code></b>
+</p>
+<p>
+<label id="auth-GETapi-v2-web-auth-logout" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v2-web-auth-logout" data-component="header"></label>
+</p>
+</form>
+<h2>Refresh token</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<p>Authenticated token can be refreshed to extend its lifetime before it's expired.
+Recommend: 15 minutes before it's expired</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/refresh" \
+    -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/refresh"
+);
+
+let headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/refresh'
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200, success):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvd2ViXC9hdXRoXC9yZWZyZXNoIiwiaWF0IjoxNjA3NjEzMjIzLCJleHAiOjE2MDc3Mzg1NDYsIm5iZiI6MTYwNzczNDk0NiwianRpIjoicDVueGl4M3o3TG56bkVrRyIsInN1YiI6NiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.-3IOo1c1Flt-bbHPT5DMuanWn_BwMOENYemhsPSzXdM",
+    "exp": 1607738546
+}</code></pre>
+<blockquote>
+<p>Example response (401, failed):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "The token has been blacklisted"
+}</code></pre>
+<div id="execution-results-GETapi-v2-web-auth-refresh" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-v2-web-auth-refresh"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v2-web-auth-refresh"></code></pre>
+</div>
+<div id="execution-error-GETapi-v2-web-auth-refresh" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v2-web-auth-refresh"></code></pre>
+</div>
+<form id="form-GETapi-v2-web-auth-refresh" data-method="GET" data-path="api/v2/web/auth/refresh" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v2-web-auth-refresh', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v2-web-auth-refresh" onclick="tryItOut('GETapi-v2-web-auth-refresh');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v2-web-auth-refresh" onclick="cancelTryOut('GETapi-v2-web-auth-refresh');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v2-web-auth-refresh" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/v2/web/auth/refresh</code></b>
+</p>
+<p>
+<label id="auth-GETapi-v2-web-auth-refresh" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v2-web-auth-refresh" data-component="header"></label>
+</p>
 </form><h1>v2 - Authenticate User</h1>
 <p>Authentication for mobile user.</p>
 <h2>Login User.</h2>
@@ -11189,7 +11555,7 @@ The id of barang image.</p>
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar Updated","uri":"base64string","barang_id":9}'
+    -d '{"nama":"Tas Besar Updated","uri":"base64string","barang_id":14}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/6"
@@ -11204,7 +11570,7 @@ let headers = {
 let body = {
     "nama": "Tas Besar Updated",
     "uri": "base64string",
-    "barang_id": 9
+    "barang_id": 14
 }
 
 fetch(url, {
@@ -11219,7 +11585,7 @@ url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/6'
 payload = {
     "nama": "Tas Besar Updated",
     "uri": "base64string",
-    "barang_id": 9
+    "barang_id": 14
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -11330,7 +11696,7 @@ id Barang that owned this image. Example 3</p>
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar Partial Update","barang_id":5}'
+    -d '{"nama":"Tas Besar Partial Update","barang_id":13}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/6"
@@ -11344,7 +11710,7 @@ let headers = {
 
 let body = {
     "nama": "Tas Besar Partial Update",
-    "barang_id": 5
+    "barang_id": 13
 }
 
 fetch(url, {
@@ -11358,7 +11724,7 @@ import json
 url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/6'
 payload = {
     "nama": "Tas Besar Partial Update",
-    "barang_id": 5
+    "barang_id": 13
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -11551,7 +11917,7 @@ After that, the url will be saved in database.</p>
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar","uri":"base64string","barang_id":12}'
+    -d '{"nama":"Tas Besar","uri":"base64string","barang_id":5}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images"
@@ -11566,7 +11932,7 @@ let headers = {
 let body = {
     "nama": "Tas Besar",
     "uri": "base64string",
-    "barang_id": 12
+    "barang_id": 5
 }
 
 fetch(url, {
@@ -11581,7 +11947,7 @@ url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images'
 payload = {
     "nama": "Tas Besar",
     "uri": "base64string",
-    "barang_id": 12
+    "barang_id": 5
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
