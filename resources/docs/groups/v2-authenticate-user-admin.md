@@ -1,4 +1,4 @@
-# v1 - Authenticate User Admin
+# v2 - Authenticate User Admin
 
 Authenticate admin/super admin to dashboard.
 
@@ -15,7 +15,7 @@ Visit here <a href="https://www.epochconverter.com/">https://www.epochconverter.
 
 ```bash
 curl -X POST \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/auth/login" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/login" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"nip":"4539422570508851","password":"UnguessablePassword"}'
@@ -24,7 +24,7 @@ curl -X POST \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/auth/login"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/login"
 );
 
 let headers = {
@@ -48,7 +48,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/auth/login'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/login'
 payload = {
     "nip": "4539422570508851",
     "password": "UnguessablePassword"
@@ -103,34 +103,34 @@ response.json()
     "message": "Authentication credentials were missing or incorrect"
 }
 ```
-<div id="execution-results-POSTapi-v1-web-auth-login" hidden>
-    <blockquote>Received response<span id="execution-response-status-POSTapi-v1-web-auth-login"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-v1-web-auth-login"></code></pre>
+<div id="execution-results-POSTapi-v2-web-auth-login" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-v2-web-auth-login"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v2-web-auth-login"></code></pre>
 </div>
-<div id="execution-error-POSTapi-v1-web-auth-login" hidden>
+<div id="execution-error-POSTapi-v2-web-auth-login" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-v1-web-auth-login"></code></pre>
+    <pre><code id="execution-error-message-POSTapi-v2-web-auth-login"></code></pre>
 </div>
-<form id="form-POSTapi-v1-web-auth-login" data-method="POST" data-path="api/v1/web/auth/login" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-web-auth-login', this);">
+<form id="form-POSTapi-v2-web-auth-login" data-method="POST" data-path="api/v2/web/auth/login" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v2-web-auth-login', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v1-web-auth-login" onclick="tryItOut('POSTapi-v1-web-auth-login');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-v1-web-auth-login" onclick="cancelTryOut('POSTapi-v1-web-auth-login');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-v1-web-auth-login" hidden>Send Request 💥</button>
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v2-web-auth-login" onclick="tryItOut('POSTapi-v2-web-auth-login');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-v2-web-auth-login" onclick="cancelTryOut('POSTapi-v2-web-auth-login');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-v2-web-auth-login" hidden>Send Request 💥</button>
     </h3>
 <p>
 <small class="badge badge-black">POST</small>
- <b><code>api/v1/web/auth/login</code></b>
+ <b><code>api/v2/web/auth/login</code></b>
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
 <b><code>nip</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="nip" data-endpoint="POSTapi-v1-web-auth-login" data-component="body" required  hidden>
+<input type="text" name="nip" data-endpoint="POSTapi-v2-web-auth-login" data-component="body" required  hidden>
 <br>
 NIP admin/super admin.</p>
 <p>
 <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="password" data-endpoint="POSTapi-v1-web-auth-login" data-component="body" required  hidden>
+<input type="text" name="password" data-endpoint="POSTapi-v2-web-auth-login" data-component="body" required  hidden>
 <br>
 Account password.</p>
 
@@ -147,7 +147,7 @@ Admin/super admin user can be registered by super admin using this API.
 
 ```bash
 curl -X POST \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/auth/register" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/register" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
@@ -157,7 +157,7 @@ curl -X POST \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/auth/register"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/register"
 );
 
 let headers = {
@@ -186,7 +186,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/auth/register'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/register'
 payload = {
     "nama": "Admin",
     "nip": "A12345",
@@ -257,57 +257,57 @@ response.json()
     "message": "You must be super admin to do this."
 }
 ```
-<div id="execution-results-POSTapi-v1-web-auth-register" hidden>
-    <blockquote>Received response<span id="execution-response-status-POSTapi-v1-web-auth-register"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-v1-web-auth-register"></code></pre>
+<div id="execution-results-POSTapi-v2-web-auth-register" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-v2-web-auth-register"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v2-web-auth-register"></code></pre>
 </div>
-<div id="execution-error-POSTapi-v1-web-auth-register" hidden>
+<div id="execution-error-POSTapi-v2-web-auth-register" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-v1-web-auth-register"></code></pre>
+    <pre><code id="execution-error-message-POSTapi-v2-web-auth-register"></code></pre>
 </div>
-<form id="form-POSTapi-v1-web-auth-register" data-method="POST" data-path="api/v1/web/auth/register" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-web-auth-register', this);">
+<form id="form-POSTapi-v2-web-auth-register" data-method="POST" data-path="api/v2/web/auth/register" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v2-web-auth-register', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v1-web-auth-register" onclick="tryItOut('POSTapi-v1-web-auth-register');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-v1-web-auth-register" onclick="cancelTryOut('POSTapi-v1-web-auth-register');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-v1-web-auth-register" hidden>Send Request 💥</button>
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v2-web-auth-register" onclick="tryItOut('POSTapi-v2-web-auth-register');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-v2-web-auth-register" onclick="cancelTryOut('POSTapi-v2-web-auth-register');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-v2-web-auth-register" hidden>Send Request 💥</button>
     </h3>
 <p>
 <small class="badge badge-black">POST</small>
- <b><code>api/v1/web/auth/register</code></b>
+ <b><code>api/v2/web/auth/register</code></b>
 </p>
 <p>
-<label id="auth-POSTapi-v1-web-auth-register" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="POSTapi-v1-web-auth-register" data-component="header"></label>
+<label id="auth-POSTapi-v2-web-auth-register" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="POSTapi-v2-web-auth-register" data-component="header"></label>
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
 <b><code>nama</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="nama" data-endpoint="POSTapi-v1-web-auth-register" data-component="body" required  hidden>
+<input type="text" name="nama" data-endpoint="POSTapi-v2-web-auth-register" data-component="body" required  hidden>
 <br>
 Admin/super admin name.</p>
 <p>
 <b><code>nip</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="nip" data-endpoint="POSTapi-v1-web-auth-register" data-component="body" required  hidden>
+<input type="text" name="nip" data-endpoint="POSTapi-v2-web-auth-register" data-component="body" required  hidden>
 <br>
 NIP admin/super admin.</p>
 <p>
 <b><code>password</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="password" data-endpoint="POSTapi-v1-web-auth-register" data-component="body" required  hidden>
+<input type="text" name="password" data-endpoint="POSTapi-v2-web-auth-register" data-component="body" required  hidden>
 <br>
 Account password.</p>
 <p>
 <b><code>image</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="image" data-endpoint="POSTapi-v1-web-auth-register" data-component="body" required  hidden>
+<input type="text" name="image" data-endpoint="POSTapi-v2-web-auth-register" data-component="body" required  hidden>
 <br>
 Admin/super admin profile picture in URI Base64.</p>
 <p>
 <b><code>stasiun_id</code></b>&nbsp;&nbsp;<small>numeric</small>     <i>optional</i> &nbsp;
-<input type="text" name="stasiun_id" data-endpoint="POSTapi-v1-web-auth-register" data-component="body"  hidden>
+<input type="text" name="stasiun_id" data-endpoint="POSTapi-v2-web-auth-register" data-component="body"  hidden>
 <br>
 id stasiun where admin/super admin work.</p>
 <p>
 <b><code>role</code></b>&nbsp;&nbsp;<small>numeric</small>     <i>optional</i> &nbsp;
-<input type="text" name="role" data-endpoint="POSTapi-v1-web-auth-register" data-component="body"  hidden>
+<input type="text" name="role" data-endpoint="POSTapi-v2-web-auth-register" data-component="body"  hidden>
 <br>
 Role code of admin (1) and super admin (2).</p>
 
@@ -324,7 +324,7 @@ When logout authenticated token will not work anymore.
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/web/auth/logout" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/logout" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -332,7 +332,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/auth/logout"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/logout"
 );
 
 let headers = {
@@ -352,7 +352,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/auth/logout'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/logout'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -379,27 +379,27 @@ response.json()
     "message": "The token has been blacklisted"
 }
 ```
-<div id="execution-results-GETapi-v1-web-auth-logout" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-v1-web-auth-logout"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-web-auth-logout"></code></pre>
+<div id="execution-results-GETapi-v2-web-auth-logout" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-v2-web-auth-logout"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v2-web-auth-logout"></code></pre>
 </div>
-<div id="execution-error-GETapi-v1-web-auth-logout" hidden>
+<div id="execution-error-GETapi-v2-web-auth-logout" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-web-auth-logout"></code></pre>
+    <pre><code id="execution-error-message-GETapi-v2-web-auth-logout"></code></pre>
 </div>
-<form id="form-GETapi-v1-web-auth-logout" data-method="GET" data-path="api/v1/web/auth/logout" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-web-auth-logout', this);">
+<form id="form-GETapi-v2-web-auth-logout" data-method="GET" data-path="api/v2/web/auth/logout" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v2-web-auth-logout', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v1-web-auth-logout" onclick="tryItOut('GETapi-v1-web-auth-logout');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v1-web-auth-logout" onclick="cancelTryOut('GETapi-v1-web-auth-logout');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v1-web-auth-logout" hidden>Send Request 💥</button>
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v2-web-auth-logout" onclick="tryItOut('GETapi-v2-web-auth-logout');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v2-web-auth-logout" onclick="cancelTryOut('GETapi-v2-web-auth-logout');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v2-web-auth-logout" hidden>Send Request 💥</button>
     </h3>
 <p>
 <small class="badge badge-green">GET</small>
- <b><code>api/v1/web/auth/logout</code></b>
+ <b><code>api/v2/web/auth/logout</code></b>
 </p>
 <p>
-<label id="auth-GETapi-v1-web-auth-logout" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v1-web-auth-logout" data-component="header"></label>
+<label id="auth-GETapi-v2-web-auth-logout" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v2-web-auth-logout" data-component="header"></label>
 </p>
 </form>
 
@@ -415,7 +415,7 @@ Recommend: 15 minutes before it's expired
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/web/auth/refresh" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/refresh" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -423,7 +423,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/web/auth/refresh"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/refresh"
 );
 
 let headers = {
@@ -443,7 +443,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/web/auth/refresh'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/web/auth/refresh'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -470,27 +470,27 @@ response.json()
     "message": "The token has been blacklisted"
 }
 ```
-<div id="execution-results-GETapi-v1-web-auth-refresh" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-v1-web-auth-refresh"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-web-auth-refresh"></code></pre>
+<div id="execution-results-GETapi-v2-web-auth-refresh" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-v2-web-auth-refresh"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v2-web-auth-refresh"></code></pre>
 </div>
-<div id="execution-error-GETapi-v1-web-auth-refresh" hidden>
+<div id="execution-error-GETapi-v2-web-auth-refresh" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-web-auth-refresh"></code></pre>
+    <pre><code id="execution-error-message-GETapi-v2-web-auth-refresh"></code></pre>
 </div>
-<form id="form-GETapi-v1-web-auth-refresh" data-method="GET" data-path="api/v1/web/auth/refresh" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-web-auth-refresh', this);">
+<form id="form-GETapi-v2-web-auth-refresh" data-method="GET" data-path="api/v2/web/auth/refresh" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v2-web-auth-refresh', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v1-web-auth-refresh" onclick="tryItOut('GETapi-v1-web-auth-refresh');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v1-web-auth-refresh" onclick="cancelTryOut('GETapi-v1-web-auth-refresh');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v1-web-auth-refresh" hidden>Send Request 💥</button>
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v2-web-auth-refresh" onclick="tryItOut('GETapi-v2-web-auth-refresh');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v2-web-auth-refresh" onclick="cancelTryOut('GETapi-v2-web-auth-refresh');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v2-web-auth-refresh" hidden>Send Request 💥</button>
     </h3>
 <p>
 <small class="badge badge-green">GET</small>
- <b><code>api/v1/web/auth/refresh</code></b>
+ <b><code>api/v2/web/auth/refresh</code></b>
 </p>
 <p>
-<label id="auth-GETapi-v1-web-auth-refresh" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v1-web-auth-refresh" data-component="header"></label>
+<label id="auth-GETapi-v2-web-auth-refresh" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v2-web-auth-refresh" data-component="header"></label>
 </p>
 </form>
 

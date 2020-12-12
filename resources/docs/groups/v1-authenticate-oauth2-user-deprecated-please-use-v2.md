@@ -51,106 +51,471 @@ response.json()
 ```
 
 
-> Example response (400):
+> Example response (500):
 
 ```json
 {
-    "message": "Client error: `POST https:\/\/www.googleapis.com\/oauth2\/v4\/token` resulted in a `400 Bad Request` response:\n{\n  \"error\": \"invalid_request\",\n  \"error_description\": \"Missing required parameter: code\"\n}\n",
-    "exception": "GuzzleHttp\\Exception\\ClientException",
+    "message": "cURL error 6: Could not resolve host: www.googleapis.com (see https:\/\/curl.haxx.se\/libcurl\/c\/libcurl-errors.html) for https:\/\/www.googleapis.com\/oauth2\/v4\/token",
+    "class": "GuzzleHttp\\Exception\\ConnectException",
     "trace": [
         {
-            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Middleware.php",
-            "line": 69,
-            "function": "create",
-            "class": "GuzzleHttp\\Exception\\RequestException",
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Handler\\CurlFactory.php",
+            "line": 158,
+            "function": "createRejection",
+            "class": "GuzzleHttp\\Handler\\CurlFactory",
             "type": "::",
             "args": [
-                {},
-                {},
-                null,
-                [],
-                null
+                {
+                    "sink": {},
+                    "headers": [],
+                    "response": null,
+                    "request": {},
+                    "options": {
+                        "synchronous": true,
+                        "handler": {},
+                        "allow_redirects": {
+                            "max": 5,
+                            "protocols": [
+                                "http",
+                                "https"
+                            ],
+                            "strict": false,
+                            "referer": false,
+                            "track_redirects": false
+                        },
+                        "http_errors": true,
+                        "decode_content": true,
+                        "verify": true,
+                        "cookies": false,
+                        "idn_conversion": false
+                    },
+                    "errno": 6,
+                    "onHeadersException": null,
+                    "createResponseException": null
+                },
+                {
+                    "errno": 6,
+                    "error": "Could not resolve host: www.googleapis.com",
+                    "appconnect_time": 0,
+                    "url": "https:\/\/www.googleapis.com\/oauth2\/v4\/token",
+                    "content_type": null,
+                    "http_code": 0,
+                    "header_size": 0,
+                    "request_size": 0,
+                    "filetime": -1,
+                    "ssl_verify_result": 0,
+                    "redirect_count": 0,
+                    "total_time": 0.003536,
+                    "namelookup_time": 0,
+                    "connect_time": 0,
+                    "pretransfer_time": 0,
+                    "size_upload": 0,
+                    "size_download": 0,
+                    "speed_download": 0,
+                    "speed_upload": 0,
+                    "download_content_length": -1,
+                    "upload_content_length": -1,
+                    "starttransfer_time": 0,
+                    "redirect_time": 0,
+                    "redirect_url": "",
+                    "primary_ip": "",
+                    "certinfo": [],
+                    "primary_port": 0,
+                    "local_ip": "",
+                    "local_port": 0,
+                    "http_version": 0,
+                    "protocol": 0,
+                    "ssl_verifyresult": 0,
+                    "scheme": "",
+                    "appconnect_time_us": 0,
+                    "connect_time_us": 0,
+                    "namelookup_time_us": 0,
+                    "pretransfer_time_us": 0,
+                    "redirect_time_us": 0,
+                    "starttransfer_time_us": 0,
+                    "total_time_us": 3536,
+                    "curl_version": "7.70.0"
+                }
             ]
         },
         {
-            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\Promise.php",
-            "line": 204,
-            "function": "GuzzleHttp\\{closure}",
-            "class": "GuzzleHttp\\Middleware",
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Handler\\CurlFactory.php",
+            "line": 110,
+            "function": "finishError",
+            "class": "GuzzleHttp\\Handler\\CurlFactory",
             "type": "::",
             "args": [
+                {},
+                {
+                    "sink": {},
+                    "headers": [],
+                    "response": null,
+                    "request": {},
+                    "options": {
+                        "synchronous": true,
+                        "handler": {},
+                        "allow_redirects": {
+                            "max": 5,
+                            "protocols": [
+                                "http",
+                                "https"
+                            ],
+                            "strict": false,
+                            "referer": false,
+                            "track_redirects": false
+                        },
+                        "http_errors": true,
+                        "decode_content": true,
+                        "verify": true,
+                        "cookies": false,
+                        "idn_conversion": false
+                    },
+                    "errno": 6,
+                    "onHeadersException": null,
+                    "createResponseException": null
+                },
                 {}
             ]
         },
         {
-            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\Promise.php",
-            "line": 153,
-            "function": "callHandler",
-            "class": "GuzzleHttp\\Promise\\Promise",
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Handler\\CurlHandler.php",
+            "line": 47,
+            "function": "finish",
+            "class": "GuzzleHttp\\Handler\\CurlFactory",
             "type": "::",
             "args": [
-                1,
                 {},
-                null
+                {
+                    "sink": {},
+                    "headers": [],
+                    "response": null,
+                    "request": {},
+                    "options": {
+                        "synchronous": true,
+                        "handler": {},
+                        "allow_redirects": {
+                            "max": 5,
+                            "protocols": [
+                                "http",
+                                "https"
+                            ],
+                            "strict": false,
+                            "referer": false,
+                            "track_redirects": false
+                        },
+                        "http_errors": true,
+                        "decode_content": true,
+                        "verify": true,
+                        "cookies": false,
+                        "idn_conversion": false
+                    },
+                    "errno": 6,
+                    "onHeadersException": null,
+                    "createResponseException": null
+                },
+                {}
             ]
         },
         {
-            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\TaskQueue.php",
-            "line": 48,
-            "function": "GuzzleHttp\\Promise\\{closure}",
-            "class": "GuzzleHttp\\Promise\\Promise",
-            "type": "::",
-            "args": []
-        },
-        {
-            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\Promise.php",
-            "line": 248,
-            "function": "run",
-            "class": "GuzzleHttp\\Promise\\TaskQueue",
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Handler\\Proxy.php",
+            "line": 28,
+            "function": "__invoke",
+            "class": "GuzzleHttp\\Handler\\CurlHandler",
             "type": "->",
             "args": [
-                true
+                {},
+                {
+                    "synchronous": true,
+                    "handler": {},
+                    "allow_redirects": {
+                        "max": 5,
+                        "protocols": [
+                            "http",
+                            "https"
+                        ],
+                        "strict": false,
+                        "referer": false,
+                        "track_redirects": false
+                    },
+                    "http_errors": true,
+                    "decode_content": true,
+                    "verify": true,
+                    "cookies": false,
+                    "idn_conversion": false
+                }
             ]
         },
         {
-            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\Promise.php",
-            "line": 224,
-            "function": "invokeWaitFn",
-            "class": "GuzzleHttp\\Promise\\Promise",
-            "type": "->",
-            "args": []
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Handler\\Proxy.php",
+            "line": 48,
+            "function": "GuzzleHttp\\Handler\\{closure}",
+            "class": "GuzzleHttp\\Handler\\Proxy",
+            "type": "::",
+            "args": [
+                {},
+                {
+                    "synchronous": true,
+                    "handler": {},
+                    "allow_redirects": {
+                        "max": 5,
+                        "protocols": [
+                            "http",
+                            "https"
+                        ],
+                        "strict": false,
+                        "referer": false,
+                        "track_redirects": false
+                    },
+                    "http_errors": true,
+                    "decode_content": true,
+                    "verify": true,
+                    "cookies": false,
+                    "idn_conversion": false
+                }
+            ]
         },
         {
-            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\Promise.php",
-            "line": 269,
-            "function": "waitIfPending",
-            "class": "GuzzleHttp\\Promise\\Promise",
-            "type": "->",
-            "args": []
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\PrepareBodyMiddleware.php",
+            "line": 64,
+            "function": "GuzzleHttp\\Handler\\{closure}",
+            "class": "GuzzleHttp\\Handler\\Proxy",
+            "type": "::",
+            "args": [
+                {},
+                {
+                    "synchronous": true,
+                    "handler": {},
+                    "allow_redirects": {
+                        "max": 5,
+                        "protocols": [
+                            "http",
+                            "https"
+                        ],
+                        "strict": false,
+                        "referer": false,
+                        "track_redirects": false
+                    },
+                    "http_errors": true,
+                    "decode_content": true,
+                    "verify": true,
+                    "cookies": false,
+                    "idn_conversion": false
+                }
+            ]
         },
         {
-            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\Promise.php",
-            "line": 226,
-            "function": "invokeWaitList",
-            "class": "GuzzleHttp\\Promise\\Promise",
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Middleware.php",
+            "line": 31,
+            "function": "__invoke",
+            "class": "GuzzleHttp\\PrepareBodyMiddleware",
             "type": "->",
-            "args": []
+            "args": [
+                {},
+                {
+                    "synchronous": true,
+                    "handler": {},
+                    "allow_redirects": {
+                        "max": 5,
+                        "protocols": [
+                            "http",
+                            "https"
+                        ],
+                        "strict": false,
+                        "referer": false,
+                        "track_redirects": false
+                    },
+                    "http_errors": true,
+                    "decode_content": true,
+                    "verify": true,
+                    "cookies": false,
+                    "idn_conversion": false
+                }
+            ]
         },
         {
-            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\Promise.php",
-            "line": 62,
-            "function": "waitIfPending",
-            "class": "GuzzleHttp\\Promise\\Promise",
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\RedirectMiddleware.php",
+            "line": 71,
+            "function": "GuzzleHttp\\{closure}",
+            "class": "GuzzleHttp\\Middleware",
+            "type": "::",
+            "args": [
+                {},
+                {
+                    "synchronous": true,
+                    "handler": {},
+                    "allow_redirects": {
+                        "max": 5,
+                        "protocols": [
+                            "http",
+                            "https"
+                        ],
+                        "strict": false,
+                        "referer": false,
+                        "track_redirects": false
+                    },
+                    "http_errors": true,
+                    "decode_content": true,
+                    "verify": true,
+                    "cookies": false,
+                    "idn_conversion": false
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Middleware.php",
+            "line": 63,
+            "function": "__invoke",
+            "class": "GuzzleHttp\\RedirectMiddleware",
             "type": "->",
-            "args": []
+            "args": [
+                {},
+                {
+                    "synchronous": true,
+                    "handler": {},
+                    "allow_redirects": {
+                        "max": 5,
+                        "protocols": [
+                            "http",
+                            "https"
+                        ],
+                        "strict": false,
+                        "referer": false,
+                        "track_redirects": false
+                    },
+                    "http_errors": true,
+                    "decode_content": true,
+                    "verify": true,
+                    "cookies": false,
+                    "idn_conversion": false
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\HandlerStack.php",
+            "line": 75,
+            "function": "GuzzleHttp\\{closure}",
+            "class": "GuzzleHttp\\Middleware",
+            "type": "::",
+            "args": [
+                {},
+                {
+                    "synchronous": true,
+                    "handler": {},
+                    "allow_redirects": {
+                        "max": 5,
+                        "protocols": [
+                            "http",
+                            "https"
+                        ],
+                        "strict": false,
+                        "referer": false,
+                        "track_redirects": false
+                    },
+                    "http_errors": true,
+                    "decode_content": true,
+                    "verify": true,
+                    "cookies": false,
+                    "idn_conversion": false
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Client.php",
+            "line": 331,
+            "function": "__invoke",
+            "class": "GuzzleHttp\\HandlerStack",
+            "type": "->",
+            "args": [
+                {},
+                {
+                    "synchronous": true,
+                    "handler": {},
+                    "allow_redirects": {
+                        "max": 5,
+                        "protocols": [
+                            "http",
+                            "https"
+                        ],
+                        "strict": false,
+                        "referer": false,
+                        "track_redirects": false
+                    },
+                    "http_errors": true,
+                    "decode_content": true,
+                    "verify": true,
+                    "cookies": false,
+                    "idn_conversion": false
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Client.php",
+            "line": 168,
+            "function": "transfer",
+            "class": "GuzzleHttp\\Client",
+            "type": "->",
+            "args": [
+                {},
+                {
+                    "synchronous": true,
+                    "handler": {},
+                    "allow_redirects": {
+                        "max": 5,
+                        "protocols": [
+                            "http",
+                            "https"
+                        ],
+                        "strict": false,
+                        "referer": false,
+                        "track_redirects": false
+                    },
+                    "http_errors": true,
+                    "decode_content": true,
+                    "verify": true,
+                    "cookies": false,
+                    "idn_conversion": false
+                }
+            ]
         },
         {
             "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Client.php",
             "line": 187,
-            "function": "wait",
-            "class": "GuzzleHttp\\Promise\\Promise",
+            "function": "requestAsync",
+            "class": "GuzzleHttp\\Client",
             "type": "->",
-            "args": []
+            "args": [
+                "POST",
+                {},
+                {
+                    "form_params": {
+                        "grant_type": "authorization_code",
+                        "client_id": "304092645592-42g8iugfoohtdgq3jqgio9h67ojb7vhh.apps.googleusercontent.com",
+                        "client_secret": "noXkPSo7ZalqZoMeYJXgvnmt",
+                        "code": null,
+                        "redirect_uri": "http:\/\/localhost:8000\/api\/v1\/android\/auth\/oauth2\/google\/authorize"
+                    },
+                    "synchronous": true,
+                    "handler": {},
+                    "allow_redirects": {
+                        "max": 5,
+                        "protocols": [
+                            "http",
+                            "https"
+                        ],
+                        "strict": false,
+                        "referer": false,
+                        "track_redirects": false
+                    },
+                    "http_errors": true,
+                    "decode_content": true,
+                    "verify": true,
+                    "cookies": false,
+                    "idn_conversion": false,
+                    "_conditional": {
+                        "User-Agent": "GuzzleHttp\/7"
+                    }
+                }
+            ]
         },
         {
             "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\ClientTrait.php",
