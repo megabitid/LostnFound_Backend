@@ -221,7 +221,7 @@ response.json()
     "message": "Token not provided"
 }
 ```
-> Example response (403, not owner or super admin):
+> Example response (403, not owner or admin):
 
 ```json
 {
@@ -386,7 +386,7 @@ response.json()
     "message": "Token not provided"
 }
 ```
-> Example response (403, not owner or super admin):
+> Example response (403, not owner or admin):
 
 ```json
 {
@@ -460,7 +460,7 @@ New user password.</p>
 Will returns user list.
 
 ### orderBy query supported fields:
-* All field of barang detail
+* All field of its detail
 
 > Example request:
 
