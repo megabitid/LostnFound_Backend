@@ -81,6 +81,13 @@ response.json()
     "exp": 1610328256
 }
 ```
+> Example response (202, not verify email):
+
+```json
+{
+    "message": "Verify your email first, we have send you an email."
+}
+```
 > Example response (400, bad request):
 
 ```json
