@@ -1,4 +1,4 @@
-# v1 - Authenticate User (Deprecated)
+# v1 - Authenticate User (Deprecated, please use v2!)
 
 
 ## api/v1/android/auth/login

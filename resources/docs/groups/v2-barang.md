@@ -1,4 +1,4 @@
-# v1 - Barang
+# v2 - Barang
 
 ### API for Manage Barang.
 
@@ -16,7 +16,7 @@ Will delete barang and all of its images.
 
 ```bash
 curl -X DELETE \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang/1" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/1" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -24,7 +24,7 @@ curl -X DELETE \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang/1"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/1"
 );
 
 let headers = {
@@ -44,7 +44,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang/1'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang/1'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -82,32 +82,32 @@ response.json()
     "message": "Not Found"
 }
 ```
-<div id="execution-results-DELETEapi-v1-barang--id-" hidden>
-    <blockquote>Received response<span id="execution-response-status-DELETEapi-v1-barang--id-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-DELETEapi-v1-barang--id-"></code></pre>
+<div id="execution-results-DELETEapi-v2-barang--id-" hidden>
+    <blockquote>Received response<span id="execution-response-status-DELETEapi-v2-barang--id-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-v2-barang--id-"></code></pre>
 </div>
-<div id="execution-error-DELETEapi-v1-barang--id-" hidden>
+<div id="execution-error-DELETEapi-v2-barang--id-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-DELETEapi-v1-barang--id-"></code></pre>
+    <pre><code id="execution-error-message-DELETEapi-v2-barang--id-"></code></pre>
 </div>
-<form id="form-DELETEapi-v1-barang--id-" data-method="DELETE" data-path="api/v1/barang/{id}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v1-barang--id-', this);">
+<form id="form-DELETEapi-v2-barang--id-" data-method="DELETE" data-path="api/v2/barang/{id}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('DELETEapi-v2-barang--id-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-DELETEapi-v1-barang--id-" onclick="tryItOut('DELETEapi-v1-barang--id-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-DELETEapi-v1-barang--id-" onclick="cancelTryOut('DELETEapi-v1-barang--id-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-DELETEapi-v1-barang--id-" hidden>Send Request 💥</button>
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-DELETEapi-v2-barang--id-" onclick="tryItOut('DELETEapi-v2-barang--id-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-DELETEapi-v2-barang--id-" onclick="cancelTryOut('DELETEapi-v2-barang--id-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-DELETEapi-v2-barang--id-" hidden>Send Request 💥</button>
     </h3>
 <p>
 <small class="badge badge-red">DELETE</small>
- <b><code>api/v1/barang/{id}</code></b>
+ <b><code>api/v2/barang/{id}</code></b>
 </p>
 <p>
-<label id="auth-DELETEapi-v1-barang--id-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="DELETEapi-v1-barang--id-" data-component="header"></label>
+<label id="auth-DELETEapi-v2-barang--id-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="DELETEapi-v2-barang--id-" data-component="header"></label>
 </p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
 <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="id" data-endpoint="DELETEapi-v1-barang--id-" data-component="url" required  hidden>
+<input type="number" name="id" data-endpoint="DELETEapi-v2-barang--id-" data-component="url" required  hidden>
 <br>
 The id of barang.</p>
 </form>
@@ -123,17 +123,17 @@ Will update barang.
 
 ```bash
 curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang/3" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/3" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama_barang":"Clair Rowe Updated Partially","lokasi":"67934 Juvenal Place\\nJeffport, OR 75023-4991","deskripsi":"Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.","warna":"Salmon","merek":"Heaney-Hansen","user_id":5,"status_id":4,"stasiun_id":4,"kategori_id":3}'
+    -d '{"nama_barang":"Clair Rowe Updated Partially","deskripsi":"Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.","user_id":5,"status_id":4,"stasiun_id":4,"kategori_id":3,"tanggal":"2020-12-04","warna":"Salmon","merek":"Heaney-Hansen","lokasi":"67934 Juvenal Place\\nJeffport, OR 75023-4991"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang/3"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/3"
 );
 
 let headers = {
@@ -144,14 +144,15 @@ let headers = {
 
 let body = {
     "nama_barang": "Clair Rowe Updated Partially",
-    "lokasi": "67934 Juvenal Place\\nJeffport, OR 75023-4991",
     "deskripsi": "Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.",
-    "warna": "Salmon",
-    "merek": "Heaney-Hansen",
     "user_id": 5,
     "status_id": 4,
     "stasiun_id": 4,
-    "kategori_id": 3
+    "kategori_id": 3,
+    "tanggal": "2020-12-04",
+    "warna": "Salmon",
+    "merek": "Heaney-Hansen",
+    "lokasi": "67934 Juvenal Place\\nJeffport, OR 75023-4991"
 }
 
 fetch(url, {
@@ -165,17 +166,18 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang/3'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang/3'
 payload = {
     "nama_barang": "Clair Rowe Updated Partially",
-    "lokasi": "67934 Juvenal Place\\nJeffport, OR 75023-4991",
     "deskripsi": "Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.",
-    "warna": "Salmon",
-    "merek": "Heaney-Hansen",
     "user_id": 5,
     "status_id": 4,
     "stasiun_id": 4,
-    "kategori_id": 3
+    "kategori_id": 3,
+    "tanggal": "2020-12-04",
+    "warna": "Salmon",
+    "merek": "Heaney-Hansen",
+    "lokasi": "67934 Juvenal Place\\nJeffport, OR 75023-4991"
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -239,6 +241,9 @@ response.json()
         ],
         "kategori_id": [
             "The kategori id field is required."
+        ],
+        "tanggal": [
+            "The tanggal field is required."
         ]
     }
 }
@@ -264,80 +269,85 @@ response.json()
     "message": "Not Found"
 }
 ```
-<div id="execution-results-PUTapi-v1-barang--id-" hidden>
-    <blockquote>Received response<span id="execution-response-status-PUTapi-v1-barang--id-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-PUTapi-v1-barang--id-"></code></pre>
+<div id="execution-results-PUTapi-v2-barang--id-" hidden>
+    <blockquote>Received response<span id="execution-response-status-PUTapi-v2-barang--id-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-v2-barang--id-"></code></pre>
 </div>
-<div id="execution-error-PUTapi-v1-barang--id-" hidden>
+<div id="execution-error-PUTapi-v2-barang--id-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PUTapi-v1-barang--id-"></code></pre>
+    <pre><code id="execution-error-message-PUTapi-v2-barang--id-"></code></pre>
 </div>
-<form id="form-PUTapi-v1-barang--id-" data-method="PUT" data-path="api/v1/barang/{id}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-v1-barang--id-', this);">
+<form id="form-PUTapi-v2-barang--id-" data-method="PUT" data-path="api/v2/barang/{id}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PUTapi-v2-barang--id-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTapi-v1-barang--id-" onclick="tryItOut('PUTapi-v1-barang--id-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PUTapi-v1-barang--id-" onclick="cancelTryOut('PUTapi-v1-barang--id-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PUTapi-v1-barang--id-" hidden>Send Request 💥</button>
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PUTapi-v2-barang--id-" onclick="tryItOut('PUTapi-v2-barang--id-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PUTapi-v2-barang--id-" onclick="cancelTryOut('PUTapi-v2-barang--id-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PUTapi-v2-barang--id-" hidden>Send Request 💥</button>
     </h3>
 <p>
 <small class="badge badge-darkblue">PUT</small>
- <b><code>api/v1/barang/{id}</code></b>
+ <b><code>api/v2/barang/{id}</code></b>
 </p>
 <p>
-<label id="auth-PUTapi-v1-barang--id-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="PUTapi-v1-barang--id-" data-component="header"></label>
+<label id="auth-PUTapi-v2-barang--id-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="PUTapi-v2-barang--id-" data-component="header"></label>
 </p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
 <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="id" data-endpoint="PUTapi-v1-barang--id-" data-component="url" required  hidden>
+<input type="number" name="id" data-endpoint="PUTapi-v2-barang--id-" data-component="url" required  hidden>
 <br>
 The id of barang.</p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
 <b><code>nama_barang</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="nama_barang" data-endpoint="PUTapi-v1-barang--id-" data-component="body" required  hidden>
+<input type="text" name="nama_barang" data-endpoint="PUTapi-v2-barang--id-" data-component="body" required  hidden>
 <br>
 Nama barang.</p>
 <p>
-<b><code>lokasi</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="lokasi" data-endpoint="PUTapi-v1-barang--id-" data-component="body" required  hidden>
-<br>
-Lokasi detail barang.</p>
-<p>
 <b><code>deskripsi</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="deskripsi" data-endpoint="PUTapi-v1-barang--id-" data-component="body" required  hidden>
+<input type="text" name="deskripsi" data-endpoint="PUTapi-v2-barang--id-" data-component="body" required  hidden>
 <br>
 Deskripsi barang.</p>
 <p>
-<b><code>warna</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="warna" data-endpoint="PUTapi-v1-barang--id-" data-component="body" required  hidden>
-<br>
-Warna barang.</p>
-<p>
-<b><code>merek</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="merek" data-endpoint="PUTapi-v1-barang--id-" data-component="body" required  hidden>
-<br>
-Merek barang.</p>
-<p>
 <b><code>user_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="user_id" data-endpoint="PUTapi-v1-barang--id-" data-component="body" required  hidden>
+<input type="number" name="user_id" data-endpoint="PUTapi-v2-barang--id-" data-component="body" required  hidden>
 <br>
 id User yang terkait barang.</p>
 <p>
 <b><code>status_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="status_id" data-endpoint="PUTapi-v1-barang--id-" data-component="body" required  hidden>
+<input type="number" name="status_id" data-endpoint="PUTapi-v2-barang--id-" data-component="body" required  hidden>
 <br>
 id Status barang.</p>
 <p>
 <b><code>stasiun_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="stasiun_id" data-endpoint="PUTapi-v1-barang--id-" data-component="body" required  hidden>
+<input type="number" name="stasiun_id" data-endpoint="PUTapi-v2-barang--id-" data-component="body" required  hidden>
 <br>
 id Stasiun barang.</p>
 <p>
 <b><code>kategori_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="kategori_id" data-endpoint="PUTapi-v1-barang--id-" data-component="body" required  hidden>
+<input type="number" name="kategori_id" data-endpoint="PUTapi-v2-barang--id-" data-component="body" required  hidden>
 <br>
 id Kategori barang.</p>
+<p>
+<b><code>tanggal</code></b>&nbsp;&nbsp;<small>date_format:Y-m-d</small>  &nbsp;
+<input type="text" name="tanggal" data-endpoint="PUTapi-v2-barang--id-" data-component="body" required  hidden>
+<br>
+Tanggal pendataan.</p>
+<p>
+<b><code>warna</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="warna" data-endpoint="PUTapi-v2-barang--id-" data-component="body"  hidden>
+<br>
+Warna barang.</p>
+<p>
+<b><code>merek</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="merek" data-endpoint="PUTapi-v2-barang--id-" data-component="body"  hidden>
+<br>
+Merek barang.</p>
+<p>
+<b><code>lokasi</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="lokasi" data-endpoint="PUTapi-v2-barang--id-" data-component="body"  hidden>
+<br>
+Lokasi detail barang.</p>
 
 </form>
 
@@ -352,7 +362,7 @@ Will update barang partially.
 
 ```bash
 curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang/3" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/3" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
@@ -362,7 +372,7 @@ curl -X PATCH \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang/3"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/3"
 );
 
 let headers = {
@@ -386,7 +396,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang/3'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang/3'
 payload = {
     "nama_barang": "Clair Rowe Updated Partially"
 }
@@ -452,6 +462,9 @@ response.json()
         ],
         "kategori_id": [
             "The kategori id must be a number."
+        ],
+        "tanggal": [
+            "The tanggal does not match the format Y-m-d."
         ]
     }
 }
@@ -477,80 +490,85 @@ response.json()
     "message": "Not Found"
 }
 ```
-<div id="execution-results-PATCHapi-v1-barang--id-" hidden>
-    <blockquote>Received response<span id="execution-response-status-PATCHapi-v1-barang--id-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-PATCHapi-v1-barang--id-"></code></pre>
+<div id="execution-results-PATCHapi-v2-barang--id-" hidden>
+    <blockquote>Received response<span id="execution-response-status-PATCHapi-v2-barang--id-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-PATCHapi-v2-barang--id-"></code></pre>
 </div>
-<div id="execution-error-PATCHapi-v1-barang--id-" hidden>
+<div id="execution-error-PATCHapi-v2-barang--id-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-PATCHapi-v1-barang--id-"></code></pre>
+    <pre><code id="execution-error-message-PATCHapi-v2-barang--id-"></code></pre>
 </div>
-<form id="form-PATCHapi-v1-barang--id-" data-method="PATCH" data-path="api/v1/barang/{id}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PATCHapi-v1-barang--id-', this);">
+<form id="form-PATCHapi-v2-barang--id-" data-method="PATCH" data-path="api/v2/barang/{id}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('PATCHapi-v2-barang--id-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PATCHapi-v1-barang--id-" onclick="tryItOut('PATCHapi-v1-barang--id-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PATCHapi-v1-barang--id-" onclick="cancelTryOut('PATCHapi-v1-barang--id-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PATCHapi-v1-barang--id-" hidden>Send Request 💥</button>
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-PATCHapi-v2-barang--id-" onclick="tryItOut('PATCHapi-v2-barang--id-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-PATCHapi-v2-barang--id-" onclick="cancelTryOut('PATCHapi-v2-barang--id-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-PATCHapi-v2-barang--id-" hidden>Send Request 💥</button>
     </h3>
 <p>
 <small class="badge badge-purple">PATCH</small>
- <b><code>api/v1/barang/{id}</code></b>
+ <b><code>api/v2/barang/{id}</code></b>
 </p>
 <p>
-<label id="auth-PATCHapi-v1-barang--id-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="PATCHapi-v1-barang--id-" data-component="header"></label>
+<label id="auth-PATCHapi-v2-barang--id-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="PATCHapi-v2-barang--id-" data-component="header"></label>
 </p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
 <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="id" data-endpoint="PATCHapi-v1-barang--id-" data-component="url" required  hidden>
+<input type="number" name="id" data-endpoint="PATCHapi-v2-barang--id-" data-component="url" required  hidden>
 <br>
 The id of barang.</p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
 <b><code>nama_barang</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-<input type="text" name="nama_barang" data-endpoint="PATCHapi-v1-barang--id-" data-component="body"  hidden>
+<input type="text" name="nama_barang" data-endpoint="PATCHapi-v2-barang--id-" data-component="body"  hidden>
 <br>
 Nama barang.</p>
 <p>
-<b><code>lokasi</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-<input type="text" name="lokasi" data-endpoint="PATCHapi-v1-barang--id-" data-component="body"  hidden>
-<br>
-Lokasi detail barang.</p>
-<p>
 <b><code>deskripsi</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-<input type="text" name="deskripsi" data-endpoint="PATCHapi-v1-barang--id-" data-component="body"  hidden>
+<input type="text" name="deskripsi" data-endpoint="PATCHapi-v2-barang--id-" data-component="body"  hidden>
 <br>
 Deskripsi barang.</p>
 <p>
-<b><code>warna</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-<input type="text" name="warna" data-endpoint="PATCHapi-v1-barang--id-" data-component="body"  hidden>
-<br>
-Warna barang.</p>
-<p>
-<b><code>merek</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-<input type="text" name="merek" data-endpoint="PATCHapi-v1-barang--id-" data-component="body"  hidden>
-<br>
-Merek barang.</p>
-<p>
 <b><code>user_id</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-<input type="number" name="user_id" data-endpoint="PATCHapi-v1-barang--id-" data-component="body"  hidden>
+<input type="number" name="user_id" data-endpoint="PATCHapi-v2-barang--id-" data-component="body"  hidden>
 <br>
 id User yang terkait barang.</p>
 <p>
 <b><code>status_id</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-<input type="number" name="status_id" data-endpoint="PATCHapi-v1-barang--id-" data-component="body"  hidden>
+<input type="number" name="status_id" data-endpoint="PATCHapi-v2-barang--id-" data-component="body"  hidden>
 <br>
 id Status barang.</p>
 <p>
 <b><code>stasiun_id</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-<input type="number" name="stasiun_id" data-endpoint="PATCHapi-v1-barang--id-" data-component="body"  hidden>
+<input type="number" name="stasiun_id" data-endpoint="PATCHapi-v2-barang--id-" data-component="body"  hidden>
 <br>
 id Stasiun barang.</p>
 <p>
 <b><code>kategori_id</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-<input type="number" name="kategori_id" data-endpoint="PATCHapi-v1-barang--id-" data-component="body"  hidden>
+<input type="number" name="kategori_id" data-endpoint="PATCHapi-v2-barang--id-" data-component="body"  hidden>
 <br>
 id Kategori barang.</p>
+<p>
+<b><code>tanggal</code></b>&nbsp;&nbsp;<small>date_format:Y-m-d</small>     <i>optional</i> &nbsp;
+<input type="text" name="tanggal" data-endpoint="PATCHapi-v2-barang--id-" data-component="body"  hidden>
+<br>
+Tanggal pendataan.</p>
+<p>
+<b><code>warna</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="warna" data-endpoint="PATCHapi-v2-barang--id-" data-component="body"  hidden>
+<br>
+Warna barang.</p>
+<p>
+<b><code>merek</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="merek" data-endpoint="PATCHapi-v2-barang--id-" data-component="body"  hidden>
+<br>
+Merek barang.</p>
+<p>
+<b><code>lokasi</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="lokasi" data-endpoint="PATCHapi-v2-barang--id-" data-component="body"  hidden>
+<br>
+Lokasi detail barang.</p>
 
 </form>
 
@@ -565,7 +583,7 @@ id Kategori barang.</p>
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/barang/3" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/barang/3" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -573,7 +591,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang/3"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang/3"
 );
 
 let headers = {
@@ -593,7 +611,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang/3'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang/3'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -652,32 +670,32 @@ response.json()
     "message": "Not Found"
 }
 ```
-<div id="execution-results-GETapi-v1-barang--id-" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-v1-barang--id-"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-barang--id-"></code></pre>
+<div id="execution-results-GETapi-v2-barang--id-" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-v2-barang--id-"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v2-barang--id-"></code></pre>
 </div>
-<div id="execution-error-GETapi-v1-barang--id-" hidden>
+<div id="execution-error-GETapi-v2-barang--id-" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-barang--id-"></code></pre>
+    <pre><code id="execution-error-message-GETapi-v2-barang--id-"></code></pre>
 </div>
-<form id="form-GETapi-v1-barang--id-" data-method="GET" data-path="api/v1/barang/{id}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-barang--id-', this);">
+<form id="form-GETapi-v2-barang--id-" data-method="GET" data-path="api/v2/barang/{id}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v2-barang--id-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v1-barang--id-" onclick="tryItOut('GETapi-v1-barang--id-');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v1-barang--id-" onclick="cancelTryOut('GETapi-v1-barang--id-');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v1-barang--id-" hidden>Send Request 💥</button>
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v2-barang--id-" onclick="tryItOut('GETapi-v2-barang--id-');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v2-barang--id-" onclick="cancelTryOut('GETapi-v2-barang--id-');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v2-barang--id-" hidden>Send Request 💥</button>
     </h3>
 <p>
 <small class="badge badge-green">GET</small>
- <b><code>api/v1/barang/{id}</code></b>
+ <b><code>api/v2/barang/{id}</code></b>
 </p>
 <p>
-<label id="auth-GETapi-v1-barang--id-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v1-barang--id-" data-component="header"></label>
+<label id="auth-GETapi-v2-barang--id-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v2-barang--id-" data-component="header"></label>
 </p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
 <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="id" data-endpoint="GETapi-v1-barang--id-" data-component="url" required  hidden>
+<input type="number" name="id" data-endpoint="GETapi-v2-barang--id-" data-component="url" required  hidden>
 <br>
 The id of barang.</p>
 </form>
@@ -693,17 +711,17 @@ Add barang with their status and its related field.
 
 ```bash
 curl -X POST \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama_barang":"Clair Rowe","lokasi":"67934 Juvenal Place\\nJeffport, OR 75023-4991","deskripsi":"Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.","warna":"Salmon","merek":"Heaney-Hansen","user_id":5,"status_id":4,"stasiun_id":4,"kategori_id":3}'
+    -d '{"nama_barang":"Clair Rowe","deskripsi":"Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.","user_id":5,"status_id":4,"stasiun_id":4,"kategori_id":3,"tanggal":"2020-12-04","warna":"Salmon","merek":"Heaney-Hansen","lokasi":"67934 Juvenal Place\\nJeffport, OR 75023-4991"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang"
 );
 
 let headers = {
@@ -714,14 +732,15 @@ let headers = {
 
 let body = {
     "nama_barang": "Clair Rowe",
-    "lokasi": "67934 Juvenal Place\\nJeffport, OR 75023-4991",
     "deskripsi": "Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.",
-    "warna": "Salmon",
-    "merek": "Heaney-Hansen",
     "user_id": 5,
     "status_id": 4,
     "stasiun_id": 4,
-    "kategori_id": 3
+    "kategori_id": 3,
+    "tanggal": "2020-12-04",
+    "warna": "Salmon",
+    "merek": "Heaney-Hansen",
+    "lokasi": "67934 Juvenal Place\\nJeffport, OR 75023-4991"
 }
 
 fetch(url, {
@@ -735,17 +754,18 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang'
 payload = {
     "nama_barang": "Clair Rowe",
-    "lokasi": "67934 Juvenal Place\\nJeffport, OR 75023-4991",
     "deskripsi": "Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.",
-    "warna": "Salmon",
-    "merek": "Heaney-Hansen",
     "user_id": 5,
     "status_id": 4,
     "stasiun_id": 4,
-    "kategori_id": 3
+    "kategori_id": 3,
+    "tanggal": "2020-12-04",
+    "warna": "Salmon",
+    "merek": "Heaney-Hansen",
+    "lokasi": "67934 Juvenal Place\\nJeffport, OR 75023-4991"
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -786,17 +806,8 @@ response.json()
         "nama_barang": [
             "The nama barang field is required."
         ],
-        "lokasi": [
-            "The lokasi field is required."
-        ],
         "deskripsi": [
             "The deskripsi field is required."
-        ],
-        "warna": [
-            "The warna field is required."
-        ],
-        "merek": [
-            "The merek field is required."
         ],
         "user_id": [
             "The user id field is required."
@@ -809,6 +820,9 @@ response.json()
         ],
         "kategori_id": [
             "The kategori id field is required."
+        ],
+        "tanggal": [
+            "The tanggal field is required."
         ]
     }
 }
@@ -820,74 +834,79 @@ response.json()
     "message": "Token not provided"
 }
 ```
-<div id="execution-results-POSTapi-v1-barang" hidden>
-    <blockquote>Received response<span id="execution-response-status-POSTapi-v1-barang"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-v1-barang"></code></pre>
+<div id="execution-results-POSTapi-v2-barang" hidden>
+    <blockquote>Received response<span id="execution-response-status-POSTapi-v2-barang"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v2-barang"></code></pre>
 </div>
-<div id="execution-error-POSTapi-v1-barang" hidden>
+<div id="execution-error-POSTapi-v2-barang" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-v1-barang"></code></pre>
+    <pre><code id="execution-error-message-POSTapi-v2-barang"></code></pre>
 </div>
-<form id="form-POSTapi-v1-barang" data-method="POST" data-path="api/v1/barang" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-barang', this);">
+<form id="form-POSTapi-v2-barang" data-method="POST" data-path="api/v2/barang" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v2-barang', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v1-barang" onclick="tryItOut('POSTapi-v1-barang');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-v1-barang" onclick="cancelTryOut('POSTapi-v1-barang');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-v1-barang" hidden>Send Request 💥</button>
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v2-barang" onclick="tryItOut('POSTapi-v2-barang');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-POSTapi-v2-barang" onclick="cancelTryOut('POSTapi-v2-barang');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-POSTapi-v2-barang" hidden>Send Request 💥</button>
     </h3>
 <p>
 <small class="badge badge-black">POST</small>
- <b><code>api/v1/barang</code></b>
+ <b><code>api/v2/barang</code></b>
 </p>
 <p>
-<label id="auth-POSTapi-v1-barang" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="POSTapi-v1-barang" data-component="header"></label>
+<label id="auth-POSTapi-v2-barang" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="POSTapi-v2-barang" data-component="header"></label>
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
 <b><code>nama_barang</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="nama_barang" data-endpoint="POSTapi-v1-barang" data-component="body" required  hidden>
+<input type="text" name="nama_barang" data-endpoint="POSTapi-v2-barang" data-component="body" required  hidden>
 <br>
 Nama barang.</p>
 <p>
-<b><code>lokasi</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="lokasi" data-endpoint="POSTapi-v1-barang" data-component="body" required  hidden>
-<br>
-Lokasi detail barang.</p>
-<p>
 <b><code>deskripsi</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="deskripsi" data-endpoint="POSTapi-v1-barang" data-component="body" required  hidden>
+<input type="text" name="deskripsi" data-endpoint="POSTapi-v2-barang" data-component="body" required  hidden>
 <br>
 Deskripsi barang.</p>
 <p>
-<b><code>warna</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="warna" data-endpoint="POSTapi-v1-barang" data-component="body" required  hidden>
-<br>
-Warna barang.</p>
-<p>
-<b><code>merek</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="merek" data-endpoint="POSTapi-v1-barang" data-component="body" required  hidden>
-<br>
-Merek barang.</p>
-<p>
 <b><code>user_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="user_id" data-endpoint="POSTapi-v1-barang" data-component="body" required  hidden>
+<input type="number" name="user_id" data-endpoint="POSTapi-v2-barang" data-component="body" required  hidden>
 <br>
 id User yang terkait barang.</p>
 <p>
 <b><code>status_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="status_id" data-endpoint="POSTapi-v1-barang" data-component="body" required  hidden>
+<input type="number" name="status_id" data-endpoint="POSTapi-v2-barang" data-component="body" required  hidden>
 <br>
 id Status barang.</p>
 <p>
 <b><code>stasiun_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="stasiun_id" data-endpoint="POSTapi-v1-barang" data-component="body" required  hidden>
+<input type="number" name="stasiun_id" data-endpoint="POSTapi-v2-barang" data-component="body" required  hidden>
 <br>
 id Stasiun barang.</p>
 <p>
 <b><code>kategori_id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
-<input type="number" name="kategori_id" data-endpoint="POSTapi-v1-barang" data-component="body" required  hidden>
+<input type="number" name="kategori_id" data-endpoint="POSTapi-v2-barang" data-component="body" required  hidden>
 <br>
 id Kategori barang.</p>
+<p>
+<b><code>tanggal</code></b>&nbsp;&nbsp;<small>date_format:Y-m-d</small>  &nbsp;
+<input type="text" name="tanggal" data-endpoint="POSTapi-v2-barang" data-component="body" required  hidden>
+<br>
+Tanggal pendataan.</p>
+<p>
+<b><code>warna</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="warna" data-endpoint="POSTapi-v2-barang" data-component="body"  hidden>
+<br>
+Warna barang.</p>
+<p>
+<b><code>merek</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="merek" data-endpoint="POSTapi-v2-barang" data-component="body"  hidden>
+<br>
+Merek barang.</p>
+<p>
+<b><code>lokasi</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="lokasi" data-endpoint="POSTapi-v2-barang" data-component="body"  hidden>
+<br>
+Lokasi detail barang.</p>
 
 </form>
 
@@ -920,7 +939,7 @@ id Kategori barang.</p>
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/barang?orderBy=-id&search=2020" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/barang?orderBy=-id&search=2020" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -928,7 +947,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/barang"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/barang"
 );
 
 let params = {
@@ -955,7 +974,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang'
 params = {
   'orderBy': '-id',
   'search': '2020',
@@ -1072,8 +1091,8 @@ response.json()
         }
     ],
     "links": {
-        "first": "http:\/\/localhost\/api\/v1\/barang?orderBy=-id&search=2020&page=1",
-        "last": "http:\/\/localhost\/api\/v1\/barang?orderBy=-id&search=2020&page=1",
+        "first": "http:\/\/localhost\/api\/v2\/barang?orderBy=-id&search=2020&page=1",
+        "last": "http:\/\/localhost\/api\/v2\/barang?orderBy=-id&search=2020&page=1",
         "prev": null,
         "next": null
     },
@@ -1088,7 +1107,7 @@ response.json()
                 "active": false
             },
             {
-                "url": "http:\/\/localhost\/api\/v1\/barang?orderBy=-id&search=2020&page=1",
+                "url": "http:\/\/localhost\/api\/v2\/barang?orderBy=-id&search=2020&page=1",
                 "label": 1,
                 "active": true
             },
@@ -1098,69 +1117,69 @@ response.json()
                 "active": false
             }
         ],
-        "path": "http:\/\/localhost\/api\/v1\/barang",
+        "path": "http:\/\/localhost\/api\/v2\/barang",
         "per_page": 20,
         "to": 5,
         "total": 5
     }
 }
 ```
-<div id="execution-results-GETapi-v1-barang" hidden>
-    <blockquote>Received response<span id="execution-response-status-GETapi-v1-barang"></span>:</blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-barang"></code></pre>
+<div id="execution-results-GETapi-v2-barang" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-v2-barang"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v2-barang"></code></pre>
 </div>
-<div id="execution-error-GETapi-v1-barang" hidden>
+<div id="execution-error-GETapi-v2-barang" hidden>
     <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-barang"></code></pre>
+    <pre><code id="execution-error-message-GETapi-v2-barang"></code></pre>
 </div>
-<form id="form-GETapi-v1-barang" data-method="GET" data-path="api/v1/barang" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-barang', this);">
+<form id="form-GETapi-v2-barang" data-method="GET" data-path="api/v2/barang" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v2-barang', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
-        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v1-barang" onclick="tryItOut('GETapi-v1-barang');">Try it out ⚡</button>
-    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v1-barang" onclick="cancelTryOut('GETapi-v1-barang');" hidden>Cancel</button>&nbsp;&nbsp;
-    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v1-barang" hidden>Send Request 💥</button>
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v2-barang" onclick="tryItOut('GETapi-v2-barang');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v2-barang" onclick="cancelTryOut('GETapi-v2-barang');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v2-barang" hidden>Send Request 💥</button>
     </h3>
 <p>
 <small class="badge badge-green">GET</small>
- <b><code>api/v1/barang</code></b>
+ <b><code>api/v2/barang</code></b>
 </p>
 <p>
-<label id="auth-GETapi-v1-barang" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v1-barang" data-component="header"></label>
+<label id="auth-GETapi-v2-barang" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v2-barang" data-component="header"></label>
 </p>
 <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
 <p>
 <b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-<input type="number" name="id" data-endpoint="GETapi-v1-barang" data-component="query"  hidden>
+<input type="number" name="id" data-endpoint="GETapi-v2-barang" data-component="query"  hidden>
 <br>
 Apply filter with id.</p>
 <p>
 <b><code>user_id</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-<input type="number" name="user_id" data-endpoint="GETapi-v1-barang" data-component="query"  hidden>
+<input type="number" name="user_id" data-endpoint="GETapi-v2-barang" data-component="query"  hidden>
 <br>
 Apply filter with user_id.</p>
 <p>
 <b><code>stasiun_id</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-<input type="number" name="stasiun_id" data-endpoint="GETapi-v1-barang" data-component="query"  hidden>
+<input type="number" name="stasiun_id" data-endpoint="GETapi-v2-barang" data-component="query"  hidden>
 <br>
 Apply filter with stasiun_id.</p>
 <p>
 <b><code>status_id</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-<input type="number" name="status_id" data-endpoint="GETapi-v1-barang" data-component="query"  hidden>
+<input type="number" name="status_id" data-endpoint="GETapi-v2-barang" data-component="query"  hidden>
 <br>
 Apply filter with status_id.</p>
 <p>
 <b><code>kategori_id</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
-<input type="number" name="kategori_id" data-endpoint="GETapi-v1-barang" data-component="query"  hidden>
+<input type="number" name="kategori_id" data-endpoint="GETapi-v2-barang" data-component="query"  hidden>
 <br>
 Apply filter with kategori_id.</p>
 <p>
 <b><code>orderBy</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-<input type="text" name="orderBy" data-endpoint="GETapi-v1-barang" data-component="query"  hidden>
+<input type="text" name="orderBy" data-endpoint="GETapi-v2-barang" data-component="query"  hidden>
 <br>
 </p>
 <p>
 <b><code>search</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-<input type="text" name="search" data-endpoint="GETapi-v1-barang" data-component="query"  hidden>
+<input type="text" name="search" data-endpoint="GETapi-v2-barang" data-component="query"  hidden>
 <br>
 Apply filtering with string search.</p>
 </form>

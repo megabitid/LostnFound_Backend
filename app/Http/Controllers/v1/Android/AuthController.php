@@ -13,7 +13,7 @@ use Validator;
 use App\Traits\ValidationError;
 
 /** 
- * @group v1 - Authenticate User (Deprecated)
+ * @group v1 - Authenticate User (Deprecated, please use v2!)
  * @deprecated
  */
 class AuthController extends Controller

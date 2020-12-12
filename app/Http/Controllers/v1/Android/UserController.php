@@ -15,7 +15,7 @@ use App\Traits\database\Paginator;
 use Validator;
 
 /** 
- * @group v1 - User (Deprecated)
+ * @group v1 - User (Deprecated, please use v2!)
  * @deprecated
  */
 class UserController extends Controller

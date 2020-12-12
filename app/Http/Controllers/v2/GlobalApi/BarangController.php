@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\v1\GlobalApi;
+namespace App\Http\Controllers\v2\GlobalApi;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\Resource;
@@ -11,14 +11,13 @@ use App\Traits\database\QueryBuilder;
 use App\Traits\FirebaseStorage;
 use App\Traits\Permissions;
 use App\Traits\ValidationError;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Traits\database\Paginator;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
 /** 
- * @group v1 - Barang
+ * @group v2 - Barang
  * 
  * ### API for Manage Barang.
  * 
@@ -95,9 +94,8 @@ class BarangController extends Controller
         $query = $query->with(array('barangimages'=>function($query){
             $query->first();
         }));
-
-
-        // paginate
+        
+        //paginate 
         $paginator = Paginator::paginate($request, $query);
         $excludeFields = [
             'stasiun_id',
@@ -115,14 +113,15 @@ class BarangController extends Controller
      * Add barang with their status and its related field.
      * 
      * @bodyParam nama_barang string required Nama barang. Example: Clair Rowe
-     * @bodyParam lokasi string required Lokasi detail barang. Example: 67934 Juvenal Place\nJeffport, OR 75023-4991
      * @bodyParam deskripsi string required Deskripsi barang. Example: Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.
-     * @bodyParam warna string required Warna barang. Example: Salmon
-     * @bodyParam merek string required Merek barang. Example: Heaney-Hansen
      * @bodyParam user_id integer required id User yang terkait barang. Example: 5
      * @bodyParam status_id integer required id Status barang. Example: 4
      * @bodyParam stasiun_id integer required id Stasiun barang. Example: 4
      * @bodyParam kategori_id integer required id Kategori barang. Example: 3
+     * @bodyParam tanggal date_format:Y-m-d required Tanggal pendataan. Example: 2020-12-04
+     * @bodyParam warna string Warna barang. Example: Salmon
+     * @bodyParam merek string Merek barang. Example: Heaney-Hansen
+     * @bodyParam lokasi string Lokasi detail barang. Example: 67934 Juvenal Place\nJeffport, OR 75023-4991
      * 
      * @response status=201 scenario="success" {
      *  "id": 3,
@@ -145,17 +144,8 @@ class BarangController extends Controller
      *       "nama_barang": [
      *           "The nama barang field is required."
      *       ],
-     *       "lokasi": [
-     *           "The lokasi field is required."
-     *       ],
      *       "deskripsi": [
      *           "The deskripsi field is required."
-     *       ],
-     *       "warna": [
-     *           "The warna field is required."
-     *       ],
-     *       "merek": [
-     *           "The merek field is required."
      *       ],
      *       "user_id": [
      *           "The user id field is required."
@@ -168,6 +158,9 @@ class BarangController extends Controller
      *       ],
      *       "kategori_id": [
      *           "The kategori id field is required."
+     *       ],
+     *       "tanggal": [
+     *           "The tanggal field is required."
      *       ]
      *   }
      * }
@@ -178,23 +171,22 @@ class BarangController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'nama_barang' => 'required|string|max:255',
-            'lokasi' => 'required|string',
-            'deskripsi' => 'required|string',
-            'warna' => 'required|string',
-            'merek' => 'required|string',
-            'user_id' => 'required|numeric',
-            'stasiun_id' => 'required|numeric',
-            'status_id' => 'required|numeric',
-            'kategori_id' => 'required|numeric'
+            'nama_barang'=>'required|string|max:255',
+            'deskripsi'=>'required|string',
+            'user_id'=>'required|numeric',
+            'stasiun_id'=>'required|numeric',
+            'status_id'=>'required|numeric',
+            'kategori_id'=>'required|numeric',
+            'tanggal'=>'required|date_format:Y-m-d',
+            // backward compatible field
+            'warna'=>'string',
+            'merek'=>'string',
+            'lokasi'=>'string'
         ]);
-
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
-
         $validatedData = $validator->validated();
-        $validatedData['tanggal'] = Carbon::now()->format('Y-m-d');
         $barang = Barang::create($validatedData);
         $responseData = $barang->toArray();
         History::create([
@@ -247,7 +239,7 @@ class BarangController extends Controller
      */
     public function show($id)
     {
-        $barang = Barang::with(['stasiun','kategori','barangimages'])->findOrFail($id);
+        $barang = Barang::with(['stasiun', 'kategori', 'barangimages'])->findOrFail($id);
         $excludeFields = [
             'stasiun_id',
             'kategori_id',
@@ -262,14 +254,15 @@ class BarangController extends Controller
      * Will update barang.
      * 
      * @bodyParam nama_barang string required Nama barang. Example: Clair Rowe Updated Partially
-     * @bodyParam lokasi string required Lokasi detail barang. Example: 67934 Juvenal Place\nJeffport, OR 75023-4991
      * @bodyParam deskripsi string required Deskripsi barang. Example: Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.
-     * @bodyParam warna string required Warna barang. Example: Salmon
-     * @bodyParam merek string required Merek barang. Example: Heaney-Hansen
      * @bodyParam user_id integer required id User yang terkait barang. Example: 5
      * @bodyParam status_id integer required id Status barang. Example: 4
      * @bodyParam stasiun_id integer required id Stasiun barang. Example: 4
      * @bodyParam kategori_id integer required id Kategori barang. Example: 3
+     * @bodyParam tanggal date_format:Y-m-d required Tanggal pendataan. Example: 2020-12-04
+     * @bodyParam warna string Warna barang. Example: Salmon
+     * @bodyParam merek string Merek barang. Example: Heaney-Hansen
+     * @bodyParam lokasi string Lokasi detail barang. Example: 67934 Juvenal Place\nJeffport, OR 75023-4991
      * 
      * @urlParam id integer required The id of barang. Example: 3
      * @response status=201 scenario="update success" {
@@ -316,6 +309,9 @@ class BarangController extends Controller
      *       ],
      *       "kategori_id": [
      *           "The kategori id field is required."
+     *       ],
+     *       "tanggal": [
+     *           "The tanggal field is required."
      *       ]
      *   }
      * }
@@ -334,15 +330,17 @@ class BarangController extends Controller
         $barang = Barang::findOrFail($id);
         Permissions::isOwnerOrAdminOrSuperAdmin($request, $barang->user_id);
         $validator = Validator::make($request->all(), [
-            'nama_barang' => 'required|string|max:255',
-            'lokasi' => 'required|string',
-            'deskripsi' => 'required|string',
-            'warna' => 'required|string',
-            'merek' => 'required|string',
-            'user_id' => 'required|numeric',
-            'stasiun_id' => 'required|numeric',
-            'status_id' => 'required|numeric',
-            'kategori_id' => 'required|numeric'
+            'nama_barang'=>'required|string|max:255',
+            'deskripsi'=>'required|string',
+            'user_id'=>'required|numeric',
+            'stasiun_id'=>'required|numeric',
+            'status_id'=>'required|numeric',
+            'kategori_id'=>'required|numeric',
+            'tanggal'=>'required|date_format:Y-m-d',
+            // backward compatible field
+            'warna'=>'string',
+            'merek'=>'string',
+            'lokasi'=>'string'
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
@@ -366,14 +364,15 @@ class BarangController extends Controller
      * Will update barang partially.
      * 
      * @bodyParam nama_barang string Nama barang. Example: Clair Rowe Updated Partially
-     * @bodyParam lokasi string Lokasi detail barang. No-example
      * @bodyParam deskripsi string Deskripsi barang. No-example
-     * @bodyParam warna string Warna barang. No-example
-     * @bodyParam merek string Merek barang. No-example
      * @bodyParam user_id integer id User yang terkait barang. No-example
      * @bodyParam status_id integer id Status barang. No-example
      * @bodyParam stasiun_id integer id Stasiun barang. No-example
      * @bodyParam kategori_id integer id Kategori barang. No-example
+     * @bodyParam tanggal date_format:Y-m-d Tanggal pendataan. No-example
+     * @bodyParam warna string Warna barang. No-example
+     * @bodyParam merek string Merek barang. No-example
+     * @bodyParam lokasi string Lokasi detail barang. No-example
      * 
      * @urlParam id integer required The id of barang. Example: 3
      * @response status=201 scenario="update success" {
@@ -420,7 +419,10 @@ class BarangController extends Controller
      *      ],
      *      "kategori_id": [
      *          "The kategori id must be a number."
-     *      ]
+     *      ],
+     *     "tanggal": [
+     *         "The tanggal does not match the format Y-m-d."
+     *     ] 
      *  }
      * }
      * @response status=401 scenario="Unauthorized" {
@@ -438,20 +440,21 @@ class BarangController extends Controller
         $barang = Barang::findOrFail($id);
         Permissions::isOwnerOrAdminOrSuperAdmin($request, $barang->user_id);
         $validator = Validator::make($request->all(), [
-            'nama_barang' => 'string|max:255',
-            'lokasi' => 'string',
-            'deskripsi' => 'string',
-            'warna' => 'string',
-            'merek' => 'string',
-            'user_id' => 'numeric',
-            'stasiun_id' => 'numeric',
-            'status_id' => 'numeric',
-            'kategori_id' => 'numeric'
+            'nama_barang'=>'string|max:255',
+            'deskripsi'=>'string',
+            'user_id'=>'numeric',
+            'stasiun_id'=>'numeric',
+            'status_id'=>'numeric',
+            'kategori_id'=>'numeric',
+            'tanggal'=>'date_format:Y-m-d',
+            // backward compatible field
+            'warna'=>'string',
+            'merek'=>'string',
+            'lokasi'=>'string'
         ]);
         if ($validator->fails()) {
             return ValidationError::response($validator->errors());
         }
-        
         $validatedData = $validator->validated();
         if (array_key_exists("status_id", $validatedData)) {
             if ($validatedData["status_id"] != $barang->status_id){
@@ -495,6 +498,6 @@ class BarangController extends Controller
             FirebaseStorage::imageDelete('barangs/image/'. $image->id);
         }        
         $barang->delete();
-        return response()->json(['message' => 'Barang deleted.'], 204);
+        return response()->json(['message'=>'Barang deleted.'], 204);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\v1\Admin;
+namespace App\Http\Controllers\v2\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 use App\Traits\database\Paginator;
 
 /** 
- * @group v1 - User Admin
+ * @group v2 - User Admin
  * 
  * ### API for Managing User Admin
  * 
@@ -44,10 +44,11 @@ class AdminController extends Controller
      */
     public function index(Request $request)
     {
-        Permissions::isAdminOrSuperAdmin($request);
+        Permissions::isSuperAdmin($request);
         $query = User::where('role', '>', 0);
         $query = QueryBuilder::orderBy($request, $query);
         $query = QueryBuilder::onlyTrashed($request, $query);
+
 
         $paginator = Paginator::paginate($request, $query);
         $excludeFields = [
@@ -91,7 +92,7 @@ class AdminController extends Controller
     {
         $user = User::where('role','>', 0)->findOrFail($id);
         Permissions::isOwnerOrSuperAdmin($request, $user->id);
-        
+
         $excludeFields = [
             'email',
             'email_verified_at'
@@ -167,12 +168,11 @@ class AdminController extends Controller
             return ValidationError::response($validator->errors());
         }
         $validatedData = $validator->validated();
-        if(StringValidator::isImageBase64($validatedData['image']) == null) {
-            return ValidationError::response(['image'=>'You must use urlBase64 image format.']);
-        }
-
         if(array_key_exists('role', $validatedData)) {
             Permissions::isSuperAdmin($request);
+        }
+        if(StringValidator::isImageBase64($validatedData['image']) == null) {
+            return ValidationError::response(['image'=>'You must use urlBase64 image format.']);
         }
 
         $someUser = User::where('nip', '=', $validatedData['nip'])->first();
@@ -249,8 +249,8 @@ class AdminController extends Controller
             'nama' => 'string',
             'nip' => 'string',
             'password' => 'string',
-            'stasiun_id'=>'numeric',
             'image'=>'string',
+            'stasiun_id'=>'numeric',
             'role'=>'numeric|max:2'
         ]);
         if ($validator->fails()) {

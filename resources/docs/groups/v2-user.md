@@ -1,17 +1,18 @@
-# v2 - User
+# v2 - User 
 
+### API for Managing User
 
-## Display the specified resource.
+## Get Detail User.
 
 <small class="badge badge-darkred">requires authentication</small>
 
-
+User detail can be retrieved using this API.
 
 > Example request:
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/est" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/1" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -19,7 +20,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/est"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/1"
 );
 
 let headers = {
@@ -39,7 +40,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/users/est'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/users/1'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -51,7 +52,34 @@ response.json()
 ```
 
 
-> Example response (404):
+> Example response (200, success):
+
+```json
+{
+    "id": 1,
+    "nama": "Yoshiko Gottlieb",
+    "email": "katheryn42@okeefe.biz",
+    "email_verified_at": "2020-12-10T17:18:48.000000Z",
+    "image": "https:\/\/via.placeholder.com\/640x480.png\/00ddee?text=nostrum",
+    "created_at": null,
+    "updated_at": null
+}
+```
+> Example response (401, Unauthorized):
+
+```json
+{
+    "message": "Token not provided"
+}
+```
+> Example response (403, not owner or admin):
+
+```json
+{
+    "message": "You must be owner or admin to do this."
+}
+```
+> Example response (404, data not found):
 
 ```json
 {
@@ -82,32 +110,34 @@ response.json()
 </p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
-<b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="id" data-endpoint="GETapi-v2-android-users--id-" data-component="url" required  hidden>
+<b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="id" data-endpoint="GETapi-v2-android-users--id-" data-component="url" required  hidden>
 <br>
-</p>
+The id of user.</p>
 </form>
 
 
-## Update the specified resource in storage.
+## Update User.
 
 <small class="badge badge-darkred">requires authentication</small>
 
-
+User can be updated using this API.
 
 > Example request:
 
 ```bash
 curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/harum" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/1" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"
+    -H "Accept: application/json" \
+    -d '{"nama":"Yoshiko Gottlieb Updated","email":"katheryn42@okeefe.biz","image":"uribase64"}'
+
 ```
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/harum"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/1"
 );
 
 let headers = {
@@ -116,10 +146,16 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "nama": "Yoshiko Gottlieb Updated",
+    "email": "katheryn42@okeefe.biz",
+    "image": "uribase64"
+}
 
 fetch(url, {
     method: "PUT",
     headers,
+    body: JSON.stringify(body),
 }).then(response => response.json());
 ```
 
@@ -127,18 +163,78 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/users/harum'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/users/1'
+payload = {
+    "nama": "Yoshiko Gottlieb Updated",
+    "email": "katheryn42@okeefe.biz",
+    "image": "uribase64"
+}
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
   'Accept': 'application/json'
 }
 
-response = requests.request('PUT', url, headers=headers)
+response = requests.request('PUT', url, headers=headers, json=payload)
 response.json()
 ```
 
 
+> Example response (201, success):
+
+```json
+{
+    "id": 1,
+    "nama": "Yoshiko Gottlieb Updated",
+    "nip": "2401108140514821",
+    "email": "katheryn42@okeefe.biz",
+    "email_verified_at": "2020-12-10T17:18:48.000000Z",
+    "image": "https:\/\/via.placeholder.com\/640x480.png\/00ddee?text=nostrum",
+    "role": 0,
+    "stasiun_id": null,
+    "created_at": null,
+    "updated_at": "2020-12-12T02:26:55.000000Z"
+}
+```
+> Example response (400, bad request):
+
+```json
+
+{
+ "message": "Validation Error",
+ "errors": {
+     "nama": [
+         "The nama field is required."
+     ],
+     "email": [
+         "The email field is required."
+     ],
+     "image": [
+         "The image field is required."
+     ]
+}
+```
+> Example response (401, Unauthorized):
+
+```json
+{
+    "message": "Token not provided"
+}
+```
+> Example response (403, not owner or super admin):
+
+```json
+{
+    "message": "You must be owner or admin to do this."
+}
+```
+> Example response (404, data not found):
+
+```json
+{
+    "message": "Not Found"
+}
+```
 <div id="execution-results-PUTapi-v2-android-users--id-" hidden>
     <blockquote>Received response<span id="execution-response-status-PUTapi-v2-android-users--id-"></span>:</blockquote>
     <pre class="json"><code id="execution-response-content-PUTapi-v2-android-users--id-"></code></pre>
@@ -163,32 +259,51 @@ response.json()
 </p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
-<b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="id" data-endpoint="PUTapi-v2-android-users--id-" data-component="url" required  hidden>
+<b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="id" data-endpoint="PUTapi-v2-android-users--id-" data-component="url" required  hidden>
 <br>
-</p>
+The id of user.</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>nama</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="nama" data-endpoint="PUTapi-v2-android-users--id-" data-component="body" required  hidden>
+<br>
+User name.</p>
+<p>
+<b><code>email</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="email" data-endpoint="PUTapi-v2-android-users--id-" data-component="body" required  hidden>
+<br>
+User email.</p>
+<p>
+<b><code>image</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="image" data-endpoint="PUTapi-v2-android-users--id-" data-component="body" required  hidden>
+<br>
+User profile picture in URI Base64.</p>
+
 </form>
 
 
-## Update partially the specified resource in storage.
+## Partial Update User.
 
 <small class="badge badge-darkred">requires authentication</small>
 
-
+User can be updated using this API.
 
 > Example request:
 
 ```bash
 curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/et" \
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/1" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
-    -H "Accept: application/json"
+    -H "Accept: application/json" \
+    -d '{"nama":"Yoshiko Gottlieb Partial Update"}'
+
 ```
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/et"
+    "https://megabit-lostnfound.herokuapp.com/api/v2/android/users/1"
 );
 
 let headers = {
@@ -197,10 +312,14 @@ let headers = {
     "Accept": "application/json",
 };
 
+let body = {
+    "nama": "Yoshiko Gottlieb Partial Update"
+}
 
 fetch(url, {
     method: "PATCH",
     headers,
+    body: JSON.stringify(body),
 }).then(response => response.json());
 ```
 
@@ -208,18 +327,79 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/users/et'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/users/1'
+payload = {
+    "nama": "Yoshiko Gottlieb Partial Update"
+}
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
   'Accept': 'application/json'
 }
 
-response = requests.request('PATCH', url, headers=headers)
+response = requests.request('PATCH', url, headers=headers, json=payload)
 response.json()
 ```
 
 
+> Example response (201, success):
+
+```json
+{
+    "id": 1,
+    "nama": "Yoshiko Gottlieb Partial Update",
+    "nip": null,
+    "email": "katheryn42@okeefe.biz",
+    "email_verified_at": "2020-12-10T17:18:48.000000Z",
+    "image": "https:\/\/via.placeholder.com\/640x480.png\/00ddee?text=nostrum",
+    "role": 0,
+    "stasiun_id": null,
+    "created_at": null,
+    "updated_at": "2020-12-12T02:26:55.000000Z"
+}
+```
+> Example response (400, bad request):
+
+```json
+
+{
+ "message": "Validation Error",
+ "errors": {
+     "nama": [
+         "The nama must be a string."
+     ],
+     "email": [
+         "The email must be a string."
+     ],
+     "password": [
+         "The password must be a string."
+     ],
+     "image": [
+         "The image must be a string."
+     ]
+}
+```
+> Example response (401, Unauthorized):
+
+```json
+{
+    "message": "Token not provided"
+}
+```
+> Example response (403, not owner or super admin):
+
+```json
+{
+    "message": "You must be owner or admin to do this."
+}
+```
+> Example response (404, data not found):
+
+```json
+{
+    "message": "Not Found"
+}
+```
 <div id="execution-results-PATCHapi-v2-android-users--id-" hidden>
     <blockquote>Received response<span id="execution-response-status-PATCHapi-v2-android-users--id-"></span>:</blockquote>
     <pre class="json"><code id="execution-response-content-PATCHapi-v2-android-users--id-"></code></pre>
@@ -244,24 +424,49 @@ response.json()
 </p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
-<b><code>id</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
-<input type="text" name="id" data-endpoint="PATCHapi-v2-android-users--id-" data-component="url" required  hidden>
+<b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>  &nbsp;
+<input type="number" name="id" data-endpoint="PATCHapi-v2-android-users--id-" data-component="url" required  hidden>
 <br>
-</p>
+The id of user.</p>
+<h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+<p>
+<b><code>nama</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="nama" data-endpoint="PATCHapi-v2-android-users--id-" data-component="body"  hidden>
+<br>
+User name.</p>
+<p>
+<b><code>email</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="email" data-endpoint="PATCHapi-v2-android-users--id-" data-component="body"  hidden>
+<br>
+User email. Example:</p>
+<p>
+<b><code>image</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="image" data-endpoint="PATCHapi-v2-android-users--id-" data-component="body"  hidden>
+<br>
+User profile picture in URI Base64.</p>
+<p>
+<b><code>password</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="password" data-endpoint="PATCHapi-v2-android-users--id-" data-component="body"  hidden>
+<br>
+New user password.</p>
+
 </form>
 
 
-## Display a listing of the resource.
+## Get List User
 
 <small class="badge badge-darkred">requires authentication</small>
 
+Will returns user list.
 
+### orderBy query supported fields:
+* All field of barang detail
 
 > Example request:
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/android/users" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/android/users?orderBy=-id" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -271,6 +476,12 @@ curl -X GET \
 const url = new URL(
     "https://megabit-lostnfound.herokuapp.com/api/v2/android/users"
 );
+
+let params = {
+    "orderBy": "-id",
+};
+Object.keys(params)
+    .forEach(key => url.searchParams.append(key, params[key]));
 
 let headers = {
     "Authorization": "Bearer {YOUR_AUTH_KEY}",
@@ -290,42 +501,45 @@ import requests
 import json
 
 url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/users'
+params = {
+  'orderBy': '-id',
+}
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
   'Accept': 'application/json'
 }
 
-response = requests.request('GET', url, headers=headers)
+response = requests.request('GET', url, headers=headers, params=params)
 response.json()
 ```
 
 
+> Example response (401, Unauthorized):
+
+```json
+{
+    "message": "Token not provided"
+}
+```
+> Example response (403, not admin):
+
+```json
+{
+    "message": "You must be admin or super admin to do this."
+}
+```
 > Example response (200):
 
 ```json
 {
     "data": [
         {
-            "id": 1,
-            "nama": "Yoshiko Gottlieb",
-            "email": "katheryn42@okeefe.biz",
-            "email_verified_at": "2020-12-10T17:18:48.000000Z",
-            "image": "https:\/\/via.placeholder.com\/640x480.png\/00ddee?text=nostrum"
-        },
-        {
-            "id": 2,
-            "nama": "Tressa Kling",
-            "email": "lgrimes@hodkiewicz.com",
+            "id": 5,
+            "nama": "Ms. Josie Macejkovic",
+            "email": "hmonahan@bergnaum.net",
             "email_verified_at": "2020-12-10T17:18:49.000000Z",
-            "image": "https:\/\/via.placeholder.com\/640x480.png\/00ffbb?text=cum"
-        },
-        {
-            "id": 3,
-            "nama": "Trystan Bogisich",
-            "email": "amalia.murray@hotmail.com",
-            "email_verified_at": "2020-12-10T17:18:49.000000Z",
-            "image": "https:\/\/via.placeholder.com\/640x480.png\/00ff11?text=quia"
+            "image": "https:\/\/via.placeholder.com\/640x480.png\/0077aa?text=odio"
         },
         {
             "id": 4,
@@ -335,16 +549,30 @@ response.json()
             "image": "https:\/\/via.placeholder.com\/640x480.png\/00ff33?text=et"
         },
         {
-            "id": 5,
-            "nama": "Ms. Josie Macejkovic",
-            "email": "hmonahan@bergnaum.net",
+            "id": 3,
+            "nama": "Trystan Bogisich",
+            "email": "amalia.murray@hotmail.com",
             "email_verified_at": "2020-12-10T17:18:49.000000Z",
-            "image": "https:\/\/via.placeholder.com\/640x480.png\/0077aa?text=odio"
+            "image": "https:\/\/via.placeholder.com\/640x480.png\/00ff11?text=quia"
+        },
+        {
+            "id": 2,
+            "nama": "Tressa Kling",
+            "email": "lgrimes@hodkiewicz.com",
+            "email_verified_at": "2020-12-10T17:18:49.000000Z",
+            "image": "https:\/\/via.placeholder.com\/640x480.png\/00ffbb?text=cum"
+        },
+        {
+            "id": 1,
+            "nama": "Yoshiko Gottlieb Updated",
+            "email": "katheryn42@okeefe.biz",
+            "email_verified_at": "2020-12-10T17:18:48.000000Z",
+            "image": "https:\/\/via.placeholder.com\/640x480.png\/00ddee?text=nostrum"
         }
     ],
     "links": {
-        "first": "http:\/\/localhost\/api\/v2\/android\/users?page=1",
-        "last": "http:\/\/localhost\/api\/v2\/android\/users?page=1",
+        "first": "http:\/\/localhost\/api\/v2\/android\/users?orderBy=-id&page=1",
+        "last": "http:\/\/localhost\/api\/v2\/android\/users?orderBy=-id&page=1",
         "prev": null,
         "next": null
     },
@@ -359,7 +587,7 @@ response.json()
                 "active": false
             },
             {
-                "url": "http:\/\/localhost\/api\/v2\/android\/users?page=1",
+                "url": "http:\/\/localhost\/api\/v2\/android\/users?orderBy=-id&page=1",
                 "label": 1,
                 "active": true
             },
@@ -398,6 +626,17 @@ response.json()
 <p>
 <label id="auth-GETapi-v2-android-users" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v2-android-users" data-component="header"></label>
 </p>
+<h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+<p>
+<b><code>orderBy</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="orderBy" data-endpoint="GETapi-v2-android-users" data-component="query"  hidden>
+<br>
+</p>
+<p>
+<b><code>onlyTrashed</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="onlyTrashed" data-endpoint="GETapi-v2-android-users" data-component="query"  hidden>
+<br>
+Retrive deleted admin user if true.</p>
 </form>
 
 

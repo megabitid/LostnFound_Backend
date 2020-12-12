@@ -1,4 +1,4 @@
-# v1 - User (Deprecated)
+# v1 - User (Deprecated, please use v2!)
 
 
 ## Display the specified resource.
@@ -11,7 +11,7 @@
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/voluptatibus" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/voluptatum" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -19,7 +19,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/voluptatibus"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/voluptatum"
 );
 
 let headers = {
@@ -39,7 +39,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/voluptatibus'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/voluptatum'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ response.json()
 
 ```bash
 curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/id" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/non" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -107,7 +107,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/id"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/non"
 );
 
 let headers = {
@@ -127,7 +127,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/id'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/non'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -180,7 +180,7 @@ response.json()
 
 ```bash
 curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/est" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/veritatis" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -188,7 +188,7 @@ curl -X PATCH \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/est"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/veritatis"
 );
 
 let headers = {
@@ -208,7 +208,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/est'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/veritatis'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -308,7 +308,7 @@ response.json()
     "data": [
         {
             "id": 1,
-            "nama": "Yoshiko Gottlieb",
+            "nama": "Yoshiko Gottlieb Updated",
             "email": "katheryn42@okeefe.biz",
             "email_verified_at": "2020-12-10T17:18:48.000000Z",
             "image": "https:\/\/via.placeholder.com\/640x480.png\/00ddee?text=nostrum"

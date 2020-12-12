@@ -13,7 +13,7 @@ use Google_Client;
 use Tymon\JWTAuth\Facades\JWTAuth;
 
 /** 
- * @group v1 - Authenticate OAuth2 User (Deprecated)
+ * @group v1 - Authenticate OAuth2 User (Deprecated, please use v2!)
  * @deprecated
  */
 // reference https://www.codesenior.com/en/tutorial/Php-Laravel-Socialite-And-Android-Google-Sign-In-Operation
