@@ -126,7 +126,7 @@ curl -X PUT \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar Updated","uri":"base64string","barang_id":7}'
+    -d '{"nama":"Tas Besar Updated","uri":"base64string","barang_id":9}'
 
 ```
 
@@ -144,7 +144,7 @@ let headers = {
 let body = {
     "nama": "Tas Besar Updated",
     "uri": "base64string",
-    "barang_id": 7
+    "barang_id": 9
 }
 
 fetch(url, {
@@ -162,7 +162,7 @@ url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/6'
 payload = {
     "nama": "Tas Besar Updated",
     "uri": "base64string",
-    "barang_id": 7
+    "barang_id": 9
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -286,7 +286,7 @@ curl -X PATCH \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar Partial Update","barang_id":2}'
+    -d '{"nama":"Tas Besar Partial Update","barang_id":5}'
 
 ```
 
@@ -303,7 +303,7 @@ let headers = {
 
 let body = {
     "nama": "Tas Besar Partial Update",
-    "barang_id": 2
+    "barang_id": 5
 }
 
 fetch(url, {
@@ -320,7 +320,7 @@ import json
 url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/6'
 payload = {
     "nama": "Tas Besar Partial Update",
-    "barang_id": 2
+    "barang_id": 5
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -543,7 +543,7 @@ curl -X POST \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar","uri":"base64string","barang_id":18}'
+    -d '{"nama":"Tas Besar","uri":"base64string","barang_id":12}'
 
 ```
 
@@ -561,7 +561,7 @@ let headers = {
 let body = {
     "nama": "Tas Besar",
     "uri": "base64string",
-    "barang_id": 18
+    "barang_id": 12
 }
 
 fetch(url, {
@@ -579,7 +579,7 @@ url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images'
 payload = {
     "nama": "Tas Besar",
     "uri": "base64string",
-    "barang_id": 18
+    "barang_id": 12
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
