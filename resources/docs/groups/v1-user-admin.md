@@ -715,7 +715,7 @@ The id of admin user.</p>
 Will returns admin list including super admin.
 
 ### orderBy query supported fields:
-* All field of barang detail
+* All field of its detail
 
 > Example request:
 

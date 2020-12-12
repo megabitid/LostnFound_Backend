@@ -28,7 +28,7 @@ class AdminController extends Controller
      * Will returns admin list including super admin.
      * 
      * ### orderBy query supported fields:
-     * * All field of barang detail
+     * * All field of its detail
      * 
      * @queryParam orderBy string Apply ordering based on specific field. 
      *              Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending).
