@@ -1384,7 +1384,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image. Example 3'
-                                    example: 19
+                                    example: 10
                             required:
                                 - nama
                                 - uri
@@ -1493,7 +1493,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image.'
-                                    example: 10
+                                    example: 7
         get:
             summary: 'Get Detail Barang Image.'
             description: 'Returns barang image details.'
@@ -1642,7 +1642,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image. Example 3'
-                                    example: 5
+                                    example: 19
                             required:
                                 - nama
                                 - uri
@@ -3932,7 +3932,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: velit
+                example: repellendus
                 required: true
                 schema:
                     type: string
@@ -4520,13 +4520,6 @@ paths:
                         example: 4%2F0AY0e-g6EBhLCybi1F4m1dCNyasrDTKVrqOQJ5T1PWefprvlq3oXh1_JqF6r2U5XT_vM7Jg
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -4573,18 +4566,12 @@ paths:
                                     message: { type: string, example: 'Authentication credentials are incorrect.' }
             tags:
                 - 'v2 - Authenticate OAuth2 User'
+            security: []
     /auth/oauth2/google:
         get:
             summary: 'Redirect to Google.'
             description: "User can login using google authorization.\n\nThis will redirect user to Google and signin there.\nThis is for web only. You must implement yourself in mobile."
             parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
                 -
                     in: header
                     name: Content-Type
@@ -4612,6 +4599,7 @@ paths:
                                     message: { type: string, example: 'Session store not set on request.' }
             tags:
                 - 'v2 - Authenticate OAuth2 User'
+            security: []
     /api/v2/android/auth/login:
         post:
             summary: 'Login User.'
@@ -6312,7 +6300,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image. Example 3'
-                                    example: 16
+                                    example: 10
                             required:
                                 - nama
                                 - uri
@@ -6421,7 +6409,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image.'
-                                    example: 2
+                                    example: 20
         get:
             summary: 'Get Detail Barang Image.'
             description: 'Returns barang image details.'
@@ -6570,7 +6558,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image. Example 3'
-                                    example: 8
+                                    example: 12
                             required:
                                 - nama
                                 - uri
