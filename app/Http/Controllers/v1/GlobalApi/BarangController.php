@@ -117,6 +117,89 @@ class BarangController extends Controller
     }
 
     /**
+     * Get List Barang (Eager Load).
+     * 
+     * ### Barang parameter query supported:
+     * * id
+     * * user_id
+     * * stasiun_id
+     * * status_id
+     * * kategori_id
+     * * tanggal
+     * 
+     * ### orderBy query supported fields:
+     * * All field of barang detail
+     * 
+     * ### search query will search string inside these fields:
+     * * nama_barang
+     * * lokasi
+     * * deskripsi
+     * * warna
+     * * merek
+     *       
+     * ### searchDate query will search string inside this field:
+     * * tanggal; so you can search date date with the year only or more. Example: 2020-11
+     * 
+     *       
+     * <aside class="warning"> We still use limit offset pagination. In future will be replaced with cursor based pagination.</aside>
+     * 
+     * @queryParam id integer Apply filter with id. No-example
+     * @queryParam user_id integer Apply filter with user_id. No-example
+     * @queryParam stasiun_id integer Apply filter with stasiun_id. No-example
+     * @queryParam status_id integer Apply filter with status_id. No-example
+     * @queryParam kategori_id integer Apply filter with kategori_id. No-example
+     * @queryParam tanggal date_format:Y-m-d Apply filter with tanggal. No-example
+     * @queryParam orderBy string Apply ordering based on specific field. 
+     *              Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending).
+     *              Example: -id
+     * @queryParam search string Apply filtering with string search. No-example
+     * @queryParam searchDate string Apply filtering with date search. Example: 2020
+     * 
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
+     */
+    public function indexEagerLoad(Request $request)
+    {
+        $query = Barang::select('*');
+        $fields = [
+            'id',
+            'user_id',
+            'stasiun_id',
+            'status_id',
+            'tanggal',
+            'kategori_id'
+        ];
+        // limit query by specific field. Example: ?id=1
+        $query = QueryBuilder::whereFields($request, $query, $fields);
+
+        // order by desc or asc in field specified: use "?orderBy=-id" to order by id descending, and "?orderBy=id" to order by ascending.
+        $query = QueryBuilder::orderBy($request, $query);
+
+        // search text contains in this field.
+        $searchFields = [
+                'nama_barang',
+                'lokasi',
+                'deskripsi',
+                'warna',
+                'merek'
+        ];
+        $query = QueryBuilder::searchIn($request, $query, $searchFields);
+        $query = QueryBuilder::searchDate($request, $query, ['tanggal']);
+        $query = $query->with([
+            'stasiun', 
+            'kategori', 
+            'barangimages',
+            'status',
+
+        ]);
+
+        // paginate
+        $barangs = Paginator::paginate($request, $query);
+        return Resource::collection($barangs);
+    }
+
+    /**
      * Add Barang.
      * 
      * Add barang with their status and its related field.
@@ -218,30 +301,38 @@ class BarangController extends Controller
      * @urlParam id integer required The id of barang. Example: 3
      * @response status=200 scenario="success" {
      *  "id": 3,
-     *  "nama_barang": "Clair Rowe Updated Partially",
-     *  "tanggal": "2020-12-04",
-     *  "lokasi": "67934 Juvenal Place\nJeffport, OR 75023-4991",
-     *  "deskripsi": "Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.",
-     *  "warna": "Salmon",
-     *  "merek": "Heaney-Hansen",
-     *  "user_id": 5,
-     *  "status_id": 4,
+     *  "nama_barang": "Ms. Aaliyah Mills Sr.",
+     *  "tanggal": "2020-12-10",
+     *  "lokasi": "7241 Milton Loaf\nReichelport, AK 28866-0297",
+     *  "deskripsi": "Qui dolor doloremque illo laudantium optio sit. Dolorem asperiores ex et vel deserunt minima quos. Qui veniam maiores ab vel ullam.",
+     *  "warna": "PapayaWhip",
+     *  "merek": "Langworth PLC",
+     *  "user_id": 4,
+     *  "status_id": 3,
+     *  "stasiun_id": 2,
+     *  "kategori_id": 5,
      *  "created_at": null,
-     *  "updated_at": "2020-12-10T15:28:18.000000Z",
+     *  "updated_at": null,
      *  "stasiun": {
-     *      "id": 4,
-     *      "nama": "Lou Gutmann"
+     *      "id": 2,
+     *      "nama": "Dr. Abbigail Price"
      *  },
      *  "kategori": {
-     *      "id": 3,
-     *      "nama": "Mr. Toby Fadel"
+     *      "id": 5,
+     *      "nama": "Mariane Eichmann"
      *  },
      *  "barangimages": [
      *      {
-     *        "id": 1,
-     *        "nama": "Teresa Hettinger",
-     *        "uri": "https://via.placeholder.com/640x480.png/00cc66?text=tenetur",
-     *        "barang_id": 3
+     *          "id": 1,
+     *          "nama": "Teresa Hettinger",
+     *          "uri": "https://via.placeholder.com/640x480.png/00cc66?text=tenetur",
+     *          "barang_id": 3
+     *      },
+     *      {
+     *          "id": 6,
+     *          "nama": "Tas Besar",
+     *          "uri": "https://storage.googleapis.com/megabitlostnfound.appspot.com/barangs/image/6",
+     *          "barang_id": 3
      *      }
      *  ]
      * }
@@ -255,11 +346,6 @@ class BarangController extends Controller
     public function show($id)
     {
         $barang = Barang::with(['stasiun','kategori','barangimages'])->findOrFail($id);
-        $excludeFields = [
-            'stasiun_id',
-            'kategori_id',
-        ];
-        $barang = $barang->makeHidden($excludeFields);
         return response()->json($barang, 200);
     }
 
