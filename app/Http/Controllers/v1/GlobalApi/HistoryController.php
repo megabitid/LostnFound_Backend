@@ -65,6 +65,7 @@ class HistoryController extends Controller
 
         $count = $dates->merge($barangHilangCount);
 
+
         return response()->json($count, 200);
     }
     public function countBarangDitemukan()
