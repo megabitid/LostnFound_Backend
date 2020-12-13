@@ -46,7 +46,7 @@
                             <li><a href='http://github.com/knuckleswtf/scribe'>Documentation powered by Scribe ✍</a></li>
                     </ul>
             <ul class="toc-footer" id="last-updated">
-            <li>Last updated: December 12 2020</li>
+            <li>Last updated: December 13 2020</li>
         </ul>
 </div>
 <div class="page-wrapper">
@@ -66,7 +66,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 <p>Base URL</p>
 </blockquote>
 <pre><code class="language-yaml">https://megabit-lostnfound.herokuapp.com</code></pre><h1>Authenticating requests</h1>
-<p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
+<p>This API is authenticated by sending an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 <p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p><h1>v1 - Authenticate OAuth2 User (Deprecated, please use v2!)</h1>
 <h2>api/v1/android/auth/oauth2/google/authorize</h2>
@@ -106,10 +106,1688 @@ headers = {
 response = requests.request('GET', url, headers=headers)
 response.json()</code></pre>
 <blockquote>
-<p>Example response (500):</p>
+<p>Example response (400):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "message": "cURL error 6: Could not resolve host: www.googleapis.com (see https:\/\/curl.haxx.se\/libcurl\/c\/libcurl-errors.html) for https:\/\/www.googleapis.com\/oauth2\/v4\/token"
+    "message": "Client error: `POST https:\/\/www.googleapis.com\/oauth2\/v4\/token` resulted in a `400 Bad Request` response:\n{\n  \"error\": \"invalid_request\",\n  \"error_description\": \"Missing required parameter: code\"\n}\n",
+    "exception": "GuzzleHttp\\Exception\\ClientException",
+    "trace": [
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Middleware.php",
+            "line": 69,
+            "function": "create",
+            "class": "GuzzleHttp\\Exception\\RequestException",
+            "type": "::",
+            "args": [
+                {},
+                {},
+                null,
+                [],
+                null
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\Promise.php",
+            "line": 204,
+            "function": "GuzzleHttp\\{closure}",
+            "class": "GuzzleHttp\\Middleware",
+            "type": "::",
+            "args": [
+                {}
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\Promise.php",
+            "line": 153,
+            "function": "callHandler",
+            "class": "GuzzleHttp\\Promise\\Promise",
+            "type": "::",
+            "args": [
+                1,
+                {},
+                null
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\TaskQueue.php",
+            "line": 48,
+            "function": "GuzzleHttp\\Promise\\{closure}",
+            "class": "GuzzleHttp\\Promise\\Promise",
+            "type": "::",
+            "args": []
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\Promise.php",
+            "line": 248,
+            "function": "run",
+            "class": "GuzzleHttp\\Promise\\TaskQueue",
+            "type": "-&gt;",
+            "args": [
+                true
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\Promise.php",
+            "line": 224,
+            "function": "invokeWaitFn",
+            "class": "GuzzleHttp\\Promise\\Promise",
+            "type": "-&gt;",
+            "args": []
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\Promise.php",
+            "line": 269,
+            "function": "waitIfPending",
+            "class": "GuzzleHttp\\Promise\\Promise",
+            "type": "-&gt;",
+            "args": []
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\Promise.php",
+            "line": 226,
+            "function": "invokeWaitList",
+            "class": "GuzzleHttp\\Promise\\Promise",
+            "type": "-&gt;",
+            "args": []
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\promises\\src\\Promise.php",
+            "line": 62,
+            "function": "waitIfPending",
+            "class": "GuzzleHttp\\Promise\\Promise",
+            "type": "-&gt;",
+            "args": []
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\Client.php",
+            "line": 187,
+            "function": "wait",
+            "class": "GuzzleHttp\\Promise\\Promise",
+            "type": "-&gt;",
+            "args": []
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\guzzlehttp\\guzzle\\src\\ClientTrait.php",
+            "line": 95,
+            "function": "request",
+            "class": "GuzzleHttp\\Client",
+            "type": "-&gt;",
+            "args": [
+                "POST",
+                "https:\/\/www.googleapis.com\/oauth2\/v4\/token",
+                {
+                    "headers": {
+                        "Accept": "application\/json"
+                    },
+                    "form_params": {
+                        "grant_type": "authorization_code",
+                        "client_id": "304092645592-42g8iugfoohtdgq3jqgio9h67ojb7vhh.apps.googleusercontent.com",
+                        "client_secret": "noXkPSo7ZalqZoMeYJXgvnmt",
+                        "code": null,
+                        "redirect_uri": "http:\/\/localhost:8000\/api\/v1\/android\/auth\/oauth2\/google\/authorize"
+                    },
+                    "synchronous": true
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\socialite\\src\\Two\\AbstractProvider.php",
+            "line": 273,
+            "function": "post",
+            "class": "GuzzleHttp\\Client",
+            "type": "-&gt;",
+            "args": [
+                "https:\/\/www.googleapis.com\/oauth2\/v4\/token",
+                {
+                    "headers": {
+                        "Accept": "application\/json"
+                    },
+                    "form_params": {
+                        "grant_type": "authorization_code",
+                        "client_id": "304092645592-42g8iugfoohtdgq3jqgio9h67ojb7vhh.apps.googleusercontent.com",
+                        "client_secret": "noXkPSo7ZalqZoMeYJXgvnmt",
+                        "code": null,
+                        "redirect_uri": "http:\/\/localhost:8000\/api\/v1\/android\/auth\/oauth2\/google\/authorize"
+                    }
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\app\\Http\\Controllers\\v1\\Android\\Oauth2Controller.php",
+            "line": 34,
+            "function": "getAccessTokenResponse",
+            "class": "Laravel\\Socialite\\Two\\AbstractProvider",
+            "type": "-&gt;",
+            "args": [
+                null
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php",
+            "line": 54,
+            "function": "handleGoogleCallback",
+            "class": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php",
+            "line": 45,
+            "function": "callAction",
+            "class": "Illuminate\\Routing\\Controller",
+            "type": "-&gt;",
+            "args": [
+                "handleGoogleCallback",
+                [
+                    {
+                        "attributes": {},
+                        "request": {},
+                        "query": {},
+                        "server": {},
+                        "files": {},
+                        "cookies": {},
+                        "headers": {}
+                    }
+                ]
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
+            "line": 254,
+            "function": "dispatch",
+            "class": "Illuminate\\Routing\\ControllerDispatcher",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "uri": "api\/v1\/android\/auth\/oauth2\/google\/authorize",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "action": {
+                        "middleware": [
+                            "api"
+                        ],
+                        "uses": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller@handleGoogleCallback",
+                        "controller": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller@handleGoogleCallback",
+                        "namespace": null,
+                        "prefix": "api\/v1\/android\/auth",
+                        "where": []
+                    },
+                    "isFallback": false,
+                    "controller": {},
+                    "defaults": [],
+                    "wheres": [],
+                    "parameters": [],
+                    "parameterNames": [],
+                    "computedMiddleware": [
+                        "api"
+                    ],
+                    "compiled": {}
+                },
+                {},
+                "handleGoogleCallback"
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php",
+            "line": 197,
+            "function": "runController",
+            "class": "Illuminate\\Routing\\Route",
+            "type": "-&gt;",
+            "args": []
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
+            "line": 692,
+            "function": "run",
+            "class": "Illuminate\\Routing\\Route",
+            "type": "-&gt;",
+            "args": []
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 128,
+            "function": "Illuminate\\Routing\\{closure}",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php",
+            "line": 41,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Illuminate\\Routing\\Middleware\\SubstituteBindings",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                },
+                {}
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
+            "line": 127,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
+            "line": 103,
+            "function": "handleRequest",
+            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                },
+                {},
+                [
+                    {
+                        "key": "e7cf66797159dc3cd3e85f72e15bb551",
+                        "maxAttempts": 60,
+                        "decayMinutes": 1,
+                        "responseCallback": null
+                    }
+                ]
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php",
+            "line": 55,
+            "function": "handleRequestUsingNamedLimiter",
+            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                },
+                {},
+                "api",
+                {}
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Illuminate\\Routing\\Middleware\\ThrottleRequests",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                },
+                {},
+                "api"
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 103,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
+            "line": 694,
+            "function": "then",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;",
+            "args": [
+                {}
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
+            "line": 669,
+            "function": "runRouteWithinStack",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "uri": "api\/v1\/android\/auth\/oauth2\/google\/authorize",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "action": {
+                        "middleware": [
+                            "api"
+                        ],
+                        "uses": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller@handleGoogleCallback",
+                        "controller": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller@handleGoogleCallback",
+                        "namespace": null,
+                        "prefix": "api\/v1\/android\/auth",
+                        "where": []
+                    },
+                    "isFallback": false,
+                    "controller": {},
+                    "defaults": [],
+                    "wheres": [],
+                    "parameters": [],
+                    "parameterNames": [],
+                    "computedMiddleware": [
+                        "api"
+                    ],
+                    "compiled": {}
+                },
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
+            "line": 635,
+            "function": "runRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                },
+                {
+                    "uri": "api\/v1\/android\/auth\/oauth2\/google\/authorize",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "action": {
+                        "middleware": [
+                            "api"
+                        ],
+                        "uses": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller@handleGoogleCallback",
+                        "controller": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller@handleGoogleCallback",
+                        "namespace": null,
+                        "prefix": "api\/v1\/android\/auth",
+                        "where": []
+                    },
+                    "isFallback": false,
+                    "controller": {},
+                    "defaults": [],
+                    "wheres": [],
+                    "parameters": [],
+                    "parameterNames": [],
+                    "computedMiddleware": [
+                        "api"
+                    ],
+                    "compiled": {}
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php",
+            "line": 624,
+            "function": "dispatchToRoute",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
+            "line": 166,
+            "function": "dispatch",
+            "class": "Illuminate\\Routing\\Router",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 128,
+            "function": "Illuminate\\Foundation\\Http\\{closure}",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
+            "line": 21,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                },
+                {}
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php",
+            "line": 21,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                },
+                {}
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php",
+            "line": 27,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                },
+                {}
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance.php",
+            "line": 87,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Middleware\\PreventRequestsDuringMaintenance",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                },
+                {}
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\fruitcake\\laravel-cors\\src\\HandleCors.php",
+            "line": 57,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Fruitcake\\Cors\\HandleCors",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                },
+                {}
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\fideloper\\proxy\\src\\TrustProxies.php",
+            "line": 57,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 167,
+            "function": "handle",
+            "class": "Fideloper\\Proxy\\TrustProxies",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                },
+                {}
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php",
+            "line": 103,
+            "function": "Illuminate\\Pipeline\\{closure}",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
+            "line": 141,
+            "function": "then",
+            "class": "Illuminate\\Pipeline\\Pipeline",
+            "type": "-&gt;",
+            "args": [
+                {}
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php",
+            "line": 110,
+            "function": "sendRequestThroughRouter",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
+            "line": 324,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Http\\Kernel",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
+            "line": 305,
+            "function": "callLaravelOrLumenRoute",
+            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
+            "line": 76,
+            "function": "makeApiCall",
+            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "attributes": {},
+                    "request": {},
+                    "query": {},
+                    "server": {},
+                    "files": {},
+                    "cookies": {},
+                    "headers": {}
+                },
+                {
+                    "uri": "api\/v1\/android\/auth\/oauth2\/google\/authorize",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "action": {
+                        "middleware": [
+                            "api"
+                        ],
+                        "uses": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller@handleGoogleCallback",
+                        "controller": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller@handleGoogleCallback",
+                        "namespace": null,
+                        "prefix": "api\/v1\/android\/auth",
+                        "where": []
+                    },
+                    "isFallback": false,
+                    "controller": {},
+                    "defaults": [],
+                    "wheres": [],
+                    "parameters": [],
+                    "parameterNames": [],
+                    "computedMiddleware": [
+                        "api"
+                    ],
+                    "compiled": {}
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
+            "line": 51,
+            "function": "makeResponseCall",
+            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "uri": "api\/v1\/android\/auth\/oauth2\/google\/authorize",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "action": {
+                        "middleware": [
+                            "api"
+                        ],
+                        "uses": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller@handleGoogleCallback",
+                        "controller": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller@handleGoogleCallback",
+                        "namespace": null,
+                        "prefix": "api\/v1\/android\/auth",
+                        "where": []
+                    },
+                    "isFallback": false,
+                    "controller": {},
+                    "defaults": [],
+                    "wheres": [],
+                    "parameters": [],
+                    "parameterNames": [],
+                    "computedMiddleware": [
+                        "api"
+                    ],
+                    "compiled": {}
+                },
+                {
+                    "id": "d7770fbdcc266a6e29f94b49f98f9dcd",
+                    "methods": [
+                        "GET"
+                    ],
+                    "uri": "api\/v1\/android\/auth\/oauth2\/google\/authorize",
+                    "metadata": {
+                        "groupName": "v1 - Authenticate OAuth2 User (Deprecated, please use v2!)",
+                        "groupDescription": "",
+                        "title": "",
+                        "description": "",
+                        "authenticated": true
+                    },
+                    "urlParameters": [],
+                    "cleanUrlParameters": [],
+                    "boundUri": "api\/v1\/android\/auth\/oauth2\/google\/authorize",
+                    "auth": "headers.Authorization.Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvYW5kcm9pZFwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MDc2MDY3ODcsImV4cCI6MTYxMDE5ODc4NywibmJmIjoxNjA3NjA2Nzg3LCJqdGkiOiJtME45NGtocDI0T2VGMXNDIiwic3ViIjo2LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ej0YJMNMf3-z9apdeaOFjBN30m7jdkh7gjqn3bQLl40",
+                    "headers": {
+                        "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvYW5kcm9pZFwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MDc2MDY3ODcsImV4cCI6MTYxMDE5ODc4NywibmJmIjoxNjA3NjA2Nzg3LCJqdGkiOiJtME45NGtocDI0T2VGMXNDIiwic3ViIjo2LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ej0YJMNMf3-z9apdeaOFjBN30m7jdkh7gjqn3bQLl40",
+                        "Content-Type": "application\/json",
+                        "Accept": "application\/json"
+                    },
+                    "queryParameters": [],
+                    "cleanQueryParameters": [],
+                    "bodyParameters": [],
+                    "cleanBodyParameters": [],
+                    "fileParameters": [],
+                    "responses": []
+                },
+                {
+                    "methods": [
+                        "GET"
+                    ],
+                    "config": {
+                        "app.env": "documentation"
+                    },
+                    "queryParams": [],
+                    "bodyParams": [],
+                    "fileParams": [],
+                    "cookies": []
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Strategies\\Responses\\ResponseCalls.php",
+            "line": 41,
+            "function": "makeResponseCallIfEnabledAndNoSuccessResponses",
+            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "uri": "api\/v1\/android\/auth\/oauth2\/google\/authorize",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "action": {
+                        "middleware": [
+                            "api"
+                        ],
+                        "uses": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller@handleGoogleCallback",
+                        "controller": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller@handleGoogleCallback",
+                        "namespace": null,
+                        "prefix": "api\/v1\/android\/auth",
+                        "where": []
+                    },
+                    "isFallback": false,
+                    "controller": {},
+                    "defaults": [],
+                    "wheres": [],
+                    "parameters": [],
+                    "parameterNames": [],
+                    "computedMiddleware": [
+                        "api"
+                    ],
+                    "compiled": {}
+                },
+                {
+                    "headers": {
+                        "Content-Type": "application\/json",
+                        "Accept": "application\/json"
+                    },
+                    "response_calls": {
+                        "methods": [
+                            "GET"
+                        ],
+                        "config": {
+                            "app.env": "documentation"
+                        },
+                        "queryParams": [],
+                        "bodyParams": [],
+                        "fileParams": [],
+                        "cookies": []
+                    }
+                },
+                {
+                    "id": "d7770fbdcc266a6e29f94b49f98f9dcd",
+                    "methods": [
+                        "GET"
+                    ],
+                    "uri": "api\/v1\/android\/auth\/oauth2\/google\/authorize",
+                    "metadata": {
+                        "groupName": "v1 - Authenticate OAuth2 User (Deprecated, please use v2!)",
+                        "groupDescription": "",
+                        "title": "",
+                        "description": "",
+                        "authenticated": true
+                    },
+                    "urlParameters": [],
+                    "cleanUrlParameters": [],
+                    "boundUri": "api\/v1\/android\/auth\/oauth2\/google\/authorize",
+                    "auth": "headers.Authorization.Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvYW5kcm9pZFwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MDc2MDY3ODcsImV4cCI6MTYxMDE5ODc4NywibmJmIjoxNjA3NjA2Nzg3LCJqdGkiOiJtME45NGtocDI0T2VGMXNDIiwic3ViIjo2LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ej0YJMNMf3-z9apdeaOFjBN30m7jdkh7gjqn3bQLl40",
+                    "headers": {
+                        "Authorization": "Bearer {YOUR_AUTH_KEY}",
+                        "Content-Type": "application\/json",
+                        "Accept": "application\/json"
+                    },
+                    "queryParameters": [],
+                    "cleanQueryParameters": [],
+                    "bodyParameters": [],
+                    "cleanBodyParameters": [],
+                    "fileParameters": [],
+                    "responses": []
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Generator.php",
+            "line": 236,
+            "function": "__invoke",
+            "class": "Knuckles\\Scribe\\Extracting\\Strategies\\Responses\\ResponseCalls",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "uri": "api\/v1\/android\/auth\/oauth2\/google\/authorize",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "action": {
+                        "middleware": [
+                            "api"
+                        ],
+                        "uses": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller@handleGoogleCallback",
+                        "controller": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller@handleGoogleCallback",
+                        "namespace": null,
+                        "prefix": "api\/v1\/android\/auth",
+                        "where": []
+                    },
+                    "isFallback": false,
+                    "controller": {},
+                    "defaults": [],
+                    "wheres": [],
+                    "parameters": [],
+                    "parameterNames": [],
+                    "computedMiddleware": [
+                        "api"
+                    ],
+                    "compiled": {}
+                },
+                {
+                    "name": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller"
+                },
+                {
+                    "name": "handleGoogleCallback",
+                    "class": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller"
+                },
+                {
+                    "headers": {
+                        "Content-Type": "application\/json",
+                        "Accept": "application\/json"
+                    },
+                    "response_calls": {
+                        "methods": [
+                            "GET"
+                        ],
+                        "config": {
+                            "app.env": "documentation"
+                        },
+                        "queryParams": [],
+                        "bodyParams": [],
+                        "fileParams": [],
+                        "cookies": []
+                    }
+                },
+                {
+                    "id": "d7770fbdcc266a6e29f94b49f98f9dcd",
+                    "methods": [
+                        "GET"
+                    ],
+                    "uri": "api\/v1\/android\/auth\/oauth2\/google\/authorize",
+                    "metadata": {
+                        "groupName": "v1 - Authenticate OAuth2 User (Deprecated, please use v2!)",
+                        "groupDescription": "",
+                        "title": "",
+                        "description": "",
+                        "authenticated": true
+                    },
+                    "urlParameters": [],
+                    "cleanUrlParameters": [],
+                    "boundUri": "api\/v1\/android\/auth\/oauth2\/google\/authorize",
+                    "auth": "headers.Authorization.Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvYW5kcm9pZFwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MDc2MDY3ODcsImV4cCI6MTYxMDE5ODc4NywibmJmIjoxNjA3NjA2Nzg3LCJqdGkiOiJtME45NGtocDI0T2VGMXNDIiwic3ViIjo2LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ej0YJMNMf3-z9apdeaOFjBN30m7jdkh7gjqn3bQLl40",
+                    "headers": {
+                        "Authorization": "Bearer {YOUR_AUTH_KEY}",
+                        "Content-Type": "application\/json",
+                        "Accept": "application\/json"
+                    },
+                    "queryParameters": [],
+                    "cleanQueryParameters": [],
+                    "bodyParameters": [],
+                    "cleanBodyParameters": [],
+                    "fileParameters": [],
+                    "responses": []
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Generator.php",
+            "line": 172,
+            "function": "iterateThroughStrategies",
+            "class": "Knuckles\\Scribe\\Extracting\\Generator",
+            "type": "-&gt;",
+            "args": [
+                "responses",
+                {
+                    "id": "d7770fbdcc266a6e29f94b49f98f9dcd",
+                    "methods": [
+                        "GET"
+                    ],
+                    "uri": "api\/v1\/android\/auth\/oauth2\/google\/authorize",
+                    "metadata": {
+                        "groupName": "v1 - Authenticate OAuth2 User (Deprecated, please use v2!)",
+                        "groupDescription": "",
+                        "title": "",
+                        "description": "",
+                        "authenticated": true
+                    },
+                    "urlParameters": [],
+                    "cleanUrlParameters": [],
+                    "boundUri": "api\/v1\/android\/auth\/oauth2\/google\/authorize",
+                    "auth": "headers.Authorization.Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvYW5kcm9pZFwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MDc2MDY3ODcsImV4cCI6MTYxMDE5ODc4NywibmJmIjoxNjA3NjA2Nzg3LCJqdGkiOiJtME45NGtocDI0T2VGMXNDIiwic3ViIjo2LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ej0YJMNMf3-z9apdeaOFjBN30m7jdkh7gjqn3bQLl40",
+                    "headers": {
+                        "Authorization": "Bearer {YOUR_AUTH_KEY}",
+                        "Content-Type": "application\/json",
+                        "Accept": "application\/json"
+                    },
+                    "queryParameters": [],
+                    "cleanQueryParameters": [],
+                    "bodyParameters": [],
+                    "cleanBodyParameters": [],
+                    "fileParameters": [],
+                    "responses": []
+                },
+                [
+                    {
+                        "uri": "api\/v1\/android\/auth\/oauth2\/google\/authorize",
+                        "methods": [
+                            "GET",
+                            "HEAD"
+                        ],
+                        "action": {
+                            "middleware": [
+                                "api"
+                            ],
+                            "uses": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller@handleGoogleCallback",
+                            "controller": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller@handleGoogleCallback",
+                            "namespace": null,
+                            "prefix": "api\/v1\/android\/auth",
+                            "where": []
+                        },
+                        "isFallback": false,
+                        "controller": {},
+                        "defaults": [],
+                        "wheres": [],
+                        "parameters": [],
+                        "parameterNames": [],
+                        "computedMiddleware": [
+                            "api"
+                        ],
+                        "compiled": {}
+                    },
+                    {
+                        "name": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller"
+                    },
+                    {
+                        "name": "handleGoogleCallback",
+                        "class": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller"
+                    },
+                    {
+                        "headers": {
+                            "Content-Type": "application\/json",
+                            "Accept": "application\/json"
+                        },
+                        "response_calls": {
+                            "methods": [
+                                "GET"
+                            ],
+                            "config": {
+                                "app.env": "documentation"
+                            },
+                            "queryParams": [],
+                            "bodyParams": [],
+                            "fileParams": [],
+                            "cookies": []
+                        }
+                    }
+                ]
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\knuckleswtf\\scribe\\src\\Extracting\\Generator.php",
+            "line": 127,
+            "function": "fetchResponses",
+            "class": "Knuckles\\Scribe\\Extracting\\Generator",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "name": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller"
+                },
+                {
+                    "name": "handleGoogleCallback",
+                    "class": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller"
+                },
+                {
+                    "uri": "api\/v1\/android\/auth\/oauth2\/google\/authorize",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "action": {
+                        "middleware": [
+                            "api"
+                        ],
+                        "uses": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller@handleGoogleCallback",
+                        "controller": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller@handleGoogleCallback",
+                        "namespace": null,
+                        "prefix": "api\/v1\/android\/auth",
+                        "where": []
+                    },
+                    "isFallback": false,
+                    "controller": {},
+                    "defaults": [],
+                    "wheres": [],
+                    "parameters": [],
+                    "parameterNames": [],
+                    "computedMiddleware": [
+                        "api"
+                    ],
+                    "compiled": {}
+                },
+                {
+                    "headers": {
+                        "Content-Type": "application\/json",
+                        "Accept": "application\/json"
+                    },
+                    "response_calls": {
+                        "methods": [
+                            "GET"
+                        ],
+                        "config": {
+                            "app.env": "documentation"
+                        },
+                        "queryParams": [],
+                        "bodyParams": [],
+                        "fileParams": [],
+                        "cookies": []
+                    }
+                },
+                {
+                    "id": "d7770fbdcc266a6e29f94b49f98f9dcd",
+                    "methods": [
+                        "GET"
+                    ],
+                    "uri": "api\/v1\/android\/auth\/oauth2\/google\/authorize",
+                    "metadata": {
+                        "groupName": "v1 - Authenticate OAuth2 User (Deprecated, please use v2!)",
+                        "groupDescription": "",
+                        "title": "",
+                        "description": "",
+                        "authenticated": true
+                    },
+                    "urlParameters": [],
+                    "cleanUrlParameters": [],
+                    "boundUri": "api\/v1\/android\/auth\/oauth2\/google\/authorize",
+                    "auth": "headers.Authorization.Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvYW5kcm9pZFwvYXV0aFwvbG9naW4iLCJpYXQiOjE2MDc2MDY3ODcsImV4cCI6MTYxMDE5ODc4NywibmJmIjoxNjA3NjA2Nzg3LCJqdGkiOiJtME45NGtocDI0T2VGMXNDIiwic3ViIjo2LCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.ej0YJMNMf3-z9apdeaOFjBN30m7jdkh7gjqn3bQLl40",
+                    "headers": {
+                        "Authorization": "Bearer {YOUR_AUTH_KEY}",
+                        "Content-Type": "application\/json",
+                        "Accept": "application\/json"
+                    },
+                    "queryParameters": [],
+                    "cleanQueryParameters": [],
+                    "bodyParameters": [],
+                    "cleanBodyParameters": [],
+                    "fileParameters": []
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php",
+            "line": 119,
+            "function": "processRoute",
+            "class": "Knuckles\\Scribe\\Extracting\\Generator",
+            "type": "-&gt;",
+            "args": [
+                {
+                    "uri": "api\/v1\/android\/auth\/oauth2\/google\/authorize",
+                    "methods": [
+                        "GET",
+                        "HEAD"
+                    ],
+                    "action": {
+                        "middleware": [
+                            "api"
+                        ],
+                        "uses": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller@handleGoogleCallback",
+                        "controller": "App\\Http\\Controllers\\v1\\Android\\Oauth2Controller@handleGoogleCallback",
+                        "namespace": null,
+                        "prefix": "api\/v1\/android\/auth",
+                        "where": []
+                    },
+                    "isFallback": false,
+                    "controller": {},
+                    "defaults": [],
+                    "wheres": [],
+                    "parameters": [],
+                    "parameterNames": [],
+                    "computedMiddleware": [
+                        "api"
+                    ],
+                    "compiled": {}
+                },
+                {
+                    "headers": {
+                        "Content-Type": "application\/json",
+                        "Accept": "application\/json"
+                    },
+                    "response_calls": {
+                        "methods": [
+                            "GET"
+                        ],
+                        "config": {
+                            "app.env": "documentation"
+                        },
+                        "queryParams": [],
+                        "bodyParams": [],
+                        "fileParams": [],
+                        "cookies": []
+                    }
+                }
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\knuckleswtf\\scribe\\src\\Commands\\GenerateDocumentation.php",
+            "line": 73,
+            "function": "processRoutes",
+            "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
+            "type": "-&gt;",
+            "args": [
+                [
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {},
+                    {}
+                ]
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
+            "line": 36,
+            "function": "handle",
+            "class": "Knuckles\\Scribe\\Commands\\GenerateDocumentation",
+            "type": "-&gt;",
+            "args": [
+                {}
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Util.php",
+            "line": 40,
+            "function": "Illuminate\\Container\\{closure}",
+            "class": "Illuminate\\Container\\BoundMethod",
+            "type": "::",
+            "args": []
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
+            "line": 93,
+            "function": "unwrapIfClosure",
+            "class": "Illuminate\\Container\\Util",
+            "type": "::",
+            "args": [
+                {}
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\BoundMethod.php",
+            "line": 37,
+            "function": "callBoundMethod",
+            "class": "Illuminate\\Container\\BoundMethod",
+            "type": "::",
+            "args": [
+                {
+                    "contextual": []
+                },
+                [
+                    {},
+                    "handle"
+                ],
+                {}
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php",
+            "line": 610,
+            "function": "call",
+            "class": "Illuminate\\Container\\BoundMethod",
+            "type": "::",
+            "args": [
+                {
+                    "contextual": []
+                },
+                [
+                    {},
+                    "handle"
+                ],
+                [],
+                null
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php",
+            "line": 136,
+            "function": "call",
+            "class": "Illuminate\\Container\\Container",
+            "type": "-&gt;",
+            "args": [
+                [
+                    {},
+                    "handle"
+                ]
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\symfony\\console\\Command\\Command.php",
+            "line": 255,
+            "function": "execute",
+            "class": "Illuminate\\Console\\Command",
+            "type": "-&gt;",
+            "args": [
+                {},
+                {}
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php",
+            "line": 121,
+            "function": "run",
+            "class": "Symfony\\Component\\Console\\Command\\Command",
+            "type": "-&gt;",
+            "args": [
+                {},
+                {}
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\symfony\\console\\Application.php",
+            "line": 971,
+            "function": "run",
+            "class": "Illuminate\\Console\\Command",
+            "type": "-&gt;",
+            "args": [
+                {},
+                {}
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\symfony\\console\\Application.php",
+            "line": 290,
+            "function": "doRunCommand",
+            "class": "Symfony\\Component\\Console\\Application",
+            "type": "-&gt;",
+            "args": [
+                {},
+                {},
+                {}
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\symfony\\console\\Application.php",
+            "line": 166,
+            "function": "doRun",
+            "class": "Symfony\\Component\\Console\\Application",
+            "type": "-&gt;",
+            "args": [
+                {},
+                {}
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php",
+            "line": 93,
+            "function": "run",
+            "class": "Symfony\\Component\\Console\\Application",
+            "type": "-&gt;",
+            "args": [
+                {},
+                {}
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php",
+            "line": 129,
+            "function": "run",
+            "class": "Illuminate\\Console\\Application",
+            "type": "-&gt;",
+            "args": [
+                {},
+                {}
+            ]
+        },
+        {
+            "file": "D:\\Megabit\\LostnFound_Backend\\lost_n_found\\artisan",
+            "line": 37,
+            "function": "handle",
+            "class": "Illuminate\\Foundation\\Console\\Kernel",
+            "type": "-&gt;",
+            "args": [
+                {},
+                {}
+            ]
+        }
+    ]
 }</code></pre>
 <div id="execution-results-GETapi-v1-android-auth-oauth2-google-authorize" hidden>
     <blockquote>Received response<span id="execution-response-status-GETapi-v1-android-auth-oauth2-google-authorize"></span>:</blockquote>
@@ -894,7 +2572,7 @@ The id of barang image.</p>
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar Updated","uri":"base64string","barang_id":14}'
+    -d '{"nama":"Tas Besar Updated","uri":"base64string","barang_id":5}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/6"
@@ -909,7 +2587,7 @@ let headers = {
 let body = {
     "nama": "Tas Besar Updated",
     "uri": "base64string",
-    "barang_id": 14
+    "barang_id": 5
 }
 
 fetch(url, {
@@ -924,7 +2602,7 @@ url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/6'
 payload = {
     "nama": "Tas Besar Updated",
     "uri": "base64string",
-    "barang_id": 14
+    "barang_id": 5
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -1035,7 +2713,7 @@ id Barang that owned this image. Example 3</p>
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar Partial Update","barang_id":16}'
+    -d '{"nama":"Tas Besar Partial Update","barang_id":9}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/6"
@@ -1049,7 +2727,7 @@ let headers = {
 
 let body = {
     "nama": "Tas Besar Partial Update",
-    "barang_id": 16
+    "barang_id": 9
 }
 
 fetch(url, {
@@ -1063,7 +2741,7 @@ import json
 url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/6'
 payload = {
     "nama": "Tas Besar Partial Update",
-    "barang_id": 16
+    "barang_id": 9
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -1256,7 +2934,7 @@ After that, the url will be saved in database.</p>
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar","uri":"base64string","barang_id":2}'
+    -d '{"nama":"Tas Besar","uri":"base64string","barang_id":8}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images"
@@ -1271,7 +2949,7 @@ let headers = {
 let body = {
     "nama": "Tas Besar",
     "uri": "base64string",
-    "barang_id": 2
+    "barang_id": 8
 }
 
 fetch(url, {
@@ -1286,7 +2964,7 @@ url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images'
 payload = {
     "nama": "Tas Besar",
     "uri": "base64string",
-    "barang_id": 2
+    "barang_id": 8
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -3413,6 +5091,7 @@ id Kategori barang.</p>
 <li>stasiun_id</li>
 <li>status_id</li>
 <li>kategori_id</li>
+<li>tanggal</li>
 </ul>
 <h3>orderBy query supported fields:</h3>
 <ul>
@@ -3422,17 +5101,20 @@ id Kategori barang.</p>
 <ul>
 <li>nama_barang</li>
 <li>lokasi</li>
-<li>tanggl</li>
-<li>deskrpi</li>
+<li>deskripsi</li>
 <li>warna</li>
 <li>merek</li>
+</ul>
+<h3>searchDate query will search string inside this field:</h3>
+<ul>
+<li>tanggal; so you can search date date with the year only or more. Example: 2020-11</li>
 </ul>
 <aside class="warning"> We still use limit offset pagination. In future will be replaced with cursor based pagination.</aside>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/barang?orderBy=-id&amp;search=2020" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/barang?orderBy=-id&amp;searchDate=2020" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
@@ -3442,7 +5124,7 @@ id Kategori barang.</p>
 
 let params = {
     "orderBy": "-id",
-    "search": "2020",
+    "searchDate": "2020",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -3463,7 +5145,7 @@ import json
 url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang'
 params = {
   'orderBy': '-id',
-  'search': '2020',
+  'searchDate': '2020',
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -3563,7 +5245,7 @@ response.json()</code></pre>
             "warna": "MediumVioletRed",
             "merek": "Hartmann, Reinger and Jaskolski",
             "user_id": 5,
-            "status_id": 1,
+            "status_id": 2,
             "kategori_id": 5,
             "stasiun": {
                 "id": 5,
@@ -3573,8 +5255,8 @@ response.json()</code></pre>
         }
     ],
     "links": {
-        "first": "http:\/\/localhost\/api\/v1\/barang?orderBy=-id&amp;search=2020&amp;page=1",
-        "last": "http:\/\/localhost\/api\/v1\/barang?orderBy=-id&amp;search=2020&amp;page=1",
+        "first": "http:\/\/localhost\/api\/v1\/barang?orderBy=-id&amp;searchDate=2020&amp;page=1",
+        "last": "http:\/\/localhost\/api\/v1\/barang?orderBy=-id&amp;searchDate=2020&amp;page=1",
         "prev": null,
         "next": null
     },
@@ -3589,7 +5271,7 @@ response.json()</code></pre>
                 "active": false
             },
             {
-                "url": "http:\/\/localhost\/api\/v1\/barang?orderBy=-id&amp;search=2020&amp;page=1",
+                "url": "http:\/\/localhost\/api\/v1\/barang?orderBy=-id&amp;searchDate=2020&amp;page=1",
                 "label": 1,
                 "active": true
             },
@@ -3654,6 +5336,11 @@ Apply filter with status_id.</p>
 <br>
 Apply filter with kategori_id.</p>
 <p>
+<b><code>tanggal</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="tanggal" data-endpoint="GETapi-v1-barang" data-component="query"  hidden>
+<br>
+date_format:Y-m-d Apply filter with tanggal.</p>
+<p>
 <b><code>orderBy</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
 <input type="text" name="orderBy" data-endpoint="GETapi-v1-barang" data-component="query"  hidden>
 <br>
@@ -3663,6 +5350,11 @@ Apply filter with kategori_id.</p>
 <input type="text" name="search" data-endpoint="GETapi-v1-barang" data-component="query"  hidden>
 <br>
 Apply filtering with string search.</p>
+<p>
+<b><code>searchDate</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="searchDate" data-endpoint="GETapi-v1-barang" data-component="query"  hidden>
+<br>
+Apply filtering with date search.</p>
 </form><h1>v1 - Claim</h1>
 <h3>API for Managing Claim</h3>
 <p>Claim is when user want to claim barang hilang.
@@ -3765,14 +5457,14 @@ The id of barang status.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/dolorem/verified" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/praesentium/verified" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"verified":true}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/dolorem/verified"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/praesentium/verified"
 );
 
 let headers = {
@@ -3793,7 +5485,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/dolorem/verified'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/praesentium/verified'
 payload = {
     "verified": true
 }
@@ -3893,14 +5585,14 @@ Claim can be updated for barang hilang only.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/repellendus" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/esse" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"user_id":"1","barang_id":1,"alamat":"Jalan Mangga, Block X\/21","uri_tiket":"uribase64","no_telp":"08123456789"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/repellendus"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/esse"
 );
 
 let headers = {
@@ -3925,7 +5617,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/repellendus'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/esse'
 payload = {
     "user_id": "1",
     "barang_id": 1,
@@ -4060,14 +5752,14 @@ Claim can be updated for barang hilang only.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/minus" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/error" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"no_telp":"0999999999"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/minus"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/error"
 );
 
 let headers = {
@@ -4088,7 +5780,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/minus'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/error'
 payload = {
     "no_telp": "0999999999"
 }
@@ -4218,12 +5910,12 @@ Phone number of user.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/claims/sed" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/claims/alias" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/sed"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/alias"
 );
 
 let headers = {
@@ -4239,7 +5931,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/sed'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/alias'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -4523,6 +6215,12 @@ response.json()</code></pre>
     "message": "Token not provided"
 }</code></pre>
 <blockquote>
+<p>Example response (403, not admin):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "You must be admin or super admin to do this."
+}</code></pre>
+<blockquote>
 <p>Example response (200):</p>
 </blockquote>
 <pre><code class="language-json">{
@@ -4666,19 +6364,34 @@ response.json()</code></pre>
 Apply ordering based on specific field.
              Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending).</p>
 </form><h1>v1 - History</h1>
-<h2>Display a listing of the resource.</h2>
+<p>History is the place you can get barang status histories.
+Because of the value can be changed so we create this API,
+to track the history of barang status. So you can get a nice chart
+on your dashboard.</p>
+<h2>Get List History</h2>
 <p><small class="badge badge-darkred">requires authentication</small></p>
+<p>List of barang status histories.</p>
+<h3>orderBy query supported fields:</h3>
+<ul>
+<li>All field of claim detail</li>
+</ul>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/histories" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/histories?status=rerum" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://megabit-lostnfound.herokuapp.com/api/v1/histories"
 );
+
+let params = {
+    "status": "rerum",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 let headers = {
     "Authorization": "Bearer {YOUR_AUTH_KEY}",
@@ -4694,22 +6407,37 @@ fetch(url, {
 import json
 
 url = 'https://megabit-lostnfound.herokuapp.com/api/v1/histories'
+params = {
+  'status': 'rerum',
+}
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
   'Accept': 'application/json'
 }
 
-response = requests.request('GET', url, headers=headers)
+response = requests.request('GET', url, headers=headers, params=params)
 response.json()</code></pre>
+<blockquote>
+<p>Example response (401, Unauthorized):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Token not provided"
+}</code></pre>
+<blockquote>
+<p>Example response (403, not admin):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "You must be admin or super admin to do this."
+}</code></pre>
 <blockquote>
 <p>Example response (200):</p>
 </blockquote>
 <pre><code class="language-json">{
     "data": [],
     "links": {
-        "first": "http:\/\/localhost\/api\/v1\/histories?page=1",
-        "last": "http:\/\/localhost\/api\/v1\/histories?page=1",
+        "first": "http:\/\/localhost\/api\/v1\/histories?status=rerum&amp;page=1",
+        "last": "http:\/\/localhost\/api\/v1\/histories?status=rerum&amp;page=1",
         "prev": null,
         "next": null
     },
@@ -4724,7 +6452,7 @@ response.json()</code></pre>
                 "active": false
             },
             {
-                "url": "http:\/\/localhost\/api\/v1\/histories?page=1",
+                "url": "http:\/\/localhost\/api\/v1\/histories?status=rerum&amp;page=1",
                 "label": 1,
                 "active": true
             },
@@ -4762,6 +6490,145 @@ response.json()</code></pre>
 <p>
 <label id="auth-GETapi-v1-histories" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v1-histories" data-component="header"></label>
 </p>
+<h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+<p>
+<b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
+<input type="number" name="id" data-endpoint="GETapi-v1-histories" data-component="query"  hidden>
+<br>
+The id of history.</p>
+<p>
+<b><code>user_id</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
+<input type="number" name="user_id" data-endpoint="GETapi-v1-histories" data-component="query"  hidden>
+<br>
+The id of user that changed barang status.</p>
+<p>
+<b><code>barang_id</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
+<input type="number" name="barang_id" data-endpoint="GETapi-v1-histories" data-component="query"  hidden>
+<br>
+The id of barang.</p>
+<p>
+<b><code>status</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="status" data-endpoint="GETapi-v1-histories" data-component="query"  hidden>
+<br>
+The status of barang. Possible values are
+            hilang, ditemukan, didonasikan, diklaim.</p>
+<p>
+<b><code>limitDay</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
+<input type="number" name="limitDay" data-endpoint="GETapi-v1-histories" data-component="query"  hidden>
+<br>
+Limit history to how many days.</p>
+<p>
+<b><code>orderBy</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="orderBy" data-endpoint="GETapi-v1-histories" data-component="query"  hidden>
+<br>
+Apply ordering based on specific field.
+             Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending).</p>
+</form>
+<h2>Get History Count</h2>
+<p><small class="badge badge-darkred">requires authentication</small></p>
+<p>Will get history count depending on status provided.
+It can be last 7 day barang hilang,
+last 7 day barang ditemukan, etc.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/histories/count?status=doloremque" \
+    -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "https://megabit-lostnfound.herokuapp.com/api/v1/histories/count"
+);
+
+let params = {
+    "status": "doloremque",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre>
+<pre><code class="language-python">import requests
+import json
+
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/histories/count'
+params = {
+  'status': 'doloremque',
+}
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers, params=params)
+response.json()</code></pre>
+<blockquote>
+<p>Example response (200, success):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "2020-12-07": 0,
+    "2020-12-08": 0,
+    "2020-12-09": 0,
+    "2020-12-10": 0,
+    "2020-12-11": 0,
+    "2020-12-12": 0,
+    "2020-12-13": 4
+}</code></pre>
+<blockquote>
+<p>Example response (401, Unauthorized):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Token not provided"
+}</code></pre>
+<blockquote>
+<p>Example response (403, not admin):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "You must be admin or super admin to do this."
+}</code></pre>
+<div id="execution-results-GETapi-v1-histories-count" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-v1-histories-count"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-histories-count"></code></pre>
+</div>
+<div id="execution-error-GETapi-v1-histories-count" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-histories-count"></code></pre>
+</div>
+<form id="form-GETapi-v1-histories-count" data-method="GET" data-path="api/v1/histories/count" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-histories-count', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v1-histories-count" onclick="tryItOut('GETapi-v1-histories-count');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v1-histories-count" onclick="cancelTryOut('GETapi-v1-histories-count');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v1-histories-count" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/v1/histories/count</code></b>
+</p>
+<p>
+<label id="auth-GETapi-v1-histories-count" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v1-histories-count" data-component="header"></label>
+</p>
+<h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+<p>
+<b><code>status</code></b>&nbsp;&nbsp;<small>string</small>  &nbsp;
+<input type="text" name="status" data-endpoint="GETapi-v1-histories-count" data-component="query" required  hidden>
+<br>
+Status can be hilang, ditemukan, didonasikan, diklaim. Example=hilang</p>
+<p>
+<b><code>limitDay</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
+<input type="number" name="limitDay" data-endpoint="GETapi-v1-histories-count" data-component="query"  hidden>
+<br>
+You can override default limit. The default limit is 7 days.</p>
 </form><h1>v1 - Stasiun</h1>
 <h3>API for Managing Stasiun.</h3>
 <p>This API is used to manage stasiun.
@@ -6074,12 +7941,12 @@ Retrive deleted admin user if true.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/est" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/et" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/est"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/et"
 );
 
 let headers = {
@@ -6095,7 +7962,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/est'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/et'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -6145,12 +8012,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/itaque" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/modi" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/itaque"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/modi"
 );
 
 let headers = {
@@ -6166,7 +8033,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/itaque'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/modi'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -6210,12 +8077,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/et" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/nemo" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/et"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/nemo"
 );
 
 let headers = {
@@ -6231,7 +8098,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/et'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/nemo'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -7871,7 +9738,7 @@ The id of barang image.</p>
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar Updated","uri":"base64string","barang_id":13}'
+    -d '{"nama":"Tas Besar Updated","uri":"base64string","barang_id":15}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/6"
@@ -7886,7 +9753,7 @@ let headers = {
 let body = {
     "nama": "Tas Besar Updated",
     "uri": "base64string",
-    "barang_id": 13
+    "barang_id": 15
 }
 
 fetch(url, {
@@ -7901,7 +9768,7 @@ url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/6'
 payload = {
     "nama": "Tas Besar Updated",
     "uri": "base64string",
-    "barang_id": 13
+    "barang_id": 15
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -8233,7 +10100,7 @@ After that, the url will be saved in database.</p>
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar","uri":"base64string","barang_id":10}'
+    -d '{"nama":"Tas Besar","uri":"base64string","barang_id":17}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images"
@@ -8248,7 +10115,7 @@ let headers = {
 let body = {
     "nama": "Tas Besar",
     "uri": "base64string",
-    "barang_id": 10
+    "barang_id": 17
 }
 
 fetch(url, {
@@ -8263,7 +10130,7 @@ url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images'
 payload = {
     "nama": "Tas Besar",
     "uri": "base64string",
-    "barang_id": 10
+    "barang_id": 17
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -10409,6 +12276,7 @@ Lokasi detail barang.</p>
 <li>stasiun_id</li>
 <li>status_id</li>
 <li>kategori_id</li>
+<li>tanggal</li>
 </ul>
 <h3>orderBy query supported fields:</h3>
 <ul>
@@ -10418,17 +12286,20 @@ Lokasi detail barang.</p>
 <ul>
 <li>nama_barang</li>
 <li>lokasi</li>
-<li>tanggl</li>
-<li>deskrpi</li>
+<li>deskripsi</li>
 <li>warna</li>
 <li>merek</li>
+</ul>
+<h3>searchDate query will search string inside this field:</h3>
+<ul>
+<li>tanggal; so you can search date date with the year only or more. Example: 2020-11</li>
 </ul>
 <aside class="warning"> We still use limit offset pagination. In future will be replaced with cursor based pagination.</aside>
 <blockquote>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/barang?orderBy=-id&amp;search=2020" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/barang?orderBy=-id&amp;searchDate=2020" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
@@ -10438,7 +12309,7 @@ Lokasi detail barang.</p>
 
 let params = {
     "orderBy": "-id",
-    "search": "2020",
+    "searchDate": "2020",
 };
 Object.keys(params)
     .forEach(key =&gt; url.searchParams.append(key, params[key]));
@@ -10459,7 +12330,7 @@ import json
 url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang'
 params = {
   'orderBy': '-id',
-  'search': '2020',
+  'searchDate': '2020',
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -10559,7 +12430,7 @@ response.json()</code></pre>
             "warna": "MediumVioletRed",
             "merek": "Hartmann, Reinger and Jaskolski",
             "user_id": 5,
-            "status_id": 1,
+            "status_id": 2,
             "kategori_id": 5,
             "stasiun": {
                 "id": 5,
@@ -10569,8 +12440,8 @@ response.json()</code></pre>
         }
     ],
     "links": {
-        "first": "http:\/\/localhost\/api\/v2\/barang?orderBy=-id&amp;search=2020&amp;page=1",
-        "last": "http:\/\/localhost\/api\/v2\/barang?orderBy=-id&amp;search=2020&amp;page=1",
+        "first": "http:\/\/localhost\/api\/v2\/barang?orderBy=-id&amp;searchDate=2020&amp;page=1",
+        "last": "http:\/\/localhost\/api\/v2\/barang?orderBy=-id&amp;searchDate=2020&amp;page=1",
         "prev": null,
         "next": null
     },
@@ -10585,7 +12456,7 @@ response.json()</code></pre>
                 "active": false
             },
             {
-                "url": "http:\/\/localhost\/api\/v2\/barang?orderBy=-id&amp;search=2020&amp;page=1",
+                "url": "http:\/\/localhost\/api\/v2\/barang?orderBy=-id&amp;searchDate=2020&amp;page=1",
                 "label": 1,
                 "active": true
             },
@@ -10650,6 +12521,11 @@ Apply filter with status_id.</p>
 <br>
 Apply filter with kategori_id.</p>
 <p>
+<b><code>tanggal</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="tanggal" data-endpoint="GETapi-v2-barang" data-component="query"  hidden>
+<br>
+date_format:Y-m-d Apply filter with tanggal.</p>
+<p>
 <b><code>orderBy</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
 <input type="text" name="orderBy" data-endpoint="GETapi-v2-barang" data-component="query"  hidden>
 <br>
@@ -10659,6 +12535,11 @@ Apply filter with kategori_id.</p>
 <input type="text" name="search" data-endpoint="GETapi-v2-barang" data-component="query"  hidden>
 <br>
 Apply filtering with string search.</p>
+<p>
+<b><code>searchDate</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="searchDate" data-endpoint="GETapi-v2-barang" data-component="query"  hidden>
+<br>
+Apply filtering with date search.</p>
 </form><h1>v2 - Stasiun</h1>
 <h3>API for Managing Stasiun.</h3>
 <p>This API is used to manage stasiun.

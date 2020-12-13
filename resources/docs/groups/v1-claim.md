@@ -125,7 +125,7 @@ Claim can be verified by admin only using this api.
 
 ```bash
 curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/dolorem/verified" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/praesentium/verified" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
@@ -135,7 +135,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/dolorem/verified"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/praesentium/verified"
 );
 
 let headers = {
@@ -159,7 +159,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/dolorem/verified'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/praesentium/verified'
 payload = {
     "verified": true
 }
@@ -272,7 +272,7 @@ Claim can be updated for barang hilang only.
 
 ```bash
 curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/repellendus" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/esse" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
@@ -282,7 +282,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/repellendus"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/esse"
 );
 
 let headers = {
@@ -310,7 +310,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/repellendus'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/esse'
 payload = {
     "user_id": "1",
     "barang_id": 1,
@@ -458,7 +458,7 @@ Claim can be updated for barang hilang only.
 
 ```bash
 curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/minus" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/error" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
@@ -468,7 +468,7 @@ curl -X PATCH \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/minus"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/error"
 );
 
 let headers = {
@@ -492,7 +492,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/minus'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/error'
 payload = {
     "no_telp": "0999999999"
 }
@@ -635,7 +635,7 @@ Claim detail can be retrieved using this API.
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/claims/sed" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/claims/alias" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -643,7 +643,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/sed"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/alias"
 );
 
 let headers = {
@@ -663,7 +663,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/sed'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/alias'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -981,6 +981,13 @@ response.json()
 ```json
 {
     "message": "Token not provided"
+}
+```
+> Example response (403, not admin):
+
+```json
+{
+    "message": "You must be admin or super admin to do this."
 }
 ```
 > Example response (200):

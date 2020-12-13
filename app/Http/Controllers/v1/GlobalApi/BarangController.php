@@ -37,6 +37,7 @@ class BarangController extends Controller
      * * stasiun_id
      * * status_id
      * * kategori_id
+     * * tanggal
      * 
      * ### orderBy query supported fields:
      * * All field of barang detail
@@ -47,6 +48,10 @@ class BarangController extends Controller
      * * deskripsi
      * * warna
      * * merek
+     *       
+     * ### searchDate query will search string inside this field:
+     * * tanggal; so you can search date date with the year only or more. Example: 2020-11
+     * 
      *       
      * <aside class="warning"> We still use limit offset pagination. In future will be replaced with cursor based pagination.</aside>
      * 
@@ -59,7 +64,8 @@ class BarangController extends Controller
      * @queryParam orderBy string Apply ordering based on specific field. 
      *              Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending).
      *              Example: -id
-     * @queryParam search string Apply filtering with string search. Example: 2020
+     * @queryParam search string Apply filtering with string search. No-example
+     * @queryParam searchDate string Apply filtering with date search. Example: 2020
      * 
      * @response status=401 scenario="Unauthorized" {
      *  "message": "Token not provided"
@@ -91,6 +97,7 @@ class BarangController extends Controller
                 'merek'
         ];
         $query = QueryBuilder::searchIn($request, $query, $searchFields);
+        $query = QueryBuilder::searchDate($request, $query, ['tanggal']);
         $query = $query->with('stasiun');
         $query = $query->with(array('barangimages'=>function($query){
             $query->first();
