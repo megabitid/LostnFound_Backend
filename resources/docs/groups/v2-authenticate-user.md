@@ -146,9 +146,8 @@ Account password.</p>
 
 ## Register User.
 
-<small class="badge badge-darkred">requires authentication</small>
 
-User can be registered by super admin using this API.
+User can register using this API.
 
 _Token only last for 30 minutes in user email._
 
@@ -157,7 +156,6 @@ _Token only last for 30 minutes in user email._
 ```bash
 curl -X POST \
     "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/register" \
-    -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"nama":"User","email":"fake@@email.com","password":"UnguessablePassword","image":"uribase64"}'
@@ -170,7 +168,6 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -201,7 +198,6 @@ payload = {
     "image": "uribase64"
 }
 headers = {
-  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
   'Accept': 'application/json'
 }
@@ -254,7 +250,7 @@ response.json()
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-POSTapi-v2-android-auth-register"></code></pre>
 </div>
-<form id="form-POSTapi-v2-android-auth-register" data-method="POST" data-path="api/v2/android/auth/register" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v2-android-auth-register', this);">
+<form id="form-POSTapi-v2-android-auth-register" data-method="POST" data-path="api/v2/android/auth/register" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v2-android-auth-register', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
         <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v2-android-auth-register" onclick="tryItOut('POSTapi-v2-android-auth-register');">Try it out ⚡</button>
@@ -264,9 +260,6 @@ response.json()
 <p>
 <small class="badge badge-black">POST</small>
  <b><code>api/v2/android/auth/register</code></b>
-</p>
-<p>
-<label id="auth-POSTapi-v2-android-auth-register" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="POSTapi-v2-android-auth-register" data-component="header"></label>
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
@@ -476,7 +469,6 @@ response.json()
 
 ## Verify email.
 
-<small class="badge badge-darkred">requires authentication</small>
 
 When an user get verification email and click it, the link will call this API,
 and verify his email.
@@ -491,7 +483,6 @@ You can give backend custom page if you want to change it.
 ```bash
 curl -X GET \
     -G "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/verify/" \
-    -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -502,7 +493,6 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -520,7 +510,6 @@ import json
 
 url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/verify/'
 headers = {
-  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
   'Accept': 'application/json'
 }
@@ -552,7 +541,7 @@ response.json()
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-v2-android-auth-verify--token-"></code></pre>
 </div>
-<form id="form-GETapi-v2-android-auth-verify--token-" data-method="GET" data-path="api/v2/android/auth/verify/{token}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v2-android-auth-verify--token-', this);">
+<form id="form-GETapi-v2-android-auth-verify--token-" data-method="GET" data-path="api/v2/android/auth/verify/{token}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v2-android-auth-verify--token-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
         <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v2-android-auth-verify--token-" onclick="tryItOut('GETapi-v2-android-auth-verify--token-');">Try it out ⚡</button>
@@ -562,9 +551,6 @@ response.json()
 <p>
 <small class="badge badge-green">GET</small>
  <b><code>api/v2/android/auth/verify/{token}</code></b>
-</p>
-<p>
-<label id="auth-GETapi-v2-android-auth-verify--token-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v2-android-auth-verify--token-" data-component="header"></label>
 </p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
@@ -577,7 +563,6 @@ Verification token (jwt).</p>
 
 ## Forget password.
 
-<small class="badge badge-darkred">requires authentication</small>
 
 Sometimes user can forget his password. Use this API to allow him reset his password.
 
@@ -590,7 +575,6 @@ You can give backend custom page if you want to change the reset page form.
 ```bash
 curl -X POST \
     "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password" \
-    -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"email":null}'
@@ -603,7 +587,6 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -628,7 +611,6 @@ payload = {
     "email": null
 }
 headers = {
-  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
   'Accept': 'application/json'
 }
@@ -665,7 +647,7 @@ response.json()
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-POSTapi-v2-android-auth-reset-password"></code></pre>
 </div>
-<form id="form-POSTapi-v2-android-auth-reset-password" data-method="POST" data-path="api/v2/android/auth/reset-password" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v2-android-auth-reset-password', this);">
+<form id="form-POSTapi-v2-android-auth-reset-password" data-method="POST" data-path="api/v2/android/auth/reset-password" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v2-android-auth-reset-password', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
         <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v2-android-auth-reset-password" onclick="tryItOut('POSTapi-v2-android-auth-reset-password');">Try it out ⚡</button>
@@ -675,9 +657,6 @@ response.json()
 <p>
 <small class="badge badge-black">POST</small>
  <b><code>api/v2/android/auth/reset-password</code></b>
-</p>
-<p>
-<label id="auth-POSTapi-v2-android-auth-reset-password" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="POSTapi-v2-android-auth-reset-password" data-component="header"></label>
 </p>
 <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
 <p>
@@ -691,7 +670,6 @@ User email.</p>
 
 ## Reset password (external).
 
-<small class="badge badge-darkred">requires authentication</small>
 
 This is what user see after user click the reset password link from his email.
 
@@ -700,7 +678,6 @@ This is what user see after user click the reset password link from his email.
 ```bash
 curl -X GET \
     -G "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/" \
-    -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
@@ -711,7 +688,6 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -729,7 +705,6 @@ import json
 
 url = 'https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/'
 headers = {
-  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
   'Accept': 'application/json'
 }
@@ -754,7 +729,7 @@ response.json()
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-GETapi-v2-android-auth-reset-password--token-"></code></pre>
 </div>
-<form id="form-GETapi-v2-android-auth-reset-password--token-" data-method="GET" data-path="api/v2/android/auth/reset-password/{token}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v2-android-auth-reset-password--token-', this);">
+<form id="form-GETapi-v2-android-auth-reset-password--token-" data-method="GET" data-path="api/v2/android/auth/reset-password/{token}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v2-android-auth-reset-password--token-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
         <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v2-android-auth-reset-password--token-" onclick="tryItOut('GETapi-v2-android-auth-reset-password--token-');">Try it out ⚡</button>
@@ -764,9 +739,6 @@ response.json()
 <p>
 <small class="badge badge-green">GET</small>
  <b><code>api/v2/android/auth/reset-password/{token}</code></b>
-</p>
-<p>
-<label id="auth-GETapi-v2-android-auth-reset-password--token-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v2-android-auth-reset-password--token-" data-component="header"></label>
 </p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
@@ -779,7 +751,6 @@ Verification token (jwt).</p>
 
 ## Reset password (internal).
 
-<small class="badge badge-darkred">requires authentication</small>
 
 This is used internally after user click the reset password link from his email.
 
@@ -788,7 +759,6 @@ This is used internally after user click the reset password link from his email.
 ```bash
 curl -X POST \
     "https://megabit-lostnfound.herokuapp.com/api/v2/android/auth/reset-password/" \
-    -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"password":null}'
@@ -801,7 +771,6 @@ const url = new URL(
 );
 
 let headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
@@ -826,7 +795,6 @@ payload = {
     "password": null
 }
 headers = {
-  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
   'Accept': 'application/json'
 }
@@ -858,7 +826,7 @@ response.json()
     <blockquote>Request failed with error:</blockquote>
     <pre><code id="execution-error-message-POSTapi-v2-android-auth-reset-password--token-"></code></pre>
 </div>
-<form id="form-POSTapi-v2-android-auth-reset-password--token-" data-method="POST" data-path="api/v2/android/auth/reset-password/{token}" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v2-android-auth-reset-password--token-', this);">
+<form id="form-POSTapi-v2-android-auth-reset-password--token-" data-method="POST" data-path="api/v2/android/auth/reset-password/{token}" data-authed="0" data-hasfiles="0" data-headers='{"Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('POSTapi-v2-android-auth-reset-password--token-', this);">
 <h3>
     Request&nbsp;&nbsp;&nbsp;
         <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-POSTapi-v2-android-auth-reset-password--token-" onclick="tryItOut('POSTapi-v2-android-auth-reset-password--token-');">Try it out ⚡</button>
@@ -868,9 +836,6 @@ response.json()
 <p>
 <small class="badge badge-black">POST</small>
  <b><code>api/v2/android/auth/reset-password/{token}</code></b>
-</p>
-<p>
-<label id="auth-POSTapi-v2-android-auth-reset-password--token-" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="POSTapi-v2-android-auth-reset-password--token-" data-component="header"></label>
 </p>
 <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
 <p>
