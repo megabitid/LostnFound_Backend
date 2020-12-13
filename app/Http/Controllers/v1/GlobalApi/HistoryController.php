@@ -27,6 +27,9 @@ class HistoryController extends Controller
      * Get List History
      * 
      * List of barang status histories.
+     * You can add barang status histories by change the status_id on barang,
+     * use patch method to change the status_id to optimize API.
+     * Normally you do that after admin verify a claim based on that barang_id.
      * 
      * ### orderBy query supported fields:
      * * All field of claim detail
@@ -35,7 +38,7 @@ class HistoryController extends Controller
      * @queryParam user_id integer The id of user that changed barang status. No-example
      * @queryParam barang_id integer The id of barang. No-example
      * @queryParam status string The status of barang. Possible values are
-     *             hilang, ditemukan, didonasikan, diklaim.
+     *             hilang, ditemukan, didonasikan, diklaim. No-example
      * @queryParam limitDay integer Limit history to how many days. No-example
      * @queryParam orderBy string Apply ordering based on specific field. 
      *              Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending).
