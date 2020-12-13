@@ -632,11 +632,6 @@ response.json()
 <input type="text" name="orderBy" data-endpoint="GETapi-v2-android-users" data-component="query"  hidden>
 <br>
 </p>
-<p>
-<b><code>onlyTrashed</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
-<input type="text" name="onlyTrashed" data-endpoint="GETapi-v2-android-users" data-component="query"  hidden>
-<br>
-Retrive deleted admin user if true.</p>
 </form>
 
 

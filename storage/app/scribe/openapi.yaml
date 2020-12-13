@@ -1384,7 +1384,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image. Example 3'
-                                    example: 1
+                                    example: 19
                             required:
                                 - nama
                                 - uri
@@ -1493,7 +1493,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image.'
-                                    example: 1
+                                    example: 10
         get:
             summary: 'Get Detail Barang Image.'
             description: 'Returns barang image details.'
@@ -1642,7 +1642,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image. Example 3'
-                                    example: 12
+                                    example: 5
                             required:
                                 - nama
                                 - uri
@@ -2996,7 +2996,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: voluptatem
+                example: et
                 required: true
                 schema:
                     type: string
@@ -3932,7 +3932,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: sint
+                example: velit
                 required: true
                 schema:
                     type: string
@@ -4720,15 +4720,8 @@ paths:
     /api/v2/android/auth/register:
         post:
             summary: 'Register User.'
-            description: "User can be registered by super admin using this API.\n\n_Token only last for 30 minutes in user email._"
+            description: "User can register using this API.\n\n_Token only last for 30 minutes in user email._"
             parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
                 -
                     in: header
                     name: Content-Type
@@ -4801,6 +4794,7 @@ paths:
                                 - email
                                 - password
                                 - image
+            security: []
     /api/v2/android/auth/logout:
         get:
             summary: 'Logout User'
@@ -4905,13 +4899,6 @@ paths:
             parameters:
                 -
                     in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
-                -
-                    in: header
                     name: Content-Type
                     description: ''
                     example: application/json
@@ -4947,6 +4934,7 @@ paths:
                                     message: { type: string, example: 'The token has been blacklisted' }
             tags:
                 - 'v2 - Authenticate User'
+            security: []
         parameters:
             -
                 in: path
@@ -4961,13 +4949,6 @@ paths:
             summary: 'Forget password.'
             description: "Sometimes user can forget his password. Use this API to allow him reset his password.\n\n<aside class=\"notice\">\nYou can give backend custom page if you want to change the reset page form.\n</aside>"
             parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
                 -
                     in: header
                     name: Content-Type
@@ -5015,18 +4996,12 @@ paths:
                                     example: null
                             required:
                                 - email
+            security: []
     '/api/v2/android/auth/reset-password/{token}':
         get:
             summary: 'Reset password (external).'
             description: 'This is what user see after user click the reset password link from his email.'
             parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
                 -
                     in: header
                     name: Content-Type
@@ -5054,17 +5029,11 @@ paths:
                                     message: { type: string, example: 'The GET method is not supported for this route. Supported methods: POST.' }
             tags:
                 - 'v2 - Authenticate User'
+            security: []
         post:
             summary: 'Reset password (internal).'
             description: 'This is used internally after user click the reset password link from his email.'
             parameters:
-                -
-                    in: header
-                    name: Authorization
-                    description: ''
-                    example: 'Bearer {YOUR_AUTH_KEY}'
-                    schema:
-                        type: string
                 -
                     in: header
                     name: Content-Type
@@ -5115,6 +5084,7 @@ paths:
                                     example: null
                             required:
                                 - password
+            security: []
         parameters:
             -
                 in: path
@@ -6342,7 +6312,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image. Example 3'
-                                    example: 6
+                                    example: 16
                             required:
                                 - nama
                                 - uri
@@ -6451,7 +6421,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image.'
-                                    example: 15
+                                    example: 2
         get:
             summary: 'Get Detail Barang Image.'
             description: 'Returns barang image details.'
@@ -6600,7 +6570,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image. Example 3'
-                                    example: 3
+                                    example: 8
                             required:
                                 - nama
                                 - uri
@@ -8143,16 +8113,6 @@ paths:
                         type: string
                         description: ''
                         example: '-id'
-                -
-                    in: query
-                    name: onlyTrashed
-                    description: 'Retrive deleted admin user if true.'
-                    example: null
-                    required: false
-                    schema:
-                        type: string
-                        description: 'Retrive deleted admin user if true.'
-                        example: null
                 -
                     in: header
                     name: Authorization
