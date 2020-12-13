@@ -58,4 +58,15 @@ trait QueryBuilder {
         }
         return $query;
     }
+    public static function searchDate($request, $query, $dateFields) {
+        if(!empty($request->searchDate)){
+            $query->where(function($query) use($request, $dateFields){
+                $searchWildcard = '%' . $request->searchDate. '%';
+                foreach($dateFields as $field){
+                    $query->orWhere($field, 'LIKE', $searchWildcard);
+                }
+            });
+        }
+        return $query;
+    }
 }

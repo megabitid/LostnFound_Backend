@@ -921,6 +921,7 @@ Lokasi detail barang.</p>
 * stasiun_id
 * status_id
 * kategori_id
+* tanggal
 
 ### orderBy query supported fields:
 * All field of barang detail
@@ -928,10 +929,13 @@ Lokasi detail barang.</p>
 ### search query will search string inside these fields:
 * nama_barang
 * lokasi
-* tanggl
-* deskrpi
+* deskripsi
 * warna
 * merek
+
+### searchDate query will search string inside this field:
+* tanggal; so you can search date date with the year only or more. Example: 2020-11
+
 
 <aside class="warning"> We still use limit offset pagination. In future will be replaced with cursor based pagination.</aside>
 
@@ -939,7 +943,7 @@ Lokasi detail barang.</p>
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v2/barang?orderBy=-id&search=2020" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v2/barang?orderBy=-id&searchDate=2020" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -952,7 +956,7 @@ const url = new URL(
 
 let params = {
     "orderBy": "-id",
-    "search": "2020",
+    "searchDate": "2020",
 };
 Object.keys(params)
     .forEach(key => url.searchParams.append(key, params[key]));
@@ -977,7 +981,7 @@ import json
 url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang'
 params = {
   'orderBy': '-id',
-  'search': '2020',
+  'searchDate': '2020',
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -1081,7 +1085,7 @@ response.json()
             "warna": "MediumVioletRed",
             "merek": "Hartmann, Reinger and Jaskolski",
             "user_id": 5,
-            "status_id": 1,
+            "status_id": 2,
             "kategori_id": 5,
             "stasiun": {
                 "id": 5,
@@ -1091,8 +1095,8 @@ response.json()
         }
     ],
     "links": {
-        "first": "http:\/\/localhost\/api\/v2\/barang?orderBy=-id&search=2020&page=1",
-        "last": "http:\/\/localhost\/api\/v2\/barang?orderBy=-id&search=2020&page=1",
+        "first": "http:\/\/localhost\/api\/v2\/barang?orderBy=-id&searchDate=2020&page=1",
+        "last": "http:\/\/localhost\/api\/v2\/barang?orderBy=-id&searchDate=2020&page=1",
         "prev": null,
         "next": null
     },
@@ -1107,7 +1111,7 @@ response.json()
                 "active": false
             },
             {
-                "url": "http:\/\/localhost\/api\/v2\/barang?orderBy=-id&search=2020&page=1",
+                "url": "http:\/\/localhost\/api\/v2\/barang?orderBy=-id&searchDate=2020&page=1",
                 "label": 1,
                 "active": true
             },
@@ -1173,6 +1177,11 @@ Apply filter with status_id.</p>
 <br>
 Apply filter with kategori_id.</p>
 <p>
+<b><code>tanggal</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="tanggal" data-endpoint="GETapi-v2-barang" data-component="query"  hidden>
+<br>
+date_format:Y-m-d Apply filter with tanggal.</p>
+<p>
 <b><code>orderBy</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
 <input type="text" name="orderBy" data-endpoint="GETapi-v2-barang" data-component="query"  hidden>
 <br>
@@ -1182,6 +1191,11 @@ Apply filter with kategori_id.</p>
 <input type="text" name="search" data-endpoint="GETapi-v2-barang" data-component="query"  hidden>
 <br>
 Apply filtering with string search.</p>
+<p>
+<b><code>searchDate</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="searchDate" data-endpoint="GETapi-v2-barang" data-component="query"  hidden>
+<br>
+Apply filtering with date search.</p>
 </form>
 
 

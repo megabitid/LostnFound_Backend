@@ -126,7 +126,7 @@ curl -X PUT \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar Updated","uri":"base64string","barang_id":13}'
+    -d '{"nama":"Tas Besar Updated","uri":"base64string","barang_id":15}'
 
 ```
 
@@ -144,7 +144,7 @@ let headers = {
 let body = {
     "nama": "Tas Besar Updated",
     "uri": "base64string",
-    "barang_id": 13
+    "barang_id": 15
 }
 
 fetch(url, {
@@ -162,7 +162,7 @@ url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/6'
 payload = {
     "nama": "Tas Besar Updated",
     "uri": "base64string",
-    "barang_id": 13
+    "barang_id": 15
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -543,7 +543,7 @@ curl -X POST \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar","uri":"base64string","barang_id":10}'
+    -d '{"nama":"Tas Besar","uri":"base64string","barang_id":17}'
 
 ```
 
@@ -561,7 +561,7 @@ let headers = {
 let body = {
     "nama": "Tas Besar",
     "uri": "base64string",
-    "barang_id": 10
+    "barang_id": 17
 }
 
 fetch(url, {
@@ -579,7 +579,7 @@ url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images'
 payload = {
     "nama": "Tas Besar",
     "uri": "base64string",
-    "barang_id": 10
+    "barang_id": 17
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
