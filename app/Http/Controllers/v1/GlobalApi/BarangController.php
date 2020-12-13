@@ -44,8 +44,7 @@ class BarangController extends Controller
      * ### search query will search string inside these fields:
      * * nama_barang
      * * lokasi
-     * * tanggl
-     * * deskrpi
+     * * deskripsi
      * * warna
      * * merek
      *       
@@ -56,6 +55,7 @@ class BarangController extends Controller
      * @queryParam stasiun_id integer Apply filter with stasiun_id. No-example
      * @queryParam status_id integer Apply filter with status_id. No-example
      * @queryParam kategori_id integer Apply filter with kategori_id. No-example
+     * @queryParam tanggal date_format:Y-m-d Apply filter with tanggal. No-example
      * @queryParam orderBy string Apply ordering based on specific field. 
      *              Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending).
      *              Example: -id
@@ -73,6 +73,7 @@ class BarangController extends Controller
             'user_id',
             'stasiun_id',
             'status_id',
+            'tanggal',
             'kategori_id'
         ];
         // limit query by specific field. Example: ?id=1
@@ -85,7 +86,6 @@ class BarangController extends Controller
         $searchFields = [
                 'nama_barang',
                 'lokasi',
-                'tanggal',
                 'deskripsi',
                 'warna',
                 'merek'

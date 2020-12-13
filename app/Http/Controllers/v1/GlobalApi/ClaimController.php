@@ -52,6 +52,9 @@ class ClaimController extends Controller
      * @response status=401 scenario="Unauthorized" {
      *  "message": "Token not provided"
      * }
+     * @response status=403 scenario="not admin" {
+     * "message": "You must be admin or super admin to do this."
+     * }
      */
     public function index(Request $request)
     {
