@@ -274,7 +274,7 @@ Claim can be updated for barang hilang only.
 
 ```bash
 curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/iusto" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/sint" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
@@ -284,7 +284,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/iusto"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/sint"
 );
 
 let headers = {
@@ -312,7 +312,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/iusto'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/sint'
 payload = {
     "user_id": "1",
     "barang_id": 1,
@@ -460,7 +460,7 @@ Claim can be updated for barang hilang only.
 
 ```bash
 curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/atque" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/quo" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
@@ -470,7 +470,7 @@ curl -X PATCH \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/atque"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/quo"
 );
 
 let headers = {
@@ -494,7 +494,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/atque'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/quo'
 payload = {
     "no_telp": "0999999999"
 }
@@ -637,7 +637,7 @@ Claim detail can be retrieved using this API.
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/claims/est" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/claims/nulla" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -645,7 +645,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/est"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/nulla"
 );
 
 let headers = {
@@ -665,7 +665,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/est'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/nulla'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
