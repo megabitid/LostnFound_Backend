@@ -36,6 +36,7 @@ class BarangController extends Controller
      * * stasiun_id
      * * status_id
      * * kategori_id
+     * * tanggal
      * 
      * ### orderBy query supported fields:
      * * All field of barang detail
@@ -43,10 +44,13 @@ class BarangController extends Controller
      * ### search query will search string inside these fields:
      * * nama_barang
      * * lokasi
-     * * tanggl
-     * * deskrpi
+     * * deskripsi
      * * warna
      * * merek
+     *       
+     * ### searchDate query will search string inside this field:
+     * * tanggal; so you can search date date with the year only or more. Example: 2020-11
+     * 
      *       
      * <aside class="warning"> We still use limit offset pagination. In future will be replaced with cursor based pagination.</aside>
      * 
@@ -55,10 +59,12 @@ class BarangController extends Controller
      * @queryParam stasiun_id integer Apply filter with stasiun_id. No-example
      * @queryParam status_id integer Apply filter with status_id. No-example
      * @queryParam kategori_id integer Apply filter with kategori_id. No-example
+     * @queryParam tanggal date_format:Y-m-d Apply filter with tanggal. No-example
      * @queryParam orderBy string Apply ordering based on specific field. 
      *              Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending).
      *              Example: -id
-     * @queryParam search string Apply filtering with string search. Example: 2020
+     * @queryParam search string Apply filtering with string search. No-example
+     * @queryParam searchDate string Apply filtering with date search. Example: 2020
      * 
      * @response status=401 scenario="Unauthorized" {
      *  "message": "Token not provided"
@@ -72,6 +78,7 @@ class BarangController extends Controller
             'user_id',
             'stasiun_id',
             'status_id',
+            'tanggal',
             'kategori_id'
         ];
         // limit query by specific field. Example: ?id=1
@@ -84,18 +91,19 @@ class BarangController extends Controller
         $searchFields = [
                 'nama_barang',
                 'lokasi',
-                'tanggal',
                 'deskripsi',
                 'warna',
                 'merek'
         ];
         $query = QueryBuilder::searchIn($request, $query, $searchFields);
+        $query = QueryBuilder::searchDate($request, $query, ['tanggal']);
         $query = $query->with('stasiun');
         $query = $query->with(array('barangimages'=>function($query){
             $query->first();
         }));
-        
-        //paginate 
+
+
+        // paginate
         $paginator = Paginator::paginate($request, $query);
         $excludeFields = [
             'stasiun_id',
