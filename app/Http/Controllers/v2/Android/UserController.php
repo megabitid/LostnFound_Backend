@@ -34,8 +34,6 @@ class UserController extends Controller
      * @queryParam orderBy string Apply ordering based on specific field. 
      *              Usage: <b>-id</b> orderBy id (descending); <b>id</b> orderBy id (ascending).
      *              Example: -id
-     * @queryParam onlyTrashed string Retrive deleted admin user if true. No-example 
-     * 
      * @response status=401 scenario="Unauthorized" {
      *  "message": "Token not provided"
      * }

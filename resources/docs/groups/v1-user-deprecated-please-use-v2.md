@@ -11,7 +11,7 @@
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/sint" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/velit" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -19,7 +19,7 @@ curl -X GET \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/sint"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/velit"
 );
 
 let headers = {
@@ -39,7 +39,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/sint'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/velit'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -99,7 +99,7 @@ response.json()
 
 ```bash
 curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/magnam" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/non" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -107,7 +107,7 @@ curl -X PUT \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/magnam"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/non"
 );
 
 let headers = {
@@ -127,7 +127,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/magnam'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/non'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -180,7 +180,7 @@ response.json()
 
 ```bash
 curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/possimus" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/incidunt" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -188,7 +188,7 @@ curl -X PATCH \
 
 ```javascript
 const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/possimus"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/incidunt"
 );
 
 let headers = {
@@ -208,7 +208,7 @@ fetch(url, {
 import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/possimus'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/incidunt'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',

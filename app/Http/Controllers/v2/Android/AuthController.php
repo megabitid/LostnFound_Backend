@@ -111,7 +111,7 @@ class AuthController extends Controller
     /**
      * Register User.
      * 
-     * User can be registered by super admin using this API.
+     * User can register using this API.
      * 
      * _Token only last for 30 minutes in user email._
      * 
@@ -142,6 +142,7 @@ class AuthController extends Controller
      * @response status=401 scenario="login failed" {
      *  "message": "Authentication credentials were missing or incorrect"
      * } 
+     * @unauthenticated
      */
     public function register(Request $request)
     {
@@ -195,6 +196,7 @@ class AuthController extends Controller
      * @response status=401 scenario="verification failed" {
      *  "message": "The token has been blacklisted"
      * }
+     * @unauthenticated
      */
     public function verifyEmail($token) {
         JWTAuth::setToken($token);
@@ -226,6 +228,7 @@ class AuthController extends Controller
      *          "The email field is required."
      *      ]
      * }
+     * @unauthenticated
      */
     public function resetPassword(Request $request) {
         $validator = Validator::make($request->all(), [
@@ -262,6 +265,7 @@ class AuthController extends Controller
      * @response status=401 scenario="verification failed" {
      *  "message": "The token has been blacklisted"
      * }
+     * @unauthenticated
      */
     public function updatePassword(Request $request, $token) {
         // token first
@@ -287,6 +291,7 @@ class AuthController extends Controller
      * This is what user see after user click the reset password link from his email.
      * 
      * @urlParam token string required Verification token (jwt). No-example
+     * @unauthenticated
      */
     public function updatePasswordAction($token) {
         return view("reset_password_action");
