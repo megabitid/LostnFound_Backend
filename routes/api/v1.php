@@ -107,8 +107,9 @@ Route::prefix('v1')->group(function () {
         Route::get('', [GlobalApi\BarangStatusController::class, 'index']);
     });
 
-    Route::prefix('histories')->middleware('jwt.auth')->group(function() {
+    Route::prefix('histories')->middleware('jwt.auth')->group(function () {
         Route::get('', [GlobalApi\HistoryController::class, 'index']);
+        Route::get('count', [GlobalApi\HistoryController::class, 'count']);
     });
 
     //claims
