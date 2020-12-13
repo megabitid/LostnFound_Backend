@@ -10,6 +10,9 @@ on your dashboard.
 <small class="badge badge-darkred">requires authentication</small>
 
 List of barang status histories.
+You can add barang status histories by change the status_id on barang,
+use patch method to change the status_id to optimize API.
+Normally you do that after admin verify a claim based on that barang_id.
 
 ### orderBy query supported fields:
 * All field of claim detail
@@ -18,7 +21,7 @@ List of barang status histories.
 
 ```bash
 curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/histories?status=quia" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/histories" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
@@ -28,12 +31,6 @@ curl -X GET \
 const url = new URL(
     "https://megabit-lostnfound.herokuapp.com/api/v1/histories"
 );
-
-let params = {
-    "status": "quia",
-};
-Object.keys(params)
-    .forEach(key => url.searchParams.append(key, params[key]));
 
 let headers = {
     "Authorization": "Bearer {YOUR_AUTH_KEY}",
@@ -53,16 +50,13 @@ import requests
 import json
 
 url = 'https://megabit-lostnfound.herokuapp.com/api/v1/histories'
-params = {
-  'status': 'quia',
-}
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
   'Accept': 'application/json'
 }
 
-response = requests.request('GET', url, headers=headers, params=params)
+response = requests.request('GET', url, headers=headers)
 response.json()
 ```
 
@@ -85,16 +79,137 @@ response.json()
 
 ```json
 {
-    "data": [],
+    "data": [
+        {
+            "id": 1,
+            "user_id": 6,
+            "barang_id": 1,
+            "status": "ditemukan",
+            "created_at": "2020-12-13T07:15:36.000000Z",
+            "updated_at": "2020-12-13T07:15:36.000000Z"
+        },
+        {
+            "id": 2,
+            "user_id": 6,
+            "barang_id": 1,
+            "status": "hilang",
+            "created_at": "2020-12-13T07:15:40.000000Z",
+            "updated_at": "2020-12-13T07:15:40.000000Z"
+        },
+        {
+            "id": 3,
+            "user_id": 6,
+            "barang_id": 1,
+            "status": "didonasikan",
+            "created_at": "2020-12-13T07:15:44.000000Z",
+            "updated_at": "2020-12-13T07:15:44.000000Z"
+        },
+        {
+            "id": 4,
+            "user_id": 6,
+            "barang_id": 1,
+            "status": "diklaim",
+            "created_at": "2020-12-13T07:15:48.000000Z",
+            "updated_at": "2020-12-13T07:15:48.000000Z"
+        },
+        {
+            "id": 5,
+            "user_id": 6,
+            "barang_id": 1,
+            "status": "ditemukan",
+            "created_at": "2020-12-13T07:15:51.000000Z",
+            "updated_at": "2020-12-13T07:15:51.000000Z"
+        },
+        {
+            "id": 6,
+            "user_id": 6,
+            "barang_id": 1,
+            "status": "hilang",
+            "created_at": "2020-12-13T07:15:54.000000Z",
+            "updated_at": "2020-12-13T07:15:54.000000Z"
+        },
+        {
+            "id": 7,
+            "user_id": 6,
+            "barang_id": 1,
+            "status": "ditemukan",
+            "created_at": "2020-12-13T07:15:59.000000Z",
+            "updated_at": "2020-12-13T07:15:59.000000Z"
+        },
+        {
+            "id": 8,
+            "user_id": 6,
+            "barang_id": 1,
+            "status": "hilang",
+            "created_at": "2020-12-13T07:16:02.000000Z",
+            "updated_at": "2020-12-13T07:16:02.000000Z"
+        },
+        {
+            "id": 9,
+            "user_id": 6,
+            "barang_id": 1,
+            "status": "ditemukan",
+            "created_at": "2020-12-13T07:16:07.000000Z",
+            "updated_at": "2020-12-13T07:16:07.000000Z"
+        },
+        {
+            "id": 10,
+            "user_id": 6,
+            "barang_id": 1,
+            "status": "hilang",
+            "created_at": "2020-12-13T07:16:10.000000Z",
+            "updated_at": "2020-12-13T07:16:10.000000Z"
+        },
+        {
+            "id": 11,
+            "user_id": 6,
+            "barang_id": 1,
+            "status": "ditemukan",
+            "created_at": "2020-12-13T07:27:29.000000Z",
+            "updated_at": "2020-12-13T07:27:29.000000Z"
+        },
+        {
+            "id": 12,
+            "user_id": 6,
+            "barang_id": 1,
+            "status": "didonasikan",
+            "created_at": "2020-12-13T07:27:32.000000Z",
+            "updated_at": "2020-12-13T07:27:32.000000Z"
+        },
+        {
+            "id": 13,
+            "user_id": 6,
+            "barang_id": 1,
+            "status": "ditemukan",
+            "created_at": "2020-12-13T07:27:35.000000Z",
+            "updated_at": "2020-12-13T07:27:35.000000Z"
+        },
+        {
+            "id": 14,
+            "user_id": 6,
+            "barang_id": 1,
+            "status": "didonasikan",
+            "created_at": "2020-12-13T07:27:38.000000Z",
+            "updated_at": "2020-12-13T07:27:38.000000Z"
+        },
+        {
+            "id": 15,
+            "user_id": 6,
+            "barang_id": 1,
+            "status": "ditemukan",
+            "created_at": "2020-12-13T07:27:42.000000Z",
+            "updated_at": "2020-12-13T07:27:42.000000Z"
+        }
+    ],
     "links": {
-        "first": "http:\/\/localhost\/api\/v1\/histories?status=quia&page=1",
-        "last": "http:\/\/localhost\/api\/v1\/histories?status=quia&page=1",
+        "first": "http:\/\/localhost\/api\/v1\/histories?page=1",
+        "last": "http:\/\/localhost\/api\/v1\/histories?page=1",
         "prev": null,
         "next": null
     },
     "meta": {
         "current_page": 1,
-        "from": null,
+        "from": 1,
         "last_page": 1,
         "links": [
             {
@@ -103,7 +218,7 @@ response.json()
                 "active": false
             },
             {
-                "url": "http:\/\/localhost\/api\/v1\/histories?status=quia&page=1",
+                "url": "http:\/\/localhost\/api\/v1\/histories?page=1",
                 "label": 1,
                 "active": true
             },
@@ -115,8 +230,8 @@ response.json()
         ],
         "path": "http:\/\/localhost\/api\/v1\/histories",
         "per_page": 20,
-        "to": null,
-        "total": 0
+        "to": 15,
+        "total": 15
     }
 }
 ```
