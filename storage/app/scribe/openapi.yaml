@@ -1384,7 +1384,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image. Example 3'
-                                    example: 18
+                                    example: 1
                             required:
                                 - nama
                                 - uri
@@ -1493,7 +1493,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image.'
-                                    example: 13
+                                    example: 1
         get:
             summary: 'Get Detail Barang Image.'
             description: 'Returns barang image details.'
@@ -1642,7 +1642,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image. Example 3'
-                                    example: 2
+                                    example: 12
                             required:
                                 - nama
                                 - uri
@@ -2996,7 +2996,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: tempore
+                example: voluptatem
                 required: true
                 schema:
                     type: string
@@ -3185,7 +3185,7 @@ paths:
     /api/v1/histories:
         get:
             summary: 'Get List History'
-            description: "List of barang status histories.\n\n### orderBy query supported fields:\n* All field of claim detail"
+            description: "List of barang status histories.\nYou can add barang status histories by change the status_id on barang,\nuse patch method to change the status_id to optimize API.\nNormally you do that after admin verify a claim based on that barang_id.\n\n### orderBy query supported fields:\n* All field of claim detail"
             parameters:
                 -
                     in: query
@@ -3221,12 +3221,12 @@ paths:
                     in: query
                     name: status
                     description: "The status of barang. Possible values are\n            hilang, ditemukan, didonasikan, diklaim."
-                    example: quia
+                    example: null
                     required: false
                     schema:
                         type: string
                         description: "The status of barang. Possible values are\n            hilang, ditemukan, didonasikan, diklaim."
-                        example: quia
+                        example: null
                 -
                     in: query
                     name: limitDay
@@ -3296,13 +3296,13 @@ paths:
                             schema:
                                 type: object
                                 example:
-                                    data: []
-                                    links: { first: 'http://localhost/api/v1/histories?status=quia&page=1', last: 'http://localhost/api/v1/histories?status=quia&page=1', prev: null, next: null }
-                                    meta: { current_page: 1, from: null, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/histories?status=quia&page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/histories', per_page: 20, to: null, total: 0 }
+                                    data: [{ id: 1, user_id: 6, barang_id: 1, status: ditemukan, created_at: '2020-12-13T07:15:36.000000Z', updated_at: '2020-12-13T07:15:36.000000Z' }, { id: 2, user_id: 6, barang_id: 1, status: hilang, created_at: '2020-12-13T07:15:40.000000Z', updated_at: '2020-12-13T07:15:40.000000Z' }, { id: 3, user_id: 6, barang_id: 1, status: didonasikan, created_at: '2020-12-13T07:15:44.000000Z', updated_at: '2020-12-13T07:15:44.000000Z' }, { id: 4, user_id: 6, barang_id: 1, status: diklaim, created_at: '2020-12-13T07:15:48.000000Z', updated_at: '2020-12-13T07:15:48.000000Z' }, { id: 5, user_id: 6, barang_id: 1, status: ditemukan, created_at: '2020-12-13T07:15:51.000000Z', updated_at: '2020-12-13T07:15:51.000000Z' }, { id: 6, user_id: 6, barang_id: 1, status: hilang, created_at: '2020-12-13T07:15:54.000000Z', updated_at: '2020-12-13T07:15:54.000000Z' }, { id: 7, user_id: 6, barang_id: 1, status: ditemukan, created_at: '2020-12-13T07:15:59.000000Z', updated_at: '2020-12-13T07:15:59.000000Z' }, { id: 8, user_id: 6, barang_id: 1, status: hilang, created_at: '2020-12-13T07:16:02.000000Z', updated_at: '2020-12-13T07:16:02.000000Z' }, { id: 9, user_id: 6, barang_id: 1, status: ditemukan, created_at: '2020-12-13T07:16:07.000000Z', updated_at: '2020-12-13T07:16:07.000000Z' }, { id: 10, user_id: 6, barang_id: 1, status: hilang, created_at: '2020-12-13T07:16:10.000000Z', updated_at: '2020-12-13T07:16:10.000000Z' }, { id: 11, user_id: 6, barang_id: 1, status: ditemukan, created_at: '2020-12-13T07:27:29.000000Z', updated_at: '2020-12-13T07:27:29.000000Z' }, { id: 12, user_id: 6, barang_id: 1, status: didonasikan, created_at: '2020-12-13T07:27:32.000000Z', updated_at: '2020-12-13T07:27:32.000000Z' }, { id: 13, user_id: 6, barang_id: 1, status: ditemukan, created_at: '2020-12-13T07:27:35.000000Z', updated_at: '2020-12-13T07:27:35.000000Z' }, { id: 14, user_id: 6, barang_id: 1, status: didonasikan, created_at: '2020-12-13T07:27:38.000000Z', updated_at: '2020-12-13T07:27:38.000000Z' }, { id: 15, user_id: 6, barang_id: 1, status: ditemukan, created_at: '2020-12-13T07:27:42.000000Z', updated_at: '2020-12-13T07:27:42.000000Z' }]
+                                    links: { first: 'http://localhost/api/v1/histories?page=1', last: 'http://localhost/api/v1/histories?page=1', prev: null, next: null }
+                                    meta: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/histories?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/histories', per_page: 20, to: 15, total: 15 }
                                 properties:
-                                    data: { type: array, example: [] }
-                                    links: { type: object, example: { first: 'http://localhost/api/v1/histories?status=quia&page=1', last: 'http://localhost/api/v1/histories?status=quia&page=1', prev: null, next: null } }
-                                    meta: { type: object, example: { current_page: 1, from: null, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/histories?status=quia&page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/histories', per_page: 20, to: null, total: 0 } }
+                                    data: { type: array, example: [{ id: 1, user_id: 6, barang_id: 1, status: ditemukan, created_at: '2020-12-13T07:15:36.000000Z', updated_at: '2020-12-13T07:15:36.000000Z' }, { id: 2, user_id: 6, barang_id: 1, status: hilang, created_at: '2020-12-13T07:15:40.000000Z', updated_at: '2020-12-13T07:15:40.000000Z' }, { id: 3, user_id: 6, barang_id: 1, status: didonasikan, created_at: '2020-12-13T07:15:44.000000Z', updated_at: '2020-12-13T07:15:44.000000Z' }, { id: 4, user_id: 6, barang_id: 1, status: diklaim, created_at: '2020-12-13T07:15:48.000000Z', updated_at: '2020-12-13T07:15:48.000000Z' }, { id: 5, user_id: 6, barang_id: 1, status: ditemukan, created_at: '2020-12-13T07:15:51.000000Z', updated_at: '2020-12-13T07:15:51.000000Z' }, { id: 6, user_id: 6, barang_id: 1, status: hilang, created_at: '2020-12-13T07:15:54.000000Z', updated_at: '2020-12-13T07:15:54.000000Z' }, { id: 7, user_id: 6, barang_id: 1, status: ditemukan, created_at: '2020-12-13T07:15:59.000000Z', updated_at: '2020-12-13T07:15:59.000000Z' }, { id: 8, user_id: 6, barang_id: 1, status: hilang, created_at: '2020-12-13T07:16:02.000000Z', updated_at: '2020-12-13T07:16:02.000000Z' }, { id: 9, user_id: 6, barang_id: 1, status: ditemukan, created_at: '2020-12-13T07:16:07.000000Z', updated_at: '2020-12-13T07:16:07.000000Z' }, { id: 10, user_id: 6, barang_id: 1, status: hilang, created_at: '2020-12-13T07:16:10.000000Z', updated_at: '2020-12-13T07:16:10.000000Z' }, { id: 11, user_id: 6, barang_id: 1, status: ditemukan, created_at: '2020-12-13T07:27:29.000000Z', updated_at: '2020-12-13T07:27:29.000000Z' }, { id: 12, user_id: 6, barang_id: 1, status: didonasikan, created_at: '2020-12-13T07:27:32.000000Z', updated_at: '2020-12-13T07:27:32.000000Z' }, { id: 13, user_id: 6, barang_id: 1, status: ditemukan, created_at: '2020-12-13T07:27:35.000000Z', updated_at: '2020-12-13T07:27:35.000000Z' }, { id: 14, user_id: 6, barang_id: 1, status: didonasikan, created_at: '2020-12-13T07:27:38.000000Z', updated_at: '2020-12-13T07:27:38.000000Z' }, { id: 15, user_id: 6, barang_id: 1, status: ditemukan, created_at: '2020-12-13T07:27:42.000000Z', updated_at: '2020-12-13T07:27:42.000000Z' }], items: { type: object } }
+                                    links: { type: object, example: { first: 'http://localhost/api/v1/histories?page=1', last: 'http://localhost/api/v1/histories?page=1', prev: null, next: null } }
+                                    meta: { type: object, example: { current_page: 1, from: 1, last_page: 1, links: [{ url: null, label: '&laquo; Previous', active: false }, { url: 'http://localhost/api/v1/histories?page=1', label: 1, active: true }, { url: null, label: 'Next &raquo;', active: false }], path: 'http://localhost/api/v1/histories', per_page: 20, to: 15, total: 15 } }
             tags:
                 - 'v1 - History ( Dashboard API )'
     /api/v1/histories/count:
@@ -3932,7 +3932,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: eaque
+                example: sint
                 required: true
                 schema:
                     type: string
@@ -6342,7 +6342,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image. Example 3'
-                                    example: 16
+                                    example: 6
                             required:
                                 - nama
                                 - uri
@@ -6451,7 +6451,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image.'
-                                    example: 20
+                                    example: 15
         get:
             summary: 'Get Detail Barang Image.'
             description: 'Returns barang image details.'
@@ -6600,7 +6600,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image. Example 3'
-                                    example: 4
+                                    example: 3
                             required:
                                 - nama
                                 - uri
