@@ -33,7 +33,6 @@ Route::prefix('v1')->group(function () {
             Route::patch('{id}', [AdminController::class, 'updatePartial']);
             Route::delete('{id}', [AdminController::class, 'delete']);
             Route::patch('{id}/restore', [AdminController::class, 'restore']);
-            // Route::delete('{id}', [AdminControllerV1::class, 'destroy']); // to do: soft delete
             Route::get('', [AdminController::class, 'index']);
         });
 
@@ -74,6 +73,7 @@ Route::prefix('v1')->group(function () {
         Route::put('{id}', [GlobalApi\BarangController::class, 'update']);
         Route::patch('{id}', [GlobalApi\BarangController::class, 'updatePartial']);
         Route::get('{id}', [GlobalApi\BarangController::class, 'show']);
+        Route::get('list/eagerload', [GlobalApi\BarangController::class, 'indexEagerLoad']);
         Route::post('', [GlobalApi\BarangController::class, 'store']);
         Route::get('', [GlobalApi\BarangController::class, 'index']);
     });

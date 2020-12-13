@@ -610,29 +610,37 @@ response.json()
 ```json
 {
     "id": 3,
-    "nama_barang": "Clair Rowe Updated Partially",
-    "tanggal": "2020-12-04",
-    "lokasi": "67934 Juvenal Place\nJeffport, OR 75023-4991",
-    "deskripsi": "Fuga molestiae minus ullam reprehenderit. Sunt accusantium nam qui esse qui optio. Dolorum qui qui aut ut voluptatum fuga et. Rem vitae similique eius sed.",
-    "warna": "Salmon",
-    "merek": "Heaney-Hansen",
-    "user_id": 5,
-    "status_id": 4,
+    "nama_barang": "Ms. Aaliyah Mills Sr.",
+    "tanggal": "2020-12-10",
+    "lokasi": "7241 Milton Loaf\nReichelport, AK 28866-0297",
+    "deskripsi": "Qui dolor doloremque illo laudantium optio sit. Dolorem asperiores ex et vel deserunt minima quos. Qui veniam maiores ab vel ullam.",
+    "warna": "PapayaWhip",
+    "merek": "Langworth PLC",
+    "user_id": 4,
+    "status_id": 3,
+    "stasiun_id": 2,
+    "kategori_id": 5,
     "created_at": null,
-    "updated_at": "2020-12-10T15:28:18.000000Z",
+    "updated_at": null,
     "stasiun": {
-        "id": 4,
-        "nama": "Lou Gutmann"
+        "id": 2,
+        "nama": "Dr. Abbigail Price"
     },
     "kategori": {
-        "id": 3,
-        "nama": "Mr. Toby Fadel"
+        "id": 5,
+        "nama": "Mariane Eichmann"
     },
     "barangimages": [
         {
             "id": 1,
             "nama": "Teresa Hettinger",
             "uri": "https:\/\/via.placeholder.com\/640x480.png\/00cc66?text=tenetur",
+            "barang_id": 3
+        },
+        {
+            "id": 6,
+            "nama": "Tas Besar",
+            "uri": "https:\/\/storage.googleapis.com\/megabitlostnfound.appspot.com\/barangs\/image\/6",
             "barang_id": 3
         }
     ]
@@ -680,6 +688,387 @@ response.json()
 <input type="number" name="id" data-endpoint="GETapi-v1-barang--id-" data-component="url" required  hidden>
 <br>
 The id of barang.</p>
+</form>
+
+
+## Get List Barang (Eager Load).
+
+<small class="badge badge-darkred">requires authentication</small>
+
+### Barang parameter query supported:
+* id
+* user_id
+* stasiun_id
+* status_id
+* kategori_id
+* tanggal
+
+### orderBy query supported fields:
+* All field of barang detail
+
+### search query will search string inside these fields:
+* nama_barang
+* lokasi
+* deskripsi
+* warna
+* merek
+
+### searchDate query will search string inside this field:
+* tanggal; so you can search date date with the year only or more. Example: 2020-11
+
+
+<aside class="warning"> We still use limit offset pagination. In future will be replaced with cursor based pagination.</aside>
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/barang/list/eagerload?orderBy=-id&searchDate=2020" \
+    -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "https://megabit-lostnfound.herokuapp.com/api/v1/barang/list/eagerload"
+);
+
+let params = {
+    "orderBy": "-id",
+    "searchDate": "2020",
+};
+Object.keys(params)
+    .forEach(key => url.searchParams.append(key, params[key]));
+
+let headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response => response.json());
+```
+
+```python
+import requests
+import json
+
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang/list/eagerload'
+params = {
+  'orderBy': '-id',
+  'searchDate': '2020',
+}
+headers = {
+  'Authorization': 'Bearer {YOUR_AUTH_KEY}',
+  'Content-Type': 'application/json',
+  'Accept': 'application/json'
+}
+
+response = requests.request('GET', url, headers=headers, params=params)
+response.json()
+```
+
+
+> Example response (401, Unauthorized):
+
+```json
+{
+    "message": "Token not provided"
+}
+```
+> Example response (200):
+
+```json
+{
+    "data": [
+        {
+            "id": 5,
+            "nama_barang": "Jolie Stroman",
+            "tanggal": "2020-12-10",
+            "lokasi": "5630 Santino Lakes Suite 696\nEast Ellenport, NC 76357-2264",
+            "deskripsi": "Accusantium sequi velit sit ea aut. Sed mollitia accusantium animi natus asperiores itaque tenetur. Et ut nihil aut unde sint.",
+            "warna": "MediumTurquoise",
+            "merek": "Klocko-Boyer",
+            "user_id": 2,
+            "status_id": 1,
+            "stasiun_id": 5,
+            "kategori_id": 3,
+            "created_at": null,
+            "updated_at": null,
+            "stasiun": {
+                "id": 5,
+                "nama": "Muriel Gibson"
+            },
+            "kategori": {
+                "id": 3,
+                "nama": "Ben Bailey"
+            },
+            "barangimages": [
+                {
+                    "id": 5,
+                    "nama": "Miss Queen Batz",
+                    "uri": "https:\/\/via.placeholder.com\/640x480.png\/00cc22?text=non",
+                    "barang_id": 5
+                }
+            ],
+            "status": {
+                "id": 1,
+                "nama": "hilang"
+            }
+        },
+        {
+            "id": 4,
+            "nama_barang": "Hanna Lynch PhD",
+            "tanggal": "2020-12-10",
+            "lokasi": "52976 Delilah Island\nLednerborough, KY 35522-5757",
+            "deskripsi": "Et assumenda et qui quo saepe quia vitae voluptatum. Ut vero ea quasi porro dicta voluptatum odit. Magnam sint corporis unde sint sit. Ut cum impedit est ab eos veritatis.",
+            "warna": "LightCoral",
+            "merek": "Ernser, Bernhard and Deckow",
+            "user_id": 5,
+            "status_id": 3,
+            "stasiun_id": 4,
+            "kategori_id": 1,
+            "created_at": null,
+            "updated_at": null,
+            "stasiun": {
+                "id": 4,
+                "nama": "Minerva Hirthe"
+            },
+            "kategori": {
+                "id": 1,
+                "nama": "Mrs. Hosea Hyatt"
+            },
+            "barangimages": [],
+            "status": {
+                "id": 3,
+                "nama": "didonasikan"
+            }
+        },
+        {
+            "id": 3,
+            "nama_barang": "Ms. Aaliyah Mills Sr.",
+            "tanggal": "2020-12-10",
+            "lokasi": "7241 Milton Loaf\nReichelport, AK 28866-0297",
+            "deskripsi": "Qui dolor doloremque illo laudantium optio sit. Dolorem asperiores ex et vel deserunt minima quos. Qui veniam maiores ab vel ullam.",
+            "warna": "PapayaWhip",
+            "merek": "Langworth PLC",
+            "user_id": 4,
+            "status_id": 3,
+            "stasiun_id": 2,
+            "kategori_id": 5,
+            "created_at": null,
+            "updated_at": null,
+            "stasiun": {
+                "id": 2,
+                "nama": "Dr. Abbigail Price"
+            },
+            "kategori": {
+                "id": 5,
+                "nama": "Mariane Eichmann"
+            },
+            "barangimages": [
+                {
+                    "id": 1,
+                    "nama": "Teresa Hettinger",
+                    "uri": "https:\/\/via.placeholder.com\/640x480.png\/00cc66?text=tenetur",
+                    "barang_id": 3
+                },
+                {
+                    "id": 6,
+                    "nama": "Tas Besar",
+                    "uri": "https:\/\/storage.googleapis.com\/megabitlostnfound.appspot.com\/barangs\/image\/6",
+                    "barang_id": 3
+                }
+            ],
+            "status": {
+                "id": 3,
+                "nama": "didonasikan"
+            }
+        },
+        {
+            "id": 2,
+            "nama_barang": "Letha Stracke",
+            "tanggal": "2020-12-10",
+            "lokasi": "43960 Franecki Forest Apt. 980\nShainafurt, RI 37135",
+            "deskripsi": "Nulla et id incidunt vel ut cupiditate quasi. Iure placeat corporis quam eveniet iusto harum molestias ab. Adipisci ad voluptates voluptate est in at.",
+            "warna": "Snow",
+            "merek": "Crooks-Schmitt",
+            "user_id": 1,
+            "status_id": 2,
+            "stasiun_id": 2,
+            "kategori_id": 4,
+            "created_at": null,
+            "updated_at": null,
+            "stasiun": {
+                "id": 2,
+                "nama": "Dr. Abbigail Price"
+            },
+            "kategori": {
+                "id": 4,
+                "nama": "Lionel Hartmann I"
+            },
+            "barangimages": [
+                {
+                    "id": 3,
+                    "nama": "Aylin Rosenbaum",
+                    "uri": "https:\/\/via.placeholder.com\/640x480.png\/003322?text=quos",
+                    "barang_id": 2
+                }
+            ],
+            "status": {
+                "id": 2,
+                "nama": "ditemukan"
+            }
+        },
+        {
+            "id": 1,
+            "nama_barang": "Ms. Cecelia Mayer I",
+            "tanggal": "2020-12-10",
+            "lokasi": "9989 Anissa Pass\nKovacekland, NE 88768-3281",
+            "deskripsi": "Illo ut iusto quia minima. Voluptas eum cupiditate fuga nihil minus.",
+            "warna": "MediumVioletRed",
+            "merek": "Hartmann, Reinger and Jaskolski",
+            "user_id": 5,
+            "status_id": 2,
+            "stasiun_id": 5,
+            "kategori_id": 5,
+            "created_at": null,
+            "updated_at": "2020-12-13T07:27:42.000000Z",
+            "stasiun": {
+                "id": 5,
+                "nama": "Muriel Gibson"
+            },
+            "kategori": {
+                "id": 5,
+                "nama": "Mariane Eichmann"
+            },
+            "barangimages": [
+                {
+                    "id": 2,
+                    "nama": "Laverne Jacobs III",
+                    "uri": "https:\/\/via.placeholder.com\/640x480.png\/0044ee?text=sed",
+                    "barang_id": 1
+                },
+                {
+                    "id": 4,
+                    "nama": "Emmett Schmitt V",
+                    "uri": "https:\/\/via.placeholder.com\/640x480.png\/00eedd?text=quis",
+                    "barang_id": 1
+                }
+            ],
+            "status": {
+                "id": 2,
+                "nama": "ditemukan"
+            }
+        }
+    ],
+    "links": {
+        "first": "http:\/\/localhost\/api\/v1\/barang\/list\/eagerload?orderBy=-id&searchDate=2020&page=1",
+        "last": "http:\/\/localhost\/api\/v1\/barang\/list\/eagerload?orderBy=-id&searchDate=2020&page=1",
+        "prev": null,
+        "next": null
+    },
+    "meta": {
+        "current_page": 1,
+        "from": 1,
+        "last_page": 1,
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "http:\/\/localhost\/api\/v1\/barang\/list\/eagerload?orderBy=-id&searchDate=2020&page=1",
+                "label": 1,
+                "active": true
+            },
+            {
+                "url": null,
+                "label": "Next &raquo;",
+                "active": false
+            }
+        ],
+        "path": "http:\/\/localhost\/api\/v1\/barang\/list\/eagerload",
+        "per_page": 20,
+        "to": 5,
+        "total": 5
+    }
+}
+```
+<div id="execution-results-GETapi-v1-barang-list-eagerload" hidden>
+    <blockquote>Received response<span id="execution-response-status-GETapi-v1-barang-list-eagerload"></span>:</blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-barang-list-eagerload"></code></pre>
+</div>
+<div id="execution-error-GETapi-v1-barang-list-eagerload" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-barang-list-eagerload"></code></pre>
+</div>
+<form id="form-GETapi-v1-barang-list-eagerload" data-method="GET" data-path="api/v1/barang/list/eagerload" data-authed="1" data-hasfiles="0" data-headers='{"Authorization":"Bearer {YOUR_AUTH_KEY}","Content-Type":"application\/json","Accept":"application\/json"}' onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-barang-list-eagerload', this);">
+<h3>
+    Request&nbsp;&nbsp;&nbsp;
+        <button type="button" style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-tryout-GETapi-v1-barang-list-eagerload" onclick="tryItOut('GETapi-v1-barang-list-eagerload');">Try it out ⚡</button>
+    <button type="button" style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-canceltryout-GETapi-v1-barang-list-eagerload" onclick="cancelTryOut('GETapi-v1-barang-list-eagerload');" hidden>Cancel</button>&nbsp;&nbsp;
+    <button type="submit" style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;" id="btn-executetryout-GETapi-v1-barang-list-eagerload" hidden>Send Request 💥</button>
+    </h3>
+<p>
+<small class="badge badge-green">GET</small>
+ <b><code>api/v1/barang/list/eagerload</code></b>
+</p>
+<p>
+<label id="auth-GETapi-v1-barang-list-eagerload" hidden>Authorization header: <b><code>Bearer </code></b><input type="text" name="Authorization" data-prefix="Bearer " data-endpoint="GETapi-v1-barang-list-eagerload" data-component="header"></label>
+</p>
+<h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+<p>
+<b><code>id</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
+<input type="number" name="id" data-endpoint="GETapi-v1-barang-list-eagerload" data-component="query"  hidden>
+<br>
+Apply filter with id.</p>
+<p>
+<b><code>user_id</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
+<input type="number" name="user_id" data-endpoint="GETapi-v1-barang-list-eagerload" data-component="query"  hidden>
+<br>
+Apply filter with user_id.</p>
+<p>
+<b><code>stasiun_id</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
+<input type="number" name="stasiun_id" data-endpoint="GETapi-v1-barang-list-eagerload" data-component="query"  hidden>
+<br>
+Apply filter with stasiun_id.</p>
+<p>
+<b><code>status_id</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
+<input type="number" name="status_id" data-endpoint="GETapi-v1-barang-list-eagerload" data-component="query"  hidden>
+<br>
+Apply filter with status_id.</p>
+<p>
+<b><code>kategori_id</code></b>&nbsp;&nbsp;<small>integer</small>     <i>optional</i> &nbsp;
+<input type="number" name="kategori_id" data-endpoint="GETapi-v1-barang-list-eagerload" data-component="query"  hidden>
+<br>
+Apply filter with kategori_id.</p>
+<p>
+<b><code>tanggal</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="tanggal" data-endpoint="GETapi-v1-barang-list-eagerload" data-component="query"  hidden>
+<br>
+date_format:Y-m-d Apply filter with tanggal.</p>
+<p>
+<b><code>orderBy</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="orderBy" data-endpoint="GETapi-v1-barang-list-eagerload" data-component="query"  hidden>
+<br>
+</p>
+<p>
+<b><code>search</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="search" data-endpoint="GETapi-v1-barang-list-eagerload" data-component="query"  hidden>
+<br>
+Apply filtering with string search.</p>
+<p>
+<b><code>searchDate</code></b>&nbsp;&nbsp;<small>string</small>     <i>optional</i> &nbsp;
+<input type="text" name="searchDate" data-endpoint="GETapi-v1-barang-list-eagerload" data-component="query"  hidden>
+<br>
+Apply filtering with date search.</p>
 </form>
 
 
