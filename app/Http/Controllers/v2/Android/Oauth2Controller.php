@@ -26,6 +26,7 @@ class Oauth2Controller extends Controller
      * 
      * This will redirect user to Google and signin there.
      * This is for web only. You must implement yourself in mobile.
+     * @unauthenticated
      */
     // if you use xampp you might find error when hit handleGoogleCallback
     // go to https://stackoverflow.com/a/55263864/11683936
@@ -76,6 +77,7 @@ class Oauth2Controller extends Controller
      * @response status=401 scenario="using code from other oauth2 account" {
      *  "message": "Authentication credentials are incorrect."
      * }
+     * @unauthenticated
      */
     public function handleGoogleCallback(Request $request) {
         // example request: domain.com?code=4%2F0AY0e-g6EBhLCybi1F4m1dCNyasrDTKVrqOQJ5T1PWefprvlq3oXh1_JqF6r2U5XT_vM7Jg
