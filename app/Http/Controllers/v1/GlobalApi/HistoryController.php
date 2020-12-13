@@ -14,7 +14,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
 /** 
- * @group v1 - History
+ * @group v1 - History ( Dashboard API )
  * 
  * History is the place you can get barang status histories.
  * Because of the value can be changed so we create this API,
@@ -71,13 +71,81 @@ class HistoryController extends Controller
     }
 
     /**
+     * Monthly Count Percentage
+     * 
+     * This API count each status for this month and last month.
+     * After that, calculate the percentage difference between them.
+     * 
+     * The formula is:
+     * 
+     * **percentage = ( (this_month - last_month)/last_month ) x 100  | where last_month != 0**
+     * 
+     * if no data in last_month then it will be considered as 0 and formula will be:
+     * 
+     * **percentage = this_month x 100**
+     * 
+     * @response status=200 scenario="success" {
+     *  "this_month": {
+     *      "ditemukan": 7,
+     *      "hilang": 4,
+     *      "didonasikan": 3,
+     *      "diklaim": 1
+     *  },
+     *  "last_month": [],
+     *  "percentage": {
+     *      "ditemukan": 700,
+     *      "hilang": 400,
+     *      "didonasikan": 300,
+     *      "diklaim": 100
+     *  } 
+     * }
+     * @response status=401 scenario="Unauthorized" {
+     *  "message": "Token not provided"
+     * }
+     * @response status=403 scenario="not admin" {
+     *  "message": "You must be admin or super admin to do this."
+     * }  
+     */
+    public function monthlyCount(Request $request) {
+        Permissions::isAdminOrSuperAdmin($request);
+        // get count this month
+        $query = History::select('*');
+        $date = Carbon::now()->addMonths(0)->format('Y-m');
+        $request->searchDate = $date;
+        $query = QueryBuilder::searchDate($request, $query, ['created_at']);
+        $thisMonthCount = $query->get()->groupBy('status')->map(function($history, $status) {
+            return $history->count();
+        });
+        // get count last month
+        $query = History::select('*');
+        $date = Carbon::now()->addMonths(-1)->format('Y-m');
+        $request->searchDate = $date;
+        $query = QueryBuilder::searchDate($request, $query, ['created_at']);
+        $lastMonthCount = $query->get()->groupBy('status')->map(function($history, $status) {
+            return $history->count();
+        });
+
+        // convert to array to calculate percentage
+        $lastMonthCount = $lastMonthCount->toArray();
+        $thisMonthCount = $thisMonthCount->toArray();
+        // calculate percentage if exists
+        foreach($thisMonthCount as $key=>$value) {
+            $percentage[$key] = array_key_exists($key, $lastMonthCount) ? (($value - $lastMonthCount[$key])/$lastMonthCount[$key])*100 : $value*100;
+        }
+
+
+        $countGroup = ['this_month'=>$thisMonthCount, 'last_month'=>$lastMonthCount, 'percentage'=>$percentage];
+        return response()->json($countGroup);
+    }
+
+    /**
      * Get History Count
      * 
      * Will get history count depending on status provided.
      * It can be last 7 day barang hilang,
      * last 7 day barang ditemukan, etc.
      * 
-     * @queryParam status string required Status can be hilang, ditemukan, didonasikan, diklaim. Example=hilang
+     * @queryParam status string required Status can be hilang, ditemukan, didonasikan, diklaim. Example: hilang
      * @queryParam limitDay integer You can override default limit. The default limit is 7 days. No-example
      * 
      * @response status=200 scenario="success" {

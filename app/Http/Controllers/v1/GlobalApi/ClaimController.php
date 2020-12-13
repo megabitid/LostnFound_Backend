@@ -381,6 +381,8 @@ class ClaimController extends Controller
      * 
      * Claim can be verified by admin only using this api.
      * 
+     * **When you verify claim, manually change the status of barang based on the claim. Because this API it self did not change it. If the status_id of barang not updated, The dashboard counter will not updated.**
+     * 
      * @bodyParam verified boolean id user that want to claim. Example: 1
      * 
      * @response status=201 scenario="success" {

@@ -110,6 +110,7 @@ Route::prefix('v1')->group(function () {
     Route::prefix('histories')->middleware('jwt.auth')->group(function () {
         Route::get('', [GlobalApi\HistoryController::class, 'index']);
         Route::get('count', [GlobalApi\HistoryController::class, 'count']);
+        Route::get('monthly-count', [GlobalApi\HistoryController::class, 'monthlyCount']);
     });
 
     //claims
