@@ -32,7 +32,7 @@ class HistoryController extends Controller
      * Normally you do that after admin verify a claim based on that barang_id.
      * 
      * ### orderBy query supported fields:
-     * * All field of claim detail
+     * * All field of its detail
      * 
      * @queryParam id integer The id of history. No-example
      * @queryParam user_id integer The id of user that changed barang status. No-example

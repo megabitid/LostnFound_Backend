@@ -46,7 +46,7 @@
                             <li><a href='http://github.com/knuckleswtf/scribe'>Documentation powered by Scribe ✍</a></li>
                     </ul>
             <ul class="toc-footer" id="last-updated">
-            <li>Last updated: December 13 2020</li>
+            <li>Last updated: December 14 2020</li>
         </ul>
 </div>
 <div class="page-wrapper">
@@ -66,7 +66,7 @@ You can switch the language used with the tabs at the top right (or from the nav
 <p>Base URL</p>
 </blockquote>
 <pre><code class="language-yaml">https://megabit-lostnfound.herokuapp.com</code></pre><h1>Authenticating requests</h1>
-<p>To authenticate requests, include an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
+<p>Authenticate requests to this API's endpoints by sending an <strong><code>Authorization</code></strong> header with the value <strong><code>"Bearer {YOUR_AUTH_KEY}"</code></strong>.</p>
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 <p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p><h1>v1 - Authenticate OAuth2 User (Deprecated, please use v2!)</h1>
 <h2>api/v1/android/auth/oauth2/google/authorize</h2>
@@ -2575,7 +2575,7 @@ The id of barang image.</p>
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar Updated","uri":"base64string","barang_id":4}'
+    -d '{"nama":"Tas Besar Updated","uri":"base64string","barang_id":6}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/6"
@@ -2590,7 +2590,7 @@ let headers = {
 let body = {
     "nama": "Tas Besar Updated",
     "uri": "base64string",
-    "barang_id": 4
+    "barang_id": 6
 }
 
 fetch(url, {
@@ -2605,7 +2605,7 @@ url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/6'
 payload = {
     "nama": "Tas Besar Updated",
     "uri": "base64string",
-    "barang_id": 4
+    "barang_id": 6
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -2716,7 +2716,7 @@ id Barang that owned this image. Example 3</p>
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar Partial Update","barang_id":19}'
+    -d '{"nama":"Tas Besar Partial Update","barang_id":1}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/6"
@@ -2730,7 +2730,7 @@ let headers = {
 
 let body = {
     "nama": "Tas Besar Partial Update",
-    "barang_id": 19
+    "barang_id": 1
 }
 
 fetch(url, {
@@ -2744,7 +2744,7 @@ import json
 url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images/6'
 payload = {
     "nama": "Tas Besar Partial Update",
-    "barang_id": 19
+    "barang_id": 1
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -2937,7 +2937,7 @@ After that, the url will be saved in database.</p>
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar","uri":"base64string","barang_id":16}'
+    -d '{"nama":"Tas Besar","uri":"base64string","barang_id":10}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://megabit-lostnfound.herokuapp.com/api/v1/barang-images"
@@ -2952,7 +2952,7 @@ let headers = {
 let body = {
     "nama": "Tas Besar",
     "uri": "base64string",
-    "barang_id": 16
+    "barang_id": 10
 }
 
 fetch(url, {
@@ -2967,7 +2967,7 @@ url = 'https://megabit-lostnfound.herokuapp.com/api/v1/barang-images'
 payload = {
     "nama": "Tas Besar",
     "uri": "base64string",
-    "barang_id": 16
+    "barang_id": 10
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -5836,14 +5836,14 @@ The id of barang status.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/quae/verified" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/dolor/verified" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"verified":true}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/quae/verified"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/dolor/verified"
 );
 
 let headers = {
@@ -5864,7 +5864,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/quae/verified'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/dolor/verified'
 payload = {
     "verified": true
 }
@@ -5964,14 +5964,14 @@ Claim can be updated for barang hilang only.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/autem" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/quos" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"user_id":"1","barang_id":1,"alamat":"Jalan Mangga, Block X\/21","uri_tiket":"uribase64","no_telp":"08123456789"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/autem"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/quos"
 );
 
 let headers = {
@@ -5996,7 +5996,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/autem'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/quos'
 payload = {
     "user_id": "1",
     "barang_id": 1,
@@ -6131,14 +6131,14 @@ Claim can be updated for barang hilang only.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/omnis" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/aliquam" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"no_telp":"0999999999"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/omnis"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/aliquam"
 );
 
 let headers = {
@@ -6159,7 +6159,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/omnis'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/aliquam'
 payload = {
     "no_telp": "0999999999"
 }
@@ -6289,12 +6289,12 @@ Phone number of user.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/claims/voluptatem" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/claims/porro" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/voluptatem"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/claims/porro"
 );
 
 let headers = {
@@ -6310,7 +6310,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/voluptatem'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/claims/porro'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -6755,7 +6755,7 @@ use patch method to change the status_id to optimize API.
 Normally you do that after admin verify a claim based on that barang_id.</p>
 <h3>orderBy query supported fields:</h3>
 <ul>
-<li>All field of claim detail</li>
+<li>All field of its detail</li>
 </ul>
 <blockquote>
 <p>Example request:</p>
@@ -8530,12 +8530,12 @@ Retrive deleted admin user if true.</p>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/error" \
+    -G "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/laudantium" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/error"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/laudantium"
 );
 
 let headers = {
@@ -8551,7 +8551,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/error'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/laudantium'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -8601,12 +8601,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/ipsum" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/fugiat" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/ipsum"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/fugiat"
 );
 
 let headers = {
@@ -8622,7 +8622,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/ipsum'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/fugiat'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -8666,12 +8666,12 @@ response.json()</code></pre>
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PATCH \
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/veritatis" \
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/aspernatur" \
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/veritatis"
+    "https://megabit-lostnfound.herokuapp.com/api/v1/android/users/aspernatur"
 );
 
 let headers = {
@@ -8687,7 +8687,7 @@ fetch(url, {
 <pre><code class="language-python">import requests
 import json
 
-url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/veritatis'
+url = 'https://megabit-lostnfound.herokuapp.com/api/v1/android/users/aspernatur'
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
   'Content-Type': 'application/json',
@@ -10278,7 +10278,7 @@ The id of barang image.</p>
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar Updated","uri":"base64string","barang_id":19}'
+    -d '{"nama":"Tas Besar Updated","uri":"base64string","barang_id":3}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/6"
@@ -10293,7 +10293,7 @@ let headers = {
 let body = {
     "nama": "Tas Besar Updated",
     "uri": "base64string",
-    "barang_id": 19
+    "barang_id": 3
 }
 
 fetch(url, {
@@ -10308,7 +10308,7 @@ url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/6'
 payload = {
     "nama": "Tas Besar Updated",
     "uri": "base64string",
-    "barang_id": 19
+    "barang_id": 3
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -10419,7 +10419,7 @@ id Barang that owned this image. Example 3</p>
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar Partial Update","barang_id":5}'
+    -d '{"nama":"Tas Besar Partial Update","barang_id":11}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/6"
@@ -10433,7 +10433,7 @@ let headers = {
 
 let body = {
     "nama": "Tas Besar Partial Update",
-    "barang_id": 5
+    "barang_id": 11
 }
 
 fetch(url, {
@@ -10447,7 +10447,7 @@ import json
 url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images/6'
 payload = {
     "nama": "Tas Besar Partial Update",
-    "barang_id": 5
+    "barang_id": 11
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
@@ -10640,7 +10640,7 @@ After that, the url will be saved in database.</p>
     -H "Authorization: Bearer {YOUR_AUTH_KEY}" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"nama":"Tas Besar","uri":"base64string","barang_id":1}'
+    -d '{"nama":"Tas Besar","uri":"base64string","barang_id":13}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "https://megabit-lostnfound.herokuapp.com/api/v2/barang-images"
@@ -10655,7 +10655,7 @@ let headers = {
 let body = {
     "nama": "Tas Besar",
     "uri": "base64string",
-    "barang_id": 1
+    "barang_id": 13
 }
 
 fetch(url, {
@@ -10670,7 +10670,7 @@ url = 'https://megabit-lostnfound.herokuapp.com/api/v2/barang-images'
 payload = {
     "nama": "Tas Besar",
     "uri": "base64string",
-    "barang_id": 1
+    "barang_id": 13
 }
 headers = {
   'Authorization': 'Bearer {YOUR_AUTH_KEY}',
