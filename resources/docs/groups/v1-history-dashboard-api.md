@@ -15,7 +15,7 @@ use patch method to change the status_id to optimize API.
 Normally you do that after admin verify a claim based on that barang_id.
 
 ### orderBy query supported fields:
-* All field of claim detail
+* All field of its detail
 
 > Example request:
 
