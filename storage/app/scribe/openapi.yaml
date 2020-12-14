@@ -1531,7 +1531,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image. Example 3'
-                                    example: 4
+                                    example: 6
                             required:
                                 - nama
                                 - uri
@@ -1640,7 +1640,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image.'
-                                    example: 19
+                                    example: 1
         get:
             summary: 'Get Detail Barang Image.'
             description: 'Returns barang image details.'
@@ -1789,7 +1789,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image. Example 3'
-                                    example: 16
+                                    example: 10
                             required:
                                 - nama
                                 - uri
@@ -3143,7 +3143,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: quae
+                example: dolor
                 required: true
                 schema:
                     type: string
@@ -3332,7 +3332,7 @@ paths:
     /api/v1/histories:
         get:
             summary: 'Get List History'
-            description: "List of barang status histories.\nYou can add barang status histories by change the status_id on barang,\nuse patch method to change the status_id to optimize API.\nNormally you do that after admin verify a claim based on that barang_id.\n\n### orderBy query supported fields:\n* All field of claim detail"
+            description: "List of barang status histories.\nYou can add barang status histories by change the status_id on barang,\nuse patch method to change the status_id to optimize API.\nNormally you do that after admin verify a claim based on that barang_id.\n\n### orderBy query supported fields:\n* All field of its detail"
             parameters:
                 -
                     in: query
@@ -4079,7 +4079,7 @@ paths:
                 in: path
                 name: id
                 description: ''
-                example: error
+                example: laudantium
                 required: true
                 schema:
                     type: string
@@ -6594,7 +6594,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image. Example 3'
-                                    example: 19
+                                    example: 3
                             required:
                                 - nama
                                 - uri
@@ -6703,7 +6703,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image.'
-                                    example: 5
+                                    example: 11
         get:
             summary: 'Get Detail Barang Image.'
             description: 'Returns barang image details.'
@@ -6852,7 +6852,7 @@ paths:
                                 barang_id:
                                     type: integer
                                     description: 'id Barang that owned this image. Example 3'
-                                    example: 1
+                                    example: 13
                             required:
                                 - nama
                                 - uri
