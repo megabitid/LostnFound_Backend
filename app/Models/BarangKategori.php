@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Hashids;
 
 class BarangKategori extends Model
 {
@@ -15,6 +16,20 @@ class BarangKategori extends Model
     protected $fillable = [
         'nama',
     ];
+
+    // encrypt id
+    public function getHIdAttribute() {
+        return Hashids::encode($this->attributes['id']);
+    }
+
+    protected $appends = [
+        'h_id',
+    ];
+
+    // uncomment this to fully activate id encryption
+    // protected $hidden = [
+    //     'id',
+    // ];
 
     // Relation one to many
     public function barangs() 
