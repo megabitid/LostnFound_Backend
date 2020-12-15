@@ -59,13 +59,13 @@ class Barang extends Model
     ];
 
     // uncomment this to fully activate id encryption
-    protected $hidden = [
-        'id',
-        'user_id',
-        'stasiun_id',
-        'status_id',
-        'kategori_id'
-    ];
+    // protected $hidden = [
+    //     'id',
+    //     'user_id',
+    //     'stasiun_id',
+    //     'status_id',
+    //     'kategori_id'
+    // ];
 
     // Relation many to one
     public function user()

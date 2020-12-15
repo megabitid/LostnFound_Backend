@@ -53,8 +53,8 @@ class User extends Authenticatable implements JWTSubject
         'remember_token',
         'deleted_at',
         // uncomment this to enable id encryption
-        'id',
-        'stasiun_id'
+        // 'id',
+        // 'stasiun_id'
     ];
 
     /**

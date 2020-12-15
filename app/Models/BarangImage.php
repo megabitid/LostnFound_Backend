@@ -32,10 +32,10 @@ class BarangImage extends Model
     ];
 
     // uncomment this to fully activate id encryption
-    protected $hidden = [
-        'id',
-        'barang_id'
-    ];
+    // protected $hidden = [
+    //     'id',
+    //     'barang_id'
+    // ];
 
     // Relation many (barangImage) to one (barang)
     public function barang() 

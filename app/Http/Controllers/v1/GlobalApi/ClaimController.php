@@ -146,20 +146,18 @@ class ClaimController extends Controller
         }
 
         $validatedData = $validator->validated();
-        dd($validatedData);
         $validatedData['verified'] = 0;
 
         //cek image format
-        // if (StringValidator::isImageBase64($validatedData['uri_tiket']) == null) {
-        //     return ValidationError::response(['uri_tiket' => 'You must use urlBase64 image format.']);
-        // }
+        if (StringValidator::isImageBase64($validatedData['uri_tiket']) == null) {
+            return ValidationError::response(['uri_tiket' => 'You must use urlBase64 image format.']);
+        }
         $uriBase64 = $validatedData['uri_tiket'];
         $validatedData['uri_tiket'] = "";
         $claim = Claim::create($validatedData);
 
         // upload image to firebase
-        // $uri = FirebaseStorage::imageUpload($uriBase64, 'claims/ticket_image/' . $claim->id);
-        $uri = "";
+        $uri = FirebaseStorage::imageUpload($uriBase64, 'claims/ticket_image/' . $claim->id);
         $validatedData['uri_tiket'] = $uri;
 
         $claim->update(['uri_tiket' => $uri]);

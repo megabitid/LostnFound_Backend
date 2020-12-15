@@ -25,9 +25,9 @@ class BarangStatus extends Model
     ];
 
     // uncomment this to fully activate id encryption
-    protected $hidden = [
-        'id',
-    ];
+    // protected $hidden = [
+    //     'id',
+    // ];
 
     // Relation one to many
     public function barangs() 

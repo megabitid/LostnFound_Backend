@@ -33,6 +33,12 @@ class History extends Model
         'h_barang_id',
     ];
 
+    // protected $hidden = [
+    //     'id',
+    //     'user_id',
+    //     'barang_id',
+    // ];
+
     // Relation many to one
     public function user()
     {

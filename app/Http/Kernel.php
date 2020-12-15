@@ -14,7 +14,8 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $middleware = [
-        \App\Http\Middleware\HashidDecode::class,
+        // uncomment this if you want to decode id in form request
+        // \App\Http\Middleware\HashidDecode::class,
         \App\Http\Middleware\TrustProxies::class,
         \Fruitcake\Cors\HandleCors::class,
         \App\Http\Middleware\PreventRequestsDuringMaintenance::class,

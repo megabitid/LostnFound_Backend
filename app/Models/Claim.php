@@ -37,11 +37,11 @@ class Claim extends Model
     ];
 
     // uncomment this to fully activate id encryption
-    protected $hidden = [
-        'id',
-        'user_id',
-        'barang_id',
-    ];
+    // protected $hidden = [
+    //     'id',
+    //     'user_id',
+    //     'barang_id',
+    // ];
 
     public function user(){
         return $this->belongsTo(User::class);
