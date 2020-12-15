@@ -37,3 +37,20 @@ composer update && composer install
   Go to [http://localhost:8000/docs](http://localhost:8000/docs) to view documentation.
 
   https://laracasts.com/discuss/channels/laravel/how-to-apply-https-to-the-helpers-asset-and-url
+
+## Advanced usage
+### Hashed id and foreign_id
+By default h_id and h_foreign_id are enabled to introduce the feature.
+* To fully enable hashed id encryption check file bellow and uncomment the code.
+
+  * app\Http\Kernel.php
+  * app\Models\\*.php
+  * app\Providers\RouteServiceProvider.php
+
+* To **remove** this feature, or hashed field [ h_(field) ] in response, **comment on**:
+  ```php
+  protected $appends = [
+    ...
+  ]
+  ```
+  * and the functions above it.

@@ -3,6 +3,7 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Hashids;
 
 class Resource extends JsonResource
 {
@@ -14,6 +15,7 @@ class Resource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        $data = parent::toArray($request);
+        return $data;
     }
 }
