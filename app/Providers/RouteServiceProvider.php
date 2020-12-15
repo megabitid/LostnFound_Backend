@@ -38,6 +38,10 @@ class RouteServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
 
         $this->routes(function () {
+            Route::bind('id', function($id, $route){
+                return \Hashids::decode($id)[0];
+            });
+
             foreach (glob(base_path('routes/api/*.php')) as $route){
                 Route::prefix('api')
                     ->middleware('api')

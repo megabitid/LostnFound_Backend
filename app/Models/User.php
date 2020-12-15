@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Notifications\Notifiable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 use App\Models\Barang;
+use Hashids;
 
 class User extends Authenticatable implements JWTSubject
 {
@@ -29,6 +30,19 @@ class User extends Authenticatable implements JWTSubject
         'email_verified_at',
     ];
 
+    // encrypt id
+    public function getHIdAttribute() {
+        return Hashids::encode($this->attributes['id']);
+    }
+    public function getHStasiunIdAttribute() {
+        return Hashids::encode($this->attributes['stasiun_id']);
+    }
+
+    protected $appends = [
+        'h_id',
+        'h_stasiun_id',
+    ];
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -38,6 +52,9 @@ class User extends Authenticatable implements JWTSubject
         'password',
         'remember_token',
         'deleted_at',
+        // uncomment this to enable id encryption
+        'id',
+        'stasiun_id'
     ];
 
     /**

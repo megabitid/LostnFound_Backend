@@ -346,6 +346,7 @@ class BarangController extends Controller
     public function show($id)
     {
         $barang = Barang::with(['stasiun','kategori','barangimages'])->findOrFail($id);
+        $barang = Resource::make($barang);
         return response()->json($barang, 200);
     }
 
